@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlertDialog component supports simple dialogs 1`] = `
+<div
+  className="mdc-dialog"
+>
+  <div
+    className="mdc-dialog__container"
+  >
+    <div
+      aria-describedby="dialog-content"
+      aria-modal="true"
+      className="mdc-dialog__surface"
+      role="alertdialog"
+    >
+      <div
+        className="mdc-dialog__content"
+        id="dialog-content"
+      />
+      <div
+        className="mdc-dialog__actions"
+      >
+        <button
+          className="mdc-button mdc-dialog__button"
+          data-mdc-dialog-action="ok"
+          data-mdc-dialog-button-default=""
+          type="button"
+        >
+          <div
+            className="mdc-button__ripple"
+          />
+          <span
+            className="mdc-button__label"
+          >
+            OK
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="mdc-dialog__scrim"
+  />
+</div>
+`;
+
+exports[`AlertDialog component supports simple dialogs 2`] = `
+<div
+  className="mdc-dialog"
+>
+  <div
+    className="mdc-dialog__container"
+  >
+    <div
+      aria-describedby="dialog-content"
+      aria-modal="true"
+      className="mdc-dialog__surface"
+      role="alertdialog"
+    >
+      <div
+        className="mdc-dialog__content"
+        id="dialog-content"
+      />
+      <div
+        className="mdc-dialog__actions"
+      >
+        <button
+          className="mdc-button mdc-dialog__button"
+          data-mdc-dialog-action="cancel"
+          data-mdc-dialog-button-default=""
+          type="button"
+        >
+          <div
+            className="mdc-button__ripple"
+          />
+          <span
+            className="mdc-button__label"
+          >
+            Cancel
+          </span>
+        </button>
+        <button
+          className="mdc-button mdc-dialog__button"
+          data-mdc-dialog-action="ok"
+          type="button"
+        >
+          <div
+            className="mdc-button__ripple"
+          />
+          <span
+            className="mdc-button__label"
+          >
+            OK
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="mdc-dialog__scrim"
+  />
+</div>
+`;

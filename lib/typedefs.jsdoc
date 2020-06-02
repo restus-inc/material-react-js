@@ -1,0 +1,5 @@
+/**
+ * The event handler.
+ * @typedef {Function} EventHandler
+ * @param {Event} event The event object.
+ */

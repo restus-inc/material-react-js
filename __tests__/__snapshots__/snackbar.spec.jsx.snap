@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snackbar component supports snackbar with action button 1`] = `
+<div
+  className="mdc-snackbar"
+>
+  <div
+    className="mdc-snackbar__surface"
+  >
+    <div
+      aria-live="polite"
+      className="mdc-snackbar__label"
+      role="status"
+    >
+      foo
+    </div>
+    <div
+      className="mdc-snackbar__actions"
+    >
+      <button
+        className="mdc-button mdc-snackbar__action"
+        type="button"
+      >
+        <div
+          className="mdc-button__ripple"
+        />
+        <span
+          className="mdc-button__label"
+        >
+          bar
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Snackbar component supports snackbar with action button 2`] = `
+<div
+  className="mdc-snackbar mdc-snackbar--stacked"
+>
+  <div
+    className="mdc-snackbar__surface"
+  >
+    <div
+      aria-live="polite"
+      className="mdc-snackbar__label"
+      role="status"
+    >
+      foo
+    </div>
+    <div
+      className="mdc-snackbar__actions"
+    >
+      <button
+        className="mdc-button mdc-snackbar__action"
+        type="button"
+      >
+        <div
+          className="mdc-button__ripple"
+        />
+        <span
+          className="mdc-button__label"
+        >
+          bar
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Snackbar component supports snackbar with action button 3`] = `
+<div
+  className="mdc-snackbar mdc-snackbar--leading"
+>
+  <div
+    className="mdc-snackbar__surface"
+  >
+    <div
+      aria-live="polite"
+      className="mdc-snackbar__label"
+      role="status"
+    >
+      foo
+    </div>
+    <div
+      className="mdc-snackbar__actions"
+    >
+      <button
+        className="mdc-button mdc-snackbar__action"
+        type="button"
+      >
+        <div
+          className="mdc-button__ripple"
+        />
+        <span
+          className="mdc-button__label"
+        >
+          bar
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Snackbar component supports snackbar without action button 1`] = `
+<div
+  className="mdc-snackbar"
+>
+  <div
+    className="mdc-snackbar__surface"
+  >
+    <div
+      aria-live="polite"
+      className="mdc-snackbar__label"
+      role="status"
+    />
+  </div>
+</div>
+`;
+
+exports[`Snackbar component supports snackbar without action button 2`] = `
+<div
+  className="mdc-snackbar mdc-snackbar--leading"
+>
+  <div
+    className="mdc-snackbar__surface"
+  >
+    <div
+      aria-live="polite"
+      className="mdc-snackbar__label"
+      role="status"
+    />
+  </div>
+</div>
+`;

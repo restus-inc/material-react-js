@@ -1,0 +1,297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField component supports filled text fields 1`] = `
+<label
+  className="mdc-text-field mdc-text-field--no-label mdc-text-field--filled"
+>
+  <span
+    className="mdc-text-field__ripple"
+  />
+  <input
+    className="mdc-text-field__input"
+    defaultValue=""
+    disabled={false}
+    required={false}
+    type="text"
+  />
+  <span
+    className="mdc-line-ripple"
+  />
+</label>
+`;
+
+exports[`TextField component supports filled text fields 2`] = `
+<label
+  className="mdc-text-field mdc-text-field--disabled mdc-text-field--filled"
+>
+  <span
+    className="mdc-text-field__ripple"
+  />
+  <input
+    aria-labelledby="a0123456-label"
+    className="mdc-text-field__input"
+    defaultValue=""
+    disabled={true}
+    placeholder="bar"
+    required={false}
+    type="text"
+  />
+  <span
+    className="mdc-floating-label"
+    id="a0123456-label"
+  >
+    foo
+  </span>
+  <span
+    className="mdc-line-ripple"
+  />
+</label>
+`;
+
+exports[`TextField component supports filled text fields 3`] = `
+<label
+  className="mdc-text-field mdc-text-field--label-floating mdc-text-field--filled"
+>
+  <span
+    className="mdc-text-field__ripple"
+  />
+  <input
+    aria-labelledby="bar-label"
+    className="mdc-text-field__input"
+    defaultValue=""
+    disabled={false}
+    id="bar"
+    name="bar"
+    pattern="[a-z]*"
+    required={false}
+    type="text"
+  />
+  <span
+    className="mdc-floating-label mdc-floating-label--float-above"
+    id="bar-label"
+  >
+    foo
+  </span>
+  <span
+    className="mdc-line-ripple"
+  />
+</label>
+`;
+
+exports[`TextField component supports filled text fields 4`] = `
+<label
+  className="mdc-text-field mdc-text-field--label-floating mdc-text-field--filled"
+>
+  <span
+    className="mdc-text-field__ripple"
+  />
+  <input
+    aria-labelledby="bar-label"
+    className="mdc-text-field__input"
+    defaultValue=""
+    disabled={false}
+    id="bar"
+    name="bar"
+    required={false}
+    type="text"
+  />
+  <span
+    className="mdc-floating-label mdc-floating-label--float-above"
+    id="bar-label"
+  >
+    foo
+  </span>
+  <span
+    className="mdc-line-ripple"
+  />
+</label>
+`;
+
+exports[`TextField component supports outlined text fields 1`] = `
+<label
+  className="mdc-text-field mdc-text-field--no-label mdc-text-field--outlined"
+>
+  <input
+    className="mdc-text-field__input"
+    defaultValue=""
+    disabled={false}
+    required={false}
+    type="text"
+  />
+  <span
+    className="mdc-notched-outline"
+  >
+    <span
+      className="mdc-notched-outline__leading"
+    />
+    <span
+      className="mdc-notched-outline__trailing"
+    />
+  </span>
+</label>
+`;
+
+exports[`TextField component supports outlined text fields 2`] = `
+<label
+  className="mdc-text-field mdc-text-field--disabled mdc-text-field--outlined"
+>
+  <input
+    aria-labelledby="a0123456-label"
+    className="mdc-text-field__input"
+    defaultValue=""
+    disabled={true}
+    placeholder="bar"
+    required={false}
+    type="text"
+  />
+  <span
+    className="mdc-notched-outline"
+  >
+    <span
+      className="mdc-notched-outline__leading"
+    />
+    <span
+      className="mdc-notched-outline__notch"
+    >
+      <span
+        className="mdc-floating-label"
+        id="a0123456-label"
+      >
+        foo
+      </span>
+    </span>
+    <span
+      className="mdc-notched-outline__trailing"
+    />
+  </span>
+</label>
+`;
+
+exports[`TextField component supports outlined text fields 3`] = `
+<label
+  className="mdc-text-field mdc-text-field--label-floating mdc-text-field--outlined"
+>
+  <input
+    aria-labelledby="bar-label"
+    className="mdc-text-field__input"
+    defaultValue=""
+    disabled={false}
+    id="bar"
+    name="bar"
+    pattern="[a-z]*"
+    required={false}
+    type="text"
+  />
+  <span
+    className="mdc-notched-outline"
+  >
+    <span
+      className="mdc-notched-outline__leading"
+    />
+    <span
+      className="mdc-notched-outline__notch"
+    >
+      <span
+        className="mdc-floating-label mdc-floating-label--float-above"
+        id="bar-label"
+      >
+        foo
+      </span>
+    </span>
+    <span
+      className="mdc-notched-outline__trailing"
+    />
+  </span>
+</label>
+`;
+
+exports[`TextField component supports outlined textareas 1`] = `
+<label
+  className="mdc-text-field mdc-text-field--no-label mdc-text-field--outlined mdc-text-field--textarea"
+>
+  <span
+    className="mdc-text-field__resizer"
+  >
+    <textarea
+      className="mdc-text-field__input"
+      cols={32}
+      defaultValue=""
+      disabled={false}
+      required={false}
+      rows={4}
+    />
+  </span>
+  <span
+    className="mdc-notched-outline"
+  >
+    <span
+      className="mdc-notched-outline__leading"
+    />
+    <span
+      className="mdc-notched-outline__trailing"
+    />
+  </span>
+</label>
+`;
+
+exports[`TextField component supports outlined textareas 2`] = `
+<label
+  className="mdc-text-field mdc-text-field--no-label mdc-text-field--disabled mdc-text-field--outlined mdc-text-field--textarea"
+>
+  <span
+    className="mdc-text-field__resizer"
+  >
+    <textarea
+      className="mdc-text-field__input"
+      cols={32}
+      defaultValue=""
+      disabled={true}
+      placeholder="bar"
+      required={false}
+      rows={4}
+    />
+  </span>
+  <span
+    className="mdc-notched-outline"
+  >
+    <span
+      className="mdc-notched-outline__leading"
+    />
+    <span
+      className="mdc-notched-outline__trailing"
+    />
+  </span>
+</label>
+`;
+
+exports[`TextField component supports outlined textareas 3`] = `
+<label
+  className="mdc-text-field mdc-text-field--no-label mdc-text-field--label-floating mdc-text-field--outlined mdc-text-field--textarea"
+>
+  <span
+    className="mdc-text-field__resizer"
+  >
+    <textarea
+      className="mdc-text-field__input"
+      cols={40}
+      defaultValue=""
+      disabled={false}
+      id="bar"
+      name="bar"
+      pattern="[a-z]*"
+      required={false}
+      rows={6}
+    />
+  </span>
+  <span
+    className="mdc-notched-outline"
+  >
+    <span
+      className="mdc-notched-outline__leading"
+    />
+    <span
+      className="mdc-notched-outline__trailing"
+    />
+  </span>
+</label>
+`;

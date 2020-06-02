@@ -1,0 +1,32 @@
+{
+  "plugins": ["plugins/markdown"],
+  "source": {
+    "include": [
+      "lib/"
+    ],
+    "includePattern": ".+\\.jsx?(doc)?$"
+  },
+  "opts": {
+    "template": "node_modules/tui-jsdoc-template",
+    "destination": "./docs/api/"
+  },
+  "templates": {
+    "default": {
+      "staticFiles": {
+        "include": ["jsdoc-template/"]
+      }
+    },
+    "css": [
+      "https://fonts.googleapis.com/css?family=Roboto",
+      "styles/custom.css"
+    ],
+    "name": "Material React",
+    "footerText": "Restus Inc.",
+    "logo": {
+      "url": "img/logo-type.png",
+      "width": "91px",
+      "height": "22px"
+    },
+    "cleverLinks": true
+  }
+}

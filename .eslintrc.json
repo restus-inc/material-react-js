@@ -1,0 +1,41 @@
+{
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "extends": [
+        "airbnb-base",
+        "plugin:react/recommended"
+    ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "import/resolver": {
+            "node": {
+              "extensions": [".js",".jsx"]
+            }
+          }
+    },
+    "globals": {
+        "window": "readonly",
+        "document": "readonly"
+    },
+    "rules": {
+        "func-names": [
+            "warn", "as-needed"
+        ],
+        "function-paren-newline": [
+            "error", "consistent"
+        ],
+        "import/no-extraneous-dependencies": "off",
+        "no-continue": "off",
+        "no-underscore-dangle": [
+            "error", { "allowAfterThis": true }
+        ],
+        "react/prop-types": "off"
+    }
+}

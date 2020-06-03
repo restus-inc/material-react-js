@@ -8,7 +8,7 @@ const EVENTS = ['opening', 'opened', 'closing', 'closed'];
  * An alert type [MDCDialog component]{@link https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-textfield#readme}
  * implemented by react component.
  * @param {Object} props
- * @param {string} props.contnet The content of the dialog.
+ * @param {string} props.content The content of the dialog.
  * @param {Object[]} props.buttons Specifies the settings of the action buttons that
  * the dialog has.
  * @param {string} props.buttons[].action Mandatory. The identifer of the action button.

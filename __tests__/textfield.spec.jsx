@@ -28,6 +28,21 @@ describe('TextField component', () => {
       <TextField variation="filled" label="foo" id="bar" defaultValue="baz"/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
+
+    component = renderer.create(
+      <TextField helper={{ text: 'qux' }}/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+
+    component = renderer.create(
+      <TextField label="foo" placeholder="bar" require={true} disabled={true} helper={{ text: 'qux', isPersistent: true }}/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+
+    component = renderer.create(
+      <TextField label="foo" id="bar" defaultValue="baz" pattern="[a-z]*" helper={{ text: 'qux', isValidationMessage: true }}/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
   });
 
   it('supports outlined text fields', () => {
@@ -45,6 +60,21 @@ describe('TextField component', () => {
       <TextField variation='outlined' label="foo" id="bar" defaultValue="baz" pattern="[a-z]*"/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
+
+    component = renderer.create(
+      <TextField variation='outlined' helper={{ text: 'qux' }}/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+
+    component = renderer.create(
+      <TextField variation='outlined' label="foo" placeholder="bar" require={true} disabled={true} helper={{ text: 'qux', isPersistent: true }}/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+
+    component = renderer.create(
+      <TextField variation='outlined' label="foo" id="bar" defaultValue="baz" pattern="[a-z]*" helper={{ text: 'qux', isValidationMessage: true }}/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
   });
 
   it('supports outlined textareas', () => {
@@ -60,6 +90,21 @@ describe('TextField component', () => {
 
     component = renderer.create(
       <TextField variation='textarea' id="bar" defaultValue="baz" pattern="[a-z]*" rows={6} cols={40}/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+
+    component = renderer.create(
+      <TextField variation='textarea' helper={{ text: 'qux' }}/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+
+    component = renderer.create(
+      <TextField variation='textarea' label="foo" placeholder="bar" require={true} disabled={true} helper={{ text: 'qux', isPersistent: true }}/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+
+    component = renderer.create(
+      <TextField variation='textarea' label="foo" id="bar" defaultValue="baz" pattern="[a-z]*" helper={{ text: 'qux', isValidationMessage: true }}/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });

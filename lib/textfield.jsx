@@ -58,12 +58,33 @@ const generateNaviteInput = (props, id, hasLabel) => {
   if (hasLabel) {
     Object.assign(nativeInputProps, { 'aria-labelledby': `${id}-label` });
   }
+  if (props.helper) {
+    Object.assign(nativeInputProps, { 'aria-controls': `${id}-helper`, 'aria-describedby': `${id}-helper` });
+  }
   if (props.pattern) {
     Object.assign(nativeInputProps, { pattern: props.pattern });
   }
   const tagName = props.variation === 'textarea' ? 'textarea' : 'input';
   return React.createElement(tagName, nativeInputProps);
 };
+
+function HelperText(props) {
+  if (!props.helper) {
+    return null;
+  }
+  const classList = ['mdc-text-field-helper-text'];
+  if (props.helper.isPersistent) {
+    classList.push('mdc-text-field-helper-text--persistent');
+  }
+  if (props.helper.isValidationMessage) {
+    classList.push('mdc-text-field-helper-text--validation-msg');
+  }
+  return (
+    <div className="mdc-text-field-helper-line">
+      <div className={classList.join(' ')} id={`${props.id}-helper`} aria-hidden="true">{props.helper.text}</div>
+    </div>
+  );
+}
 
 /**
  * [MDCTextField component]{@link https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-textfield#readme}
@@ -85,6 +106,12 @@ const generateNaviteInput = (props, id, hasLabel) => {
  * Default to `false`.
  * @param {string} [props.pattern] Specifeis regular expression as string that the text
  * field's value is checked.
+ * @param {Object} [props.helper] Specifeis settings of the helper text.
+ * @param {string} [props.helper.text] Specifeis the helper text.
+ * @param {boolean} [props.helper.isPersistent] Specifies `true` to make the helper text
+ * permanently visible. Default to `false`.
+ * @param {boolean} [props.helper.isValidationMessage] Specifies `true` if the helper text is
+ * a validation message. Default to `false`.
  * @param {number} [props.rows] The number of rows of textarea. If `props.variation` is not
  * `'textarea'`, this attribute is ignored. Default to `4`.
  * @param {number} [props.cols] The cols attribute of textarea element. If `props.variation`
@@ -115,39 +142,48 @@ export default function TextField(props) {
   switch (props.variation || 'filled') {
     case 'filled':
       return (
-        <label className={rootClassName} ref={rootElement}>
-          <span className="mdc-text-field__ripple"></span>
-          {nativeInput}
-          {hasLabel && <span className={labelClassName} id={`${id}-label`}>{props.label}</span>}
-          <span className="mdc-line-ripple"></span>
-        </label>
+        <>
+          <label className={rootClassName} ref={rootElement}>
+            <span className="mdc-text-field__ripple"></span>
+            {nativeInput}
+            {hasLabel && <span className={labelClassName} id={`${id}-label`}>{props.label}</span>}
+            <span className="mdc-line-ripple"></span>
+          </label>
+          <HelperText {...{ ...props, id }}/>
+        </>
       );
     case 'outlined':
       return (
-        <label className={rootClassName} ref={rootElement}>
-          {nativeInput}
-          <span className="mdc-notched-outline">
-            <span className="mdc-notched-outline__leading"></span>
-            {hasLabel && (
-              <span className="mdc-notched-outline__notch">
-                <span className={labelClassName} id={`${id}-label`}>{props.label}</span>
-              </span>
-            )}
-            <span className="mdc-notched-outline__trailing"></span>
-          </span>
-        </label>
+        <>
+          <label className={rootClassName} ref={rootElement}>
+            {nativeInput}
+            <span className="mdc-notched-outline">
+              <span className="mdc-notched-outline__leading"></span>
+              {hasLabel && (
+                <span className="mdc-notched-outline__notch">
+                  <span className={labelClassName} id={`${id}-label`}>{props.label}</span>
+                </span>
+              )}
+              <span className="mdc-notched-outline__trailing"></span>
+            </span>
+          </label>
+          <HelperText {...{ ...props, id }}/>
+        </>
       );
     case 'textarea':
       return (
-        <label className={rootClassName} ref={rootElement}>
-          <span className="mdc-text-field__resizer">
-            {nativeInput}
-          </span>
-          <span className="mdc-notched-outline">
-            <span className="mdc-notched-outline__leading"></span>
-            <span className="mdc-notched-outline__trailing"></span>
-          </span>
-        </label>
+        <>
+          <label className={rootClassName} ref={rootElement}>
+            <span className="mdc-text-field__resizer">
+              {nativeInput}
+            </span>
+            <span className="mdc-notched-outline">
+              <span className="mdc-notched-outline__leading"></span>
+              <span className="mdc-notched-outline__trailing"></span>
+            </span>
+          </label>
+          <HelperText {...{ ...props, id }}/>
+        </>
       );
     default:
       throw new Error(`Not suported variation; ${props.variation}`);

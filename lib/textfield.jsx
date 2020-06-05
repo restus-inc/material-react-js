@@ -58,7 +58,7 @@ const generateNaviteInput = (props, id, hasLabel) => {
   if (hasLabel) {
     Object.assign(nativeInputProps, { 'aria-labelledby': `${id}-label` });
   }
-  if (props.helper) {
+  if (props.helperText || props.showsHelperPersistently || props.showsHelperAsValidation) {
     Object.assign(nativeInputProps, { 'aria-controls': `${id}-helper`, 'aria-describedby': `${id}-helper` });
   }
   if (props.pattern) {
@@ -69,19 +69,19 @@ const generateNaviteInput = (props, id, hasLabel) => {
 };
 
 function HelperText(props) {
-  if (!props.helper) {
+  if (!props.helperText && !props.showsHelperPersistently && !props.showsHelperAsValidation) {
     return null;
   }
   const classList = ['mdc-text-field-helper-text'];
-  if (props.helper.isPersistent) {
+  if (props.showsHelperPersistently) {
     classList.push('mdc-text-field-helper-text--persistent');
   }
-  if (props.helper.isValidationMessage) {
+  if (props.showsHelperAsValidation) {
     classList.push('mdc-text-field-helper-text--validation-msg');
   }
   return (
     <div className="mdc-text-field-helper-line">
-      <div className={classList.join(' ')} id={`${props.id}-helper`} aria-hidden="true">{props.helper.text}</div>
+      <div className={classList.join(' ')} id={`${props.id}-helper`} aria-hidden="true">{props.helperText}</div>
     </div>
   );
 }
@@ -106,11 +106,10 @@ function HelperText(props) {
  * Default to `false`.
  * @param {string} [props.pattern] Specifeis regular expression as string that the text
  * field's value is checked.
- * @param {Object} [props.helper] Specifeis settings of the helper text.
- * @param {string} [props.helper.text] Specifeis the helper text.
- * @param {boolean} [props.helper.isPersistent] Specifies `true` to make the helper text
+ * @param {string} [props.helperText] Specifeis the helper text.
+ * @param {boolean} [props.showsHelperPersistently] Specifies `true` to make the helper text
  * permanently visible. Default to `false`.
- * @param {boolean} [props.helper.isValidationMessage] Specifies `true` if the helper text is
+ * @param {boolean} [props.showsHelperAsValidation] Specifies `true` if the helper text is
  * a validation message. Default to `false`.
  * @param {number} [props.rows] The number of rows of textarea. If `props.variation` is not
  * `'textarea'`, this attribute is ignored. Default to `4`.

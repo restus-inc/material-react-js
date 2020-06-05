@@ -20,12 +20,12 @@ describe('TextField component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <TextField label="foo" id="bar" value="baz" pattern="[a-z]*"/>,
+      <TextField label="foo" id="bar" defaultValue="baz" pattern="[a-z]*"/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <TextField variation="filled" label="foo" id="bar" value="baz"/>,
+      <TextField variation="filled" label="foo" id="bar" defaultValue="baz"/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -42,7 +42,7 @@ describe('TextField component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <TextField variation='outlined' label="foo" id="bar" value="baz" pattern="[a-z]*"/>,
+      <TextField variation='outlined' label="foo" id="bar" defaultValue="baz" pattern="[a-z]*"/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -59,7 +59,7 @@ describe('TextField component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <TextField variation='textarea' id="bar" value="baz" pattern="[a-z]*" rows={6} cols={40}/>,
+      <TextField variation='textarea' id="bar" defaultValue="baz" pattern="[a-z]*" rows={6} cols={40}/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });

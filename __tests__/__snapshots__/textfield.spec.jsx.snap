@@ -58,7 +58,7 @@ exports[`TextField component supports filled text fields 3`] = `
   <input
     aria-labelledby="bar-label"
     className="mdc-text-field__input"
-    defaultValue=""
+    defaultValue="baz"
     disabled={false}
     id="bar"
     name="bar"
@@ -88,7 +88,7 @@ exports[`TextField component supports filled text fields 4`] = `
   <input
     aria-labelledby="bar-label"
     className="mdc-text-field__input"
-    defaultValue=""
+    defaultValue="baz"
     disabled={false}
     id="bar"
     name="bar"
@@ -174,7 +174,7 @@ exports[`TextField component supports outlined text fields 3`] = `
   <input
     aria-labelledby="bar-label"
     className="mdc-text-field__input"
-    defaultValue=""
+    defaultValue="baz"
     disabled={false}
     id="bar"
     name="bar"
@@ -274,7 +274,7 @@ exports[`TextField component supports outlined textareas 3`] = `
     <textarea
       className="mdc-text-field__input"
       cols={40}
-      defaultValue=""
+      defaultValue="baz"
       disabled={false}
       id="bar"
       name="bar"

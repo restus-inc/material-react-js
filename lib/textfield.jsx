@@ -10,7 +10,7 @@ const generateRootClassName = (props, hasLabel) => {
   if (props.disabled) {
     rootClasses.push('mdc-text-field--disabled');
   }
-  if (props.value) {
+  if (props.defaultValue) {
     rootClasses.push('mdc-text-field--label-floating');
   }
 
@@ -107,7 +107,7 @@ export default function TextField(props) {
   const id = props.id || newId();
   const hasLabel = !(props.label == null || props.label === '');
   const rootClassName = generateRootClassName(props, hasLabel);
-  const labelClassName = (hasLabel && props.value)
+  const labelClassName = (hasLabel && props.defaultValue)
     ? 'mdc-floating-label mdc-floating-label--float-above'
     : 'mdc-floating-label';
   const nativeInput = generateNaviteInput(props, id, hasLabel);

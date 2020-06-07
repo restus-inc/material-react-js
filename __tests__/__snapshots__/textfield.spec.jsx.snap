@@ -28,7 +28,6 @@ exports[`TextField component supports filled text fields 2`] = `
     className="mdc-text-field__ripple"
   />
   <input
-    aria-labelledby="a0123456-label"
     className="mdc-text-field__input"
     defaultValue=""
     disabled={true}
@@ -38,7 +37,6 @@ exports[`TextField component supports filled text fields 2`] = `
   />
   <span
     className="mdc-floating-label"
-    id="a0123456-label"
   >
     foo
   </span>
@@ -116,8 +114,6 @@ Array [
       className="mdc-text-field__ripple"
     />
     <input
-      aria-controls="a0123456-helper"
-      aria-describedby="a0123456-helper"
       className="mdc-text-field__input"
       defaultValue=""
       disabled={false}
@@ -134,7 +130,6 @@ Array [
     <div
       aria-hidden="true"
       className="mdc-text-field-helper-text"
-      id="a0123456-helper"
     >
       qux
     </div>
@@ -151,9 +146,6 @@ Array [
       className="mdc-text-field__ripple"
     />
     <input
-      aria-controls="a0123456-helper"
-      aria-describedby="a0123456-helper"
-      aria-labelledby="a0123456-label"
       className="mdc-text-field__input"
       defaultValue=""
       disabled={true}
@@ -163,7 +155,6 @@ Array [
     />
     <span
       className="mdc-floating-label"
-      id="a0123456-label"
     >
       foo
     </span>
@@ -177,7 +168,6 @@ Array [
     <div
       aria-hidden="true"
       className="mdc-text-field-helper-text mdc-text-field-helper-text--persistent"
-      id="a0123456-helper"
     >
       qux
     </div>
@@ -259,7 +249,6 @@ exports[`TextField component supports outlined text fields 2`] = `
   className="mdc-text-field mdc-text-field--disabled mdc-text-field--outlined"
 >
   <input
-    aria-labelledby="a0123456-label"
     className="mdc-text-field__input"
     defaultValue=""
     disabled={true}
@@ -278,7 +267,6 @@ exports[`TextField component supports outlined text fields 2`] = `
     >
       <span
         className="mdc-floating-label"
-        id="a0123456-label"
       >
         foo
       </span>
@@ -334,8 +322,6 @@ Array [
     className="mdc-text-field mdc-text-field--no-label mdc-text-field--outlined"
   >
     <input
-      aria-controls="a0123456-helper"
-      aria-describedby="a0123456-helper"
       className="mdc-text-field__input"
       defaultValue=""
       disabled={false}
@@ -359,7 +345,6 @@ Array [
     <div
       aria-hidden="true"
       className="mdc-text-field-helper-text"
-      id="a0123456-helper"
     >
       qux
     </div>
@@ -373,9 +358,6 @@ Array [
     className="mdc-text-field mdc-text-field--disabled mdc-text-field--outlined"
   >
     <input
-      aria-controls="a0123456-helper"
-      aria-describedby="a0123456-helper"
-      aria-labelledby="a0123456-label"
       className="mdc-text-field__input"
       defaultValue=""
       disabled={true}
@@ -394,7 +376,6 @@ Array [
       >
         <span
           className="mdc-floating-label"
-          id="a0123456-label"
         >
           foo
         </span>
@@ -410,7 +391,6 @@ Array [
     <div
       aria-hidden="true"
       className="mdc-text-field-helper-text mdc-text-field-helper-text--persistent"
-      id="a0123456-helper"
     >
       qux
     </div>
@@ -571,8 +551,6 @@ Array [
       className="mdc-text-field__resizer"
     >
       <textarea
-        aria-controls="a0123456-helper"
-        aria-describedby="a0123456-helper"
         className="mdc-text-field__input"
         cols={32}
         defaultValue=""
@@ -598,7 +576,6 @@ Array [
     <div
       aria-hidden="true"
       className="mdc-text-field-helper-text"
-      id="a0123456-helper"
     >
       qux
     </div>
@@ -615,9 +592,6 @@ Array [
       className="mdc-text-field__resizer"
     >
       <textarea
-        aria-controls="a0123456-helper"
-        aria-describedby="a0123456-helper"
-        aria-labelledby="a0123456-label"
         className="mdc-text-field__input"
         cols={32}
         defaultValue=""
@@ -644,7 +618,6 @@ Array [
     <div
       aria-hidden="true"
       className="mdc-text-field-helper-text mdc-text-field-helper-text--persistent"
-      id="a0123456-helper"
     >
       qux
     </div>

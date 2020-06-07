@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { MDCTextField } from '@material/textfield';
-import { newId } from './utils';
 
-const generateRootClassName = (props, hasLabel) => {
+const generateRootClassName = (props) => {
   const rootClasses = ['mdc-text-field'];
-  if (!hasLabel) {
+  if (props.label == null || props.label === '') {
     rootClasses.push('mdc-text-field--no-label');
   }
   if (props.disabled) {
@@ -30,7 +29,7 @@ const generateRootClassName = (props, hasLabel) => {
   return rootClasses.join(' ');
 };
 
-const generateNaviteInput = (props, id, hasLabel) => {
+const NativeInput = (props) => {
   const nativeInputProps = {
     className: 'mdc-text-field__input',
     defaultValue: props.defaultValue || '',
@@ -51,15 +50,18 @@ const generateNaviteInput = (props, id, hasLabel) => {
   }
   if (props.id) {
     Object.assign(nativeInputProps, { id: props.id, name: props.id });
+    if (!(props.label == null || props.label === '')) {
+      Object.assign(nativeInputProps, { 'aria-labelledby': `${props.id}-label` });
+    }
+    if (props.helperText || props.showsHelperPersistently || props.showsHelperAsValidation) {
+      Object.assign(nativeInputProps, {
+        'aria-controls': `${props.id}-helper`,
+        'aria-describedby': `${props.id}-helper`,
+      });
+    }
   }
   if (!(props.placeholder == null || props.placeholder === '')) {
     Object.assign(nativeInputProps, { placeholder: props.placeholder });
-  }
-  if (hasLabel) {
-    Object.assign(nativeInputProps, { 'aria-labelledby': `${id}-label` });
-  }
-  if (props.helperText || props.showsHelperPersistently || props.showsHelperAsValidation) {
-    Object.assign(nativeInputProps, { 'aria-controls': `${id}-helper`, 'aria-describedby': `${id}-helper` });
   }
   if (props.pattern) {
     Object.assign(nativeInputProps, { pattern: props.pattern });
@@ -81,7 +83,7 @@ function HelperText(props) {
   }
   return (
     <div className="mdc-text-field-helper-line">
-      <div className={classList.join(' ')} id={`${props.id}-helper`} aria-hidden="true">{props.helperText}</div>
+      <div className={classList.join(' ')} id={props.id && `${props.id}-helper`} aria-hidden="true">{props.helperText}</div>
     </div>
   );
 }
@@ -130,13 +132,10 @@ export default function TextField(props) {
     };
   });
 
-  const id = props.id || newId();
-  const hasLabel = !(props.label == null || props.label === '');
-  const rootClassName = generateRootClassName(props, hasLabel);
-  const labelClassName = (hasLabel && props.defaultValue)
+  const rootClassName = generateRootClassName(props);
+  const labelClassName = props.defaultValue
     ? 'mdc-floating-label mdc-floating-label--float-above'
     : 'mdc-floating-label';
-  const nativeInput = generateNaviteInput(props, id, hasLabel);
 
   switch (props.variation || 'filled') {
     case 'filled':
@@ -144,29 +143,31 @@ export default function TextField(props) {
         <>
           <label className={rootClassName} ref={rootElement}>
             <span className="mdc-text-field__ripple"></span>
-            {nativeInput}
-            {hasLabel && <span className={labelClassName} id={`${id}-label`}>{props.label}</span>}
+            <NativeInput {...props}/>
+            {!(props.label == null || props.label === '') && (
+            <span className={labelClassName} id={props.id && `${props.id}-label`}>{props.label}</span>
+            )}
             <span className="mdc-line-ripple"></span>
           </label>
-          <HelperText {...{ ...props, id }}/>
+          <HelperText {...props}/>
         </>
       );
     case 'outlined':
       return (
         <>
           <label className={rootClassName} ref={rootElement}>
-            {nativeInput}
+          <NativeInput {...props}/>
             <span className="mdc-notched-outline">
               <span className="mdc-notched-outline__leading"></span>
-              {hasLabel && (
+              {!(props.label == null || props.label === '') && (
                 <span className="mdc-notched-outline__notch">
-                  <span className={labelClassName} id={`${id}-label`}>{props.label}</span>
+                  <span className={labelClassName} id={props.id && `${props.id}-label`}>{props.label}</span>
                 </span>
               )}
               <span className="mdc-notched-outline__trailing"></span>
             </span>
           </label>
-          <HelperText {...{ ...props, id }}/>
+          <HelperText {...props}/>
         </>
       );
     case 'textarea':
@@ -174,14 +175,14 @@ export default function TextField(props) {
         <>
           <label className={rootClassName} ref={rootElement}>
             <span className="mdc-text-field__resizer">
-              {nativeInput}
+            <NativeInput {...props}/>
             </span>
             <span className="mdc-notched-outline">
               <span className="mdc-notched-outline__leading"></span>
               <span className="mdc-notched-outline__trailing"></span>
             </span>
           </label>
-          <HelperText {...{ ...props, id }}/>
+          <HelperText {...props}/>
         </>
       );
     default:

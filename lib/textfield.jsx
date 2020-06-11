@@ -29,7 +29,7 @@ const generateRootClassName = (props) => {
   return rootClasses.join(' ');
 };
 
-const NativeInput = (props) => {
+function NativeInput(props) {
   const nativeInputProps = {
     className: 'mdc-text-field__input',
     defaultValue: props.defaultValue || '',
@@ -68,7 +68,7 @@ const NativeInput = (props) => {
   }
   const tagName = props.variation === 'textarea' ? 'textarea' : 'input';
   return React.createElement(tagName, nativeInputProps);
-};
+}
 
 function HelperText(props) {
   if (!props.helperText && !props.showsHelperPersistently && !props.showsHelperAsValidation) {
@@ -130,7 +130,7 @@ export default function TextField(props) {
     return () => {
       mdcComponent.destroy();
     };
-  });
+  }, []);
 
   const rootClassName = generateRootClassName(props);
   const labelClassName = props.defaultValue

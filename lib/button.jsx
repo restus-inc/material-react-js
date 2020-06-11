@@ -53,7 +53,7 @@ export default function Button(props) {
     return () => {
       mdcComponent.destroy();
     };
-  });
+  }, []);
 
   const rootClassName = generateRootClassName(props);
   const button = (

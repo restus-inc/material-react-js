@@ -1,0 +1,302 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataTable component supports standard data table 1`] = `
+<div
+  className="mdc-data-table"
+>
+  <div
+    className="mdc-data-table__table-container"
+  >
+    <table
+      className="mdc-data-table__table"
+    >
+      <thead>
+        <tr
+          className="mdc-data-table__header-row"
+        >
+          <th
+            className="mdc-data-table__header-cell mdc-data-table__header-cell--numeric id-cell"
+            role="columnheader"
+            scope="col"
+          >
+            ID
+          </th>
+          <th
+            className="mdc-data-table__header-cell composer-cell"
+            role="columnheader"
+            scope="col"
+          >
+            Composer Name
+          </th>
+          <th
+            className="mdc-data-table__header-cell none"
+            role="columnheader"
+            scope="col"
+          >
+            
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        className="mdc-data-table__content"
+      >
+        <tr
+          className="mdc-data-table__row"
+        >
+          <th
+            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
+            scope="row"
+          >
+            1
+          </th>
+          <td
+            className="mdc-data-table__cell composer-cell composer-body-cell"
+          >
+            Wolfgang Amadeus Mozart
+          </td>
+          <td
+            className="mdc-data-table__cell"
+          >
+            <a
+              href="./1"
+            >
+              Show Details
+            </a>
+          </td>
+        </tr>
+        <tr
+          className="mdc-data-table__row"
+        >
+          <th
+            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
+            scope="row"
+          >
+            2
+          </th>
+          <td
+            className="mdc-data-table__cell composer-cell composer-body-cell"
+          >
+            Ludwig van Beethoven
+          </td>
+          <td
+            className="mdc-data-table__cell"
+          >
+            <a
+              href="./2"
+            >
+              Show Details
+            </a>
+          </td>
+        </tr>
+        <tr
+          className="mdc-data-table__row"
+        >
+          <th
+            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
+            scope="row"
+          >
+            3
+          </th>
+          <td
+            className="mdc-data-table__cell composer-cell composer-body-cell"
+          >
+            Antonio Vivaldi
+          </td>
+          <td
+            className="mdc-data-table__cell"
+          >
+            <a
+              href="./3"
+            >
+              Show Details
+            </a>
+          </td>
+        </tr>
+        <tr
+          className="mdc-data-table__row"
+        >
+          <th
+            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
+            scope="row"
+          >
+            4
+          </th>
+          <td
+            className="mdc-data-table__cell composer-cell composer-body-cell"
+          />
+          <td
+            className="mdc-data-table__cell"
+          >
+            <a
+              href="./4"
+            >
+              Show Details
+            </a>
+          </td>
+        </tr>
+        <tr
+          className="mdc-data-table__row"
+        >
+          <th
+            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
+            scope="row"
+          >
+            5
+          </th>
+          <td
+            className="mdc-data-table__cell composer-cell composer-body-cell"
+          >
+            George Frideric Handel
+          </td>
+          <td
+            className="mdc-data-table__cell"
+          >
+            <a
+              href="./5"
+            >
+              Show Details
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`DataTable component supports standard data table 2`] = `
+<div
+  className="mdc-data-table my-table"
+>
+  <div
+    className="mdc-data-table__table-container"
+  >
+    <table
+      className="mdc-data-table__table"
+    >
+      <tbody
+        className="mdc-data-table__content"
+      >
+        <tr
+          className="mdc-data-table__row"
+        >
+          <th
+            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
+            scope="row"
+          >
+            1
+          </th>
+          <td
+            className="mdc-data-table__cell composer-cell composer-body-cell"
+          >
+            Wolfgang Amadeus Mozart
+          </td>
+          <td
+            className="mdc-data-table__cell"
+          >
+            <a
+              href="./1"
+            >
+              Show Details
+            </a>
+          </td>
+        </tr>
+        <tr
+          className="mdc-data-table__row"
+        >
+          <th
+            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
+            scope="row"
+          >
+            2
+          </th>
+          <td
+            className="mdc-data-table__cell composer-cell composer-body-cell"
+          >
+            Ludwig van Beethoven
+          </td>
+          <td
+            className="mdc-data-table__cell"
+          >
+            <a
+              href="./2"
+            >
+              Show Details
+            </a>
+          </td>
+        </tr>
+        <tr
+          className="mdc-data-table__row"
+        >
+          <th
+            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
+            scope="row"
+          >
+            3
+          </th>
+          <td
+            className="mdc-data-table__cell composer-cell composer-body-cell"
+          >
+            Antonio Vivaldi
+          </td>
+          <td
+            className="mdc-data-table__cell"
+          >
+            <a
+              href="./3"
+            >
+              Show Details
+            </a>
+          </td>
+        </tr>
+        <tr
+          className="mdc-data-table__row"
+        >
+          <th
+            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
+            scope="row"
+          >
+            4
+          </th>
+          <td
+            className="mdc-data-table__cell composer-cell composer-body-cell"
+          />
+          <td
+            className="mdc-data-table__cell"
+          >
+            <a
+              href="./4"
+            >
+              Show Details
+            </a>
+          </td>
+        </tr>
+        <tr
+          className="mdc-data-table__row"
+        >
+          <th
+            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
+            scope="row"
+          >
+            5
+          </th>
+          <td
+            className="mdc-data-table__cell composer-cell composer-body-cell"
+          >
+            George Frideric Handel
+          </td>
+          <td
+            className="mdc-data-table__cell"
+          >
+            <a
+              href="./5"
+            >
+              Show Details
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

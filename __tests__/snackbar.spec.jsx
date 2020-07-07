@@ -14,7 +14,7 @@ describe('Snackbar component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <Snackbar message="foo" isLeading={true} onClosed={() => {}}/>,
+      <Snackbar message="foo" className="baz" isLeading={true} onClosed={() => {}}/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -26,7 +26,7 @@ describe('Snackbar component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <Snackbar label="foo" actionLabel="bar" isStacked={true} onClosing={() => {}}/>,
+      <Snackbar label="foo" actionLabel="bar" className="baz" isStacked={true} onClosing={() => {}}/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
 

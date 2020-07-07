@@ -19,7 +19,7 @@ describe('AlertDialog component', () => {
       { action: 'ok', label: 'OK' },
     ];
     component = renderer.create(
-      <AlertDialog message="foo" buttons={buttons} onClosing={() => {}}/>,
+      <AlertDialog message="foo" className="bar" buttons={buttons} onClosing={() => {}}/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });

@@ -19,7 +19,7 @@ describe('Button component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <Button label="foo" iconClassName="fa fa-aws"/>,
+      <Button label="foo" className="bar" iconClassName="fa fa-aws"/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
 
@@ -41,7 +41,7 @@ describe('Button component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <Button variation='outlined' label="foo" iconClassName="fa fa-aws" disabled={true}/>,
+      <Button variation='outlined' label="foo" className="bar" iconClassName="fa fa-aws" disabled={true}/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -58,7 +58,7 @@ describe('Button component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <Button variation='contained' label="foo" iconClassName="fa fa-aws" disabled={true}/>,
+      <Button variation='contained' label="foo" className="bar" iconClassName="fa fa-aws" disabled={true}/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });

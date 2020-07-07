@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button component supports text buttons 1`] = `
+exports[`Button component supports contained buttons 1`] = `
 <button
-  className="mdc-button"
+  className="mdc-button mdc-button--raised"
 >
   <div
     className="mdc-button__ripple"
@@ -15,12 +15,12 @@ exports[`Button component supports text buttons 1`] = `
 </button>
 `;
 
-exports[`Button component supports text buttons 2`] = `
+exports[`Button component supports contained buttons 2`] = `
 <div
   className="mdc-touch-target-wrapper"
 >
   <button
-    className="mdc-button mdc-button--touch"
+    className="mdc-button mdc-button--raised mdc-button--touch"
   >
     <div
       className="mdc-button__ripple"
@@ -43,9 +43,10 @@ exports[`Button component supports text buttons 2`] = `
 </div>
 `;
 
-exports[`Button component supports text buttons 3`] = `
+exports[`Button component supports contained buttons 3`] = `
 <button
-  className="mdc-button"
+  className="mdc-button mdc-button--raised bar"
+  disabled={true}
 >
   <div
     className="mdc-button__ripple"
@@ -54,28 +55,6 @@ exports[`Button component supports text buttons 3`] = `
     aria-hidden="true"
     className="fa fa-aws mdc-button__icon"
   />
-  <span
-    className="mdc-button__label"
-  >
-    foo
-  </span>
-</button>
-`;
-
-exports[`Button component supports text buttons 4`] = `
-<button
-  className="mdc-button"
-  disabled={true}
->
-  <div
-    className="mdc-button__ripple"
-  />
-  <i
-    aria-hidden="true"
-    className="material-icons mdc-button__icon"
-  >
-    favorite
-  </i>
   <span
     className="mdc-button__label"
   >
@@ -129,7 +108,7 @@ exports[`Button component supports outlined buttons 2`] = `
 
 exports[`Button component supports outlined buttons 3`] = `
 <button
-  className="mdc-button mdc-button--outlined"
+  className="mdc-button mdc-button--outlined bar"
   disabled={true}
 >
   <div
@@ -147,9 +126,9 @@ exports[`Button component supports outlined buttons 3`] = `
 </button>
 `;
 
-exports[`Button component supports contained buttons 1`] = `
+exports[`Button component supports text buttons 1`] = `
 <button
-  className="mdc-button mdc-button--raised"
+  className="mdc-button"
 >
   <div
     className="mdc-button__ripple"
@@ -162,12 +141,12 @@ exports[`Button component supports contained buttons 1`] = `
 </button>
 `;
 
-exports[`Button component supports contained buttons 2`] = `
+exports[`Button component supports text buttons 2`] = `
 <div
   className="mdc-touch-target-wrapper"
 >
   <button
-    className="mdc-button mdc-button--raised mdc-button--touch"
+    className="mdc-button mdc-button--touch"
   >
     <div
       className="mdc-button__ripple"
@@ -190,10 +169,9 @@ exports[`Button component supports contained buttons 2`] = `
 </div>
 `;
 
-exports[`Button component supports contained buttons 3`] = `
+exports[`Button component supports text buttons 3`] = `
 <button
-  className="mdc-button mdc-button--raised"
-  disabled={true}
+  className="mdc-button bar"
 >
   <div
     className="mdc-button__ripple"
@@ -202,6 +180,28 @@ exports[`Button component supports contained buttons 3`] = `
     aria-hidden="true"
     className="fa fa-aws mdc-button__icon"
   />
+  <span
+    className="mdc-button__label"
+  >
+    foo
+  </span>
+</button>
+`;
+
+exports[`Button component supports text buttons 4`] = `
+<button
+  className="mdc-button"
+  disabled={true}
+>
+  <div
+    className="mdc-button__ripple"
+  />
+  <i
+    aria-hidden="true"
+    className="material-icons mdc-button__icon"
+  >
+    favorite
+  </i>
   <span
     className="mdc-button__label"
   >

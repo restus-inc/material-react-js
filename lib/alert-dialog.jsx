@@ -9,6 +9,7 @@ const EVENTS = ['opening', 'opened', 'closing', 'closed'];
  * implemented by react component.
  * @param {Object} props
  * @param {string} props.content The content of the dialog.
+ * @param {string} [props.className] The class name that is added to the surface element.
  * @param {Object[]} props.buttons Specifies the settings of the action buttons that
  * the dialog has.
  * @param {string} props.buttons[].action Mandatory. The identifer of the action button.
@@ -63,7 +64,7 @@ export default function AlertDialog(props) {
   return (
     <div className="mdc-dialog" ref={rootElement}>
       <div className="mdc-dialog__container">
-        <div className="mdc-dialog__surface"
+        <div className={props.className ? `mdc-dialog__surface ${props.className}` : 'mdc-dialog__surface'}
              role="alertdialog"
              aria-modal="true"
              aria-describedby="dialog-content">

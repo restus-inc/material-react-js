@@ -40,7 +40,7 @@ exports[`Snackbar component supports snackbar with action button 2`] = `
   className="mdc-snackbar mdc-snackbar--stacked"
 >
   <div
-    className="mdc-snackbar__surface"
+    className="mdc-snackbar__surface baz"
   >
     <div
       aria-live="polite"
@@ -126,7 +126,7 @@ exports[`Snackbar component supports snackbar without action button 2`] = `
   className="mdc-snackbar mdc-snackbar--leading"
 >
   <div
-    className="mdc-snackbar__surface"
+    className="mdc-snackbar__surface baz"
   >
     <div
       aria-live="polite"

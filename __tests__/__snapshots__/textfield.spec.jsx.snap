@@ -46,7 +46,7 @@ exports[`TextField component supports filled text fields 2`] = `
 
 exports[`TextField component supports filled text fields 3`] = `
 <label
-  className="mdc-text-field mdc-text-field--label-floating mdc-text-field--filled"
+  className="mdc-text-field mdc-text-field--label-floating mdc-text-field--filled qux"
 >
   <span
     className="mdc-text-field__ripple"
@@ -174,7 +174,7 @@ Array [
 exports[`TextField component supports filled text fields 7`] = `
 Array [
   <label
-    className="mdc-text-field mdc-text-field--label-floating mdc-text-field--filled"
+    className="mdc-text-field mdc-text-field--label-floating mdc-text-field--filled qux"
   >
     <span
       className="mdc-text-field__ripple"
@@ -274,7 +274,7 @@ exports[`TextField component supports outlined text fields 2`] = `
 
 exports[`TextField component supports outlined text fields 3`] = `
 <label
-  className="mdc-text-field mdc-text-field--label-floating mdc-text-field--outlined"
+  className="mdc-text-field mdc-text-field--label-floating mdc-text-field--outlined qux"
 >
   <input
     aria-labelledby="bar-label"
@@ -393,7 +393,7 @@ Array [
 exports[`TextField component supports outlined text fields 6`] = `
 Array [
   <label
-    className="mdc-text-field mdc-text-field--label-floating mdc-text-field--outlined"
+    className="mdc-text-field mdc-text-field--label-floating mdc-text-field--outlined qux"
   >
     <input
       aria-controls="bar-helper"
@@ -502,7 +502,7 @@ exports[`TextField component supports outlined textareas 2`] = `
 
 exports[`TextField component supports outlined textareas 3`] = `
 <label
-  className="mdc-text-field mdc-text-field--no-label mdc-text-field--label-floating mdc-text-field--outlined mdc-text-field--textarea"
+  className="mdc-text-field mdc-text-field--no-label mdc-text-field--label-floating mdc-text-field--outlined mdc-text-field--textarea qux"
 >
   <span
     className="mdc-text-field__resizer"
@@ -616,7 +616,7 @@ Array [
 exports[`TextField component supports outlined textareas 6`] = `
 Array [
   <label
-    className="mdc-text-field mdc-text-field--label-floating mdc-text-field--outlined mdc-text-field--textarea"
+    className="mdc-text-field mdc-text-field--label-floating mdc-text-field--outlined mdc-text-field--textarea qux"
   >
     <span
       className="mdc-text-field__resizer"

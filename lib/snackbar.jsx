@@ -20,6 +20,7 @@ const generateRootClassName = (props) => {
  * implemented by react component.
  * @param {Object} props
  * @param {string} props.label The text label on the snackbar.
+ * @param {string} [props.className] The class name that is added to the surface element.
  * @param {string} [props.actionLabel] The label of action button on the snackbar. Does not
  * specify if action button is not placed.
  * @param {string} [props.isStacked] Whether to put the action button bellow the label.
@@ -64,7 +65,7 @@ export default function Snackbar(props) {
 
   return (
     <div className={generateRootClassName(props)} ref={rootElement}>
-      <div className="mdc-snackbar__surface">
+      <div className={props.className ? `mdc-snackbar__surface ${props.className}` : 'mdc-snackbar__surface'}>
         <div className="mdc-snackbar__label"
              role="status"
              aria-live="polite">{props.label}</div>

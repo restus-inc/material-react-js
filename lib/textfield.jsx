@@ -26,6 +26,9 @@ const generateRootClassName = (props) => {
     default:
       throw new Error(`Not suported variation; ${props.variation}`);
   }
+  if (props.className) {
+    rootClasses.push(props.className);
+  }
   return rootClasses.join(' ');
 };
 
@@ -109,6 +112,7 @@ function HelperText(props) {
  * @param {string} [props.label] The label text of the text field. If `props.variation` is
  * `'textarea'`, this attribute is ignored.
  * @param {string} [props.placeholder] The placeholder of the text field.
+ * @param {string} [props.className] The class name that is added to the root element.
  * @param {boolean} [props.disabled] Specifies `true` if you want to disable the text field.
  * Default to `false`.
  * @param {boolean} [props.required] Specifies `true` if the text field is required.

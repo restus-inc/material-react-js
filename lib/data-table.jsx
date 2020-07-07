@@ -73,7 +73,7 @@ function Cell(props) {
  * @param {string} [props.keyField] The property name of data source used to uniquely
  * identify the data source an element. A nested property can be specified by connecting
  * then with `'.'`.
- * @param {string} props.className The class name that is added to the root element.
+ * @param {string} [props.className] The class name that is added to the root element.
  * @param {boolean} [props.omitsHeaderRow] `true` if not display header row, otherwise `false`.
  * Default to `false`.
  * @param {Object[]} props.columns The setting of data table's columns.
@@ -99,7 +99,7 @@ function Cell(props) {
  */
 export default function DataTable(props) {
   return (
-    <div className={['mdc-data-table', props.className].join(' ').trim()}>
+    <div className={props.className ? `mdc-data-table ${props.className}` : 'mdc-data-table'}>
       <div className="mdc-data-table__table-container">
         <table className="mdc-data-table__table" aria-label={props['aria-label']}>
         {props.omitsHeaderRow

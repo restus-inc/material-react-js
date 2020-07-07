@@ -54,7 +54,7 @@ exports[`AlertDialog component supports simple dialogs 2`] = `
     <div
       aria-describedby="dialog-content"
       aria-modal="true"
-      className="mdc-dialog__surface"
+      className="mdc-dialog__surface bar"
       role="alertdialog"
     >
       <div

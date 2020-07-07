@@ -18,6 +18,9 @@ const generateRootClassName = (props) => {
   if (props.supportsTouch) {
     rootClassNames.push('mdc-button--touch');
   }
+  if (props.className) {
+    rootClassNames.push(props.className);
+  }
   return rootClassNames.join(' ');
 };
 
@@ -36,6 +39,7 @@ const generateIconElement = (props) => {
  * @param {string} [props.variation] The variation of the button. Supported variations are
  * `'text'`(default), `'outlined'` and `'contained'`.
  * @param {string} props.label The label text of the button.
+ * @param {string} [props.className] The class name that is added to the root element.
  * @param {boolean} [props.disabled] Specifies `true` if you want to disable the button.
  * Default to `false`.
  * @param {boolean} [props.supportsTouch] Whether to support touch in Material Design

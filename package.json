@@ -23,6 +23,7 @@
     "@babel/preset-react": "^7.10.4",
     "@material/button": "^7.0.0",
     "@material/dialog": "^7.0.0",
+    "@material/select": "^7.0.0",
     "@material/snackbar": "^7.0.0",
     "@material/textfield": "^7.0.0",
     "babel-jest": "^26.1.0",

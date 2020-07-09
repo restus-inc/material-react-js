@@ -1,0 +1,968 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select component allow to set objects as items 1`] = `
+<div
+  className="mdc-select mdc-select--filled"
+>
+  <div
+    aria-disabled={null}
+    aria-haspopup="listbox"
+    aria-required={null}
+    className="mdc-select__anchor"
+    role="button"
+  >
+    <span
+      className="mdc-select__ripple"
+    />
+    <span
+      className="mdc-select__selected-text"
+    >
+      one
+    </span>
+    <span
+      className="mdc-select__dropdown-icon"
+    >
+      <svg
+        className="mdc-select__dropdown-icon-graphic"
+        viewBox="7 10 10 5"
+      >
+        <polygon
+          className="mdc-select__dropdown-icon-inactive"
+          fillRule="evenodd"
+          points="7 10 12 15 17 10"
+          stroke="none"
+        />
+        <polygon
+          className="mdc-select__dropdown-icon-active"
+          fillRule="evenodd"
+          points="7 15 12 10 17 15"
+          stroke="none"
+        />
+      </svg>
+    </span>
+    <span
+      className="mdc-floating-label"
+    >
+      foo
+    </span>
+    <span
+      className="mdc-line-ripple"
+    />
+  </div>
+  <div
+    className="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
+    role="listbox"
+  >
+    <ul
+      className="mdc-list"
+    >
+      <li
+        aria-selected="true"
+        className="mdc-list-item mdc-list-item--selected"
+        data-value="1"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          one
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="2"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          two
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="3"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          three
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Select component allow to set objects as items 2`] = `
+<div
+  className="mdc-select mdc-select--filled"
+>
+  <div
+    aria-disabled={null}
+    aria-haspopup="listbox"
+    aria-required={null}
+    className="mdc-select__anchor"
+    role="button"
+  >
+    <span
+      className="mdc-select__ripple"
+    />
+    <span
+      className="mdc-select__selected-text"
+    >
+      one
+    </span>
+    <span
+      className="mdc-select__dropdown-icon"
+    >
+      <svg
+        className="mdc-select__dropdown-icon-graphic"
+        viewBox="7 10 10 5"
+      >
+        <polygon
+          className="mdc-select__dropdown-icon-inactive"
+          fillRule="evenodd"
+          points="7 10 12 15 17 10"
+          stroke="none"
+        />
+        <polygon
+          className="mdc-select__dropdown-icon-active"
+          fillRule="evenodd"
+          points="7 15 12 10 17 15"
+          stroke="none"
+        />
+      </svg>
+    </span>
+    <span
+      className="mdc-floating-label"
+    >
+      foo
+    </span>
+    <span
+      className="mdc-line-ripple"
+    />
+  </div>
+  <div
+    className="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
+    role="listbox"
+  >
+    <ul
+      className="mdc-list"
+    >
+      <li
+        aria-selected="true"
+        className="mdc-list-item mdc-list-item--selected"
+        data-value="0"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          one
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="1"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          two
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="2"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          three
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Select component supports filled select 1`] = `
+<div
+  className="mdc-select mdc-select--filled"
+>
+  <div
+    aria-disabled={null}
+    aria-haspopup="listbox"
+    aria-required={null}
+    className="mdc-select__anchor"
+    role="button"
+  >
+    <span
+      className="mdc-select__ripple"
+    />
+    <span
+      className="mdc-select__selected-text"
+    >
+      
+    </span>
+    <span
+      className="mdc-select__dropdown-icon"
+    >
+      <svg
+        className="mdc-select__dropdown-icon-graphic"
+        viewBox="7 10 10 5"
+      >
+        <polygon
+          className="mdc-select__dropdown-icon-inactive"
+          fillRule="evenodd"
+          points="7 10 12 15 17 10"
+          stroke="none"
+        />
+        <polygon
+          className="mdc-select__dropdown-icon-active"
+          fillRule="evenodd"
+          points="7 15 12 10 17 15"
+          stroke="none"
+        />
+      </svg>
+    </span>
+    <span
+      className="mdc-line-ripple"
+    />
+  </div>
+  <div
+    className="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
+    role="listbox"
+  >
+    <ul
+      className="mdc-list"
+    >
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="one"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          one
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="two"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          two
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="three"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          three
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Select component supports filled select 2`] = `
+<div
+  className="mdc-select mdc-select--filled mdc-select--required mdc-select--disabled"
+>
+  <div
+    aria-disabled="true"
+    aria-haspopup="listbox"
+    aria-required="true"
+    className="mdc-select__anchor"
+    role="button"
+  >
+    <span
+      className="mdc-select__ripple"
+    />
+    <span
+      className="mdc-select__selected-text"
+    >
+      
+    </span>
+    <span
+      className="mdc-select__dropdown-icon"
+    >
+      <svg
+        className="mdc-select__dropdown-icon-graphic"
+        viewBox="7 10 10 5"
+      >
+        <polygon
+          className="mdc-select__dropdown-icon-inactive"
+          fillRule="evenodd"
+          points="7 10 12 15 17 10"
+          stroke="none"
+        />
+        <polygon
+          className="mdc-select__dropdown-icon-active"
+          fillRule="evenodd"
+          points="7 15 12 10 17 15"
+          stroke="none"
+        />
+      </svg>
+    </span>
+    <span
+      className="mdc-floating-label"
+    >
+      foo
+    </span>
+    <span
+      className="mdc-line-ripple"
+    />
+  </div>
+  <div
+    className="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
+    role="listbox"
+  >
+    <ul
+      className="mdc-list"
+    >
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="one"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          one
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="two"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          two
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="three"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          three
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Select component supports filled select 3`] = `
+<div
+  className="mdc-select mdc-select--filled qux"
+>
+  <div
+    aria-disabled={null}
+    aria-haspopup="listbox"
+    aria-required={null}
+    className="mdc-select__anchor"
+    role="button"
+  >
+    <span
+      className="mdc-select__ripple"
+    />
+    <span
+      className="mdc-select__selected-text"
+    >
+      
+    </span>
+    <span
+      className="mdc-select__dropdown-icon"
+    >
+      <svg
+        className="mdc-select__dropdown-icon-graphic"
+        viewBox="7 10 10 5"
+      >
+        <polygon
+          className="mdc-select__dropdown-icon-inactive"
+          fillRule="evenodd"
+          points="7 10 12 15 17 10"
+          stroke="none"
+        />
+        <polygon
+          className="mdc-select__dropdown-icon-active"
+          fillRule="evenodd"
+          points="7 15 12 10 17 15"
+          stroke="none"
+        />
+      </svg>
+    </span>
+    <span
+      className="mdc-floating-label"
+    >
+      foo
+    </span>
+    <span
+      className="mdc-line-ripple"
+    />
+  </div>
+  <div
+    className="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
+    role="listbox"
+  >
+    <ul
+      className="mdc-list"
+    >
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="one"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          one
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="two"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          two
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="three"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          three
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Select component supports filled select 4`] = `
+<div
+  className="mdc-select mdc-select--filled mdc-select--required mdc-select--disabled"
+>
+  <div
+    aria-disabled="true"
+    aria-haspopup="listbox"
+    aria-required="true"
+    className="mdc-select__anchor"
+    role="button"
+  >
+    <span
+      className="mdc-select__ripple"
+    />
+    <span
+      className="mdc-select__selected-text"
+    >
+      
+    </span>
+    <span
+      className="mdc-select__dropdown-icon"
+    >
+      <svg
+        className="mdc-select__dropdown-icon-graphic"
+        viewBox="7 10 10 5"
+      >
+        <polygon
+          className="mdc-select__dropdown-icon-inactive"
+          fillRule="evenodd"
+          points="7 10 12 15 17 10"
+          stroke="none"
+        />
+        <polygon
+          className="mdc-select__dropdown-icon-active"
+          fillRule="evenodd"
+          points="7 15 12 10 17 15"
+          stroke="none"
+        />
+      </svg>
+    </span>
+    <span
+      className="mdc-floating-label"
+    >
+      foo
+    </span>
+    <span
+      className="mdc-line-ripple"
+    />
+  </div>
+  <div
+    className="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
+    role="listbox"
+  >
+    <ul
+      className="mdc-list"
+    >
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="one"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          one
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="two"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          two
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="three"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          three
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Select component supports outlined select 1`] = `
+<div
+  className="mdc-select mdc-select--outlined"
+>
+  <div
+    aria-disabled={null}
+    aria-haspopup="listbox"
+    aria-required={null}
+    className="mdc-select__anchor"
+    role="button"
+  >
+    
+    <span
+      className="mdc-select__selected-text"
+    >
+      
+    </span>
+    <span
+      className="mdc-select__dropdown-icon"
+    >
+      <svg
+        className="mdc-select__dropdown-icon-graphic"
+        viewBox="7 10 10 5"
+      >
+        <polygon
+          className="mdc-select__dropdown-icon-inactive"
+          fillRule="evenodd"
+          points="7 10 12 15 17 10"
+          stroke="none"
+        />
+        <polygon
+          className="mdc-select__dropdown-icon-active"
+          fillRule="evenodd"
+          points="7 15 12 10 17 15"
+          stroke="none"
+        />
+      </svg>
+    </span>
+    <span
+      className="mdc-notched-outline"
+    >
+      <span
+        className="mdc-notched-outline__leading"
+      />
+      <span
+        className="mdc-notched-outline__trailing"
+      />
+    </span>
+  </div>
+  <div
+    className="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
+    role="listbox"
+  >
+    <ul
+      className="mdc-list"
+    >
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="one"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          one
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="two"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          two
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="three"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          three
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Select component supports outlined select 2`] = `
+<div
+  className="mdc-select mdc-select--outlined mdc-select--required mdc-select--disabled"
+>
+  <div
+    aria-disabled="true"
+    aria-haspopup="listbox"
+    aria-required="true"
+    className="mdc-select__anchor"
+    role="button"
+  >
+    
+    <span
+      className="mdc-select__selected-text"
+    >
+      
+    </span>
+    <span
+      className="mdc-select__dropdown-icon"
+    >
+      <svg
+        className="mdc-select__dropdown-icon-graphic"
+        viewBox="7 10 10 5"
+      >
+        <polygon
+          className="mdc-select__dropdown-icon-inactive"
+          fillRule="evenodd"
+          points="7 10 12 15 17 10"
+          stroke="none"
+        />
+        <polygon
+          className="mdc-select__dropdown-icon-active"
+          fillRule="evenodd"
+          points="7 15 12 10 17 15"
+          stroke="none"
+        />
+      </svg>
+    </span>
+    <span
+      className="mdc-notched-outline"
+    >
+      <span
+        className="mdc-notched-outline__leading"
+      />
+      <span
+        className="mdc-notched-outline__notch"
+      >
+        <span
+          className="mdc-floating-label"
+        >
+          foo
+        </span>
+      </span>
+      <span
+        className="mdc-notched-outline__trailing"
+      />
+    </span>
+  </div>
+  <div
+    className="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
+    role="listbox"
+  >
+    <ul
+      className="mdc-list"
+    >
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="one"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          one
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="two"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          two
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="three"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          three
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Select component supports outlined select 3`] = `
+<div
+  className="mdc-select mdc-select--outlined qux"
+>
+  <div
+    aria-disabled={null}
+    aria-haspopup="listbox"
+    aria-required={null}
+    className="mdc-select__anchor"
+    role="button"
+  >
+    
+    <span
+      className="mdc-select__selected-text"
+    >
+      
+    </span>
+    <span
+      className="mdc-select__dropdown-icon"
+    >
+      <svg
+        className="mdc-select__dropdown-icon-graphic"
+        viewBox="7 10 10 5"
+      >
+        <polygon
+          className="mdc-select__dropdown-icon-inactive"
+          fillRule="evenodd"
+          points="7 10 12 15 17 10"
+          stroke="none"
+        />
+        <polygon
+          className="mdc-select__dropdown-icon-active"
+          fillRule="evenodd"
+          points="7 15 12 10 17 15"
+          stroke="none"
+        />
+      </svg>
+    </span>
+    <span
+      className="mdc-notched-outline"
+    >
+      <span
+        className="mdc-notched-outline__leading"
+      />
+      <span
+        className="mdc-notched-outline__notch"
+      >
+        <span
+          className="mdc-floating-label"
+        >
+          foo
+        </span>
+      </span>
+      <span
+        className="mdc-notched-outline__trailing"
+      />
+    </span>
+  </div>
+  <div
+    className="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
+    role="listbox"
+  >
+    <ul
+      className="mdc-list"
+    >
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="one"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          one
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="two"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          two
+        </span>
+      </li>
+      <li
+        aria-selected={null}
+        className="mdc-list-item"
+        data-value="three"
+        role="option"
+      >
+        <span
+          className="mdc-list-item__ripple"
+        />
+        <span
+          className="mdc-list-item__text"
+        >
+          three
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

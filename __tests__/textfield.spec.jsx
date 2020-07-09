@@ -107,4 +107,36 @@ describe('TextField component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+
+  it('supports filled textareas', () => {
+    let component = renderer.create(
+      <TextField variation="filled-textarea"/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+
+    component = renderer.create(
+      <TextField variation="filled-textarea" placeholder="bar" required={true} disabled={true}/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+
+    component = renderer.create(
+      <TextField variation="filled-textarea" id="bar" defaultValue="baz" className="qux" pattern="[a-z]*" rows={6} cols={40}/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+
+    component = renderer.create(
+      <TextField variation="filled-textarea" helperText="qux"/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+
+    component = renderer.create(
+      <TextField variation="filled-textarea" label="foo" placeholder="bar" required={true} disabled={true} helperText="qux" showsHelperPersistently={true}/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+
+    component = renderer.create(
+      <TextField variation="filled-textarea" label="foo" id="bar" defaultValue="baz" className="qux" pattern="[a-z]*" helperText="qux" showsHelperAsValidation={true}/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });

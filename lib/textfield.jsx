@@ -23,6 +23,9 @@ const generateRootClassName = (props) => {
     case 'textarea':
       rootClasses.push('mdc-text-field--outlined', 'mdc-text-field--textarea');
       break;
+    case 'filled-textarea':
+      rootClasses.push('mdc-text-field--filled', 'mdc-text-field--textarea');
+      break;
     default:
       throw new Error(`Not suported variation; ${props.variation}`);
   }
@@ -50,7 +53,7 @@ function NativeInput(props) {
       ...Object.entries(props.dataset).map(([key, value]) => ({ [`data-${key}`]: value })),
     );
   }
-  if (props.variation === 'textarea') {
+  if ((props.variation || 'filled').endsWith('textarea')) {
     Object.assign(nativeInputProps, { rows: props.rows || 4, cols: props.cols || 32 });
   } else {
     Object.assign(nativeInputProps, { type: props.type || 'text' });
@@ -73,7 +76,7 @@ function NativeInput(props) {
   if (props.pattern) {
     Object.assign(nativeInputProps, { pattern: props.pattern });
   }
-  const tagName = props.variation === 'textarea' ? 'textarea' : 'input';
+  const tagName = (props.variation || 'filled').endsWith('textarea') ? 'textarea' : 'input';
   return React.createElement(tagName, nativeInputProps);
 }
 
@@ -108,9 +111,8 @@ function HelperText(props) {
  * @param {string} [props.type] The `type` attribute of the native html input element.
  * If `props.variation` is `'textarea'`, this attribute is ignored. Default to `'text'`.
  * @param {string} [props.variation] The variation of the text field. Supported variations
- *  are`'filled'`(default), `'outlined'` and `'textarea'`.
- * @param {string} [props.label] The label text of the text field. If `props.variation` is
- * `'textarea'`, this attribute is ignored.
+ *  are`'filled'`(default), `'outlined'`, `'textarea'` and `'filled-textarea'`.
+ * @param {string} [props.label] The label text of the text field.
  * @param {string} [props.placeholder] The placeholder of the text field.
  * @param {string} [props.className] The class name that is added to the root element.
  * @param {boolean} [props.disabled] Specifies `true` if you want to disable the text field.
@@ -125,9 +127,9 @@ function HelperText(props) {
  * @param {boolean} [props.showsHelperAsValidation] Specifies `true` if the helper text is
  * a validation message. Default to `false`.
  * @param {number} [props.rows] The number of rows of textarea. If `props.variation` is not
- * `'textarea'`, this attribute is ignored. Default to `4`.
+ * `'textarea'` or `'filled-textarea'`, this attribute is ignored. Default to `4`.
  * @param {number} [props.cols] The cols attribute of textarea element. If `props.variation`
- * is not `'textarea'`, this attribute is ignored. Default to `32`.
+ * is not `'textarea'` or `'filled-textarea'`, this attribute is ignored. Default to `32`.
  * @param {EventHandler} [props.onChange] Specifies event handler that is called when
  * the text changes.
  * @returns {DetailedReactHTMLElement}
@@ -196,12 +198,33 @@ export default function TextField(props) {
         <>
           <label className={rootClassName} ref={rootElement}>
             <span className="mdc-text-field__resizer">
-            <NativeInput {...props}/>
+              <NativeInput {...props}/>
             </span>
             <span className="mdc-notched-outline">
               <span className="mdc-notched-outline__leading"></span>
+              {!(props.label == null || props.label === '') && (
+                <span className="mdc-notched-outline__notch">
+                  <span className={labelClassName} id={props.id && `${props.id}-label`}>{props.label}</span>
+                </span>
+              )}
               <span className="mdc-notched-outline__trailing"></span>
             </span>
+          </label>
+          <HelperText {...props}/>
+        </>
+      );
+    case 'filled-textarea':
+      return (
+        <>
+          <label className={rootClassName} ref={rootElement}>
+            <span className="mdc-text-field__ripple"></span>
+            <span className="mdc-text-field__resizer">
+              <NativeInput {...props}/>
+            </span>
+            {!(props.label == null || props.label === '') && (
+            <span className={labelClassName} id={props.id && `${props.id}-label`}>{props.label}</span>
+            )}
+            <span className="mdc-line-ripple"></span>
           </label>
           <HelperText {...props}/>
         </>

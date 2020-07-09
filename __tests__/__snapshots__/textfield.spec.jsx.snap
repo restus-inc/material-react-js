@@ -30,7 +30,7 @@ exports[`TextField component supports filled text fields 2`] = `
     className="mdc-text-field__input"
     disabled={true}
     placeholder="bar"
-    required={false}
+    required={true}
     type="text"
   />
   <span
@@ -146,7 +146,7 @@ Array [
       className="mdc-text-field__input"
       disabled={true}
       placeholder="bar"
-      required={false}
+      required={true}
       type="text"
     />
     <span
@@ -247,7 +247,7 @@ exports[`TextField component supports outlined text fields 2`] = `
     className="mdc-text-field__input"
     disabled={true}
     placeholder="bar"
-    required={false}
+    required={true}
     type="text"
   />
   <span
@@ -354,7 +354,7 @@ Array [
       className="mdc-text-field__input"
       disabled={true}
       placeholder="bar"
-      required={false}
+      required={true}
       type="text"
     />
     <span
@@ -483,7 +483,7 @@ exports[`TextField component supports outlined textareas 2`] = `
       cols={32}
       disabled={true}
       placeholder="bar"
-      required={false}
+      required={true}
       rows={4}
     />
   </span>
@@ -585,7 +585,7 @@ Array [
         cols={32}
         disabled={true}
         placeholder="bar"
-        required={false}
+        required={true}
         rows={4}
       />
     </span>

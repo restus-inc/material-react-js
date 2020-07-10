@@ -134,6 +134,9 @@ function HelperText(props) {
  * `'textarea'` or `'filled-textarea'`, this attribute is ignored. Default to `4`.
  * @param {number} [props.cols] The cols attribute of textarea element. If `props.variation`
  * is not `'textarea'` or `'filled-textarea'`, this attribute is ignored. Default to `32`.
+ * @param {boolean} [props.resizable] Specifies `true` allowing the user to resize the textarea.
+ * If `props.variation` is not `'textarea'` or `'filled-textarea'`, this attribute is ignored.
+ * Default to `false`
  * @param {EventHandler} [props.on*] An event handler of React that is associated with
  * `input` or `textarea` element.
  * @returns {DetailedReactHTMLElement}
@@ -201,9 +204,13 @@ export default function TextField(props) {
       return (
         <>
           <label className={rootClassName} ref={rootElement}>
-            <span className="mdc-text-field__resizer">
+            {props.resizable ? (
+              <span className="mdc-text-field__resizer">
+                <NativeInput {...props}/>
+              </span>
+            ) : (
               <NativeInput {...props}/>
-            </span>
+            )}
             <span className="mdc-notched-outline">
               <span className="mdc-notched-outline__leading"></span>
               {!(props.label == null || props.label === '') && (
@@ -222,9 +229,13 @@ export default function TextField(props) {
         <>
           <label className={rootClassName} ref={rootElement}>
             <span className="mdc-text-field__ripple"></span>
-            <span className="mdc-text-field__resizer">
+            {props.resizable ? (
+              <span className="mdc-text-field__resizer">
+                <NativeInput {...props}/>
+              </span>
+            ) : (
               <NativeInput {...props}/>
-            </span>
+            )}
             {!(props.label == null || props.label === '') && (
             <span className={labelClassName} id={props.id && `${props.id}-label`}>{props.label}</span>
             )}

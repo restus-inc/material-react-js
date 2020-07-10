@@ -223,17 +223,13 @@ exports[`TextField component supports filled textareas 1`] = `
   <span
     className="mdc-text-field__ripple"
   />
-  <span
-    className="mdc-text-field__resizer"
-  >
-    <textarea
-      className="mdc-text-field__input"
-      cols={32}
-      disabled={false}
-      required={false}
-      rows={4}
-    />
-  </span>
+  <textarea
+    className="mdc-text-field__input"
+    cols={32}
+    disabled={false}
+    required={false}
+    rows={4}
+  />
   <span
     className="mdc-line-ripple"
   />
@@ -272,21 +268,17 @@ exports[`TextField component supports filled textareas 3`] = `
   <span
     className="mdc-text-field__ripple"
   />
-  <span
-    className="mdc-text-field__resizer"
-  >
-    <textarea
-      className="mdc-text-field__input"
-      cols={40}
-      defaultValue="baz"
-      disabled={false}
-      id="bar"
-      name="bar"
-      pattern="[a-z]*"
-      required={false}
-      rows={6}
-    />
-  </span>
+  <textarea
+    className="mdc-text-field__input"
+    cols={40}
+    defaultValue="baz"
+    disabled={false}
+    id="bar"
+    name="bar"
+    pattern="[a-z]*"
+    required={false}
+    rows={6}
+  />
   <span
     className="mdc-line-ripple"
   />
@@ -337,18 +329,14 @@ Array [
     <span
       className="mdc-text-field__ripple"
     />
-    <span
-      className="mdc-text-field__resizer"
-    >
-      <textarea
-        className="mdc-text-field__input"
-        cols={32}
-        disabled={true}
-        placeholder="bar"
-        required={true}
-        rows={4}
-      />
-    </span>
+    <textarea
+      className="mdc-text-field__input"
+      cols={32}
+      disabled={true}
+      placeholder="bar"
+      required={true}
+      rows={4}
+    />
     <span
       className="mdc-floating-label"
     >
@@ -379,24 +367,20 @@ Array [
     <span
       className="mdc-text-field__ripple"
     />
-    <span
-      className="mdc-text-field__resizer"
-    >
-      <textarea
-        aria-controls="bar-helper"
-        aria-describedby="bar-helper"
-        aria-labelledby="bar-label"
-        className="mdc-text-field__input"
-        cols={32}
-        defaultValue="baz"
-        disabled={false}
-        id="bar"
-        name="bar"
-        pattern="[a-z]*"
-        required={false}
-        rows={4}
-      />
-    </span>
+    <textarea
+      aria-controls="bar-helper"
+      aria-describedby="bar-helper"
+      aria-labelledby="bar-label"
+      className="mdc-text-field__input"
+      cols={32}
+      defaultValue="baz"
+      disabled={false}
+      id="bar"
+      name="bar"
+      pattern="[a-z]*"
+      required={false}
+      rows={4}
+    />
     <span
       className="mdc-floating-label mdc-floating-label--float-above"
       id="bar-label"
@@ -652,17 +636,13 @@ exports[`TextField component supports outlined textareas 1`] = `
 <label
   className="mdc-text-field mdc-text-field--no-label mdc-text-field--outlined mdc-text-field--textarea"
 >
-  <span
-    className="mdc-text-field__resizer"
-  >
-    <textarea
-      className="mdc-text-field__input"
-      cols={32}
-      disabled={false}
-      required={false}
-      rows={4}
-    />
-  </span>
+  <textarea
+    className="mdc-text-field__input"
+    cols={32}
+    disabled={false}
+    required={false}
+    rows={4}
+  />
   <span
     className="mdc-notched-outline"
   >
@@ -709,21 +689,17 @@ exports[`TextField component supports outlined textareas 3`] = `
 <label
   className="mdc-text-field mdc-text-field--no-label mdc-text-field--label-floating mdc-text-field--outlined mdc-text-field--textarea qux"
 >
-  <span
-    className="mdc-text-field__resizer"
-  >
-    <textarea
-      className="mdc-text-field__input"
-      cols={40}
-      defaultValue="baz"
-      disabled={false}
-      id="bar"
-      name="bar"
-      pattern="[a-z]*"
-      required={false}
-      rows={6}
-    />
-  </span>
+  <textarea
+    className="mdc-text-field__input"
+    cols={40}
+    defaultValue="baz"
+    disabled={false}
+    id="bar"
+    name="bar"
+    pattern="[a-z]*"
+    required={false}
+    rows={6}
+  />
   <span
     className="mdc-notched-outline"
   >
@@ -782,18 +758,14 @@ Array [
   <label
     className="mdc-text-field mdc-text-field--disabled mdc-text-field--outlined mdc-text-field--textarea"
   >
-    <span
-      className="mdc-text-field__resizer"
-    >
-      <textarea
-        className="mdc-text-field__input"
-        cols={32}
-        disabled={true}
-        placeholder="bar"
-        required={true}
-        rows={4}
-      />
-    </span>
+    <textarea
+      className="mdc-text-field__input"
+      cols={32}
+      disabled={true}
+      placeholder="bar"
+      required={true}
+      rows={4}
+    />
     <span
       className="mdc-notched-outline"
     >
@@ -832,24 +804,20 @@ Array [
   <label
     className="mdc-text-field mdc-text-field--label-floating mdc-text-field--outlined mdc-text-field--textarea qux"
   >
-    <span
-      className="mdc-text-field__resizer"
-    >
-      <textarea
-        aria-controls="bar-helper"
-        aria-describedby="bar-helper"
-        aria-labelledby="bar-label"
-        className="mdc-text-field__input"
-        cols={32}
-        defaultValue="baz"
-        disabled={false}
-        id="bar"
-        name="bar"
-        pattern="[a-z]*"
-        required={false}
-        rows={4}
-      />
-    </span>
+    <textarea
+      aria-controls="bar-helper"
+      aria-describedby="bar-helper"
+      aria-labelledby="bar-label"
+      className="mdc-text-field__input"
+      cols={32}
+      defaultValue="baz"
+      disabled={false}
+      id="bar"
+      name="bar"
+      pattern="[a-z]*"
+      required={false}
+      rows={4}
+    />
     <span
       className="mdc-notched-outline"
     >

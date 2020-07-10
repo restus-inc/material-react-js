@@ -83,7 +83,7 @@ describe('TextField component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <TextField variation="textarea" placeholder="bar" required={true} disabled={true}/>,
+      <TextField variation="textarea" resizable={true} placeholder="bar" required={true} disabled={true}/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
 
@@ -93,7 +93,7 @@ describe('TextField component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <TextField variation="textarea" helperText="qux"/>,
+      <TextField variation="textarea" resizable={true} helperText="qux"/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
 
@@ -115,7 +115,7 @@ describe('TextField component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <TextField variation="filled-textarea" placeholder="bar" required={true} disabled={true}/>,
+      <TextField variation="filled-textarea" resizable={true} placeholder="bar" required={true} disabled={true}/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
 
@@ -125,7 +125,7 @@ describe('TextField component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <TextField variation="filled-textarea" helperText="qux"/>,
+      <TextField variation="filled-textarea" resizable={true} helperText="qux"/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
 

@@ -44,8 +44,8 @@ const generateIconElement = (props) => {
  * Default to `false`.
  * @param {boolean} [props.supportsTouch] Whether to support touch in Material Design
  * specification. Material Design spec advises that touch targets should be at least 48 x 48 px.
- * @param {EventHandler} [props.onClick] Specifies event handler that is called when
- * the button clicks.
+ * @param {EventHandler} [props.on*] An event handler of React that is associated with
+ * `button` element.
  * @returns {DetailedReactHTMLElement}
  * @module material-react/lib/button
  */
@@ -60,11 +60,18 @@ export default function Button(props) {
   }, []);
 
   const rootClassName = generateRootClassName(props);
+  const buttonProps = Object.entries(props).reduce((newProps, [key, value]) => {
+    if (key.match(/^on[A-Z]/)) {
+      newProps[key] = value; // eslint-disable-line no-param-reassign
+    }
+    return newProps;
+  }, {
+    className: rootClassName,
+    disabled: props.disabled,
+    ref: rootElement,
+  });
   const button = (
-    <button className={rootClassName}
-            disabled={props.disabled}
-            onClick={props.onClick}
-            ref={rootElement}>
+    <button {...buttonProps}>
       <div className="mdc-button__ripple"></div>
       {generateIconElement(props)}
       <span className="mdc-button__label">{props.label}</span>

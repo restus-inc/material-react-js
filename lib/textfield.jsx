@@ -36,12 +36,16 @@ const generateRootClassName = (props) => {
 };
 
 function NativeInput(props) {
-  const nativeInputProps = {
+  const nativeInputProps = Object.entries(props).reduce((newProps, [key, value]) => {
+    if (key.match(/^on[A-Z]/)) {
+      newProps[key] = value; // eslint-disable-line no-param-reassign
+    }
+    return newProps;
+  }, {
     className: 'mdc-text-field__input',
     disabled: Boolean(props.disabled),
     required: Boolean(props.required),
-    onChange: props.onChange,
-  };
+  });
   if (props.value == null) {
     Object.assign(nativeInputProps, { defaultValue: props.defaultValue });
   } else {
@@ -130,8 +134,8 @@ function HelperText(props) {
  * `'textarea'` or `'filled-textarea'`, this attribute is ignored. Default to `4`.
  * @param {number} [props.cols] The cols attribute of textarea element. If `props.variation`
  * is not `'textarea'` or `'filled-textarea'`, this attribute is ignored. Default to `32`.
- * @param {EventHandler} [props.onChange] Specifies event handler that is called when
- * the text changes.
+ * @param {EventHandler} [props.on*] An event handler of React that is associated with
+ * `input` or `textarea` element.
  * @returns {DetailedReactHTMLElement}
  * @module material-react/lib/textfield
  */

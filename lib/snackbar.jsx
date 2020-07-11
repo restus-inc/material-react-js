@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { MDCSnackbar } from '@material/snackbar';
-import { handlerName } from './utils';
 
-const EVENTS = ['opening', 'opened', 'closing', 'closed'];
+const EVENTS = [
+  { mdcEventName: 'opening', propsName: 'onOpening' },
+  { mdcEventName: 'opened', propsName: 'onOpend' },
+  { mdcEventName: 'closing', propsName: 'onClosing' },
+  { mdcEventName: 'closed', propsName: 'onClosed' },
+];
 
 const generateRootClassName = (props) => {
   const rootClasses = ['mdc-snackbar'];
@@ -42,25 +46,28 @@ const generateRootClassName = (props) => {
  * @module material-react/lib/snackbar
  */
 export default function Snackbar(props) {
-  const rootElement = React.useRef();
+  const rootElement = useRef();
+  const mdcComponent = useRef();
 
-  React.useEffect(() => {
-    const mdcComponent = new MDCSnackbar(rootElement.current);
-    const handlers = EVENTS.reduce((array, eventName) => {
-      const handler = props[handlerName(eventName)];
-      if (handler) {
-        array.push({ eventName, handler });
-        mdcComponent.listen(`MDCSnackbar:${eventName}`, handler);
-      }
-      return array;
-    }, []);
-    mdcComponent.open();
+  useEffect(() => {
+    mdcComponent.current = new MDCSnackbar(rootElement.current);
+    mdcComponent.current.open();
     return () => {
-      handlers.forEach(({ eventName, handler }) => {
-        mdcComponent.unlisten(`MDCSnackbar:${eventName}`, handler);
-      });
-      mdcComponent.destroy();
+      mdcComponent.current.destroy();
     };
+  });
+
+  EVENTS.forEach(({ mdcEventName, propsName }) => {
+    useEffect(() => {
+      const handler = props[propsName];
+      if (!handler) {
+        return undefined;
+      }
+      mdcComponent.current.listen(`MDCSnackbar:${mdcEventName}`, handler);
+      return () => {
+        mdcComponent.current.unlisten(`MDCSnackbar:${mdcEventName}`, handler);
+      };
+    }, [props[propsName]]);
   });
 
   return (

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { MDCDialog } from '@material/dialog';
-import { handlerName } from './utils';
 
-const EVENTS = ['opening', 'opened', 'closing', 'closed'];
+const EVENTS = [
+  { mdcEventName: 'opening', propsName: 'onOpening' },
+  { mdcEventName: 'opened', propsName: 'onOpend' },
+  { mdcEventName: 'closing', propsName: 'onClosing' },
+  { mdcEventName: 'closed', propsName: 'onClosed' },
+];
 
 /**
  * An alert type [MDCDialog component]{@link https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-textfield#readme}
@@ -30,25 +34,28 @@ const EVENTS = ['opening', 'opened', 'closing', 'closed'];
  * @module material-react/lib/alert-dialog
  */
 export default function AlertDialog(props) {
-  const rootElement = React.useRef();
+  const rootElement = useRef();
+  const mdcComponent = useRef();
 
-  React.useEffect(() => {
-    const mdcComponent = new MDCDialog(rootElement.current);
-    const handlers = EVENTS.reduce((array, eventName) => {
-      const handler = props[handlerName(eventName)];
-      if (handler) {
-        array.push({ eventName, handler });
-        mdcComponent.listen(`MDCDialog:${eventName}`, handler);
-      }
-      return array;
-    }, []);
-    mdcComponent.open();
+  useEffect(() => {
+    mdcComponent.current = new MDCDialog(rootElement.current);
+    mdcComponent.current.open();
     return () => {
-      handlers.forEach(({ eventName, handler }) => {
-        mdcComponent.unlisten(`MDCDialog:${eventName}`, handler);
-      });
-      mdcComponent.destroy();
+      mdcComponent.current.destroy();
     };
+  });
+
+  EVENTS.forEach(({ mdcEventName, propsName }) => {
+    useEffect(() => {
+      const handler = props[propsName];
+      if (!handler) {
+        return undefined;
+      }
+      mdcComponent.current.listen(`MDCDialog:${mdcEventName}`, handler);
+      return () => {
+        mdcComponent.current.unlisten(`MDCDialog:${mdcEventName}`, handler);
+      };
+    }, [props[propsName]]);
   });
 
   const buttons = props.buttons.map((buttonProp) => (

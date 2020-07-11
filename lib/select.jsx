@@ -71,6 +71,12 @@ export default function Button(props) {
 
   useEffect(() => {
     mdcComponentRef.current = new MDCSelect(rootElement.current);
+    return () => {
+      mdcComponentRef.current.destroy();
+    };
+  }, []);
+
+  useEffect(() => {
     if (props.onChange) {
       mdcComponentRef.current.listen('MDCSelect:change', props.onChange);
     }
@@ -78,9 +84,8 @@ export default function Button(props) {
       if (props.onChange) {
         mdcComponentRef.current.unlisten('MDCSelect:change', props.onChange);
       }
-      mdcComponentRef.current.destroy();
     };
-  }, []);
+  }, [props.onChange]);
 
   const selectedItemText = props.selectedValue == null
     ? ''

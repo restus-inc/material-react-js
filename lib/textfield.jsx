@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { MDCTextField } from '@material/textfield';
 
+const NON_NATIVE_PROPS = [
+  'id', 'value', 'defaultValue', 'type', 'variation', 'label', 'className', 'helperText',
+  'showsHelperPersistently', 'showsHelperAsValidation', 'rows', 'cols', 'resizable',
+];
+
 const generateRootClassName = (props) => {
   const rootClasses = ['mdc-text-field'];
   if (props.label == null || props.label === '') {
@@ -36,16 +41,9 @@ const generateRootClassName = (props) => {
 };
 
 function NativeInput(props) {
-  const nativeInputProps = Object.entries(props).reduce((newProps, [key, value]) => {
-    if (key.match(/^on[A-Z]/)) {
-      newProps[key] = value; // eslint-disable-line no-param-reassign
-    }
-    return newProps;
-  }, {
-    className: 'mdc-text-field__input',
-    disabled: Boolean(props.disabled),
-    required: Boolean(props.required),
-  });
+  const nativeInputProps = Object.entries(props).reduce((newProps, [key, value]) => (
+    !NON_NATIVE_PROPS.includes(key) ? Object.assign(newProps, { [key]: value }) : newProps
+  ), { className: 'mdc-text-field__input' });
   if (props.value == null) {
     Object.assign(nativeInputProps, { defaultValue: props.defaultValue });
   } else {
@@ -74,12 +72,6 @@ function NativeInput(props) {
       });
     }
   }
-  if (!(props.placeholder == null || props.placeholder === '')) {
-    Object.assign(nativeInputProps, { placeholder: props.placeholder });
-  }
-  if (props.pattern) {
-    Object.assign(nativeInputProps, { pattern: props.pattern });
-  }
   const tagName = (props.variation || 'filled').endsWith('textarea') ? 'textarea' : 'input';
   return React.createElement(tagName, nativeInputProps);
 }
@@ -105,7 +97,8 @@ function HelperText(props) {
 /**
  * [MDCTextField component]{@link https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-textfield#readme}
  * implemented by react component.
- * @param {Object} [props]
+ * @param {Object} [props] Attributes other than followings are passed to the `input`
+ * or `textarea` element of React as is.
  * @param {string} [props.id] The `id` attribute of the native html input element. This
  * property is also used the `name` attribute.
  * @param {string} [props.value] The value of the text field. Should not specify both
@@ -113,18 +106,13 @@ function HelperText(props) {
  * @param {string} [props.defaultValue] The default value of the text field. Should not
  * specify both this attribute and `props.value` at the same time.
  * @param {string} [props.type] The `type` attribute of the native html input element.
- * If `props.variation` is `'textarea'`, this attribute is ignored. Default to `'text'`.
+ * If `props.variation` is `'textarea'` or `'filled-textarea'`, this attribute is ignored.
  * @param {string} [props.variation] The variation of the text field. Supported variations
  *  are`'filled'`(default), `'outlined'`, `'textarea'` and `'filled-textarea'`.
  * @param {string} [props.label] The label text of the text field.
- * @param {string} [props.placeholder] The placeholder of the text field.
  * @param {string} [props.className] The class name that is added to the root element.
  * @param {boolean} [props.disabled] Specifies `true` if you want to disable the text field.
  * Default to `false`.
- * @param {boolean} [props.required] Specifies `true` if the text field is required.
- * Default to `false`.
- * @param {string} [props.pattern] Specifeis regular expression as string that the text
- * field's value is checked.
  * @param {string} [props.helperText] Specifeis the helper text.
  * @param {boolean} [props.showsHelperPersistently] Specifies `true` to make the helper text
  * permanently visible. Default to `false`.
@@ -137,8 +125,6 @@ function HelperText(props) {
  * @param {boolean} [props.resizable] Specifies `true` allowing the user to resize the textarea.
  * If `props.variation` is not `'textarea'` or `'filled-textarea'`, this attribute is ignored.
  * Default to `false`
- * @param {EventHandler} [props.on*] An event handler of React that is associated with
- * `input` or `textarea` element.
  * @returns {DetailedReactHTMLElement}
  * @module material-react/lib/textfield
  */

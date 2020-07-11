@@ -9,8 +9,6 @@ exports[`TextField component supports filled text fields 1`] = `
   />
   <input
     className="mdc-text-field__input"
-    disabled={false}
-    required={false}
     type="text"
   />
   <span
@@ -55,11 +53,9 @@ exports[`TextField component supports filled text fields 3`] = `
     aria-labelledby="bar-label"
     className="mdc-text-field__input"
     defaultValue="baz"
-    disabled={false}
     id="bar"
     name="bar"
     pattern="[a-z]*"
-    required={false}
     type="text"
   />
   <span
@@ -85,10 +81,8 @@ exports[`TextField component supports filled text fields 4`] = `
     aria-labelledby="bar-label"
     className="mdc-text-field__input"
     defaultValue="baz"
-    disabled={false}
     id="bar"
     name="bar"
-    required={false}
     type="text"
   />
   <span
@@ -113,8 +107,6 @@ Array [
     />
     <input
       className="mdc-text-field__input"
-      disabled={false}
-      required={false}
       type="text"
     />
     <span
@@ -185,11 +177,9 @@ Array [
       aria-labelledby="bar-label"
       className="mdc-text-field__input"
       defaultValue="baz"
-      disabled={false}
       id="bar"
       name="bar"
       pattern="[a-z]*"
-      required={false}
       type="text"
     />
     <span
@@ -226,8 +216,6 @@ exports[`TextField component supports filled textareas 1`] = `
   <textarea
     className="mdc-text-field__input"
     cols={32}
-    disabled={false}
-    required={false}
     rows={4}
   />
   <span
@@ -272,11 +260,9 @@ exports[`TextField component supports filled textareas 3`] = `
     className="mdc-text-field__input"
     cols={40}
     defaultValue="baz"
-    disabled={false}
     id="bar"
     name="bar"
     pattern="[a-z]*"
-    required={false}
     rows={6}
   />
   <span
@@ -299,8 +285,6 @@ Array [
       <textarea
         className="mdc-text-field__input"
         cols={32}
-        disabled={false}
-        required={false}
         rows={4}
       />
     </span>
@@ -374,11 +358,9 @@ Array [
       className="mdc-text-field__input"
       cols={32}
       defaultValue="baz"
-      disabled={false}
       id="bar"
       name="bar"
       pattern="[a-z]*"
-      required={false}
       rows={4}
     />
     <span
@@ -411,8 +393,6 @@ exports[`TextField component supports outlined text fields 1`] = `
 >
   <input
     className="mdc-text-field__input"
-    disabled={false}
-    required={false}
     type="text"
   />
   <span
@@ -469,11 +449,9 @@ exports[`TextField component supports outlined text fields 3`] = `
     aria-labelledby="bar-label"
     className="mdc-text-field__input"
     defaultValue="baz"
-    disabled={false}
     id="bar"
     name="bar"
     pattern="[a-z]*"
-    required={false}
     type="text"
   />
   <span
@@ -506,8 +484,6 @@ Array [
   >
     <input
       className="mdc-text-field__input"
-      disabled={false}
-      required={false}
       type="text"
     />
     <span
@@ -590,11 +566,9 @@ Array [
       aria-labelledby="bar-label"
       className="mdc-text-field__input"
       defaultValue="baz"
-      disabled={false}
       id="bar"
       name="bar"
       pattern="[a-z]*"
-      required={false}
       type="text"
     />
     <span
@@ -639,8 +613,6 @@ exports[`TextField component supports outlined textareas 1`] = `
   <textarea
     className="mdc-text-field__input"
     cols={32}
-    disabled={false}
-    required={false}
     rows={4}
   />
   <span
@@ -693,11 +665,9 @@ exports[`TextField component supports outlined textareas 3`] = `
     className="mdc-text-field__input"
     cols={40}
     defaultValue="baz"
-    disabled={false}
     id="bar"
     name="bar"
     pattern="[a-z]*"
-    required={false}
     rows={6}
   />
   <span
@@ -724,8 +694,6 @@ Array [
       <textarea
         className="mdc-text-field__input"
         cols={32}
-        disabled={false}
-        required={false}
         rows={4}
       />
     </span>
@@ -811,11 +779,9 @@ Array [
       className="mdc-text-field__input"
       cols={32}
       defaultValue="baz"
-      disabled={false}
       id="bar"
       name="bar"
       pattern="[a-z]*"
-      required={false}
       rows={4}
     />
     <span

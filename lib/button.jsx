@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { MDCRipple } from '@material/ripple';
 
+const NON_NATIVE_PROPS = [
+  'variation', 'label', 'className', 'icon', 'iconClassName', 'supportsTouch', 'ref',
+];
+
 const generateRootClassName = (props) => {
   const rootClassNames = ['mdc-button'];
   switch (props.variation || 'text') {
@@ -35,11 +39,11 @@ function IconElement(props) {
 /**
  * [MDCButton component]{@link https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-button#readme}
  * implemented by react component.
- * @param {Object} props
+ * @param {Object} props Attributes other than followings are passed to the `button`
+ * element of React as is.
  * @param {string} [props.variation] The variation of the button. Supported variations are
  * `'text'`(default), `'outlined'` and `'contained'`.
  * @param {string} props.label The label text of the button.
- * @param {string} [props.type] The value of type attribute of `button` element.
  * @param {string} [props.className] The class name that is added to the root element.
  * @param {boolean} [props.disabled] Specifies `true` if you want to disable the button.
  * Default to `false`.
@@ -51,8 +55,6 @@ function IconElement(props) {
  * `props.icon` is present.
  * @param {boolean} [props.supportsTouch] Whether to support touch in Material Design
  * specification. Material Design spec advises that touch targets should be at least 48 x 48 px.
- * @param {EventHandler} [props.on*] An event handler of React that is associated with
- * `button` element.
  * @returns {DetailedReactHTMLElement}
  * @module material-react/lib/button
  */
@@ -66,17 +68,10 @@ export default function Button(props) {
     };
   }, []);
 
-  const buttonProps = Object.entries(props).reduce((newProps, [key, value]) => {
-    if (key.match(/^on[A-Z]/)) {
-      newProps[key] = value; // eslint-disable-line no-param-reassign
-    }
-    return newProps;
-  }, {
-    className: generateRootClassName(props),
-    disabled: props.disabled,
-    type: props.type,
-    ref: rootElement,
-  });
+  const buttonProps = Object.entries(props).reduce((newProps, [key, value]) => (
+    !NON_NATIVE_PROPS.includes(key) ? Object.assign(newProps, { [key]: value }) : newProps
+  ), { className: generateRootClassName(props), ref: rootElement });
+
   const button = (
     <button {...buttonProps}>
       <div className="mdc-button__ripple"></div>

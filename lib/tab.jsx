@@ -1,6 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 import { MDCTab } from '@material/tab';
 
+const NON_NATIVE_PROPS = [
+  'label', 'className', 'active', 'icon', 'iconClassName', 'ref',
+];
+
 const generateRootClassName = (props) => {
   const rootClassNames = ['mdc-tab'];
   if (props.active) {
@@ -23,7 +27,8 @@ function IconElement(props) {
 /**
  * [MDCSnackbar component]{@link https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-snackbar#readme}
  * implemented by react component.
- * @param {Object} props
+ * @param {Object} props Attributes other than followings are passed to the `button`
+ * element of React as is.
  * @param {string} props.label The text label on the tab.
  * @param {string} [props.className] The class name that is added to the root element.
  * @param {boolean} [props.active] Specifies `true` if the tab is active, `false` otherwise.
@@ -34,8 +39,6 @@ function IconElement(props) {
  * @param {string} [props.iconClassName] The class name that is added to the icon element if
  * adding the icon. The component renders an icon on the tab if either this attribute or
  * `props.icon` is present.
- * @param {EventHandler} [props.on*] An event handler of React that is associated with
- * `button` element.
  * @returns {DetailedReactHTMLElement}
  * @module material-react/lib/tab
  */
@@ -50,7 +53,7 @@ export default function Tab(props) {
   }, []);
 
   const buttonProps = Object.entries(props).reduce((newProps, [key, value]) => (
-    key.match(/^on[A-Z]/) ? Object.assign(newProps, { [key]: value }) : newProps
+    !NON_NATIVE_PROPS.includes(key) ? Object.assign(newProps, { [key]: value }) : newProps
   ), {
     className: generateRootClassName(props),
     role: 'tab',

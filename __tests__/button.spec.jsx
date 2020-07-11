@@ -14,7 +14,7 @@ describe('Button component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <Button label="foo" icon="favorite" supportsTouch={true}/>,
+      <Button type="button" label="foo" icon="favorite" supportsTouch={true}/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
 
@@ -24,7 +24,7 @@ describe('Button component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <Button variation="text" label="foo" icon="favorite" disabled={true}/>,
+      <Button type="reset" variation="text" label="foo" icon="favorite" disabled={true}/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -36,7 +36,7 @@ describe('Button component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <Button variation='outlined' label="foo" icon="favorite" supportsTouch={true}/>,
+      <Button type="button" variation='outlined' label="foo" icon="favorite" supportsTouch={true}/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
 
@@ -53,7 +53,7 @@ describe('Button component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <Button variation='contained' label="foo" icon="favorite" supportsTouch={true}/>,
+      <Button type="button" variation='contained' label="foo" icon="favorite" supportsTouch={true}/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
 

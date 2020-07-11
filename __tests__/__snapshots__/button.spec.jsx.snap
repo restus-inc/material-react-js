@@ -21,6 +21,7 @@ exports[`Button component supports contained buttons 2`] = `
 >
   <button
     className="mdc-button mdc-button--raised mdc-button--touch"
+    type="button"
   >
     <div
       className="mdc-button__ripple"
@@ -84,6 +85,7 @@ exports[`Button component supports outlined buttons 2`] = `
 >
   <button
     className="mdc-button mdc-button--outlined mdc-button--touch"
+    type="button"
   >
     <div
       className="mdc-button__ripple"
@@ -147,6 +149,7 @@ exports[`Button component supports text buttons 2`] = `
 >
   <button
     className="mdc-button mdc-button--touch"
+    type="button"
   >
     <div
       className="mdc-button__ripple"
@@ -192,6 +195,7 @@ exports[`Button component supports text buttons 4`] = `
 <button
   className="mdc-button"
   disabled={true}
+  type="reset"
 >
   <div
     className="mdc-button__ripple"

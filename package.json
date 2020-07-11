@@ -25,6 +25,8 @@
     "@material/dialog": "^7.0.0",
     "@material/select": "^7.0.0",
     "@material/snackbar": "^7.0.0",
+    "@material/tab": "^7.0.0",
+    "@material/tab-bar": "^7.0.0",
     "@material/textfield": "^7.0.0",
     "babel-jest": "^26.1.0",
     "cross-env": "^7.0.2",

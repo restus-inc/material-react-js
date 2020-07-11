@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tab and TabBar component render tab control 1`] = `
+<div
+  className="mdc-tab-bar"
+  role="tablist"
+>
+  <div
+    className="mdc-tab-scroller"
+  >
+    <div
+      className="mdc-tab-scroller__scroll-area"
+    >
+      <div
+        className="mdc-tab-scroller__scroll-content"
+      >
+        <button
+          aria-selected={true}
+          className="mdc-tab mdc-tab--active"
+          role="tab"
+          tabIndex="-1"
+          type="button"
+        >
+          <span
+            className="mdc-tab__content"
+          >
+            <span
+              className="mdc-tab__text-label"
+            >
+              foo
+            </span>
+          </span>
+          <span
+            className="mdc-tab-indicator mdc-tab-indicator--active"
+          >
+            <span
+              className="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+            />
+          </span>
+          <span
+            className="mdc-tab__ripple"
+          />
+        </button>
+        <button
+          className="mdc-tab"
+          role="tab"
+          tabIndex="-1"
+          type="button"
+        >
+          <span
+            className="mdc-tab__content"
+          >
+            <span
+              className="mdc-tab__text-label"
+            >
+              bar
+            </span>
+          </span>
+          <span
+            className="mdc-tab-indicator"
+          >
+            <span
+              className="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+            />
+          </span>
+          <span
+            className="mdc-tab__ripple"
+          />
+        </button>
+        <button
+          className="mdc-tab"
+          role="tab"
+          tabIndex="-1"
+          type="button"
+        >
+          <span
+            className="mdc-tab__content"
+          >
+            <span
+              className="mdc-tab__text-label"
+            >
+              baz
+            </span>
+          </span>
+          <span
+            className="mdc-tab-indicator"
+          >
+            <span
+              className="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+            />
+          </span>
+          <span
+            className="mdc-tab__ripple"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tab and TabBar component render tab control 2`] = `
+<div
+  className="mdc-tab-bar tab-bar"
+  role="tablist"
+>
+  <div
+    className="mdc-tab-scroller"
+  >
+    <div
+      className="mdc-tab-scroller__scroll-area"
+    >
+      <div
+        className="mdc-tab-scroller__scroll-content"
+      >
+        <button
+          className="mdc-tab tab"
+          role="tab"
+          tabIndex="-1"
+          type="button"
+        >
+          <span
+            className="mdc-tab__content"
+          >
+            <span
+              aria-hidden="true"
+              className="icon mdc-tab__icon"
+            >
+              grade
+            </span>
+            <span
+              className="mdc-tab__text-label"
+            >
+              foo
+            </span>
+          </span>
+          <span
+            className="mdc-tab-indicator"
+          >
+            <span
+              className="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+            />
+          </span>
+          <span
+            className="mdc-tab__ripple"
+          />
+        </button>
+        <button
+          className="mdc-tab"
+          role="tab"
+          tabIndex="-1"
+          type="button"
+        >
+          <span
+            className="mdc-tab__content"
+          >
+            <span
+              aria-hidden="true"
+              className="material-icons mdc-tab__icon"
+            >
+              favorite
+            </span>
+            <span
+              className="mdc-tab__text-label"
+            >
+              bar
+            </span>
+          </span>
+          <span
+            className="mdc-tab-indicator"
+          >
+            <span
+              className="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+            />
+          </span>
+          <span
+            className="mdc-tab__ripple"
+          />
+        </button>
+        <button
+          aria-selected={true}
+          className="mdc-tab mdc-tab--active tab"
+          role="tab"
+          tabIndex="-1"
+          type="button"
+        >
+          <span
+            className="mdc-tab__content"
+          >
+            <span
+              className="mdc-tab__text-label"
+            >
+              baz
+            </span>
+          </span>
+          <span
+            className="mdc-tab-indicator mdc-tab-indicator--active"
+          >
+            <span
+              className="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+            />
+          </span>
+          <span
+            className="mdc-tab__ripple"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -9,4 +9,6 @@ It suports following components:
 * Alert type [MDCDialog component](https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-dialog#readme)
 * [MDCSelect component](https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-select#readme)
 * [MDCSnackbar component](https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-snackbar#readme)
+* [MDCTab component](https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-tab#readme)
+* [MDCTabBar component](https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-tab-bar#readme)
 * [MDCTextField component](https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-textfield#readme)

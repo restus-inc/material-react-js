@@ -56,9 +56,16 @@ const getItemValue = (item, itemsValueAttr, index) => {
  * @returns {DetailedReactHTMLElement}
  * @module material-react/lib/select
  */
-export default function Button(props) {
+export default function Select(props) {
   const rootElement = useRef();
   const mdcComponentRef = useRef();
+
+  useEffect(() => {
+    mdcComponentRef.current = new MDCSelect(rootElement.current);
+    return () => {
+      mdcComponentRef.current.destroy();
+    };
+  }, []);
 
   useEffect(() => {
     const hasFocus = document.hasFocus() && document.activeElement === rootElement.current;
@@ -68,13 +75,6 @@ export default function Button(props) {
       mdcComponentRef.current.useNativeValidation = true;
     }
   }, [props.selectedValue]);
-
-  useEffect(() => {
-    mdcComponentRef.current = new MDCSelect(rootElement.current);
-    return () => {
-      mdcComponentRef.current.destroy();
-    };
-  }, []);
 
   useEffect(() => {
     if (props.onChange) {

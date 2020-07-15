@@ -20,7 +20,7 @@ export default function TabBar(props) {
     return () => {
       mdcComponent.current.destroy();
     };
-  }, []);
+  }, props.children.map((child) => child.type));
 
   useEffect(() => {
     if (props.onActivated) {

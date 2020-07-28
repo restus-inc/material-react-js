@@ -51,7 +51,7 @@ describe('DataTable component', () => {
       headerClassName: 'none',
     }];
     let component = renderer.create(
-      <DataTable data={dataSource} keyField="id" columns={columns}/>,
+      <DataTable data={dataSource} keyField="id" columns={columns} rowClassName={(row) => (row.id % 2 === 0 ? 'even' : 'odd') }/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
 

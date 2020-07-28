@@ -93,6 +93,7 @@ function Cell(props) {
  * of the column in the header row.
  * @param {boolean} [props.columns[].bodyClassName] The class name that is added to cells
  * of the column in the body rows.
+ * @param {RowClassName} [props.rowClassName] The function to get the class name of the table row.
  * @param {string} [props.aria-label] The `aria-label` attribute added to the table tag.
  * @returns {DetailedReactHTMLElement}
  * @module material-react/lib/data-table
@@ -122,8 +123,13 @@ export default function DataTable(props) {
             const key = props.keyField
               ? props.keyField.split('.').reduce((obj, accessor) => obj && obj[accessor], rowData)
               : i;
+            const rowClassNames = ['mdc-data-table__row'];
+            const additionalRowClassName = props.rowClassName && props.rowClassName(rowData);
+            if (additionalRowClassName) {
+              rowClassNames.push(additionalRowClassName);
+            }
             return (
-              <tr className="mdc-data-table__row" key={key}>
+              <tr className={rowClassNames.join(' ')} key={key}>
               {props.columns.map((column, j) => (
                 <Cell className={[column.className, column.bodyClassName].join(' ').trim()}
                       isNumeric={column.isNumeric}
@@ -146,12 +152,19 @@ export default function DataTable(props) {
  * The function that return the content of a cell in the header row.
  * @typedef {Function} HeaderRenderer
  * @param {Object[]} data The data source of this data table.
- * @returns {string|DetailedReactHTMLElement} The content of header cell.
+ * @returns {string|DetailedReactHTMLElement} The content of a header cell.
  */
 
 /**
  * The function that return the content of a cell in a body row.
  * @typedef {Function} BodyRenderer
  * @param {Object} rowData The data source element for the target row.
- * @returns {string|DetailedReactHTMLElement} The content of body cell.
+ * @returns {string|DetailedReactHTMLElement} The content of a body cell.
+ */
+
+/**
+ * The function that return class name of a body row.
+ * @typedef {Function} RowClassName
+ * @param {Object} rowData The data source element for the target row.
+ * @returns {string} The class name of a body row.
  */

@@ -41,7 +41,7 @@ exports[`DataTable component supports standard data table 1`] = `
         className="mdc-data-table__content"
       >
         <tr
-          className="mdc-data-table__row"
+          className="mdc-data-table__row odd"
         >
           <th
             className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
@@ -65,7 +65,7 @@ exports[`DataTable component supports standard data table 1`] = `
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          className="mdc-data-table__row even"
         >
           <th
             className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
@@ -89,7 +89,7 @@ exports[`DataTable component supports standard data table 1`] = `
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          className="mdc-data-table__row odd"
         >
           <th
             className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
@@ -113,7 +113,7 @@ exports[`DataTable component supports standard data table 1`] = `
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          className="mdc-data-table__row even"
         >
           <th
             className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
@@ -135,7 +135,7 @@ exports[`DataTable component supports standard data table 1`] = `
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          className="mdc-data-table__row odd"
         >
           <th
             className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"

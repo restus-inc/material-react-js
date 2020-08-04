@@ -95,7 +95,7 @@ function HelperText(props) {
 }
 
 /**
- * [MDCTextField component]{@link https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-textfield#readme}
+ * [MDCTextField component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield#readme}
  * implemented by react component.
  * @param {Object} [props] Attributes other than followings are passed to the `input`
  * or `textarea` element of React as is.

@@ -9,7 +9,7 @@ const EVENTS = [
 ];
 
 /**
- * An alert type [MDCDialog component]{@link https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-textfield#readme}
+ * An alert type [MDCDialog component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield#readme}
  * implemented by react component.
  * @param {Object} props
  * @param {string} props.content The content of the dialog.

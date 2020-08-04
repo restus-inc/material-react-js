@@ -20,7 +20,7 @@ const generateRootClassName = (props) => {
 };
 
 /**
- * [MDCSnackbar component]{@link https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-snackbar#readme}
+ * [MDCSnackbar component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-snackbar#readme}
  * implemented by react component.
  * @param {Object} props
  * @param {string} props.label The text label on the snackbar.

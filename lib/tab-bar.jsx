@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { MDCTabBar } from '@material/tab-bar';
 
 /**
- * [MDCTabBar component]{@link https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-tab-bar#readme}
+ * [MDCTabBar component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-tab-bar#readme}
  * implemented by react component.
  * @param {Object} props
  * @param {string} [props.className] The class name that is added to the root element.

@@ -33,7 +33,7 @@ const getItemValue = (item, itemsValueAttr, index) => {
 };
 
 /**
- * [MDCSelect component]{@link https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-select#readme}
+ * [MDCSelect component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-select#readme}
  * implemented by react component.
  * @param {Object} props
  * @param {Object[]|string[]} props.items The list of options.

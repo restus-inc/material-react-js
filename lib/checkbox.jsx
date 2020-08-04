@@ -82,7 +82,7 @@ function CheckboxWithLabel(props) {
 }
 
 /**
- * [MDCCheckbox component]{@link https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-checkbox#readme}
+ * [MDCCheckbox component]{@link https://github.com/YuoMamaterial-componentsmoru/material-components-web/tree/master/packages/mdc-checkbox#readme}
  * implemented by react component.
  * @param {Object} props Attributes other than followings are passed to the `input`
  * element of React as is.

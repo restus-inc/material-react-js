@@ -37,7 +37,7 @@ function IconElement(props) {
 }
 
 /**
- * [MDCButton component]{@link https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-button#readme}
+ * [MDCButton component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-button#readme}
  * implemented by react component.
  * @param {Object} props Attributes other than followings are passed to the `button`
  * element of React as is.

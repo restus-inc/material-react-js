@@ -66,7 +66,7 @@ function Cell(props) {
 }
 
 /**
- * [MDCDataTable component]{@link https://github.com/YuoMamoru/material-components-web/tree/master/packages/mdc-data-table#readme}
+ * [MDCDataTable component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-data-table#readme}
  * implemented by react component.
  * @param {Object} props
  * @param {Object[]} props.data The data source of the table body contents.

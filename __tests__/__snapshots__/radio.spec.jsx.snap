@@ -1,0 +1,325 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio component supports radio button 1`] = `
+<div
+  className="mdc-radio"
+>
+  <input
+    className="mdc-radio__native-control"
+    type="radio"
+  />
+  <div
+    className="mdc-radio__background"
+  >
+    <div
+      className="mdc-radio__outer-circle"
+    />
+    <div
+      className="mdc-radio__inner-circle"
+    />
+  </div>
+  <div
+    className="mdc-radio__ripple"
+  />
+</div>
+`;
+
+exports[`Radio component supports radio button 2`] = `
+<div
+  className="mdc-radio mdc-radio--disabled baz"
+>
+  <input
+    className="mdc-radio__native-control"
+    disabled={true}
+    type="radio"
+  />
+  <div
+    className="mdc-radio__background"
+  >
+    <div
+      className="mdc-radio__outer-circle"
+    />
+    <div
+      className="mdc-radio__inner-circle"
+    />
+  </div>
+  <div
+    className="mdc-radio__ripple"
+  />
+</div>
+`;
+
+exports[`Radio component supports radio button 3`] = `
+<div
+  className="mdc-form-field"
+>
+  <div
+    className="mdc-radio"
+  >
+    <input
+      checked={true}
+      className="mdc-radio__native-control"
+      id="foo"
+      type="radio"
+    />
+    <div
+      className="mdc-radio__background"
+    >
+      <div
+        className="mdc-radio__outer-circle"
+      />
+      <div
+        className="mdc-radio__inner-circle"
+      />
+    </div>
+    <div
+      className="mdc-radio__ripple"
+    />
+  </div>
+  <label
+    htmlFor="foo"
+  >
+    bar
+  </label>
+</div>
+`;
+
+exports[`Radio component supports radio button 4`] = `
+<div
+  className="mdc-form-field baz"
+>
+  <div
+    className="mdc-radio"
+  >
+    <input
+      className="mdc-radio__native-control"
+      name="qux"
+      type="radio"
+    />
+    <div
+      className="mdc-radio__background"
+    >
+      <div
+        className="mdc-radio__outer-circle"
+      />
+      <div
+        className="mdc-radio__inner-circle"
+      />
+    </div>
+    <div
+      className="mdc-radio__ripple"
+    />
+  </div>
+  <label>
+    bar
+  </label>
+</div>
+`;
+
+exports[`Radio component supports radio button 5`] = `
+<div
+  className="mdc-form-field baz"
+>
+  <div
+    className="mdc-radio mdc-radio--disabled"
+  >
+    <input
+      className="mdc-radio__native-control"
+      disabled={true}
+      id="foo"
+      name="qux"
+      type="radio"
+    />
+    <div
+      className="mdc-radio__background"
+    >
+      <div
+        className="mdc-radio__outer-circle"
+      />
+      <div
+        className="mdc-radio__inner-circle"
+      />
+    </div>
+    <div
+      className="mdc-radio__ripple"
+    />
+  </div>
+  <label
+    htmlFor="foo"
+  >
+    bar
+  </label>
+</div>
+`;
+
+exports[`Radio component supports touch target 1`] = `
+<div
+  className="mdc-touch-target-wrapper"
+>
+  <div
+    className="mdc-radio mdc-radio--touch"
+  >
+    <input
+      className="mdc-radio__native-control"
+      type="radio"
+    />
+    <div
+      className="mdc-radio__background"
+    >
+      <div
+        className="mdc-radio__outer-circle"
+      />
+      <div
+        className="mdc-radio__inner-circle"
+      />
+    </div>
+    <div
+      className="mdc-radio__ripple"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component supports touch target 2`] = `
+<div
+  className="mdc-touch-target-wrapper baz"
+>
+  <div
+    className="mdc-radio mdc-radio--disabled mdc-radio--touch"
+  >
+    <input
+      className="mdc-radio__native-control"
+      disabled={true}
+      type="radio"
+    />
+    <div
+      className="mdc-radio__background"
+    >
+      <div
+        className="mdc-radio__outer-circle"
+      />
+      <div
+        className="mdc-radio__inner-circle"
+      />
+    </div>
+    <div
+      className="mdc-radio__ripple"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component supports touch target 3`] = `
+<div
+  className="mdc-touch-target-wrapper"
+>
+  <div
+    className="mdc-form-field"
+  >
+    <div
+      className="mdc-radio mdc-radio--touch"
+    >
+      <input
+        checked={true}
+        className="mdc-radio__native-control"
+        id="foo"
+        type="radio"
+      />
+      <div
+        className="mdc-radio__background"
+      >
+        <div
+          className="mdc-radio__outer-circle"
+        />
+        <div
+          className="mdc-radio__inner-circle"
+        />
+      </div>
+      <div
+        className="mdc-radio__ripple"
+      />
+    </div>
+    <label
+      htmlFor="foo"
+    >
+      bar
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Radio component supports touch target 4`] = `
+<div
+  className="mdc-touch-target-wrapper baz"
+>
+  <div
+    className="mdc-form-field"
+  >
+    <div
+      className="mdc-radio mdc-radio--touch"
+    >
+      <input
+        className="mdc-radio__native-control"
+        name="qux"
+        type="radio"
+      />
+      <div
+        className="mdc-radio__background"
+      >
+        <div
+          className="mdc-radio__outer-circle"
+        />
+        <div
+          className="mdc-radio__inner-circle"
+        />
+      </div>
+      <div
+        className="mdc-radio__ripple"
+      />
+    </div>
+    <label>
+      bar
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Radio component supports touch target 5`] = `
+<div
+  className="mdc-touch-target-wrapper baz"
+>
+  <div
+    className="mdc-form-field"
+  >
+    <div
+      className="mdc-radio mdc-radio--disabled mdc-radio--touch"
+    >
+      <input
+        className="mdc-radio__native-control"
+        disabled={true}
+        id="foo"
+        name="qux"
+        type="radio"
+      />
+      <div
+        className="mdc-radio__background"
+      >
+        <div
+          className="mdc-radio__outer-circle"
+        />
+        <div
+          className="mdc-radio__inner-circle"
+        />
+      </div>
+      <div
+        className="mdc-radio__ripple"
+      />
+    </div>
+    <label
+      htmlFor="foo"
+    >
+      bar
+    </label>
+  </div>
+</div>
+`;

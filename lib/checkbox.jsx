@@ -96,7 +96,7 @@ function CheckboxWithLabel(props) {
  * @param {boolean} [props.supportsTouch] Whether to support touch in Material Design
  * specification. Material Design spec advises that touch targets should be at least 48 x 48 px.
  * @returns {DetailedReactHTMLElement}
- * @module material-react/lib/select
+ * @module material-react/lib/checkbox
  */
 export default function Checkbox(props) {
   if (!props.supportsTouch) {

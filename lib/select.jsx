@@ -41,7 +41,7 @@ const getItemValue = (item, itemsValueAttr, index) => {
  * If not specified, index of items is used.
  * @param {string} [props.itemsTextAttr] The attribute name of the options to show contents
  * of the option. If not specified, the return value of `item.toString()` is used.
- * @param {string} [props.selectedValue] The value of `props.itemsValueAttr` attributes of the
+ * @param {string} [props.value] The value of `props.itemsValueAttr` attributes of the
  * selected option.
  * @param {string} [props.variation] The variation of the select. Supported variations are
  * `'filled'`(default) and `'outlined'`.
@@ -71,10 +71,10 @@ export default function Select(props) {
     const hasFocus = document.hasFocus() && document.activeElement === rootElement.current;
     if (mdcComponentRef.current && !hasFocus) {
       mdcComponentRef.current.useNativeValidation = false;
-      mdcComponentRef.current.value = props.selectedValue;
+      mdcComponentRef.current.value = props.value;
       mdcComponentRef.current.useNativeValidation = true;
     }
-  }, [props.selectedValue]);
+  }, [props.value]);
 
   useEffect(() => {
     if (props.onChange) {
@@ -87,14 +87,14 @@ export default function Select(props) {
     };
   }, [props.onChange]);
 
-  const selectedItemText = props.selectedValue == null
+  const selectedItemText = props.value == null
     ? ''
     : props.items.reduce((text, item, i) => {
       if (text) {
         return text;
       }
       const value = getItemValue(item, props.itemsValueAttr, i);
-      if (props.selectedValue !== value) {
+      if (props.value !== value) {
         return text;
       }
       return props.itemsTextAttr ? item[props.itemsTextAttr] : item.toString();
@@ -145,7 +145,7 @@ export default function Select(props) {
         {props.items.map((item, i) => {
           const value = getItemValue(item, props.itemsValueAttr, i);
           const selectedText = props.itemsTextAttr ? item[props.itemsTextAttr] : item.toString();
-          const selected = props.selectedValue && (props.selectedValue === value);
+          const selected = props.value && (props.value === value);
           return (
             <li className={selected ? 'mdc-list-item mdc-list-item--selected' : 'mdc-list-item'}
                 data-value={value}

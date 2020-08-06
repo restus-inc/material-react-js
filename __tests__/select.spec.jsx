@@ -19,7 +19,7 @@ describe('Select component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <Select label="foo" id="bar" items={['one', 'two', 'three']} selectedValue="baz" className="qux"/>,
+      <Select label="foo" id="bar" items={['one', 'two', 'three']} value="baz" className="qux"/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
 
@@ -41,7 +41,7 @@ describe('Select component', () => {
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <Select variation="outlined" label="foo" id="bar" items={['one', 'two', 'three']} selectedValue="baz" className="qux"/>,
+      <Select variation="outlined" label="foo" id="bar" items={['one', 'two', 'three']} value="baz" className="qux"/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -53,12 +53,12 @@ describe('Select component', () => {
       { key: '3', value: 'three' },
     ];
     let component = renderer.create(
-      <Select label="foo" items={items} selectedValue="1" itemsValueAttr="key" itemsTextAttr="value" />,
+      <Select label="foo" items={items} value="1" itemsValueAttr="key" itemsTextAttr="value" />,
     );
     expect(component.toJSON()).toMatchSnapshot();
 
     component = renderer.create(
-      <Select label="foo" items={items} selectedValue="0" itemsTextAttr="value" />,
+      <Select label="foo" items={items} value="0" itemsTextAttr="value" />,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });

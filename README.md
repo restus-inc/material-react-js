@@ -7,7 +7,7 @@ It suports following components:
 * [MDCButton component](https://github.com/material-components/material-components-web/tree/master/packages/mdc-button#readme)
 * [MDCCheckbox component](https://github.com/material-components/material-components-web/tree/master/packages/mdc-checkbox#readme)
 * [MDCDataTable component](https://github.com/material-components/material-components-web/tree/master/packages/mdc-data-table#readme)
-* Alert type [MDCDialog component](https://github.com/material-components/material-components-web/tree/master/packages/mdc-dialog#readme)
+* [MDCDialog component](https://github.com/material-components/material-components-web/tree/master/packages/mdc-dialog#readme)
 * [MDCRadio component](https://github.com/material-components/material-components-web/tree/master/packages/mdc-radio#readme)
 * [MDCSelect component](https://github.com/material-components/material-components-web/tree/master/packages/mdc-select#readme)
 * [MDCSnackbar component](https://github.com/material-components/material-components-web/tree/master/packages/mdc-snackbar#readme)

@@ -2,15 +2,21 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import AlertDialog from '../lib/alert-dialog';
+import Dialog from '../lib/dialog';
 
 jest.mock('@material/dialog');
 
-describe('AlertDialog component', () => {
-  it('supports simple dialogs', () => {
+describe('Dialog component', () => {
+  it('supports confirmation dialogs', () => {
     let buttons = [{ action: 'ok', label: 'OK', isDefault: true }];
     let component = renderer.create(
-      <AlertDialog content="foo" buttons={buttons} onClosed={() => {}}/>,
+      <Dialog title="foo" buttons={buttons} onClosed={() => {}}>
+        <ul>
+          <li>one</li>
+          <li>two</li>
+          <li>three</li>
+        </ul>
+      </Dialog>,
     );
     expect(component.toJSON()).toMatchSnapshot();
 
@@ -19,7 +25,13 @@ describe('AlertDialog component', () => {
       { action: 'ok', label: 'OK' },
     ];
     component = renderer.create(
-      <AlertDialog content="foo" className="bar" buttons={buttons} onClosing={() => {}}/>,
+      <Dialog title="foo" className="bar" buttons={buttons} onClosing={() => {}}>
+        <ol>
+          <li>one</li>
+          <li>two</li>
+          <li>three</li>
+        </ol>
+      </Dialog>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });

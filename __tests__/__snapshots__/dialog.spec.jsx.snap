@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AlertDialog component supports simple dialogs 1`] = `
+exports[`Dialog component supports confirmation dialogs 1`] = `
 <div
   className="mdc-dialog"
 >
@@ -12,10 +12,25 @@ exports[`AlertDialog component supports simple dialogs 1`] = `
       className="mdc-dialog__surface"
       role="alertdialog"
     >
+      <h2
+        className="mdc-dialog__title"
+      >
+        foo
+      </h2>
       <div
         className="mdc-dialog__content"
       >
-        foo
+        <ul>
+          <li>
+            one
+          </li>
+          <li>
+            two
+          </li>
+          <li>
+            three
+          </li>
+        </ul>
       </div>
       <div
         className="mdc-dialog__actions"
@@ -44,7 +59,7 @@ exports[`AlertDialog component supports simple dialogs 1`] = `
 </div>
 `;
 
-exports[`AlertDialog component supports simple dialogs 2`] = `
+exports[`Dialog component supports confirmation dialogs 2`] = `
 <div
   className="mdc-dialog"
 >
@@ -56,10 +71,25 @@ exports[`AlertDialog component supports simple dialogs 2`] = `
       className="mdc-dialog__surface bar"
       role="alertdialog"
     >
+      <h2
+        className="mdc-dialog__title"
+      >
+        foo
+      </h2>
       <div
         className="mdc-dialog__content"
       >
-        foo
+        <ol>
+          <li>
+            one
+          </li>
+          <li>
+            two
+          </li>
+          <li>
+            three
+          </li>
+        </ol>
       </div>
       <div
         className="mdc-dialog__actions"

@@ -1,12 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { MDCDialog } from '@material/dialog';
-
-const EVENTS = [
-  { mdcEventName: 'opening', propsName: 'onOpening' },
-  { mdcEventName: 'opened', propsName: 'onOpend' },
-  { mdcEventName: 'closing', propsName: 'onClosing' },
-  { mdcEventName: 'closed', propsName: 'onClosed' },
-];
+import React from 'react';
+import Dialog from './dialog';
 
 /**
  * An alert type [MDCDialog component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield#readme}
@@ -34,54 +27,11 @@ const EVENTS = [
  * @module material-react/lib/alert-dialog
  */
 export default function AlertDialog(props) {
-  const rootElement = useRef();
-  const mdcComponent = useRef();
-
-  useEffect(() => {
-    mdcComponent.current = new MDCDialog(rootElement.current);
-    mdcComponent.current.open();
-    return () => {
-      mdcComponent.current.destroy();
-    };
-  });
-
-  EVENTS.forEach(({ mdcEventName, propsName }) => {
-    useEffect(() => {
-      const handler = props[propsName];
-      if (!handler) {
-        return undefined;
-      }
-      mdcComponent.current.listen(`MDCDialog:${mdcEventName}`, handler);
-      return () => {
-        mdcComponent.current.unlisten(`MDCDialog:${mdcEventName}`, handler);
-      };
-    }, [props[propsName]]);
-  });
-
-  const buttons = props.buttons.map((buttonProp) => (
-    <button type="button"
-            className="mdc-button mdc-dialog__button"
-            data-mdc-dialog-action={buttonProp.action}
-            {...(buttonProp.isDefault ? { 'data-mdc-dialog-button-default': '' } : {})}
-            key={buttonProp.action}>
-      <div className="mdc-button__ripple"></div>
-      <span className="mdc-button__label">{buttonProp.label}</span>
-    </button>
-  ));
   return (
-    <div className="mdc-dialog" ref={rootElement}>
-      <div className="mdc-dialog__container">
-        <div className={props.className ? `mdc-dialog__surface ${props.className}` : 'mdc-dialog__surface'}
-             role="alertdialog"
-             aria-modal="true"
-             aria-describedby="dialog-content">
-          <div className="mdc-dialog__content" id="dialog-content">{props.content}</div>
-          <div className="mdc-dialog__actions">
-            {buttons}
-          </div>
-        </div>
-      </div>
-      <div className="mdc-dialog__scrim"></div>
-    </div>
+    <Dialog className={props.className} buttons={props.buttons}
+            onOpening={props.onOpening} onOpened={props.onOpened}
+            onClosing={props.onClosing} onClosed={props.onClosed}>
+      {props.content}
+    </Dialog>
   );
 }

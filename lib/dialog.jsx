@@ -13,6 +13,7 @@ const EVENTS = [
  * implemented by react component.
  * @param {Object} props
  * @param {string} [props.title] The title of the dialog.
+ * @param {boolean} [isOpen] `true` if opening dialog, otherwise `false`. Default to `false`.
  * @param {string} [props.className] The class name that is added to the surface element.
  * @param {Object[]} props.buttons Specifies the settings of the action buttons that
  * the dialog has.
@@ -79,10 +80,20 @@ export default function Dialog(props) {
 
   useEffect(() => {
     mdcComponent.current = new MDCDialog(rootElement.current);
-    mdcComponent.current.open();
     return () => {
       mdcComponent.current.destroy();
     };
+  }, []);
+
+  useEffect(() => {
+    if (props.isOpen === mdcComponent.current.isOpen) {
+      return;
+    }
+    if (props.isOpen) {
+      mdcComponent.current.open();
+    } else {
+      mdcComponent.current.close();
+    }
   });
 
   EVENTS.forEach(({ mdcEventName, propsName }) => {

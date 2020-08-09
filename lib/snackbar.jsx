@@ -24,6 +24,7 @@ const generateRootClassName = (props) => {
  * implemented by react component.
  * @param {Object} props
  * @param {string} props.label The text label on the snackbar.
+ * @param {boolean} [isOpen] `true` if opening snackbar, otherwise `false`. Default to `false`.
  * @param {string} [props.className] The class name that is added to the surface element.
  * @param {string} [props.actionLabel] The label of action button on the snackbar. Does not
  * specify if action button is not placed.
@@ -51,10 +52,20 @@ export default function Snackbar(props) {
 
   useEffect(() => {
     mdcComponent.current = new MDCSnackbar(rootElement.current);
-    mdcComponent.current.open();
     return () => {
       mdcComponent.current.destroy();
     };
+  }, []);
+
+  useEffect(() => {
+    if (props.isOpen === mdcComponent.current.isOpen) {
+      return;
+    }
+    if (props.isOpen) {
+      mdcComponent.current.open();
+    } else {
+      mdcComponent.current.close();
+    }
   });
 
   EVENTS.forEach(({ mdcEventName, propsName }) => {

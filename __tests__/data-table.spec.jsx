@@ -99,4 +99,32 @@ describe('DataTable component', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+
+  it('supports data table with column sorting', () => {
+    const columns = [{
+      key: 'id',
+      header: 'ID',
+      content: 'id',
+      isNumeric: true,
+      isRowHeader: true,
+      className: 'id-cell',
+      isSortable: true,
+      sortStatus: 'ascending',
+    }, {
+      key: 'composer-name',
+      header: 'Composer Name',
+      content: 'composer.name',
+      className: 'composer-cell',
+      bodyClassName: 'composer-body-cell',
+      isSortable: true,
+    }, {
+      key: 'detail-link',
+      content: (music) => <a href={`./${music.id}`}>Show Details</a>, // eslint-disable-line react/display-name
+      headerClassName: 'none',
+    }];
+    const component = renderer.create(
+      <DataTable data={dataSource} keyField="id" columns={columns}/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });

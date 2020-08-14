@@ -1,30 +1,54 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { MDCDataTable } from '@material/data-table';
 
-const headerCellClassName = (className, isNumeric) => {
+const headerCellClassName = (props) => {
   const classList = ['mdc-data-table__header-cell'];
-  if (isNumeric) {
+  if (props.isNumeric) {
     classList.push('mdc-data-table__header-cell--numeric');
   }
-  if (className) {
-    classList.push(className);
+  if (props.className) {
+    classList.push(props.className);
+  }
+  if (props.isSortable) {
+    classList.push('mdc-data-table__header-cell--with-sort');
+    if (props.sortStatus) {
+      classList.push('mdc-data-table__header-cell--sorted');
+      if (props.sortStatus === 'descending') {
+        classList.push('mdc-data-table__header-cell--sorted-descending');
+      }
+    }
   }
   return classList.join(' ');
 };
 
-const getHeaderContent = (content, data) => {
-  if (typeof content === 'string') {
-    return content;
+function HeaderContent(props) {
+  const child = props.content || '';
+  if (props.isSortable) {
+    return (
+      <div className="mdc-data-table__header-cell-wrapper">
+        {!props.isNumeric && <div className="mdc-data-table__header-cell-label">{child}</div>}
+        <button className="mdc-icon-button material-icons mdc-data-table__sort-icon-button">arrow_upward</button>
+        {props.isNumeric && <div className="mdc-data-table__header-cell-label">{child}</div>}
+        <div className="mdc-data-table__sort-status-label" aria-hidden="true"></div>
+      </div>
+    );
   }
-  if (typeof content === 'function') {
-    return content(data);
-  }
-  return '';
-};
+  return child;
+}
 
 function HeaderCell(props) {
+  const attrs = {
+    className: headerCellClassName(props),
+    role: 'columnheader',
+    scope: 'col',
+    ...(props.isSortable ? {
+      'aria-sort': props.sortStatus || 'none',
+      'data-column-id': props.name,
+    } : {}),
+  };
   return (
-    <th className={headerCellClassName(props.className, props.isNumeric)} role="columnheader" scope="col">
-      {getHeaderContent(props.content, props.data)}
+    <th {...attrs}>
+      <HeaderContent {...props}/>
     </th>
   );
 }
@@ -79,29 +103,64 @@ function Cell(props) {
  * Default to `false`.
  * @param {Object[]} props.columns The setting of data table's columns.
  * @param {string} [props.columns[].key] The identifier for uniquely identifying the column.
- * @param {string|HeaderRenderer} [props.columns[].header] The header content of the column.
- * Mandatory if header row is shown.
+ * @param {string} [props.columns[].header] The header content of the column.
  * @param {string|BodyRenderer} props.columns[].content The property name of the data source
  * used to get the content of the table body. A nested property can be specified by connecting
  * then with `'.'`.
- * @param {boolean} [props.columns[].isNumeric] `true` if this columns is a numeric column,
- * otherwise `false`. Default to `false`.
- * @param {boolean} [props.columns[].isRowHeader] `true` if a cells of this columns is a header
- * for each row, otherwise `false`. Default to `false`.
+ * @param {boolean} [props.columns[].isNumeric] Specify `true` if this columns is a numeric
+ * column, otherwise `false`. Default to `false`.
+ * @param {boolean} [props.columns[].isRowHeader] Specify `true` if a cells of this columns
+ * is a header for each row, otherwise `false`. Default to `false`.
  * @param {string} [props.columns[].className] The class name that is added to cells of the
  * column.
- * @param {boolean} [props.columns[].headerClassName] The class name that is added to a cell
+ * @param {string} [props.columns[].headerClassName] The class name that is added to a cell
  * of the column in the header row.
- * @param {boolean} [props.columns[].bodyClassName] The class name that is added to cells
+ * @param {string} [props.columns[].bodyClassName] The class name that is added to cells
  * of the column in the body rows.
- * @param {RowClassName} [props.rowClassName] The function to get the class name of the table row.
+ * @param {boolean} [props.columns[].isSortable] Specify `true` if the column is sortable,
+ * otherwise `false`. Default to `false`.
+ * @param {string} [props.columns[].sortStatus] Specify `'ascending'` or `'descending'`
+ * if the column is sorted. If `props.columns[].isSortable` is `false`, this attribute is
+ * ignored.
+ * @param {RowClassName} [props.rowClassName] The function to get the class name of
+ * the table row.
  * @param {string} [props.aria-label] The `aria-label` attribute added to the table tag.
+ * @param {EventHandler} [props.onSorted] Specifies event handler that is called when
+ * sort icon of header cell is clicked.
  * @returns {DetailedReactHTMLElement}
  * @module material-react/lib/data-table
  */
 export default function DataTable(props) {
+  const sortable = props.columns.some((column) => column.isSortable);
+  const rootElement = sortable ? useRef() : null;
+  const mdcComponentRef = sortable ? useRef() : null;
+
+  useEffect(() => {
+    if (sortable) {
+      mdcComponentRef.current = new MDCDataTable(rootElement.current);
+    }
+
+    // Instance is not destroyed due to a bug in MDCTable
+    // return () => {
+    //   if (mdcComponentRef.current) {
+    //     mdcComponentRef.current.destroy();
+    //   }
+    // };
+  }, []);
+
+  useEffect(() => {
+    if (sortable && props.onSorted) {
+      mdcComponentRef.current.listen('MDCDataTable:sorted', props.onSorted);
+    }
+    return () => {
+      if (sortable && props.onSorted) {
+        mdcComponentRef.current.unlisten('MDCDataTable:sorted', props.onSorted);
+      }
+    };
+  }, [props.onSorted]);
+
   return (
-    <div className={props.className ? `mdc-data-table ${props.className}` : 'mdc-data-table'}>
+    <div className={props.className ? `mdc-data-table ${props.className}` : 'mdc-data-table'} ref={rootElement}>
       <div className="mdc-data-table__table-container">
         <table className="mdc-data-table__table" aria-label={props['aria-label']}>
         {props.omitsHeaderRow
@@ -114,6 +173,9 @@ export default function DataTable(props) {
                             isNumeric={column.isNumeric}
                             content={column.header}
                             data={props.data}
+                            isSortable={column.isSortable}
+                            name={column.key}
+                            sortStatus={column.sortStatus}
                             key={column.key || j}/>
               ))}
               </tr>
@@ -149,13 +211,6 @@ export default function DataTable(props) {
     </div>
   );
 }
-
-/**
- * The function that return the content of a cell in the header row.
- * @typedef {Function} HeaderRenderer
- * @param {Object[]} data The data source of this data table.
- * @returns {string|DetailedReactHTMLElement} The content of a header cell.
- */
 
 /**
  * The function that return the content of a cell in a body row.

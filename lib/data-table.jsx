@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { MDCDataTable } from '@material/data-table';
+import Checkbox from './checkbox';
 
 const headerCellClassName = (props) => {
   const classList = ['mdc-data-table__header-cell'];
@@ -22,18 +23,17 @@ const headerCellClassName = (props) => {
 };
 
 function HeaderContent(props) {
-  const child = props.content || '';
   if (props.isSortable) {
     return (
       <div className="mdc-data-table__header-cell-wrapper">
-        {!props.isNumeric && <div className="mdc-data-table__header-cell-label">{child}</div>}
+        {!props.isNumeric && <div className="mdc-data-table__header-cell-label">{props.children}</div>}
         <button className="mdc-icon-button material-icons mdc-data-table__sort-icon-button">arrow_upward</button>
-        {props.isNumeric && <div className="mdc-data-table__header-cell-label">{child}</div>}
+        {props.isNumeric && <div className="mdc-data-table__header-cell-label">{props.children}</div>}
         <div className="mdc-data-table__sort-status-label" aria-hidden="true"></div>
       </div>
     );
   }
-  return child;
+  return props.children || '';
 }
 
 function HeaderCell(props) {
@@ -78,13 +78,13 @@ function Cell(props) {
   if (props.isRowHeader) {
     return (
       <th className={cellClassName(props.className, props.isNumeric)} scope="row">
-        {getContent(props.content, props.rowData)}
+        {props.content ? getContent(props.content, props.rowData) : props.children}
       </th>
     );
   }
   return (
     <td className={cellClassName(props.className, props.isNumeric)}>
-      {getContent(props.content, props.rowData)}
+      {props.content ? getContent(props.content, props.rowData) : props.children}
     </td>
   );
 }
@@ -122,9 +122,19 @@ function Cell(props) {
  * @param {string} [props.columns[].sortStatus] Specify `'ascending'` or `'descending'`
  * if the column is sorted. If `props.columns[].isSortable` is `false`, this attribute is
  * ignored.
+ * @param {boolean} [props.usesRowSelection] Specify `true` if table has the row selection
+ * feature, otherwise `false`. Default to `false`.
+ * @param {string} [props.selectionField] The property name of data source used to select
+ * a row in the table. A nested property can be specified by connecting then with `'.'`.
  * @param {RowClassName} [props.rowClassName] The function to get the class name of
  * the table row.
  * @param {string} [props.aria-label] The `aria-label` attribute added to the table tag.
+ * @param {EventHandler} [props.onRowSelectionChanged] Specifies event handler that is
+ * called when row selection checkbox is clicked.
+ * @param {EventHandler} [props.onSelectedAll] Specifies event handler that is called
+ * when all rows are selected by clicking checkbox in header.
+ * @param {EventHandler} [props.onUnselectedAll] Specifies event handler that is called
+ * when all rows are unselected by clicking checkbox in header.
  * @param {EventHandler} [props.onSorted] Specifies event handler that is called when
  * sort icon of header cell is clicked.
  * @returns {DetailedReactHTMLElement}
@@ -132,11 +142,11 @@ function Cell(props) {
  */
 export default function DataTable(props) {
   const sortable = props.columns.some((column) => column.isSortable);
-  const rootElement = sortable ? useRef() : null;
-  const mdcComponentRef = sortable ? useRef() : null;
+  const rootElement = sortable || props.usesRowSelection ? useRef() : null;
+  const mdcComponentRef = sortable || props.usesRowSelection ? useRef() : null;
 
   useEffect(() => {
-    if (sortable) {
+    if (sortable || props.usesRowSelection) {
       mdcComponentRef.current = new MDCDataTable(rootElement.current);
     }
 
@@ -146,18 +156,47 @@ export default function DataTable(props) {
     //     mdcComponentRef.current.destroy();
     //   }
     // };
-  }, []);
+  }, [sortable, props.usesRowSelection, props.data]);
 
   useEffect(() => {
-    if (sortable && props.onSorted) {
-      mdcComponentRef.current.listen('MDCDataTable:sorted', props.onSorted);
+    if (!props.usesRowSelection || !props.onRowSelectionChanged) {
+      return () => {};
     }
+    mdcComponentRef.current.listen('MDCDataTable:rowSelectionChanged', props.onRowSelectionChanged);
     return () => {
-      if (sortable && props.onSorted) {
-        mdcComponentRef.current.unlisten('MDCDataTable:sorted', props.onSorted);
-      }
+      mdcComponentRef.current.unlisten('MDCDataTable:rowSelectionChanged', props.onRowSelectionChanged);
     };
-  }, [props.onSorted]);
+  }, [props.usesRowSelection, props.onRowSelectionChanged]);
+
+  useEffect(() => {
+    if (!props.usesRowSelection || !props.onSelectedAll) {
+      return () => {};
+    }
+    mdcComponentRef.current.listen('MDCDataTable:selectedAll', props.onSelectedAll);
+    return () => {
+      mdcComponentRef.current.unlisten('MDCDataTable:selectedAll', props.onSelectedAll);
+    };
+  }, [props.usesRowSelection, props.onSelectedAll]);
+
+  useEffect(() => {
+    if (!props.usesRowSelection || !props.onUnselectedAll) {
+      return () => {};
+    }
+    mdcComponentRef.current.listen('MDCDataTable:unselectedAll', props.onUnselectedAll);
+    return () => {
+      mdcComponentRef.current.unlisten('MDCDataTable:unselectedAll', props.onUnselectedAll);
+    };
+  }, [props.usesRowSelection, props.onUnselectedAll]);
+
+  useEffect(() => {
+    if (!sortable || !props.onSorted) {
+      return () => {};
+    }
+    mdcComponentRef.current.listen('MDCDataTable:sorted', props.onSorted);
+    return () => {
+      mdcComponentRef.current.unlisten('MDCDataTable:sorted', props.onSorted);
+    };
+  }, [sortable, props.onSorted]);
 
   return (
     <div className={props.className ? `mdc-data-table ${props.className}` : 'mdc-data-table'} ref={rootElement}>
@@ -168,15 +207,23 @@ export default function DataTable(props) {
           : (
             <thead>
               <tr className="mdc-data-table__header-row">
+              {props.usesRowSelection && (
+                <HeaderCell className="mdc-data-table__header-cell--checkbox">
+                  <Checkbox className="mdc-data-table__header-row-checkbox"
+                            disablesMdcInstance={true}
+                            aria-label="Toggle all rows"/>
+                </HeaderCell>
+              )}
               {props.columns.map((column, j) => (
                 <HeaderCell className={[column.className, column.headerClassName].join(' ').trim()}
                             isNumeric={column.isNumeric}
-                            content={column.header}
                             data={props.data}
                             isSortable={column.isSortable}
                             name={column.key}
                             sortStatus={column.sortStatus}
-                            key={column.key || j}/>
+                            key={column.key || j}>
+                  {column.header}
+                </HeaderCell>
               ))}
               </tr>
             </thead>
@@ -187,12 +234,24 @@ export default function DataTable(props) {
               ? props.keyField.split('.').reduce((obj, accessor) => obj && obj[accessor], rowData)
               : i;
             const rowClassNames = ['mdc-data-table__row'];
+            const selected = props.usesRowSelection && getContent(props.selectionField, rowData);
+            if (selected) {
+              rowClassNames.push('mdc-data-table__row--selected');
+            }
             const additionalRowClassName = props.rowClassName && props.rowClassName(rowData);
             if (additionalRowClassName) {
               rowClassNames.push(additionalRowClassName);
             }
             return (
-              <tr className={rowClassNames.join(' ')} key={key}>
+              <tr className={rowClassNames.join(' ')} key={key}
+                  {...(props.usesRowSelection ? { 'data-row-id': key } : {})}>
+              {props.usesRowSelection && (
+                <Cell className="mdc-data-table__cell--checkbox">
+                  <Checkbox className="mdc-data-table__row-checkbox"
+                            defaultChecked={selected}
+                            disablesMdcInstance={true}/>
+                </Cell>
+              )}
               {props.columns.map((column, j) => (
                 <Cell className={[column.className, column.bodyClassName].join(' ').trim()}
                       isNumeric={column.isNumeric}

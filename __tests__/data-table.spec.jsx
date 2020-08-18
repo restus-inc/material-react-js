@@ -5,6 +5,7 @@ import renderer from 'react-test-renderer';
 import DataTable from '../lib/data-table';
 import Pagination from '../lib/data-table-pagination';
 
+jest.mock('@material/data-table');
 jest.mock('@material/select');
 
 describe('DataTable component', () => {
@@ -15,6 +16,7 @@ describe('DataTable component', () => {
       id: 1,
       title: 'Eine kleine Nachtmusik',
       composer: { name: 'Wolfgang Amadeus Mozart', birthplace: 'Salzburg' },
+      selected: true,
     }, {
       id: 2,
       title: 'Ode to Joy',
@@ -27,6 +29,7 @@ describe('DataTable component', () => {
       id: 4,
       title: 'Gregorian chant',
       composer: null,
+      selected: true,
     }, {
       id: 5,
       title: 'Messiah',
@@ -60,6 +63,32 @@ describe('DataTable component', () => {
 
     component = renderer.create(
       <DataTable className="my-table" data={dataSource} keyField="id" columns={columns} omitsHeaderRow={true}/>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  it('supports data table with row selection', () => {
+    const columns = [{
+      key: 'id',
+      header: 'ID',
+      content: 'id',
+      isNumeric: true,
+      isRowHeader: true,
+      className: 'id-cell',
+    }, {
+      key: 'composer-name',
+      header: 'Composer Name',
+      content: 'composer.name',
+      className: 'composer-cell',
+      bodyClassName: 'composer-body-cell',
+    }, {
+      key: 'detail-link',
+      content: (music) => <a href={`./${music.id}`}>Show Details</a>, // eslint-disable-line react/display-name
+      headerClassName: 'none',
+    }];
+    const component = renderer.create(
+      <DataTable data={dataSource} keyField="id" columns={columns}
+                 usesRowSelection={true} selectionField="selected"/>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });

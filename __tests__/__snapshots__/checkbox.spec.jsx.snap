@@ -68,7 +68,7 @@ exports[`Checkbox component supports checkbox 3`] = `
   className="mdc-form-field"
 >
   <div
-    className="mdc-checkbox"
+    className="mdc-checkbox mdc-checkbox--selected"
   >
     <input
       checked={true}
@@ -265,7 +265,7 @@ exports[`Checkbox component supports touch target 3`] = `
     className="mdc-form-field"
   >
     <div
-      className="mdc-checkbox mdc-checkbox--touch"
+      className="mdc-checkbox mdc-checkbox--selected mdc-checkbox--touch"
     >
       <input
         checked={true}

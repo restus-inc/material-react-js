@@ -30,6 +30,9 @@ function SimpleCheckbox(props) {
   }, [props.disablesMdcInstance]);
 
   const classNames = ['mdc-checkbox'];
+  if (props.checked || props.defaultChecked) {
+    classNames.push('mdc-checkbox--selected');
+  }
   if (props.disabled) {
     classNames.push('mdc-checkbox--disabled');
   }

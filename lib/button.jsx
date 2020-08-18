@@ -3,6 +3,7 @@ import { MDCRipple } from '@material/ripple';
 
 const NON_NATIVE_PROPS = [
   'variation', 'label', 'className', 'icon', 'iconClassName', 'supportsTouch', 'ref',
+  'disablesMdcInstance',
 ];
 
 const generateRootClassName = (props) => {
@@ -53,6 +54,8 @@ function IconElement(props) {
  * @param {string} [props.iconClassName] The class name that is added to the icon element if
  * adding the icon. The component renders an icon on the button if either this attribute or
  * `props.icon` is present.
+ * @param {boolean} [props.disablesMdcInstance] Specifies `true` if you do not want to
+ * instantiate MDC Component. Default to `false`.
  * @param {boolean} [props.supportsTouch] Whether to support touch in Material Design
  * specification. Material Design spec advises that touch targets should be at least 48 x 48 px.
  * @returns {DetailedReactHTMLElement}
@@ -62,11 +65,14 @@ export default function Button(props) {
   const rootElement = useRef();
 
   useEffect(() => {
+    if (props.disablesMdcInstance) {
+      return () => {};
+    }
     const mdcComponent = new MDCRipple(rootElement.current);
     return () => {
       mdcComponent.destroy();
     };
-  }, []);
+  }, [props.disablesMdcInstance]);
 
   const buttonProps = Object.entries(props).reduce((newProps, [key, value]) => (
     !NON_NATIVE_PROPS.includes(key) ? Object.assign(newProps, { [key]: value }) : newProps

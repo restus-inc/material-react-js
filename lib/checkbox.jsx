@@ -2,7 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import { MDCCheckbox } from '@material/checkbox';
 import { MDCFormField } from '@material/form-field';
 
-const NON_NATIVE_PROPS = ['label', 'className', 'indeterminate', 'supportsTouch', 'type'];
+const NON_NATIVE_PROPS = [
+  'label', 'className', 'indeterminate', 'supportsTouch', 'type', 'disablesMdcInstance',
+];
 
 function NativeInput(props) {
   const nativeInputProps = Object.entries(props).reduce((newProps, [key, value]) => (
@@ -18,11 +20,14 @@ function SimpleCheckbox(props) {
   const rootElement = useRef();
 
   useEffect(() => {
+    if (props.disablesMdcInstance) {
+      return () => {};
+    }
     const mdcComponent = new MDCCheckbox(rootElement.current);
     return () => {
       mdcComponent.destroy();
     };
-  }, []);
+  }, [props.disablesMdcInstance]);
 
   const classNames = ['mdc-checkbox'];
   if (props.disabled) {
@@ -58,11 +63,14 @@ function CheckboxWithLabel(props) {
   const rootElement = useRef();
 
   useEffect(() => {
+    if (props.disablesMdcInstance) {
+      return () => {};
+    }
     const mdcComponent = new MDCFormField(rootElement.current);
     return () => {
       mdcComponent.destroy();
     };
-  }, []);
+  }, [props.disablesMdcInstance]);
 
   const labelProps = {};
   if (props.id) {
@@ -93,6 +101,8 @@ function CheckboxWithLabel(props) {
  * @param {string} [props.className] The class name that is added to the root element.
  * @param {boolean} [props.disabled] Specifies `true` if you want to disable the checkbox.
  * Default to `false`.
+ * @param {boolean} [props.disablesMdcInstance] Specifies `true` if you do not want to
+ * instantiate MDC Component. Default to `false`.
  * @param {boolean} [props.supportsTouch] Whether to support touch in Material Design
  * specification. Material Design spec advises that touch targets should be at least 48 x 48 px.
  * @returns {DetailedReactHTMLElement}

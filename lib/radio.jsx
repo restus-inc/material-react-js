@@ -2,7 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import { MDCRadio } from '@material/radio';
 import { MDCFormField } from '@material/form-field';
 
-const NON_NATIVE_PROPS = ['label', 'className', 'indeterminate', 'supportsTouch', 'type'];
+const NON_NATIVE_PROPS = [
+  'label', 'className', 'indeterminate', 'supportsTouch', 'type', 'disablesMdcInstance',
+];
 
 function NativeInput(props) {
   const nativeInputProps = Object.entries(props).reduce((newProps, [key, value]) => (
@@ -15,11 +17,14 @@ function SimpleRadio(props) {
   const rootElement = useRef();
 
   useEffect(() => {
+    if (props.disablesMdcInstance) {
+      return () => {};
+    }
     const mdcComponent = new MDCRadio(rootElement.current);
     return () => {
       mdcComponent.destroy();
     };
-  }, []);
+  }, [props.disablesMdcInstance]);
 
   const classNames = ['mdc-radio'];
   if (props.disabled) {
@@ -51,11 +56,14 @@ function RadioWithLabel(props) {
   const rootElement = useRef();
 
   useEffect(() => {
+    if (props.disablesMdcInstance) {
+      return () => {};
+    }
     const mdcComponent = new MDCFormField(rootElement.current);
     return () => {
       mdcComponent.destroy();
     };
-  }, []);
+  }, [props.disablesMdcInstance]);
 
   const labelProps = {};
   if (props.id) {
@@ -84,6 +92,8 @@ function RadioWithLabel(props) {
  * @param {string} [props.className] The class name that is added to the root element.
  * @param {boolean} [props.disabled] Specifies `true` if you want to disable the radio.
  * Default to `false`.
+ * @param {boolean} [props.disablesMdcInstance] Specifies `true` if you do not want to
+ * instantiate MDC Component. Default to `false`.
  * @param {boolean} [props.supportsTouch] Whether to support touch in Material Design
  * specification. Material Design spec advises that touch targets should be at least 48 x 48 px.
  * @returns {DetailedReactHTMLElement}

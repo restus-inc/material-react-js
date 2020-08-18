@@ -33,8 +33,7 @@ import Select from './select';
  * last page icon is clicked.
  * @returns {DetailedReactHTMLElement}
  * @example
- * import DataTable from 'material-react/lib/data-table';
- * import Pagination from 'material-react/lib/data-table-pagination';
+ * import { DataTable, Pagination } from 'material-react';
  *
  * function MyTable(props) {
  *   return (

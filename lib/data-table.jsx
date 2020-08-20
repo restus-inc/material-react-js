@@ -150,12 +150,16 @@ export default function DataTable(props) {
       mdcComponentRef.current = new MDCDataTable(rootElement.current);
     }
 
-    // Instance is not destroyed due to a bug in MDCTable
-    // return () => {
-    //   if (mdcComponentRef.current) {
-    //     mdcComponentRef.current.destroy();
-    //   }
-    // };
+    return () => {
+      if (mdcComponentRef && mdcComponentRef.current) {
+        try {
+          // Sometimes an error is thrown due to a bug in MDCTable
+          mdcComponentRef.current.destroy();
+        } catch (error) {
+          // do nothing
+        }
+      }
+    };
   }, [sortable, props.usesRowSelection, props.data]);
 
   useEffect(() => {

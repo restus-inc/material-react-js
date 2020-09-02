@@ -3,7 +3,7 @@ import { MDCSnackbar } from '@material/snackbar';
 
 const EVENTS = [
   { mdcEventName: 'opening', propsName: 'onOpening' },
-  { mdcEventName: 'opened', propsName: 'onOpend' },
+  { mdcEventName: 'opened', propsName: 'onOpened' },
   { mdcEventName: 'closing', propsName: 'onClosing' },
   { mdcEventName: 'closed', propsName: 'onClosed' },
 ];

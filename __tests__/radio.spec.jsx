@@ -1,64 +1,60 @@
-/* global jest, describe, it, expect */
+/* global describe, it, expect */
+import 'regenerator-runtime/runtime';
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { htmlOfRendering } from './utils';
 
 import Radio from '../lib/radio';
 
-jest.mock('@material/radio');
-jest.mock('@material/form-field');
-
 describe('Radio component', () => {
   it('supports radio button', () => {
-    let component = renderer.create(
+    expect(htmlOfRendering(
       <Radio/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <Radio className="baz" disabled={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
-      <Radio id="foo" label="bar" checked={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(htmlOfRendering(
+      <Radio id="foo" label="bar" defaultChecked={true}/>,
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <Radio label="bar" className="baz" name="qux"/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
-      <Radio id="foo" label="bar" className="baz" name="qux" disabled={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    const props = { checked: true };
+    function onChange(event) {
+      props.checked = event.currentTarget.checked;
+    }
+    expect(htmlOfRendering(
+      <Radio id="foo" label="bar" className="baz" name="qux" checked={props.checked} onChange={onChange}/>,
+    )).resolves.toMatchSnapshot();
   });
 
   it('supports touch target', () => {
-    let component = renderer.create(
+    expect(htmlOfRendering(
       <Radio supportsTouch={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <Radio className="baz" disabled={true} supportsTouch={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
-      <Radio id="foo" label="bar" checked={true} supportsTouch={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(htmlOfRendering(
+      <Radio id="foo" label="bar" defaultChecked={true} supportsTouch={true}/>,
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <Radio label="bar" className="baz" name="qux" supportsTouch={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
-      <Radio id="foo" label="bar" className="baz" name="qux" disabled={true} supportsTouch={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    const props = { checked: true };
+    function onChange(event) {
+      props.checked = event.currentTarget.checked;
+    }
+    expect(htmlOfRendering(
+      <Radio id="foo" label="bar" className="baz" name="qux" checked={props.checked} onChange={onChange} supportsTouch={true}/>,
+    )).resolves.toMatchSnapshot();
   });
 });

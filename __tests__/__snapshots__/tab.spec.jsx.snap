@@ -1,211 +1,219 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tab and TabBar component render tab control 1`] = `
-<div
-  className="mdc-tab-bar"
-  role="tablist"
+"<div
+  class=\\"mdc-tab-bar\\"
+  role=\\"tablist\\"
 >
   <div
-    className="mdc-tab-scroller"
+    class=\\"mdc-tab-scroller\\"
   >
     <div
-      className="mdc-tab-scroller__scroll-area"
+      class=\\"mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll\\"
+      style=\\"margin-bottom: 0px;\\"
     >
       <div
-        className="mdc-tab-scroller__scroll-content"
+        class=\\"mdc-tab-scroller__scroll-content\\"
       >
         <button
-          aria-selected={true}
-          className="mdc-tab mdc-tab--active"
-          role="tab"
-          tabIndex="-1"
-          type="button"
+          aria-selected=\\"true\\"
+          class=\\"mdc-tab mdc-tab--active\\"
+          id=\\"mdc-tab-1\\"
+          role=\\"tab\\"
+          tabindex=\\"-1\\"
+          type=\\"button\\"
         >
           <span
-            className="mdc-tab__content"
+            class=\\"mdc-tab__content\\"
           >
             <span
-              className="mdc-tab__text-label"
+              class=\\"mdc-tab__text-label\\"
             >
               foo
             </span>
           </span>
           <span
-            className="mdc-tab-indicator mdc-tab-indicator--active"
+            class=\\"mdc-tab-indicator mdc-tab-indicator--active\\"
           >
             <span
-              className="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+              class=\\"mdc-tab-indicator__content mdc-tab-indicator__content--underline\\"
             />
           </span>
           <span
-            className="mdc-tab__ripple"
+            class=\\"mdc-tab__ripple\\"
           />
         </button>
         <button
-          className="mdc-tab"
-          role="tab"
-          tabIndex="-1"
-          type="button"
+          class=\\"mdc-tab\\"
+          id=\\"mdc-tab-2\\"
+          role=\\"tab\\"
+          tabindex=\\"-1\\"
+          type=\\"button\\"
         >
           <span
-            className="mdc-tab__content"
+            class=\\"mdc-tab__content\\"
           >
             <span
-              className="mdc-tab__text-label"
+              class=\\"mdc-tab__text-label\\"
             >
               bar
             </span>
           </span>
           <span
-            className="mdc-tab-indicator"
+            class=\\"mdc-tab-indicator\\"
           >
             <span
-              className="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+              class=\\"mdc-tab-indicator__content mdc-tab-indicator__content--underline\\"
             />
           </span>
           <span
-            className="mdc-tab__ripple"
+            class=\\"mdc-tab__ripple\\"
           />
         </button>
         <button
-          className="mdc-tab"
-          role="tab"
-          tabIndex="-1"
-          type="button"
+          class=\\"mdc-tab\\"
+          id=\\"mdc-tab-3\\"
+          role=\\"tab\\"
+          tabindex=\\"-1\\"
+          type=\\"button\\"
         >
           <span
-            className="mdc-tab__content"
+            class=\\"mdc-tab__content\\"
           >
             <span
-              className="mdc-tab__text-label"
+              class=\\"mdc-tab__text-label\\"
             >
               baz
             </span>
           </span>
           <span
-            className="mdc-tab-indicator"
+            class=\\"mdc-tab-indicator\\"
           >
             <span
-              className="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+              class=\\"mdc-tab-indicator__content mdc-tab-indicator__content--underline\\"
             />
           </span>
           <span
-            className="mdc-tab__ripple"
+            class=\\"mdc-tab__ripple\\"
           />
         </button>
       </div>
     </div>
   </div>
-</div>
+</div>"
 `;
 
 exports[`Tab and TabBar component render tab control 2`] = `
-<div
-  className="mdc-tab-bar tab-bar"
-  role="tablist"
+"<div
+  class=\\"mdc-tab-bar tab-bar\\"
+  role=\\"tablist\\"
 >
   <div
-    className="mdc-tab-scroller"
+    class=\\"mdc-tab-scroller\\"
   >
     <div
-      className="mdc-tab-scroller__scroll-area"
+      class=\\"mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll\\"
+      style=\\"margin-bottom: 0px;\\"
     >
       <div
-        className="mdc-tab-scroller__scroll-content"
+        class=\\"mdc-tab-scroller__scroll-content\\"
       >
         <button
-          className="mdc-tab tab"
-          role="tab"
-          tabIndex="-1"
-          type="button"
+          class=\\"mdc-tab tab\\"
+          id=\\"mdc-tab-4\\"
+          role=\\"tab\\"
+          tabindex=\\"-1\\"
+          type=\\"button\\"
         >
           <span
-            className="mdc-tab__content"
+            class=\\"mdc-tab__content\\"
           >
             <span
-              aria-hidden="true"
-              className="icon mdc-tab__icon"
+              aria-hidden=\\"true\\"
+              class=\\"icon mdc-tab__icon\\"
             >
               grade
             </span>
             <span
-              className="mdc-tab__text-label"
+              class=\\"mdc-tab__text-label\\"
             >
               foo
             </span>
           </span>
           <span
-            className="mdc-tab-indicator"
+            class=\\"mdc-tab-indicator\\"
           >
             <span
-              className="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+              class=\\"mdc-tab-indicator__content mdc-tab-indicator__content--underline\\"
             />
           </span>
           <span
-            className="mdc-tab__ripple"
+            class=\\"mdc-tab__ripple\\"
           />
         </button>
         <button
-          className="mdc-tab"
-          role="tab"
-          tabIndex="-1"
-          type="button"
+          class=\\"mdc-tab\\"
+          id=\\"mdc-tab-5\\"
+          role=\\"tab\\"
+          tabindex=\\"-1\\"
+          type=\\"button\\"
         >
           <span
-            className="mdc-tab__content"
+            class=\\"mdc-tab__content\\"
           >
             <span
-              aria-hidden="true"
-              className="material-icons mdc-tab__icon"
+              aria-hidden=\\"true\\"
+              class=\\"material-icons mdc-tab__icon\\"
             >
               favorite
             </span>
             <span
-              className="mdc-tab__text-label"
+              class=\\"mdc-tab__text-label\\"
             >
               bar
             </span>
           </span>
           <span
-            className="mdc-tab-indicator"
+            class=\\"mdc-tab-indicator\\"
           >
             <span
-              className="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+              class=\\"mdc-tab-indicator__content mdc-tab-indicator__content--underline\\"
             />
           </span>
           <span
-            className="mdc-tab__ripple"
+            class=\\"mdc-tab__ripple\\"
           />
         </button>
         <button
-          aria-selected={true}
-          className="mdc-tab mdc-tab--active tab"
-          role="tab"
-          tabIndex="-1"
-          type="button"
+          aria-selected=\\"true\\"
+          class=\\"mdc-tab mdc-tab--active tab\\"
+          id=\\"mdc-tab-6\\"
+          role=\\"tab\\"
+          tabindex=\\"-1\\"
+          type=\\"button\\"
         >
           <span
-            className="mdc-tab__content"
+            class=\\"mdc-tab__content\\"
           >
             <span
-              className="mdc-tab__text-label"
+              class=\\"mdc-tab__text-label\\"
             >
               baz
             </span>
           </span>
           <span
-            className="mdc-tab-indicator mdc-tab-indicator--active"
+            class=\\"mdc-tab-indicator mdc-tab-indicator--active\\"
           >
             <span
-              className="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+              class=\\"mdc-tab-indicator__content mdc-tab-indicator__content--underline\\"
             />
           </span>
           <span
-            className="mdc-tab__ripple"
+            class=\\"mdc-tab__ripple\\"
           />
         </button>
       </div>
     </div>
   </div>
-</div>
+</div>"
 `;

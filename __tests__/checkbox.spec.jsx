@@ -1,64 +1,60 @@
-/* global jest, describe, it, expect */
+/* global describe, it, expect */
+import 'regenerator-runtime/runtime';
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { htmlOfRendering } from './utils';
 
 import Checkbox from '../lib/checkbox';
 
-jest.mock('@material/checkbox');
-jest.mock('@material/form-field');
-
 describe('Checkbox component', () => {
-  it('supports checkbox', () => {
-    let component = renderer.create(
+  it('supports checkbox', async () => {
+    expect(htmlOfRendering(
       <Checkbox/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <Checkbox className="baz" disabled={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
-      <Checkbox id="foo" label="bar" checked={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(htmlOfRendering(
+      <Checkbox id="foo" label="bar" defaultChecked={true}/>,
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <Checkbox label="bar" className="baz" indeterminate={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
-      <Checkbox id="foo" label="bar" className="baz" disabled={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    const props = { checked: true };
+    function onChange(event) {
+      props.checked = event.currentTarget.checked;
+    }
+    expect(htmlOfRendering(
+      <Checkbox id="foo" label="bar" className="baz" checked={props.checked} onChange={onChange}/>,
+    )).resolves.toMatchSnapshot();
   });
 
   it('supports touch target', () => {
-    let component = renderer.create(
+    expect(htmlOfRendering(
       <Checkbox supportsTouch={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <Checkbox className="baz" disabled={true} supportsTouch={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
-      <Checkbox id="foo" label="bar" checked={true} supportsTouch={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(htmlOfRendering(
+      <Checkbox id="foo" label="bar" defaultChecked={true} supportsTouch={true}/>,
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <Checkbox label="bar" className="baz" indeterminate={true} supportsTouch={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
-      <Checkbox id="foo" label="bar" className="baz" disabled={true} supportsTouch={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    const props = { checked: true };
+    function onChange(event) {
+      props.checked = event.currentTarget.checked;
+    }
+    expect(htmlOfRendering(
+      <Checkbox id="foo" label="bar" className="baz" checked={props.checked} onChange={onChange} supportsTouch={true}/>,
+    )).resolves.toMatchSnapshot();
   });
 });

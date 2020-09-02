@@ -1,142 +1,116 @@
-/* global jest, describe, it, expect */
+/* global describe, it, expect */
+import 'regenerator-runtime/runtime';
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { htmlOfRendering } from './utils';
 
 import TextField from '../lib/textfield';
 
-jest.mock('@material/textfield');
-
 describe('TextField component', () => {
   it('supports filled text fields', () => {
-    let component = renderer.create(
+    expect(htmlOfRendering(
       <TextField/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField label="foo" placeholder="bar" required={true} disabled={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField label="foo" id="bar" defaultValue="baz" className="qux" pattern="[a-z]*"/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="filled" label="foo" id="bar" defaultValue="baz"/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField helperText="qux"/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField label="foo" placeholder="bar" required={true} disabled={true} helperText="qux" showsHelperPersistently={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField label="foo" id="bar" defaultValue="baz" className="qux" pattern="[a-z]*" helperText="qux" showsHelperAsValidation={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
   });
 
   it('supports outlined text fields', () => {
-    let component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="outlined"/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="outlined" label="foo" placeholder="bar" required={true} disabled={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="outlined" label="foo" id="bar" defaultValue="baz" className="qux" pattern="[a-z]*"/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="outlined" helperText="qux"/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="outlined" label="foo" placeholder="bar" required={true} disabled={true} helperText="qux" showsHelperPersistently={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="outlined" label="foo" id="bar" defaultValue="baz" className="qux" pattern="[a-z]*" helperText="qux" showsHelperAsValidation={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
   });
 
   it('supports outlined textareas', () => {
-    let component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="textarea"/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="textarea" resizable={true} placeholder="bar" required={true} disabled={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="textarea" id="bar" defaultValue="baz" className="qux" pattern="[a-z]*" rows={6} cols={40}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="textarea" resizable={true} helperText="qux"/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="textarea" label="foo" placeholder="bar" required={true} disabled={true} helperText="qux" showsHelperPersistently={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="textarea" label="foo" id="bar" defaultValue="baz" className="qux" pattern="[a-z]*" helperText="qux" showsHelperAsValidation={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
   });
 
   it('supports filled textareas', () => {
-    let component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="filled-textarea"/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="filled-textarea" resizable={true} placeholder="bar" required={true} disabled={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="filled-textarea" id="bar" defaultValue="baz" className="qux" pattern="[a-z]*" rows={6} cols={40}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="filled-textarea" resizable={true} helperText="qux"/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="filled-textarea" label="foo" placeholder="bar" required={true} disabled={true} helperText="qux" showsHelperPersistently={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
 
-    component = renderer.create(
+    expect(htmlOfRendering(
       <TextField variation="filled-textarea" label="foo" id="bar" defaultValue="baz" className="qux" pattern="[a-z]*" helperText="qux" showsHelperAsValidation={true}/>,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
+    )).resolves.toMatchSnapshot();
   });
 });

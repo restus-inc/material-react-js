@@ -1,215 +1,215 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button component supports contained buttons 1`] = `
-<button
-  className="mdc-button mdc-button--raised"
+"<button
+  class=\\"mdc-button mdc-button--raised\\"
 >
   <div
-    className="mdc-button__ripple"
+    class=\\"mdc-button__ripple\\"
   />
   <span
-    className="mdc-button__label"
+    class=\\"mdc-button__label\\"
   >
     foo
   </span>
-</button>
+</button>"
 `;
 
 exports[`Button component supports contained buttons 2`] = `
-<div
-  className="mdc-touch-target-wrapper"
+"<div
+  class=\\"mdc-touch-target-wrapper\\"
 >
   <button
-    className="mdc-button mdc-button--raised mdc-button--touch"
-    type="button"
+    class=\\"mdc-button mdc-button--raised mdc-button--touch\\"
+    type=\\"button\\"
   >
     <div
-      className="mdc-button__ripple"
+      class=\\"mdc-button__ripple\\"
     />
     <i
-      aria-hidden="true"
-      className="material-icons mdc-button__icon"
+      aria-hidden=\\"true\\"
+      class=\\"material-icons mdc-button__icon\\"
     >
       favorite
     </i>
     <span
-      className="mdc-button__label"
+      class=\\"mdc-button__label\\"
     >
       foo
     </span>
     <div
-      className="mdc-button__touch"
+      class=\\"mdc-button__touch\\"
     />
   </button>
-</div>
+</div>"
 `;
 
 exports[`Button component supports contained buttons 3`] = `
-<button
-  className="mdc-button mdc-button--raised bar"
-  disabled={true}
+"<button
+  class=\\"mdc-button mdc-button--raised bar\\"
+  disabled=\\"\\"
 >
   <div
-    className="mdc-button__ripple"
+    class=\\"mdc-button__ripple\\"
   />
   <i
-    aria-hidden="true"
-    className="fa fa-aws mdc-button__icon"
+    aria-hidden=\\"true\\"
+    class=\\"fa fa-aws mdc-button__icon\\"
   />
   <span
-    className="mdc-button__label"
+    class=\\"mdc-button__label\\"
   >
     foo
   </span>
-</button>
+</button>"
 `;
 
 exports[`Button component supports outlined buttons 1`] = `
-<button
-  className="mdc-button mdc-button--outlined"
+"<button
+  class=\\"mdc-button mdc-button--outlined\\"
 >
   <div
-    className="mdc-button__ripple"
+    class=\\"mdc-button__ripple\\"
   />
   <span
-    className="mdc-button__label"
+    class=\\"mdc-button__label\\"
   >
     foo
   </span>
-</button>
+</button>"
 `;
 
 exports[`Button component supports outlined buttons 2`] = `
-<div
-  className="mdc-touch-target-wrapper"
+"<div
+  class=\\"mdc-touch-target-wrapper\\"
 >
   <button
-    className="mdc-button mdc-button--outlined mdc-button--touch"
-    type="button"
+    class=\\"mdc-button mdc-button--outlined mdc-button--touch\\"
+    type=\\"button\\"
   >
     <div
-      className="mdc-button__ripple"
+      class=\\"mdc-button__ripple\\"
     />
     <i
-      aria-hidden="true"
-      className="material-icons mdc-button__icon"
+      aria-hidden=\\"true\\"
+      class=\\"material-icons mdc-button__icon\\"
     >
       favorite
     </i>
     <span
-      className="mdc-button__label"
+      class=\\"mdc-button__label\\"
     >
       foo
     </span>
     <div
-      className="mdc-button__touch"
+      class=\\"mdc-button__touch\\"
     />
   </button>
-</div>
+</div>"
 `;
 
 exports[`Button component supports outlined buttons 3`] = `
-<button
-  className="mdc-button mdc-button--outlined bar"
-  disabled={true}
+"<button
+  class=\\"mdc-button mdc-button--outlined bar\\"
+  disabled=\\"\\"
 >
   <div
-    className="mdc-button__ripple"
+    class=\\"mdc-button__ripple\\"
   />
   <i
-    aria-hidden="true"
-    className="fa fa-aws mdc-button__icon"
+    aria-hidden=\\"true\\"
+    class=\\"fa fa-aws mdc-button__icon\\"
   />
   <span
-    className="mdc-button__label"
+    class=\\"mdc-button__label\\"
   >
     foo
   </span>
-</button>
+</button>"
 `;
 
 exports[`Button component supports text buttons 1`] = `
-<button
-  className="mdc-button"
+"<button
+  class=\\"mdc-button\\"
 >
   <div
-    className="mdc-button__ripple"
+    class=\\"mdc-button__ripple\\"
   />
   <span
-    className="mdc-button__label"
+    class=\\"mdc-button__label\\"
   >
     foo
   </span>
-</button>
+</button>"
 `;
 
 exports[`Button component supports text buttons 2`] = `
-<div
-  className="mdc-touch-target-wrapper"
+"<div
+  class=\\"mdc-touch-target-wrapper\\"
 >
   <button
-    className="mdc-button mdc-button--touch"
-    type="button"
+    class=\\"mdc-button mdc-button--touch\\"
+    type=\\"button\\"
   >
     <div
-      className="mdc-button__ripple"
+      class=\\"mdc-button__ripple\\"
     />
     <i
-      aria-hidden="true"
-      className="material-icons mdc-button__icon"
+      aria-hidden=\\"true\\"
+      class=\\"material-icons mdc-button__icon\\"
     >
       favorite
     </i>
     <span
-      className="mdc-button__label"
+      class=\\"mdc-button__label\\"
     >
       foo
     </span>
     <div
-      className="mdc-button__touch"
+      class=\\"mdc-button__touch\\"
     />
   </button>
-</div>
+</div>"
 `;
 
 exports[`Button component supports text buttons 3`] = `
-<button
-  className="mdc-button bar"
+"<button
+  class=\\"mdc-button bar\\"
 >
   <div
-    className="mdc-button__ripple"
+    class=\\"mdc-button__ripple\\"
   />
   <i
-    aria-hidden="true"
-    className="fa fa-aws mdc-button__icon"
+    aria-hidden=\\"true\\"
+    class=\\"fa fa-aws mdc-button__icon\\"
   />
   <span
-    className="mdc-button__label"
+    class=\\"mdc-button__label\\"
   >
     foo
   </span>
-</button>
+</button>"
 `;
 
 exports[`Button component supports text buttons 4`] = `
-<button
-  className="mdc-button"
-  disabled={true}
-  type="reset"
+"<button
+  class=\\"mdc-button\\"
+  disabled=\\"\\"
+  type=\\"reset\\"
 >
   <div
-    className="mdc-button__ripple"
+    class=\\"mdc-button__ripple\\"
   />
   <i
-    aria-hidden="true"
-    className="material-icons mdc-button__icon"
+    aria-hidden=\\"true\\"
+    class=\\"material-icons mdc-button__icon\\"
   >
     favorite
   </i>
   <span
-    className="mdc-button__label"
+    class=\\"mdc-button__label\\"
   >
     foo
   </span>
-</button>
+</button>"
 `;

@@ -1,196 +1,196 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataTable component supports data table with column sorting 1`] = `
-<div
-  className="mdc-data-table"
+"<div
+  class=\\"mdc-data-table\\"
 >
   <div
-    className="mdc-data-table__table-container"
+    class=\\"mdc-data-table__table-container\\"
   >
     <table
-      className="mdc-data-table__table"
+      class=\\"mdc-data-table__table\\"
     >
       <thead>
         <tr
-          className="mdc-data-table__header-row"
+          class=\\"mdc-data-table__header-row\\"
         >
           <th
-            aria-sort="ascending"
-            className="mdc-data-table__header-cell mdc-data-table__header-cell--numeric id-cell mdc-data-table__header-cell--with-sort mdc-data-table__header-cell--sorted"
-            data-column-id="id"
-            role="columnheader"
-            scope="col"
+            aria-sort=\\"ascending\\"
+            class=\\"mdc-data-table__header-cell mdc-data-table__header-cell--numeric id-cell mdc-data-table__header-cell--with-sort mdc-data-table__header-cell--sorted\\"
+            data-column-id=\\"id\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             <div
-              className="mdc-data-table__header-cell-wrapper"
+              class=\\"mdc-data-table__header-cell-wrapper\\"
             >
               <button
-                className="mdc-icon-button material-icons mdc-data-table__sort-icon-button"
+                class=\\"mdc-icon-button material-icons mdc-data-table__sort-icon-button\\"
               >
                 arrow_upward
               </button>
               <div
-                className="mdc-data-table__header-cell-label"
+                class=\\"mdc-data-table__header-cell-label\\"
               >
                 ID
               </div>
               <div
-                aria-hidden="true"
-                className="mdc-data-table__sort-status-label"
+                aria-hidden=\\"true\\"
+                class=\\"mdc-data-table__sort-status-label\\"
               />
             </div>
           </th>
           <th
-            aria-sort="none"
-            className="mdc-data-table__header-cell composer-cell mdc-data-table__header-cell--with-sort"
-            data-column-id="composer-name"
-            role="columnheader"
-            scope="col"
+            aria-sort=\\"none\\"
+            class=\\"mdc-data-table__header-cell composer-cell mdc-data-table__header-cell--with-sort\\"
+            data-column-id=\\"composer-name\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             <div
-              className="mdc-data-table__header-cell-wrapper"
+              class=\\"mdc-data-table__header-cell-wrapper\\"
             >
               <div
-                className="mdc-data-table__header-cell-label"
+                class=\\"mdc-data-table__header-cell-label\\"
               >
                 Composer Name
               </div>
               <button
-                className="mdc-icon-button material-icons mdc-data-table__sort-icon-button"
+                class=\\"mdc-icon-button material-icons mdc-data-table__sort-icon-button\\"
               >
                 arrow_upward
               </button>
               <div
-                aria-hidden="true"
-                className="mdc-data-table__sort-status-label"
+                aria-hidden=\\"true\\"
+                class=\\"mdc-data-table__sort-status-label\\"
               />
             </div>
           </th>
           <th
-            className="mdc-data-table__header-cell none"
-            role="columnheader"
-            scope="col"
+            class=\\"mdc-data-table__header-cell none\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             
           </th>
         </tr>
       </thead>
       <tbody
-        className="mdc-data-table__content"
+        class=\\"mdc-data-table__content\\"
       >
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             1
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Wolfgang Amadeus Mozart
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./1"
+              href=\\"./1\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             2
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Ludwig van Beethoven
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./2"
+              href=\\"./2\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             3
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Antonio Vivaldi
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./3"
+              href=\\"./3\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             4
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           />
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./4"
+              href=\\"./4\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             5
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             George Frideric Handel
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./5"
+              href=\\"./5\\"
             >
               Show Details
             </a>
@@ -199,162 +199,162 @@ exports[`DataTable component supports data table with column sorting 1`] = `
       </tbody>
     </table>
   </div>
-</div>
+</div>"
 `;
 
 exports[`DataTable component supports data table with pagination 1`] = `
-<div
-  className="mdc-data-table"
+"<div
+  class=\\"mdc-data-table\\"
 >
   <div
-    className="mdc-data-table__table-container"
+    class=\\"mdc-data-table__table-container\\"
   >
     <table
-      className="mdc-data-table__table"
+      class=\\"mdc-data-table__table\\"
     >
       <thead>
         <tr
-          className="mdc-data-table__header-row"
+          class=\\"mdc-data-table__header-row\\"
         >
           <th
-            className="mdc-data-table__header-cell mdc-data-table__header-cell--numeric id-cell"
-            role="columnheader"
-            scope="col"
+            class=\\"mdc-data-table__header-cell mdc-data-table__header-cell--numeric id-cell\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             ID
           </th>
           <th
-            className="mdc-data-table__header-cell composer-cell"
-            role="columnheader"
-            scope="col"
+            class=\\"mdc-data-table__header-cell composer-cell\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             Composer Name
           </th>
           <th
-            className="mdc-data-table__header-cell none"
-            role="columnheader"
-            scope="col"
+            class=\\"mdc-data-table__header-cell none\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             
           </th>
         </tr>
       </thead>
       <tbody
-        className="mdc-data-table__content"
+        class=\\"mdc-data-table__content\\"
       >
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             1
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Wolfgang Amadeus Mozart
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./1"
+              href=\\"./1\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             2
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Ludwig van Beethoven
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./2"
+              href=\\"./2\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             3
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Antonio Vivaldi
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./3"
+              href=\\"./3\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             4
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           />
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./4"
+              href=\\"./4\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             5
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             George Frideric Handel
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./5"
+              href=\\"./5\\"
             >
               Show Details
             </a>
@@ -364,125 +364,126 @@ exports[`DataTable component supports data table with pagination 1`] = `
     </table>
   </div>
   <div
-    className="mdc-data-table__pagination"
+    class=\\"mdc-data-table__pagination\\"
   >
     <div
-      className="mdc-data-table__pagination-trailing"
+      class=\\"mdc-data-table__pagination-trailing\\"
     >
       <div
-        className="mdc-data-table__pagination-rows-per-page"
+        class=\\"mdc-data-table__pagination-rows-per-page\\"
       >
         <div
-          className="mdc-select mdc-select--outlined mdc-data-table__pagination-rows-per-page-select"
+          class=\\"mdc-select mdc-select--outlined mdc-data-table__pagination-rows-per-page-select\\"
         >
           <div
-            aria-disabled={null}
-            aria-haspopup="listbox"
-            aria-required={null}
-            className="mdc-select__anchor"
-            role="button"
+            aria-disabled=\\"false\\"
+            aria-haspopup=\\"listbox\\"
+            class=\\"mdc-select__anchor\\"
+            role=\\"button\\"
+            tabindex=\\"0\\"
           >
             
             <span
-              className="mdc-select__selected-text"
+              class=\\"mdc-select__selected-text\\"
             >
               10
             </span>
             <span
-              className="mdc-select__dropdown-icon"
+              class=\\"mdc-select__dropdown-icon\\"
             >
               <svg
-                className="mdc-select__dropdown-icon-graphic"
-                viewBox="7 10 10 5"
+                class=\\"mdc-select__dropdown-icon-graphic\\"
+                viewBox=\\"7 10 10 5\\"
               >
                 <polygon
-                  className="mdc-select__dropdown-icon-inactive"
-                  fillRule="evenodd"
-                  points="7 10 12 15 17 10"
-                  stroke="none"
+                  class=\\"mdc-select__dropdown-icon-inactive\\"
+                  fill-rule=\\"evenodd\\"
+                  points=\\"7 10 12 15 17 10\\"
+                  stroke=\\"none\\"
                 />
                 <polygon
-                  className="mdc-select__dropdown-icon-active"
-                  fillRule="evenodd"
-                  points="7 15 12 10 17 15"
-                  stroke="none"
+                  class=\\"mdc-select__dropdown-icon-active\\"
+                  fill-rule=\\"evenodd\\"
+                  points=\\"7 15 12 10 17 15\\"
+                  stroke=\\"none\\"
                 />
               </svg>
             </span>
             <span
-              className="mdc-notched-outline"
+              class=\\"mdc-notched-outline mdc-notched-outline--no-label\\"
             >
               <span
-                className="mdc-notched-outline__leading"
+                class=\\"mdc-notched-outline__leading\\"
               />
               <span
-                className="mdc-notched-outline__trailing"
+                class=\\"mdc-notched-outline__trailing\\"
               />
             </span>
           </div>
           <div
-            className="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
-            role="listbox"
+            class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
+            role=\\"listbox\\"
           >
             <ul
-              className="mdc-list"
+              class=\\"mdc-list\\"
             >
               <li
-                aria-selected="true"
-                className="mdc-list-item mdc-list-item--selected"
-                data-value="10"
-                role="option"
+                aria-selected=\\"true\\"
+                class=\\"mdc-list-item mdc-list-item--selected\\"
+                data-value=\\"10\\"
+                role=\\"option\\"
+                tabindex=\\"-1\\"
               >
                 <span
-                  className="mdc-list-item__ripple"
+                  class=\\"mdc-list-item__ripple\\"
                 />
                 <span
-                  className="mdc-list-item__text"
+                  class=\\"mdc-list-item__text\\"
                 >
                   10
                 </span>
               </li>
               <li
-                aria-selected={null}
-                className="mdc-list-item"
-                data-value="25"
-                role="option"
+                class=\\"mdc-list-item\\"
+                data-value=\\"25\\"
+                role=\\"option\\"
+                tabindex=\\"-1\\"
               >
                 <span
-                  className="mdc-list-item__ripple"
+                  class=\\"mdc-list-item__ripple\\"
                 />
                 <span
-                  className="mdc-list-item__text"
+                  class=\\"mdc-list-item__text\\"
                 >
                   25
                 </span>
               </li>
               <li
-                aria-selected={null}
-                className="mdc-list-item"
-                data-value="50"
-                role="option"
+                class=\\"mdc-list-item\\"
+                data-value=\\"50\\"
+                role=\\"option\\"
+                tabindex=\\"-1\\"
               >
                 <span
-                  className="mdc-list-item__ripple"
+                  class=\\"mdc-list-item__ripple\\"
                 />
                 <span
-                  className="mdc-list-item__text"
+                  class=\\"mdc-list-item__text\\"
                 >
                   50
                 </span>
               </li>
               <li
-                aria-selected={null}
-                className="mdc-list-item"
-                data-value="100"
-                role="option"
+                class=\\"mdc-list-item\\"
+                data-value=\\"100\\"
+                role=\\"option\\"
+                tabindex=\\"-1\\"
               >
                 <span
-                  className="mdc-list-item__ripple"
+                  class=\\"mdc-list-item__ripple\\"
                 />
                 <span
-                  className="mdc-list-item__text"
+                  class=\\"mdc-list-item__text\\"
                 >
                   100
                 </span>
@@ -492,42 +493,42 @@ exports[`DataTable component supports data table with pagination 1`] = `
         </div>
       </div>
       <div
-        className="mdc-data-table__pagination-navigation"
+        class=\\"mdc-data-table__pagination-navigation\\"
       >
         <button
-          className="mdc-icon-button material-icons mdc-data-table__pagination-button"
-          disabled={true}
+          class=\\"mdc-icon-button material-icons mdc-data-table__pagination-button\\"
+          disabled=\\"\\"
         >
           <div
-            className="mdc-button__icon"
+            class=\\"mdc-button__icon\\"
           >
             first_page
           </div>
         </button>
         <button
-          className="mdc-icon-button material-icons mdc-data-table__pagination-button"
-          disabled={true}
+          class=\\"mdc-icon-button material-icons mdc-data-table__pagination-button\\"
+          disabled=\\"\\"
         >
           <div
-            className="mdc-button__icon"
+            class=\\"mdc-button__icon\\"
           >
             chevron_left
           </div>
         </button>
         <button
-          className="mdc-icon-button material-icons mdc-data-table__pagination-button"
+          class=\\"mdc-icon-button material-icons mdc-data-table__pagination-button\\"
         >
           <div
-            className="mdc-button__icon"
+            class=\\"mdc-button__icon\\"
           >
             chevron_right
           </div>
         </button>
         <button
-          className="mdc-icon-button material-icons mdc-data-table__pagination-button"
+          class=\\"mdc-icon-button material-icons mdc-data-table__pagination-button\\"
         >
           <div
-            className="mdc-button__icon"
+            class=\\"mdc-button__icon\\"
           >
             last_page
           </div>
@@ -535,162 +536,162 @@ exports[`DataTable component supports data table with pagination 1`] = `
       </div>
     </div>
   </div>
-</div>
+</div>"
 `;
 
 exports[`DataTable component supports data table with pagination 2`] = `
-<div
-  className="mdc-data-table my-table"
+"<div
+  class=\\"mdc-data-table my-table\\"
 >
   <div
-    className="mdc-data-table__table-container"
+    class=\\"mdc-data-table__table-container\\"
   >
     <table
-      className="mdc-data-table__table"
+      class=\\"mdc-data-table__table\\"
     >
       <thead>
         <tr
-          className="mdc-data-table__header-row"
+          class=\\"mdc-data-table__header-row\\"
         >
           <th
-            className="mdc-data-table__header-cell mdc-data-table__header-cell--numeric id-cell"
-            role="columnheader"
-            scope="col"
+            class=\\"mdc-data-table__header-cell mdc-data-table__header-cell--numeric id-cell\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             ID
           </th>
           <th
-            className="mdc-data-table__header-cell composer-cell"
-            role="columnheader"
-            scope="col"
+            class=\\"mdc-data-table__header-cell composer-cell\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             Composer Name
           </th>
           <th
-            className="mdc-data-table__header-cell none"
-            role="columnheader"
-            scope="col"
+            class=\\"mdc-data-table__header-cell none\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             
           </th>
         </tr>
       </thead>
       <tbody
-        className="mdc-data-table__content"
+        class=\\"mdc-data-table__content\\"
       >
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             1
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Wolfgang Amadeus Mozart
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./1"
+              href=\\"./1\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             2
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Ludwig van Beethoven
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./2"
+              href=\\"./2\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             3
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Antonio Vivaldi
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./3"
+              href=\\"./3\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             4
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           />
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./4"
+              href=\\"./4\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             5
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             George Frideric Handel
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./5"
+              href=\\"./5\\"
             >
               Show Details
             </a>
@@ -700,115 +701,116 @@ exports[`DataTable component supports data table with pagination 2`] = `
     </table>
   </div>
   <div
-    className="mdc-data-table__pagination my-class"
+    class=\\"mdc-data-table__pagination my-class\\"
   >
     <div
-      className="mdc-data-table__pagination-trailing"
+      class=\\"mdc-data-table__pagination-trailing\\"
     >
       <div
-        className="mdc-data-table__pagination-rows-per-page"
+        class=\\"mdc-data-table__pagination-rows-per-page\\"
       >
         <div
-          className="mdc-data-table__pagination-rows-per-page-label"
+          class=\\"mdc-data-table__pagination-rows-per-page-label\\"
         >
           Rows per page
         </div>
         <div
-          className="mdc-select mdc-select--outlined mdc-data-table__pagination-rows-per-page-select"
+          class=\\"mdc-select mdc-select--outlined mdc-data-table__pagination-rows-per-page-select\\"
         >
           <div
-            aria-disabled={null}
-            aria-haspopup="listbox"
-            aria-required={null}
-            className="mdc-select__anchor"
-            role="button"
+            aria-disabled=\\"false\\"
+            aria-haspopup=\\"listbox\\"
+            class=\\"mdc-select__anchor\\"
+            role=\\"button\\"
+            tabindex=\\"0\\"
           >
             
             <span
-              className="mdc-select__selected-text"
+              class=\\"mdc-select__selected-text\\"
             >
               5
             </span>
             <span
-              className="mdc-select__dropdown-icon"
+              class=\\"mdc-select__dropdown-icon\\"
             >
               <svg
-                className="mdc-select__dropdown-icon-graphic"
-                viewBox="7 10 10 5"
+                class=\\"mdc-select__dropdown-icon-graphic\\"
+                viewBox=\\"7 10 10 5\\"
               >
                 <polygon
-                  className="mdc-select__dropdown-icon-inactive"
-                  fillRule="evenodd"
-                  points="7 10 12 15 17 10"
-                  stroke="none"
+                  class=\\"mdc-select__dropdown-icon-inactive\\"
+                  fill-rule=\\"evenodd\\"
+                  points=\\"7 10 12 15 17 10\\"
+                  stroke=\\"none\\"
                 />
                 <polygon
-                  className="mdc-select__dropdown-icon-active"
-                  fillRule="evenodd"
-                  points="7 15 12 10 17 15"
-                  stroke="none"
+                  class=\\"mdc-select__dropdown-icon-active\\"
+                  fill-rule=\\"evenodd\\"
+                  points=\\"7 15 12 10 17 15\\"
+                  stroke=\\"none\\"
                 />
               </svg>
             </span>
             <span
-              className="mdc-notched-outline"
+              class=\\"mdc-notched-outline mdc-notched-outline--no-label\\"
             >
               <span
-                className="mdc-notched-outline__leading"
+                class=\\"mdc-notched-outline__leading\\"
               />
               <span
-                className="mdc-notched-outline__trailing"
+                class=\\"mdc-notched-outline__trailing\\"
               />
             </span>
           </div>
           <div
-            className="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
-            role="listbox"
+            class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
+            role=\\"listbox\\"
           >
             <ul
-              className="mdc-list"
+              class=\\"mdc-list\\"
             >
               <li
-                aria-selected={null}
-                className="mdc-list-item"
-                data-value="3"
-                role="option"
+                class=\\"mdc-list-item\\"
+                data-value=\\"3\\"
+                role=\\"option\\"
+                tabindex=\\"-1\\"
               >
                 <span
-                  className="mdc-list-item__ripple"
+                  class=\\"mdc-list-item__ripple\\"
                 />
                 <span
-                  className="mdc-list-item__text"
+                  class=\\"mdc-list-item__text\\"
                 >
                   3
                 </span>
               </li>
               <li
-                aria-selected="true"
-                className="mdc-list-item mdc-list-item--selected"
-                data-value="5"
-                role="option"
+                aria-selected=\\"true\\"
+                class=\\"mdc-list-item mdc-list-item--selected\\"
+                data-value=\\"5\\"
+                role=\\"option\\"
+                tabindex=\\"-1\\"
               >
                 <span
-                  className="mdc-list-item__ripple"
+                  class=\\"mdc-list-item__ripple\\"
                 />
                 <span
-                  className="mdc-list-item__text"
+                  class=\\"mdc-list-item__text\\"
                 >
                   5
                 </span>
               </li>
               <li
-                aria-selected={null}
-                className="mdc-list-item"
-                data-value="10"
-                role="option"
+                class=\\"mdc-list-item\\"
+                data-value=\\"10\\"
+                role=\\"option\\"
+                tabindex=\\"-1\\"
               >
                 <span
-                  className="mdc-list-item__ripple"
+                  class=\\"mdc-list-item__ripple\\"
                 />
                 <span
-                  className="mdc-list-item__text"
+                  class=\\"mdc-list-item__text\\"
                 >
                   10
                 </span>
@@ -818,47 +820,47 @@ exports[`DataTable component supports data table with pagination 2`] = `
         </div>
       </div>
       <div
-        className="mdc-data-table__pagination-navigation"
+        class=\\"mdc-data-table__pagination-navigation\\"
       >
         <div
-          className="mdc-data-table__pagination-total"
+          class=\\"mdc-data-table__pagination-total\\"
         >
           96-100 of 100
         </div>
         <button
-          className="mdc-icon-button material-icons mdc-data-table__pagination-button"
+          class=\\"mdc-icon-button material-icons mdc-data-table__pagination-button\\"
         >
           <div
-            className="mdc-button__icon"
+            class=\\"mdc-button__icon\\"
           >
             first_page
           </div>
         </button>
         <button
-          className="mdc-icon-button material-icons mdc-data-table__pagination-button"
+          class=\\"mdc-icon-button material-icons mdc-data-table__pagination-button\\"
         >
           <div
-            className="mdc-button__icon"
+            class=\\"mdc-button__icon\\"
           >
             chevron_left
           </div>
         </button>
         <button
-          className="mdc-icon-button material-icons mdc-data-table__pagination-button"
-          disabled={true}
+          class=\\"mdc-icon-button material-icons mdc-data-table__pagination-button\\"
+          disabled=\\"\\"
         >
           <div
-            className="mdc-button__icon"
+            class=\\"mdc-button__icon\\"
           >
             chevron_right
           </div>
         </button>
         <button
-          className="mdc-icon-button material-icons mdc-data-table__pagination-button"
-          disabled={true}
+          class=\\"mdc-icon-button material-icons mdc-data-table__pagination-button\\"
+          disabled=\\"\\"
         >
           <div
-            className="mdc-button__icon"
+            class=\\"mdc-button__icon\\"
           >
             last_page
           </div>
@@ -866,364 +868,365 @@ exports[`DataTable component supports data table with pagination 2`] = `
       </div>
     </div>
   </div>
-</div>
+</div>"
 `;
 
 exports[`DataTable component supports data table with row selection 1`] = `
-<div
-  className="mdc-data-table"
+"<div
+  class=\\"mdc-data-table\\"
 >
   <div
-    className="mdc-data-table__table-container"
+    class=\\"mdc-data-table__table-container\\"
   >
     <table
-      className="mdc-data-table__table"
+      class=\\"mdc-data-table__table\\"
     >
       <thead>
         <tr
-          className="mdc-data-table__header-row"
+          class=\\"mdc-data-table__header-row\\"
         >
           <th
-            className="mdc-data-table__header-cell mdc-data-table__header-cell--checkbox"
-            role="columnheader"
-            scope="col"
+            class=\\"mdc-data-table__header-cell mdc-data-table__header-cell--checkbox\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             <div
-              className="mdc-checkbox mdc-data-table__header-row-checkbox"
+              class=\\"mdc-checkbox mdc-data-table__header-row-checkbox mdc-checkbox--upgraded mdc-checkbox--selected mdc-checkbox--anim-unchecked-indeterminate\\"
             >
               <input
-                aria-label="Toggle all rows"
-                className="mdc-checkbox__native-control"
-                type="checkbox"
+                aria-checked=\\"mixed\\"
+                aria-label=\\"Toggle all rows\\"
+                class=\\"mdc-checkbox__native-control\\"
+                type=\\"checkbox\\"
               />
               <div
-                className="mdc-checkbox__background"
+                class=\\"mdc-checkbox__background\\"
               >
                 <svg
-                  className="mdc-checkbox__checkmark"
-                  viewBox="0 0 24 24"
+                  class=\\"mdc-checkbox__checkmark\\"
+                  viewBox=\\"0 0 24 24\\"
                 >
                   <path
-                    className="mdc-checkbox__checkmark-path"
-                    d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                    fill="none"
+                    class=\\"mdc-checkbox__checkmark-path\\"
+                    d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+                    fill=\\"none\\"
                   />
                 </svg>
                 <div
-                  className="mdc-checkbox__mixedmark"
+                  class=\\"mdc-checkbox__mixedmark\\"
                 />
               </div>
               <div
-                className="mdc-checkbox__ripple"
+                class=\\"mdc-checkbox__ripple\\"
               />
             </div>
           </th>
           <th
-            className="mdc-data-table__header-cell mdc-data-table__header-cell--numeric id-cell"
-            role="columnheader"
-            scope="col"
+            class=\\"mdc-data-table__header-cell mdc-data-table__header-cell--numeric id-cell\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             ID
           </th>
           <th
-            className="mdc-data-table__header-cell composer-cell"
-            role="columnheader"
-            scope="col"
+            class=\\"mdc-data-table__header-cell composer-cell\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             Composer Name
           </th>
           <th
-            className="mdc-data-table__header-cell none"
-            role="columnheader"
-            scope="col"
+            class=\\"mdc-data-table__header-cell none\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             
           </th>
         </tr>
       </thead>
       <tbody
-        className="mdc-data-table__content"
+        class=\\"mdc-data-table__content\\"
       >
         <tr
-          className="mdc-data-table__row mdc-data-table__row--selected"
-          data-row-id={1}
+          class=\\"mdc-data-table__row mdc-data-table__row--selected\\"
+          data-row-id=\\"1\\"
         >
           <td
-            className="mdc-data-table__cell mdc-data-table__cell--checkbox"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--checkbox\\"
           >
             <div
-              className="mdc-checkbox mdc-checkbox--selected mdc-data-table__row-checkbox"
+              class=\\"mdc-checkbox mdc-checkbox--selected mdc-data-table__row-checkbox mdc-checkbox--upgraded\\"
             >
               <input
-                className="mdc-checkbox__native-control"
-                defaultChecked={true}
-                type="checkbox"
+                checked=\\"\\"
+                class=\\"mdc-checkbox__native-control\\"
+                type=\\"checkbox\\"
               />
               <div
-                className="mdc-checkbox__background"
+                class=\\"mdc-checkbox__background\\"
               >
                 <svg
-                  className="mdc-checkbox__checkmark"
-                  viewBox="0 0 24 24"
+                  class=\\"mdc-checkbox__checkmark\\"
+                  viewBox=\\"0 0 24 24\\"
                 >
                   <path
-                    className="mdc-checkbox__checkmark-path"
-                    d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                    fill="none"
+                    class=\\"mdc-checkbox__checkmark-path\\"
+                    d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+                    fill=\\"none\\"
                   />
                 </svg>
                 <div
-                  className="mdc-checkbox__mixedmark"
+                  class=\\"mdc-checkbox__mixedmark\\"
                 />
               </div>
               <div
-                className="mdc-checkbox__ripple"
+                class=\\"mdc-checkbox__ripple\\"
               />
             </div>
           </td>
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             1
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Wolfgang Amadeus Mozart
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./1"
+              href=\\"./1\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
-          data-row-id={2}
+          class=\\"mdc-data-table__row\\"
+          data-row-id=\\"2\\"
         >
           <td
-            className="mdc-data-table__cell mdc-data-table__cell--checkbox"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--checkbox\\"
           >
             <div
-              className="mdc-checkbox mdc-data-table__row-checkbox"
+              class=\\"mdc-checkbox mdc-data-table__row-checkbox mdc-checkbox--upgraded\\"
             >
               <input
-                className="mdc-checkbox__native-control"
-                type="checkbox"
+                class=\\"mdc-checkbox__native-control\\"
+                type=\\"checkbox\\"
               />
               <div
-                className="mdc-checkbox__background"
+                class=\\"mdc-checkbox__background\\"
               >
                 <svg
-                  className="mdc-checkbox__checkmark"
-                  viewBox="0 0 24 24"
+                  class=\\"mdc-checkbox__checkmark\\"
+                  viewBox=\\"0 0 24 24\\"
                 >
                   <path
-                    className="mdc-checkbox__checkmark-path"
-                    d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                    fill="none"
+                    class=\\"mdc-checkbox__checkmark-path\\"
+                    d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+                    fill=\\"none\\"
                   />
                 </svg>
                 <div
-                  className="mdc-checkbox__mixedmark"
+                  class=\\"mdc-checkbox__mixedmark\\"
                 />
               </div>
               <div
-                className="mdc-checkbox__ripple"
+                class=\\"mdc-checkbox__ripple\\"
               />
             </div>
           </td>
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             2
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Ludwig van Beethoven
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./2"
+              href=\\"./2\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
-          data-row-id={3}
+          class=\\"mdc-data-table__row\\"
+          data-row-id=\\"3\\"
         >
           <td
-            className="mdc-data-table__cell mdc-data-table__cell--checkbox"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--checkbox\\"
           >
             <div
-              className="mdc-checkbox mdc-data-table__row-checkbox"
+              class=\\"mdc-checkbox mdc-data-table__row-checkbox mdc-checkbox--upgraded\\"
             >
               <input
-                className="mdc-checkbox__native-control"
-                type="checkbox"
+                class=\\"mdc-checkbox__native-control\\"
+                type=\\"checkbox\\"
               />
               <div
-                className="mdc-checkbox__background"
+                class=\\"mdc-checkbox__background\\"
               >
                 <svg
-                  className="mdc-checkbox__checkmark"
-                  viewBox="0 0 24 24"
+                  class=\\"mdc-checkbox__checkmark\\"
+                  viewBox=\\"0 0 24 24\\"
                 >
                   <path
-                    className="mdc-checkbox__checkmark-path"
-                    d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                    fill="none"
+                    class=\\"mdc-checkbox__checkmark-path\\"
+                    d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+                    fill=\\"none\\"
                   />
                 </svg>
                 <div
-                  className="mdc-checkbox__mixedmark"
+                  class=\\"mdc-checkbox__mixedmark\\"
                 />
               </div>
               <div
-                className="mdc-checkbox__ripple"
+                class=\\"mdc-checkbox__ripple\\"
               />
             </div>
           </td>
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             3
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Antonio Vivaldi
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./3"
+              href=\\"./3\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row mdc-data-table__row--selected"
-          data-row-id={4}
+          class=\\"mdc-data-table__row mdc-data-table__row--selected\\"
+          data-row-id=\\"4\\"
         >
           <td
-            className="mdc-data-table__cell mdc-data-table__cell--checkbox"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--checkbox\\"
           >
             <div
-              className="mdc-checkbox mdc-checkbox--selected mdc-data-table__row-checkbox"
+              class=\\"mdc-checkbox mdc-checkbox--selected mdc-data-table__row-checkbox mdc-checkbox--upgraded\\"
             >
               <input
-                className="mdc-checkbox__native-control"
-                defaultChecked={true}
-                type="checkbox"
+                checked=\\"\\"
+                class=\\"mdc-checkbox__native-control\\"
+                type=\\"checkbox\\"
               />
               <div
-                className="mdc-checkbox__background"
+                class=\\"mdc-checkbox__background\\"
               >
                 <svg
-                  className="mdc-checkbox__checkmark"
-                  viewBox="0 0 24 24"
+                  class=\\"mdc-checkbox__checkmark\\"
+                  viewBox=\\"0 0 24 24\\"
                 >
                   <path
-                    className="mdc-checkbox__checkmark-path"
-                    d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                    fill="none"
+                    class=\\"mdc-checkbox__checkmark-path\\"
+                    d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+                    fill=\\"none\\"
                   />
                 </svg>
                 <div
-                  className="mdc-checkbox__mixedmark"
+                  class=\\"mdc-checkbox__mixedmark\\"
                 />
               </div>
               <div
-                className="mdc-checkbox__ripple"
+                class=\\"mdc-checkbox__ripple\\"
               />
             </div>
           </td>
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             4
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           />
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./4"
+              href=\\"./4\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
-          data-row-id={5}
+          class=\\"mdc-data-table__row\\"
+          data-row-id=\\"5\\"
         >
           <td
-            className="mdc-data-table__cell mdc-data-table__cell--checkbox"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--checkbox\\"
           >
             <div
-              className="mdc-checkbox mdc-data-table__row-checkbox"
+              class=\\"mdc-checkbox mdc-data-table__row-checkbox mdc-checkbox--upgraded\\"
             >
               <input
-                className="mdc-checkbox__native-control"
-                type="checkbox"
+                class=\\"mdc-checkbox__native-control\\"
+                type=\\"checkbox\\"
               />
               <div
-                className="mdc-checkbox__background"
+                class=\\"mdc-checkbox__background\\"
               >
                 <svg
-                  className="mdc-checkbox__checkmark"
-                  viewBox="0 0 24 24"
+                  class=\\"mdc-checkbox__checkmark\\"
+                  viewBox=\\"0 0 24 24\\"
                 >
                   <path
-                    className="mdc-checkbox__checkmark-path"
-                    d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                    fill="none"
+                    class=\\"mdc-checkbox__checkmark-path\\"
+                    d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+                    fill=\\"none\\"
                   />
                 </svg>
                 <div
-                  className="mdc-checkbox__mixedmark"
+                  class=\\"mdc-checkbox__mixedmark\\"
                 />
               </div>
               <div
-                className="mdc-checkbox__ripple"
+                class=\\"mdc-checkbox__ripple\\"
               />
             </div>
           </td>
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             5
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             George Frideric Handel
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./5"
+              href=\\"./5\\"
             >
               Show Details
             </a>
@@ -1232,162 +1235,162 @@ exports[`DataTable component supports data table with row selection 1`] = `
       </tbody>
     </table>
   </div>
-</div>
+</div>"
 `;
 
 exports[`DataTable component supports standard data table 1`] = `
-<div
-  className="mdc-data-table"
+"<div
+  class=\\"mdc-data-table\\"
 >
   <div
-    className="mdc-data-table__table-container"
+    class=\\"mdc-data-table__table-container\\"
   >
     <table
-      className="mdc-data-table__table"
+      class=\\"mdc-data-table__table\\"
     >
       <thead>
         <tr
-          className="mdc-data-table__header-row"
+          class=\\"mdc-data-table__header-row\\"
         >
           <th
-            className="mdc-data-table__header-cell mdc-data-table__header-cell--numeric id-cell"
-            role="columnheader"
-            scope="col"
+            class=\\"mdc-data-table__header-cell mdc-data-table__header-cell--numeric id-cell\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             ID
           </th>
           <th
-            className="mdc-data-table__header-cell composer-cell"
-            role="columnheader"
-            scope="col"
+            class=\\"mdc-data-table__header-cell composer-cell\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             Composer Name
           </th>
           <th
-            className="mdc-data-table__header-cell none"
-            role="columnheader"
-            scope="col"
+            class=\\"mdc-data-table__header-cell none\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
           >
             
           </th>
         </tr>
       </thead>
       <tbody
-        className="mdc-data-table__content"
+        class=\\"mdc-data-table__content\\"
       >
         <tr
-          className="mdc-data-table__row odd"
+          class=\\"mdc-data-table__row odd\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             1
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Wolfgang Amadeus Mozart
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./1"
+              href=\\"./1\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row even"
+          class=\\"mdc-data-table__row even\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             2
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Ludwig van Beethoven
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./2"
+              href=\\"./2\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row odd"
+          class=\\"mdc-data-table__row odd\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             3
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Antonio Vivaldi
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./3"
+              href=\\"./3\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row even"
+          class=\\"mdc-data-table__row even\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             4
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           />
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./4"
+              href=\\"./4\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row odd"
+          class=\\"mdc-data-table__row odd\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             5
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             George Frideric Handel
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./5"
+              href=\\"./5\\"
             >
               Show Details
             </a>
@@ -1396,135 +1399,135 @@ exports[`DataTable component supports standard data table 1`] = `
       </tbody>
     </table>
   </div>
-</div>
+</div>"
 `;
 
 exports[`DataTable component supports standard data table 2`] = `
-<div
-  className="mdc-data-table my-table"
+"<div
+  class=\\"mdc-data-table my-table\\"
 >
   <div
-    className="mdc-data-table__table-container"
+    class=\\"mdc-data-table__table-container\\"
   >
     <table
-      className="mdc-data-table__table"
+      class=\\"mdc-data-table__table\\"
     >
       <tbody
-        className="mdc-data-table__content"
+        class=\\"mdc-data-table__content\\"
       >
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             1
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Wolfgang Amadeus Mozart
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./1"
+              href=\\"./1\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             2
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Ludwig van Beethoven
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./2"
+              href=\\"./2\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             3
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             Antonio Vivaldi
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./3"
+              href=\\"./3\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             4
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           />
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./4"
+              href=\\"./4\\"
             >
               Show Details
             </a>
           </td>
         </tr>
         <tr
-          className="mdc-data-table__row"
+          class=\\"mdc-data-table__row\\"
         >
           <th
-            className="mdc-data-table__cell mdc-data-table__cell--numeric id-cell"
-            scope="row"
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
           >
             5
           </th>
           <td
-            className="mdc-data-table__cell composer-cell composer-body-cell"
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
           >
             George Frideric Handel
           </td>
           <td
-            className="mdc-data-table__cell"
+            class=\\"mdc-data-table__cell\\"
           >
             <a
-              href="./5"
+              href=\\"./5\\"
             >
               Show Details
             </a>
@@ -1533,5 +1536,5 @@ exports[`DataTable component supports standard data table 2`] = `
       </tbody>
     </table>
   </div>
-</div>
+</div>"
 `;

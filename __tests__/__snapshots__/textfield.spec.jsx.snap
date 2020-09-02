@@ -1,820 +1,817 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextField component supports filled text fields 1`] = `
-<label
-  className="mdc-text-field mdc-text-field--no-label mdc-text-field--filled"
+"<label
+  class=\\"mdc-text-field mdc-text-field--no-label mdc-text-field--filled\\"
 >
   <span
-    className="mdc-text-field__ripple"
+    class=\\"mdc-text-field__ripple\\"
   />
   <input
-    className="mdc-text-field__input"
-    type="text"
+    class=\\"mdc-text-field__input\\"
+    type=\\"text\\"
+    value=\\"\\"
   />
   <span
-    className="mdc-line-ripple"
+    class=\\"mdc-line-ripple\\"
   />
-</label>
+</label>"
 `;
 
 exports[`TextField component supports filled text fields 2`] = `
-<label
-  className="mdc-text-field mdc-text-field--disabled mdc-text-field--filled"
+"<label
+  class=\\"mdc-text-field mdc-text-field--disabled mdc-text-field--filled\\"
 >
   <span
-    className="mdc-text-field__ripple"
+    class=\\"mdc-text-field__ripple\\"
   />
   <input
-    className="mdc-text-field__input"
-    disabled={true}
-    placeholder="bar"
-    required={true}
-    type="text"
+    class=\\"mdc-text-field__input\\"
+    disabled=\\"\\"
+    placeholder=\\"bar\\"
+    required=\\"\\"
+    type=\\"text\\"
+    value=\\"\\"
   />
   <span
-    className="mdc-floating-label"
+    class=\\"mdc-floating-label mdc-floating-label--required\\"
   >
     foo
   </span>
   <span
-    className="mdc-line-ripple"
+    class=\\"mdc-line-ripple\\"
   />
-</label>
+</label>"
 `;
 
 exports[`TextField component supports filled text fields 3`] = `
-<label
-  className="mdc-text-field mdc-text-field--label-floating mdc-text-field--filled qux"
+"<label
+  class=\\"mdc-text-field mdc-text-field--label-floating mdc-text-field--filled qux\\"
 >
   <span
-    className="mdc-text-field__ripple"
+    class=\\"mdc-text-field__ripple\\"
   />
   <input
-    aria-labelledby="bar-label"
-    className="mdc-text-field__input"
-    defaultValue="baz"
-    id="bar"
-    name="bar"
-    pattern="[a-z]*"
-    type="text"
+    aria-labelledby=\\"bar-label\\"
+    class=\\"mdc-text-field__input\\"
+    id=\\"bar\\"
+    name=\\"bar\\"
+    pattern=\\"[a-z]*\\"
+    type=\\"text\\"
+    value=\\"baz\\"
   />
   <span
-    className="mdc-floating-label mdc-floating-label--float-above"
-    id="bar-label"
+    class=\\"mdc-floating-label mdc-floating-label--float-above\\"
+    id=\\"bar-label\\"
   >
     foo
   </span>
   <span
-    className="mdc-line-ripple"
+    class=\\"mdc-line-ripple\\"
   />
-</label>
+</label>"
 `;
 
 exports[`TextField component supports filled text fields 4`] = `
-<label
-  className="mdc-text-field mdc-text-field--label-floating mdc-text-field--filled"
+"<label
+  class=\\"mdc-text-field mdc-text-field--label-floating mdc-text-field--filled\\"
 >
   <span
-    className="mdc-text-field__ripple"
+    class=\\"mdc-text-field__ripple\\"
   />
   <input
-    aria-labelledby="bar-label"
-    className="mdc-text-field__input"
-    defaultValue="baz"
-    id="bar"
-    name="bar"
-    type="text"
+    aria-labelledby=\\"bar-label\\"
+    class=\\"mdc-text-field__input\\"
+    id=\\"bar\\"
+    name=\\"bar\\"
+    type=\\"text\\"
+    value=\\"baz\\"
   />
   <span
-    className="mdc-floating-label mdc-floating-label--float-above"
-    id="bar-label"
+    class=\\"mdc-floating-label mdc-floating-label--float-above\\"
+    id=\\"bar-label\\"
   >
     foo
   </span>
   <span
-    className="mdc-line-ripple"
+    class=\\"mdc-line-ripple\\"
   />
-</label>
+</label>"
 `;
 
 exports[`TextField component supports filled text fields 5`] = `
-Array [
-  <label
-    className="mdc-text-field mdc-text-field--no-label mdc-text-field--filled"
-  >
-    <span
-      className="mdc-text-field__ripple"
-    />
-    <input
-      className="mdc-text-field__input"
-      type="text"
-    />
-    <span
-      className="mdc-line-ripple"
-    />
-  </label>,
+"<label
+  class=\\"mdc-text-field mdc-text-field--no-label mdc-text-field--filled\\"
+>
+  <span
+    class=\\"mdc-text-field__ripple\\"
+  />
+  <input
+    class=\\"mdc-text-field__input\\"
+    type=\\"text\\"
+    value=\\"\\"
+  />
+  <span
+    class=\\"mdc-line-ripple\\"
+  />
+</label>
+<div
+  class=\\"mdc-text-field-helper-line\\"
+>
   <div
-    className="mdc-text-field-helper-line"
+    aria-hidden=\\"true\\"
+    class=\\"mdc-text-field-helper-text\\"
   >
-    <div
-      aria-hidden="true"
-      className="mdc-text-field-helper-text"
-    >
-      qux
-    </div>
-  </div>,
-]
+    qux
+  </div>
+</div>"
 `;
 
 exports[`TextField component supports filled text fields 6`] = `
-Array [
-  <label
-    className="mdc-text-field mdc-text-field--disabled mdc-text-field--filled"
+"<label
+  class=\\"mdc-text-field mdc-text-field--disabled mdc-text-field--filled\\"
+>
+  <span
+    class=\\"mdc-text-field__ripple\\"
+  />
+  <input
+    class=\\"mdc-text-field__input\\"
+    disabled=\\"\\"
+    placeholder=\\"bar\\"
+    required=\\"\\"
+    type=\\"text\\"
+    value=\\"\\"
+  />
+  <span
+    class=\\"mdc-floating-label mdc-floating-label--required\\"
   >
-    <span
-      className="mdc-text-field__ripple"
-    />
-    <input
-      className="mdc-text-field__input"
-      disabled={true}
-      placeholder="bar"
-      required={true}
-      type="text"
-    />
-    <span
-      className="mdc-floating-label"
-    >
-      foo
-    </span>
-    <span
-      className="mdc-line-ripple"
-    />
-  </label>,
+    foo
+  </span>
+  <span
+    class=\\"mdc-line-ripple\\"
+  />
+</label>
+<div
+  class=\\"mdc-text-field-helper-line\\"
+>
   <div
-    className="mdc-text-field-helper-line"
+    aria-hidden=\\"true\\"
+    class=\\"mdc-text-field-helper-text mdc-text-field-helper-text--persistent\\"
   >
-    <div
-      aria-hidden="true"
-      className="mdc-text-field-helper-text mdc-text-field-helper-text--persistent"
-    >
-      qux
-    </div>
-  </div>,
-]
+    qux
+  </div>
+</div>"
 `;
 
 exports[`TextField component supports filled text fields 7`] = `
-Array [
-  <label
-    className="mdc-text-field mdc-text-field--label-floating mdc-text-field--filled qux"
+"<label
+  class=\\"mdc-text-field mdc-text-field--label-floating mdc-text-field--filled qux\\"
+>
+  <span
+    class=\\"mdc-text-field__ripple\\"
+  />
+  <input
+    aria-controls=\\"bar-helper\\"
+    aria-describedby=\\"bar-helper\\"
+    aria-labelledby=\\"bar-label\\"
+    class=\\"mdc-text-field__input\\"
+    id=\\"bar\\"
+    name=\\"bar\\"
+    pattern=\\"[a-z]*\\"
+    type=\\"text\\"
+    value=\\"baz\\"
+  />
+  <span
+    class=\\"mdc-floating-label mdc-floating-label--float-above\\"
+    id=\\"bar-label\\"
   >
-    <span
-      className="mdc-text-field__ripple"
-    />
-    <input
-      aria-controls="bar-helper"
-      aria-describedby="bar-helper"
-      aria-labelledby="bar-label"
-      className="mdc-text-field__input"
-      defaultValue="baz"
-      id="bar"
-      name="bar"
-      pattern="[a-z]*"
-      type="text"
-    />
-    <span
-      className="mdc-floating-label mdc-floating-label--float-above"
-      id="bar-label"
-    >
-      foo
-    </span>
-    <span
-      className="mdc-line-ripple"
-    />
-  </label>,
+    foo
+  </span>
+  <span
+    class=\\"mdc-line-ripple\\"
+  />
+</label>
+<div
+  class=\\"mdc-text-field-helper-line\\"
+>
   <div
-    className="mdc-text-field-helper-line"
+    aria-hidden=\\"true\\"
+    class=\\"mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg\\"
+    id=\\"bar-helper\\"
   >
-    <div
-      aria-hidden="true"
-      className="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
-      id="bar-helper"
-    >
-      qux
-    </div>
-  </div>,
-]
+    qux
+  </div>
+</div>"
 `;
 
 exports[`TextField component supports filled textareas 1`] = `
-<label
-  className="mdc-text-field mdc-text-field--no-label mdc-text-field--filled mdc-text-field--textarea"
+"<label
+  class=\\"mdc-text-field mdc-text-field--no-label mdc-text-field--filled mdc-text-field--textarea\\"
 >
   <span
-    className="mdc-text-field__ripple"
+    class=\\"mdc-text-field__ripple\\"
   />
   <textarea
-    className="mdc-text-field__input"
-    cols={32}
-    rows={4}
+    class=\\"mdc-text-field__input\\"
+    cols=\\"32\\"
+    rows=\\"4\\"
   />
   <span
-    className="mdc-line-ripple"
+    class=\\"mdc-line-ripple\\"
   />
-</label>
+</label>"
 `;
 
 exports[`TextField component supports filled textareas 2`] = `
-<label
-  className="mdc-text-field mdc-text-field--no-label mdc-text-field--disabled mdc-text-field--filled mdc-text-field--textarea"
+"<label
+  class=\\"mdc-text-field mdc-text-field--no-label mdc-text-field--disabled mdc-text-field--filled mdc-text-field--textarea\\"
 >
   <span
-    className="mdc-text-field__ripple"
+    class=\\"mdc-text-field__ripple\\"
   />
   <span
-    className="mdc-text-field__resizer"
+    class=\\"mdc-text-field__resizer\\"
   >
     <textarea
-      className="mdc-text-field__input"
-      cols={32}
-      disabled={true}
-      placeholder="bar"
-      required={true}
-      rows={4}
+      class=\\"mdc-text-field__input\\"
+      cols=\\"32\\"
+      disabled=\\"\\"
+      placeholder=\\"bar\\"
+      required=\\"\\"
+      rows=\\"4\\"
     />
   </span>
   <span
-    className="mdc-line-ripple"
+    class=\\"mdc-line-ripple\\"
   />
-</label>
+</label>"
 `;
 
 exports[`TextField component supports filled textareas 3`] = `
-<label
-  className="mdc-text-field mdc-text-field--no-label mdc-text-field--label-floating mdc-text-field--filled mdc-text-field--textarea qux"
+"<label
+  class=\\"mdc-text-field mdc-text-field--no-label mdc-text-field--label-floating mdc-text-field--filled mdc-text-field--textarea qux\\"
 >
   <span
-    className="mdc-text-field__ripple"
+    class=\\"mdc-text-field__ripple\\"
   />
   <textarea
-    className="mdc-text-field__input"
-    cols={40}
-    defaultValue="baz"
-    id="bar"
-    name="bar"
-    pattern="[a-z]*"
-    rows={6}
-  />
+    class=\\"mdc-text-field__input\\"
+    cols=\\"40\\"
+    id=\\"bar\\"
+    name=\\"bar\\"
+    pattern=\\"[a-z]*\\"
+    rows=\\"6\\"
+  >
+    baz
+  </textarea>
   <span
-    className="mdc-line-ripple"
+    class=\\"mdc-line-ripple\\"
   />
-</label>
+</label>"
 `;
 
 exports[`TextField component supports filled textareas 4`] = `
-Array [
-  <label
-    className="mdc-text-field mdc-text-field--no-label mdc-text-field--filled mdc-text-field--textarea"
+"<label
+  class=\\"mdc-text-field mdc-text-field--no-label mdc-text-field--filled mdc-text-field--textarea\\"
+>
+  <span
+    class=\\"mdc-text-field__ripple\\"
+  />
+  <span
+    class=\\"mdc-text-field__resizer\\"
   >
-    <span
-      className="mdc-text-field__ripple"
+    <textarea
+      class=\\"mdc-text-field__input\\"
+      cols=\\"32\\"
+      rows=\\"4\\"
     />
-    <span
-      className="mdc-text-field__resizer"
-    >
-      <textarea
-        className="mdc-text-field__input"
-        cols={32}
-        rows={4}
-      />
-    </span>
-    <span
-      className="mdc-line-ripple"
-    />
-  </label>,
+  </span>
+  <span
+    class=\\"mdc-line-ripple\\"
+  />
+</label>
+<div
+  class=\\"mdc-text-field-helper-line\\"
+>
   <div
-    className="mdc-text-field-helper-line"
+    aria-hidden=\\"true\\"
+    class=\\"mdc-text-field-helper-text\\"
   >
-    <div
-      aria-hidden="true"
-      className="mdc-text-field-helper-text"
-    >
-      qux
-    </div>
-  </div>,
-]
+    qux
+  </div>
+</div>"
 `;
 
 exports[`TextField component supports filled textareas 5`] = `
-Array [
-  <label
-    className="mdc-text-field mdc-text-field--disabled mdc-text-field--filled mdc-text-field--textarea"
+"<label
+  class=\\"mdc-text-field mdc-text-field--disabled mdc-text-field--filled mdc-text-field--textarea\\"
+>
+  <span
+    class=\\"mdc-text-field__ripple\\"
+  />
+  <textarea
+    class=\\"mdc-text-field__input\\"
+    cols=\\"32\\"
+    disabled=\\"\\"
+    placeholder=\\"bar\\"
+    required=\\"\\"
+    rows=\\"4\\"
+  />
+  <span
+    class=\\"mdc-floating-label mdc-floating-label--required\\"
   >
-    <span
-      className="mdc-text-field__ripple"
-    />
-    <textarea
-      className="mdc-text-field__input"
-      cols={32}
-      disabled={true}
-      placeholder="bar"
-      required={true}
-      rows={4}
-    />
-    <span
-      className="mdc-floating-label"
-    >
-      foo
-    </span>
-    <span
-      className="mdc-line-ripple"
-    />
-  </label>,
+    foo
+  </span>
+  <span
+    class=\\"mdc-line-ripple\\"
+  />
+</label>
+<div
+  class=\\"mdc-text-field-helper-line\\"
+>
   <div
-    className="mdc-text-field-helper-line"
+    aria-hidden=\\"true\\"
+    class=\\"mdc-text-field-helper-text mdc-text-field-helper-text--persistent\\"
   >
-    <div
-      aria-hidden="true"
-      className="mdc-text-field-helper-text mdc-text-field-helper-text--persistent"
-    >
-      qux
-    </div>
-  </div>,
-]
+    qux
+  </div>
+</div>"
 `;
 
 exports[`TextField component supports filled textareas 6`] = `
-Array [
-  <label
-    className="mdc-text-field mdc-text-field--label-floating mdc-text-field--filled mdc-text-field--textarea qux"
+"<label
+  class=\\"mdc-text-field mdc-text-field--label-floating mdc-text-field--filled mdc-text-field--textarea qux\\"
+>
+  <span
+    class=\\"mdc-text-field__ripple\\"
+  />
+  <textarea
+    aria-controls=\\"bar-helper\\"
+    aria-describedby=\\"bar-helper\\"
+    aria-labelledby=\\"bar-label\\"
+    class=\\"mdc-text-field__input\\"
+    cols=\\"32\\"
+    id=\\"bar\\"
+    name=\\"bar\\"
+    pattern=\\"[a-z]*\\"
+    rows=\\"4\\"
   >
-    <span
-      className="mdc-text-field__ripple"
-    />
-    <textarea
-      aria-controls="bar-helper"
-      aria-describedby="bar-helper"
-      aria-labelledby="bar-label"
-      className="mdc-text-field__input"
-      cols={32}
-      defaultValue="baz"
-      id="bar"
-      name="bar"
-      pattern="[a-z]*"
-      rows={4}
-    />
-    <span
-      className="mdc-floating-label mdc-floating-label--float-above"
-      id="bar-label"
-    >
-      foo
-    </span>
-    <span
-      className="mdc-line-ripple"
-    />
-  </label>,
+    baz
+  </textarea>
+  <span
+    class=\\"mdc-floating-label mdc-floating-label--float-above\\"
+    id=\\"bar-label\\"
+  >
+    foo
+  </span>
+  <span
+    class=\\"mdc-line-ripple\\"
+  />
+</label>
+<div
+  class=\\"mdc-text-field-helper-line\\"
+>
   <div
-    className="mdc-text-field-helper-line"
+    aria-hidden=\\"true\\"
+    class=\\"mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg\\"
+    id=\\"bar-helper\\"
   >
-    <div
-      aria-hidden="true"
-      className="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
-      id="bar-helper"
-    >
-      qux
-    </div>
-  </div>,
-]
+    qux
+  </div>
+</div>"
 `;
 
 exports[`TextField component supports outlined text fields 1`] = `
-<label
-  className="mdc-text-field mdc-text-field--no-label mdc-text-field--outlined"
+"<label
+  class=\\"mdc-text-field mdc-text-field--no-label mdc-text-field--outlined\\"
 >
   <input
-    className="mdc-text-field__input"
-    type="text"
+    class=\\"mdc-text-field__input\\"
+    type=\\"text\\"
+    value=\\"\\"
   />
   <span
-    className="mdc-notched-outline"
+    class=\\"mdc-notched-outline mdc-notched-outline--no-label\\"
   >
     <span
-      className="mdc-notched-outline__leading"
+      class=\\"mdc-notched-outline__leading\\"
     />
     <span
-      className="mdc-notched-outline__trailing"
+      class=\\"mdc-notched-outline__trailing\\"
     />
   </span>
-</label>
+</label>"
 `;
 
 exports[`TextField component supports outlined text fields 2`] = `
-<label
-  className="mdc-text-field mdc-text-field--disabled mdc-text-field--outlined"
+"<label
+  class=\\"mdc-text-field mdc-text-field--disabled mdc-text-field--outlined\\"
 >
   <input
-    className="mdc-text-field__input"
-    disabled={true}
-    placeholder="bar"
-    required={true}
-    type="text"
+    class=\\"mdc-text-field__input\\"
+    disabled=\\"\\"
+    placeholder=\\"bar\\"
+    required=\\"\\"
+    type=\\"text\\"
+    value=\\"\\"
   />
   <span
-    className="mdc-notched-outline"
+    class=\\"mdc-notched-outline mdc-notched-outline--upgraded\\"
   >
     <span
-      className="mdc-notched-outline__leading"
+      class=\\"mdc-notched-outline__leading\\"
     />
     <span
-      className="mdc-notched-outline__notch"
+      class=\\"mdc-notched-outline__notch\\"
     >
       <span
-        className="mdc-floating-label"
+        class=\\"mdc-floating-label mdc-floating-label--required\\"
+        style=\\"transition-duration: 0s;\\"
       >
         foo
       </span>
     </span>
     <span
-      className="mdc-notched-outline__trailing"
+      class=\\"mdc-notched-outline__trailing\\"
     />
   </span>
-</label>
+</label>"
 `;
 
 exports[`TextField component supports outlined text fields 3`] = `
-<label
-  className="mdc-text-field mdc-text-field--label-floating mdc-text-field--outlined qux"
+"<label
+  class=\\"mdc-text-field mdc-text-field--label-floating mdc-text-field--outlined qux\\"
 >
   <input
-    aria-labelledby="bar-label"
-    className="mdc-text-field__input"
-    defaultValue="baz"
-    id="bar"
-    name="bar"
-    pattern="[a-z]*"
-    type="text"
+    aria-labelledby=\\"bar-label\\"
+    class=\\"mdc-text-field__input\\"
+    id=\\"bar\\"
+    name=\\"bar\\"
+    pattern=\\"[a-z]*\\"
+    type=\\"text\\"
+    value=\\"baz\\"
   />
   <span
-    className="mdc-notched-outline"
+    class=\\"mdc-notched-outline mdc-notched-outline--upgraded mdc-notched-outline--notched\\"
   >
     <span
-      className="mdc-notched-outline__leading"
+      class=\\"mdc-notched-outline__leading\\"
     />
     <span
-      className="mdc-notched-outline__notch"
+      class=\\"mdc-notched-outline__notch\\"
+      style=\\"width: 0px;\\"
     >
       <span
-        className="mdc-floating-label mdc-floating-label--float-above"
-        id="bar-label"
+        class=\\"mdc-floating-label mdc-floating-label--float-above\\"
+        id=\\"bar-label\\"
+        style=\\"transition-duration: 0s;\\"
       >
         foo
       </span>
     </span>
     <span
-      className="mdc-notched-outline__trailing"
+      class=\\"mdc-notched-outline__trailing\\"
     />
   </span>
-</label>
+</label>"
 `;
 
 exports[`TextField component supports outlined text fields 4`] = `
-Array [
-  <label
-    className="mdc-text-field mdc-text-field--no-label mdc-text-field--outlined"
+"<label
+  class=\\"mdc-text-field mdc-text-field--no-label mdc-text-field--outlined\\"
+>
+  <input
+    class=\\"mdc-text-field__input\\"
+    type=\\"text\\"
+    value=\\"\\"
+  />
+  <span
+    class=\\"mdc-notched-outline mdc-notched-outline--no-label\\"
   >
-    <input
-      className="mdc-text-field__input"
-      type="text"
+    <span
+      class=\\"mdc-notched-outline__leading\\"
     />
     <span
-      className="mdc-notched-outline"
-    >
-      <span
-        className="mdc-notched-outline__leading"
-      />
-      <span
-        className="mdc-notched-outline__trailing"
-      />
-    </span>
-  </label>,
+      class=\\"mdc-notched-outline__trailing\\"
+    />
+  </span>
+</label>
+<div
+  class=\\"mdc-text-field-helper-line\\"
+>
   <div
-    className="mdc-text-field-helper-line"
+    aria-hidden=\\"true\\"
+    class=\\"mdc-text-field-helper-text\\"
   >
-    <div
-      aria-hidden="true"
-      className="mdc-text-field-helper-text"
-    >
-      qux
-    </div>
-  </div>,
-]
+    qux
+  </div>
+</div>"
 `;
 
 exports[`TextField component supports outlined text fields 5`] = `
-Array [
-  <label
-    className="mdc-text-field mdc-text-field--disabled mdc-text-field--outlined"
+"<label
+  class=\\"mdc-text-field mdc-text-field--disabled mdc-text-field--outlined\\"
+>
+  <input
+    class=\\"mdc-text-field__input\\"
+    disabled=\\"\\"
+    placeholder=\\"bar\\"
+    required=\\"\\"
+    type=\\"text\\"
+    value=\\"\\"
+  />
+  <span
+    class=\\"mdc-notched-outline mdc-notched-outline--upgraded\\"
   >
-    <input
-      className="mdc-text-field__input"
-      disabled={true}
-      placeholder="bar"
-      required={true}
-      type="text"
+    <span
+      class=\\"mdc-notched-outline__leading\\"
     />
     <span
-      className="mdc-notched-outline"
+      class=\\"mdc-notched-outline__notch\\"
     >
       <span
-        className="mdc-notched-outline__leading"
-      />
-      <span
-        className="mdc-notched-outline__notch"
+        class=\\"mdc-floating-label mdc-floating-label--required\\"
+        style=\\"transition-duration: 0s;\\"
       >
-        <span
-          className="mdc-floating-label"
-        >
-          foo
-        </span>
+        foo
       </span>
-      <span
-        className="mdc-notched-outline__trailing"
-      />
     </span>
-  </label>,
+    <span
+      class=\\"mdc-notched-outline__trailing\\"
+    />
+  </span>
+</label>
+<div
+  class=\\"mdc-text-field-helper-line\\"
+>
   <div
-    className="mdc-text-field-helper-line"
+    aria-hidden=\\"true\\"
+    class=\\"mdc-text-field-helper-text mdc-text-field-helper-text--persistent\\"
   >
-    <div
-      aria-hidden="true"
-      className="mdc-text-field-helper-text mdc-text-field-helper-text--persistent"
-    >
-      qux
-    </div>
-  </div>,
-]
+    qux
+  </div>
+</div>"
 `;
 
 exports[`TextField component supports outlined text fields 6`] = `
-Array [
-  <label
-    className="mdc-text-field mdc-text-field--label-floating mdc-text-field--outlined qux"
+"<label
+  class=\\"mdc-text-field mdc-text-field--label-floating mdc-text-field--outlined qux\\"
+>
+  <input
+    aria-controls=\\"bar-helper\\"
+    aria-describedby=\\"bar-helper\\"
+    aria-labelledby=\\"bar-label\\"
+    class=\\"mdc-text-field__input\\"
+    id=\\"bar\\"
+    name=\\"bar\\"
+    pattern=\\"[a-z]*\\"
+    type=\\"text\\"
+    value=\\"baz\\"
+  />
+  <span
+    class=\\"mdc-notched-outline mdc-notched-outline--upgraded mdc-notched-outline--notched\\"
   >
-    <input
-      aria-controls="bar-helper"
-      aria-describedby="bar-helper"
-      aria-labelledby="bar-label"
-      className="mdc-text-field__input"
-      defaultValue="baz"
-      id="bar"
-      name="bar"
-      pattern="[a-z]*"
-      type="text"
+    <span
+      class=\\"mdc-notched-outline__leading\\"
     />
     <span
-      className="mdc-notched-outline"
+      class=\\"mdc-notched-outline__notch\\"
+      style=\\"width: 0px;\\"
     >
       <span
-        className="mdc-notched-outline__leading"
-      />
-      <span
-        className="mdc-notched-outline__notch"
+        class=\\"mdc-floating-label mdc-floating-label--float-above\\"
+        id=\\"bar-label\\"
+        style=\\"transition-duration: 0s;\\"
       >
-        <span
-          className="mdc-floating-label mdc-floating-label--float-above"
-          id="bar-label"
-        >
-          foo
-        </span>
+        foo
       </span>
-      <span
-        className="mdc-notched-outline__trailing"
-      />
     </span>
-  </label>,
+    <span
+      class=\\"mdc-notched-outline__trailing\\"
+    />
+  </span>
+</label>
+<div
+  class=\\"mdc-text-field-helper-line\\"
+>
   <div
-    className="mdc-text-field-helper-line"
+    aria-hidden=\\"true\\"
+    class=\\"mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg\\"
+    id=\\"bar-helper\\"
   >
-    <div
-      aria-hidden="true"
-      className="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
-      id="bar-helper"
-    >
-      qux
-    </div>
-  </div>,
-]
+    qux
+  </div>
+</div>"
 `;
 
 exports[`TextField component supports outlined textareas 1`] = `
-<label
-  className="mdc-text-field mdc-text-field--no-label mdc-text-field--outlined mdc-text-field--textarea"
+"<label
+  class=\\"mdc-text-field mdc-text-field--no-label mdc-text-field--outlined mdc-text-field--textarea\\"
 >
   <textarea
-    className="mdc-text-field__input"
-    cols={32}
-    rows={4}
+    class=\\"mdc-text-field__input\\"
+    cols=\\"32\\"
+    rows=\\"4\\"
   />
   <span
-    className="mdc-notched-outline"
+    class=\\"mdc-notched-outline mdc-notched-outline--no-label\\"
   >
     <span
-      className="mdc-notched-outline__leading"
+      class=\\"mdc-notched-outline__leading\\"
     />
     <span
-      className="mdc-notched-outline__trailing"
+      class=\\"mdc-notched-outline__trailing\\"
     />
   </span>
-</label>
+</label>"
 `;
 
 exports[`TextField component supports outlined textareas 2`] = `
-<label
-  className="mdc-text-field mdc-text-field--no-label mdc-text-field--disabled mdc-text-field--outlined mdc-text-field--textarea"
+"<label
+  class=\\"mdc-text-field mdc-text-field--no-label mdc-text-field--disabled mdc-text-field--outlined mdc-text-field--textarea\\"
 >
   <span
-    className="mdc-text-field__resizer"
+    class=\\"mdc-text-field__resizer\\"
   >
     <textarea
-      className="mdc-text-field__input"
-      cols={32}
-      disabled={true}
-      placeholder="bar"
-      required={true}
-      rows={4}
+      class=\\"mdc-text-field__input\\"
+      cols=\\"32\\"
+      disabled=\\"\\"
+      placeholder=\\"bar\\"
+      required=\\"\\"
+      rows=\\"4\\"
     />
   </span>
   <span
-    className="mdc-notched-outline"
+    class=\\"mdc-notched-outline mdc-notched-outline--no-label\\"
   >
     <span
-      className="mdc-notched-outline__leading"
+      class=\\"mdc-notched-outline__leading\\"
     />
     <span
-      className="mdc-notched-outline__trailing"
+      class=\\"mdc-notched-outline__trailing\\"
     />
   </span>
-</label>
+</label>"
 `;
 
 exports[`TextField component supports outlined textareas 3`] = `
-<label
-  className="mdc-text-field mdc-text-field--no-label mdc-text-field--label-floating mdc-text-field--outlined mdc-text-field--textarea qux"
+"<label
+  class=\\"mdc-text-field mdc-text-field--no-label mdc-text-field--label-floating mdc-text-field--outlined mdc-text-field--textarea qux\\"
 >
   <textarea
-    className="mdc-text-field__input"
-    cols={40}
-    defaultValue="baz"
-    id="bar"
-    name="bar"
-    pattern="[a-z]*"
-    rows={6}
-  />
+    class=\\"mdc-text-field__input\\"
+    cols=\\"40\\"
+    id=\\"bar\\"
+    name=\\"bar\\"
+    pattern=\\"[a-z]*\\"
+    rows=\\"6\\"
+  >
+    baz
+  </textarea>
   <span
-    className="mdc-notched-outline"
+    class=\\"mdc-notched-outline mdc-notched-outline--no-label\\"
   >
     <span
-      className="mdc-notched-outline__leading"
+      class=\\"mdc-notched-outline__leading\\"
     />
     <span
-      className="mdc-notched-outline__trailing"
+      class=\\"mdc-notched-outline__trailing\\"
     />
   </span>
-</label>
+</label>"
 `;
 
 exports[`TextField component supports outlined textareas 4`] = `
-Array [
-  <label
-    className="mdc-text-field mdc-text-field--no-label mdc-text-field--outlined mdc-text-field--textarea"
+"<label
+  class=\\"mdc-text-field mdc-text-field--no-label mdc-text-field--outlined mdc-text-field--textarea\\"
+>
+  <span
+    class=\\"mdc-text-field__resizer\\"
+  >
+    <textarea
+      class=\\"mdc-text-field__input\\"
+      cols=\\"32\\"
+      rows=\\"4\\"
+    />
+  </span>
+  <span
+    class=\\"mdc-notched-outline mdc-notched-outline--no-label\\"
   >
     <span
-      className="mdc-text-field__resizer"
-    >
-      <textarea
-        className="mdc-text-field__input"
-        cols={32}
-        rows={4}
-      />
-    </span>
+      class=\\"mdc-notched-outline__leading\\"
+    />
     <span
-      className="mdc-notched-outline"
-    >
-      <span
-        className="mdc-notched-outline__leading"
-      />
-      <span
-        className="mdc-notched-outline__trailing"
-      />
-    </span>
-  </label>,
+      class=\\"mdc-notched-outline__trailing\\"
+    />
+  </span>
+</label>
+<div
+  class=\\"mdc-text-field-helper-line\\"
+>
   <div
-    className="mdc-text-field-helper-line"
+    aria-hidden=\\"true\\"
+    class=\\"mdc-text-field-helper-text\\"
   >
-    <div
-      aria-hidden="true"
-      className="mdc-text-field-helper-text"
-    >
-      qux
-    </div>
-  </div>,
-]
+    qux
+  </div>
+</div>"
 `;
 
 exports[`TextField component supports outlined textareas 5`] = `
-Array [
-  <label
-    className="mdc-text-field mdc-text-field--disabled mdc-text-field--outlined mdc-text-field--textarea"
+"<label
+  class=\\"mdc-text-field mdc-text-field--disabled mdc-text-field--outlined mdc-text-field--textarea\\"
+>
+  <textarea
+    class=\\"mdc-text-field__input\\"
+    cols=\\"32\\"
+    disabled=\\"\\"
+    placeholder=\\"bar\\"
+    required=\\"\\"
+    rows=\\"4\\"
+  />
+  <span
+    class=\\"mdc-notched-outline mdc-notched-outline--upgraded\\"
   >
-    <textarea
-      className="mdc-text-field__input"
-      cols={32}
-      disabled={true}
-      placeholder="bar"
-      required={true}
-      rows={4}
+    <span
+      class=\\"mdc-notched-outline__leading\\"
     />
     <span
-      className="mdc-notched-outline"
+      class=\\"mdc-notched-outline__notch\\"
     >
       <span
-        className="mdc-notched-outline__leading"
-      />
-      <span
-        className="mdc-notched-outline__notch"
+        class=\\"mdc-floating-label mdc-floating-label--required\\"
+        style=\\"transition-duration: 0s;\\"
       >
-        <span
-          className="mdc-floating-label"
-        >
-          foo
-        </span>
+        foo
       </span>
-      <span
-        className="mdc-notched-outline__trailing"
-      />
     </span>
-  </label>,
+    <span
+      class=\\"mdc-notched-outline__trailing\\"
+    />
+  </span>
+</label>
+<div
+  class=\\"mdc-text-field-helper-line\\"
+>
   <div
-    className="mdc-text-field-helper-line"
+    aria-hidden=\\"true\\"
+    class=\\"mdc-text-field-helper-text mdc-text-field-helper-text--persistent\\"
   >
-    <div
-      aria-hidden="true"
-      className="mdc-text-field-helper-text mdc-text-field-helper-text--persistent"
-    >
-      qux
-    </div>
-  </div>,
-]
+    qux
+  </div>
+</div>"
 `;
 
 exports[`TextField component supports outlined textareas 6`] = `
-Array [
-  <label
-    className="mdc-text-field mdc-text-field--label-floating mdc-text-field--outlined mdc-text-field--textarea qux"
+"<label
+  class=\\"mdc-text-field mdc-text-field--label-floating mdc-text-field--outlined mdc-text-field--textarea qux\\"
+>
+  <textarea
+    aria-controls=\\"bar-helper\\"
+    aria-describedby=\\"bar-helper\\"
+    aria-labelledby=\\"bar-label\\"
+    class=\\"mdc-text-field__input\\"
+    cols=\\"32\\"
+    id=\\"bar\\"
+    name=\\"bar\\"
+    pattern=\\"[a-z]*\\"
+    rows=\\"4\\"
   >
-    <textarea
-      aria-controls="bar-helper"
-      aria-describedby="bar-helper"
-      aria-labelledby="bar-label"
-      className="mdc-text-field__input"
-      cols={32}
-      defaultValue="baz"
-      id="bar"
-      name="bar"
-      pattern="[a-z]*"
-      rows={4}
+    baz
+  </textarea>
+  <span
+    class=\\"mdc-notched-outline mdc-notched-outline--upgraded mdc-notched-outline--notched\\"
+  >
+    <span
+      class=\\"mdc-notched-outline__leading\\"
     />
     <span
-      className="mdc-notched-outline"
+      class=\\"mdc-notched-outline__notch\\"
+      style=\\"width: 0px;\\"
     >
       <span
-        className="mdc-notched-outline__leading"
-      />
-      <span
-        className="mdc-notched-outline__notch"
+        class=\\"mdc-floating-label mdc-floating-label--float-above\\"
+        id=\\"bar-label\\"
+        style=\\"transition-duration: 0s;\\"
       >
-        <span
-          className="mdc-floating-label mdc-floating-label--float-above"
-          id="bar-label"
-        >
-          foo
-        </span>
+        foo
       </span>
-      <span
-        className="mdc-notched-outline__trailing"
-      />
     </span>
-  </label>,
+    <span
+      class=\\"mdc-notched-outline__trailing\\"
+    />
+  </span>
+</label>
+<div
+  class=\\"mdc-text-field-helper-line\\"
+>
   <div
-    className="mdc-text-field-helper-line"
+    aria-hidden=\\"true\\"
+    class=\\"mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg\\"
+    id=\\"bar-helper\\"
   >
-    <div
-      aria-hidden="true"
-      className="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
-      id="bar-helper"
-    >
-      qux
-    </div>
-  </div>,
-]
+    qux
+  </div>
+</div>"
 `;

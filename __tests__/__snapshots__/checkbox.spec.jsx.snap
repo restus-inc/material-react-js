@@ -1,393 +1,393 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox component supports checkbox 1`] = `
-<div
-  className="mdc-checkbox"
+"<div
+  class=\\"mdc-checkbox mdc-checkbox--upgraded\\"
 >
   <input
-    className="mdc-checkbox__native-control"
-    type="checkbox"
+    class=\\"mdc-checkbox__native-control\\"
+    type=\\"checkbox\\"
   />
   <div
-    className="mdc-checkbox__background"
+    class=\\"mdc-checkbox__background\\"
   >
     <svg
-      className="mdc-checkbox__checkmark"
-      viewBox="0 0 24 24"
+      class=\\"mdc-checkbox__checkmark\\"
+      viewBox=\\"0 0 24 24\\"
     >
       <path
-        className="mdc-checkbox__checkmark-path"
-        d="M1.73,12.91 8.1,19.28 22.79,4.59"
-        fill="none"
+        class=\\"mdc-checkbox__checkmark-path\\"
+        d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+        fill=\\"none\\"
       />
     </svg>
     <div
-      className="mdc-checkbox__mixedmark"
+      class=\\"mdc-checkbox__mixedmark\\"
     />
   </div>
   <div
-    className="mdc-checkbox__ripple"
+    class=\\"mdc-checkbox__ripple\\"
   />
-</div>
+</div>"
 `;
 
 exports[`Checkbox component supports checkbox 2`] = `
-<div
-  className="mdc-checkbox mdc-checkbox--disabled baz"
+"<div
+  class=\\"mdc-checkbox mdc-checkbox--disabled baz mdc-checkbox--upgraded\\"
 >
   <input
-    className="mdc-checkbox__native-control"
-    disabled={true}
-    type="checkbox"
+    class=\\"mdc-checkbox__native-control\\"
+    disabled=\\"\\"
+    type=\\"checkbox\\"
   />
   <div
-    className="mdc-checkbox__background"
+    class=\\"mdc-checkbox__background\\"
   >
     <svg
-      className="mdc-checkbox__checkmark"
-      viewBox="0 0 24 24"
+      class=\\"mdc-checkbox__checkmark\\"
+      viewBox=\\"0 0 24 24\\"
     >
       <path
-        className="mdc-checkbox__checkmark-path"
-        d="M1.73,12.91 8.1,19.28 22.79,4.59"
-        fill="none"
+        class=\\"mdc-checkbox__checkmark-path\\"
+        d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+        fill=\\"none\\"
       />
     </svg>
     <div
-      className="mdc-checkbox__mixedmark"
+      class=\\"mdc-checkbox__mixedmark\\"
     />
   </div>
   <div
-    className="mdc-checkbox__ripple"
+    class=\\"mdc-checkbox__ripple\\"
   />
-</div>
+</div>"
 `;
 
 exports[`Checkbox component supports checkbox 3`] = `
-<div
-  className="mdc-form-field"
+"<div
+  class=\\"mdc-form-field\\"
 >
   <div
-    className="mdc-checkbox mdc-checkbox--selected"
+    class=\\"mdc-checkbox mdc-checkbox--selected mdc-checkbox--upgraded\\"
   >
     <input
-      checked={true}
-      className="mdc-checkbox__native-control"
-      id="foo"
-      type="checkbox"
+      checked=\\"\\"
+      class=\\"mdc-checkbox__native-control\\"
+      id=\\"foo\\"
+      type=\\"checkbox\\"
     />
     <div
-      className="mdc-checkbox__background"
+      class=\\"mdc-checkbox__background\\"
     >
       <svg
-        className="mdc-checkbox__checkmark"
-        viewBox="0 0 24 24"
+        class=\\"mdc-checkbox__checkmark\\"
+        viewBox=\\"0 0 24 24\\"
       >
         <path
-          className="mdc-checkbox__checkmark-path"
-          d="M1.73,12.91 8.1,19.28 22.79,4.59"
-          fill="none"
+          class=\\"mdc-checkbox__checkmark-path\\"
+          d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+          fill=\\"none\\"
         />
       </svg>
       <div
-        className="mdc-checkbox__mixedmark"
+        class=\\"mdc-checkbox__mixedmark\\"
       />
     </div>
     <div
-      className="mdc-checkbox__ripple"
+      class=\\"mdc-checkbox__ripple\\"
     />
   </div>
   <label
-    htmlFor="foo"
+    for=\\"foo\\"
   >
     bar
   </label>
-</div>
+</div>"
 `;
 
 exports[`Checkbox component supports checkbox 4`] = `
-<div
-  className="mdc-form-field baz"
+"<div
+  class=\\"mdc-form-field baz\\"
 >
   <div
-    className="mdc-checkbox"
+    class=\\"mdc-checkbox mdc-checkbox--upgraded\\"
   >
     <input
-      className="mdc-checkbox__native-control"
-      data-indeterminate="true"
-      type="checkbox"
+      aria-checked=\\"mixed\\"
+      class=\\"mdc-checkbox__native-control\\"
+      type=\\"checkbox\\"
     />
     <div
-      className="mdc-checkbox__background"
+      class=\\"mdc-checkbox__background\\"
     >
       <svg
-        className="mdc-checkbox__checkmark"
-        viewBox="0 0 24 24"
+        class=\\"mdc-checkbox__checkmark\\"
+        viewBox=\\"0 0 24 24\\"
       >
         <path
-          className="mdc-checkbox__checkmark-path"
-          d="M1.73,12.91 8.1,19.28 22.79,4.59"
-          fill="none"
+          class=\\"mdc-checkbox__checkmark-path\\"
+          d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+          fill=\\"none\\"
         />
       </svg>
       <div
-        className="mdc-checkbox__mixedmark"
+        class=\\"mdc-checkbox__mixedmark\\"
       />
     </div>
     <div
-      className="mdc-checkbox__ripple"
+      class=\\"mdc-checkbox__ripple\\"
     />
   </div>
   <label>
     bar
   </label>
-</div>
+</div>"
 `;
 
 exports[`Checkbox component supports checkbox 5`] = `
-<div
-  className="mdc-form-field baz"
+"<div
+  class=\\"mdc-form-field baz\\"
 >
   <div
-    className="mdc-checkbox mdc-checkbox--disabled"
+    class=\\"mdc-checkbox mdc-checkbox--selected mdc-checkbox--upgraded\\"
   >
     <input
-      className="mdc-checkbox__native-control"
-      disabled={true}
-      id="foo"
-      type="checkbox"
+      checked=\\"\\"
+      class=\\"mdc-checkbox__native-control\\"
+      id=\\"foo\\"
+      type=\\"checkbox\\"
     />
     <div
-      className="mdc-checkbox__background"
+      class=\\"mdc-checkbox__background\\"
     >
       <svg
-        className="mdc-checkbox__checkmark"
-        viewBox="0 0 24 24"
+        class=\\"mdc-checkbox__checkmark\\"
+        viewBox=\\"0 0 24 24\\"
       >
         <path
-          className="mdc-checkbox__checkmark-path"
-          d="M1.73,12.91 8.1,19.28 22.79,4.59"
-          fill="none"
+          class=\\"mdc-checkbox__checkmark-path\\"
+          d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+          fill=\\"none\\"
         />
       </svg>
       <div
-        className="mdc-checkbox__mixedmark"
+        class=\\"mdc-checkbox__mixedmark\\"
       />
     </div>
     <div
-      className="mdc-checkbox__ripple"
+      class=\\"mdc-checkbox__ripple\\"
     />
   </div>
   <label
-    htmlFor="foo"
+    for=\\"foo\\"
   >
     bar
   </label>
-</div>
+</div>"
 `;
 
 exports[`Checkbox component supports touch target 1`] = `
-<div
-  className="mdc-touch-target-wrapper"
+"<div
+  class=\\"mdc-touch-target-wrapper\\"
 >
   <div
-    className="mdc-checkbox mdc-checkbox--touch"
+    class=\\"mdc-checkbox mdc-checkbox--touch mdc-checkbox--upgraded\\"
   >
     <input
-      className="mdc-checkbox__native-control"
-      type="checkbox"
+      class=\\"mdc-checkbox__native-control\\"
+      type=\\"checkbox\\"
     />
     <div
-      className="mdc-checkbox__background"
+      class=\\"mdc-checkbox__background\\"
     >
       <svg
-        className="mdc-checkbox__checkmark"
-        viewBox="0 0 24 24"
+        class=\\"mdc-checkbox__checkmark\\"
+        viewBox=\\"0 0 24 24\\"
       >
         <path
-          className="mdc-checkbox__checkmark-path"
-          d="M1.73,12.91 8.1,19.28 22.79,4.59"
-          fill="none"
+          class=\\"mdc-checkbox__checkmark-path\\"
+          d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+          fill=\\"none\\"
         />
       </svg>
       <div
-        className="mdc-checkbox__mixedmark"
+        class=\\"mdc-checkbox__mixedmark\\"
       />
     </div>
     <div
-      className="mdc-checkbox__ripple"
+      class=\\"mdc-checkbox__ripple\\"
     />
   </div>
-</div>
+</div>"
 `;
 
 exports[`Checkbox component supports touch target 2`] = `
-<div
-  className="mdc-touch-target-wrapper baz"
+"<div
+  class=\\"mdc-touch-target-wrapper baz\\"
 >
   <div
-    className="mdc-checkbox mdc-checkbox--disabled mdc-checkbox--touch"
+    class=\\"mdc-checkbox mdc-checkbox--disabled mdc-checkbox--touch mdc-checkbox--upgraded\\"
   >
     <input
-      className="mdc-checkbox__native-control"
-      disabled={true}
-      type="checkbox"
+      class=\\"mdc-checkbox__native-control\\"
+      disabled=\\"\\"
+      type=\\"checkbox\\"
     />
     <div
-      className="mdc-checkbox__background"
+      class=\\"mdc-checkbox__background\\"
     >
       <svg
-        className="mdc-checkbox__checkmark"
-        viewBox="0 0 24 24"
+        class=\\"mdc-checkbox__checkmark\\"
+        viewBox=\\"0 0 24 24\\"
       >
         <path
-          className="mdc-checkbox__checkmark-path"
-          d="M1.73,12.91 8.1,19.28 22.79,4.59"
-          fill="none"
+          class=\\"mdc-checkbox__checkmark-path\\"
+          d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+          fill=\\"none\\"
         />
       </svg>
       <div
-        className="mdc-checkbox__mixedmark"
+        class=\\"mdc-checkbox__mixedmark\\"
       />
     </div>
     <div
-      className="mdc-checkbox__ripple"
+      class=\\"mdc-checkbox__ripple\\"
     />
   </div>
-</div>
+</div>"
 `;
 
 exports[`Checkbox component supports touch target 3`] = `
-<div
-  className="mdc-touch-target-wrapper"
+"<div
+  class=\\"mdc-touch-target-wrapper\\"
 >
   <div
-    className="mdc-form-field"
+    class=\\"mdc-form-field\\"
   >
     <div
-      className="mdc-checkbox mdc-checkbox--selected mdc-checkbox--touch"
+      class=\\"mdc-checkbox mdc-checkbox--selected mdc-checkbox--touch mdc-checkbox--upgraded\\"
     >
       <input
-        checked={true}
-        className="mdc-checkbox__native-control"
-        id="foo"
-        type="checkbox"
+        checked=\\"\\"
+        class=\\"mdc-checkbox__native-control\\"
+        id=\\"foo\\"
+        type=\\"checkbox\\"
       />
       <div
-        className="mdc-checkbox__background"
+        class=\\"mdc-checkbox__background\\"
       >
         <svg
-          className="mdc-checkbox__checkmark"
-          viewBox="0 0 24 24"
+          class=\\"mdc-checkbox__checkmark\\"
+          viewBox=\\"0 0 24 24\\"
         >
           <path
-            className="mdc-checkbox__checkmark-path"
-            d="M1.73,12.91 8.1,19.28 22.79,4.59"
-            fill="none"
+            class=\\"mdc-checkbox__checkmark-path\\"
+            d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+            fill=\\"none\\"
           />
         </svg>
         <div
-          className="mdc-checkbox__mixedmark"
+          class=\\"mdc-checkbox__mixedmark\\"
         />
       </div>
       <div
-        className="mdc-checkbox__ripple"
+        class=\\"mdc-checkbox__ripple\\"
       />
     </div>
     <label
-      htmlFor="foo"
+      for=\\"foo\\"
     >
       bar
     </label>
   </div>
-</div>
+</div>"
 `;
 
 exports[`Checkbox component supports touch target 4`] = `
-<div
-  className="mdc-touch-target-wrapper baz"
+"<div
+  class=\\"mdc-touch-target-wrapper baz\\"
 >
   <div
-    className="mdc-form-field"
+    class=\\"mdc-form-field\\"
   >
     <div
-      className="mdc-checkbox mdc-checkbox--touch"
+      class=\\"mdc-checkbox mdc-checkbox--touch mdc-checkbox--upgraded\\"
     >
       <input
-        className="mdc-checkbox__native-control"
-        data-indeterminate="true"
-        type="checkbox"
+        aria-checked=\\"mixed\\"
+        class=\\"mdc-checkbox__native-control\\"
+        type=\\"checkbox\\"
       />
       <div
-        className="mdc-checkbox__background"
+        class=\\"mdc-checkbox__background\\"
       >
         <svg
-          className="mdc-checkbox__checkmark"
-          viewBox="0 0 24 24"
+          class=\\"mdc-checkbox__checkmark\\"
+          viewBox=\\"0 0 24 24\\"
         >
           <path
-            className="mdc-checkbox__checkmark-path"
-            d="M1.73,12.91 8.1,19.28 22.79,4.59"
-            fill="none"
+            class=\\"mdc-checkbox__checkmark-path\\"
+            d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+            fill=\\"none\\"
           />
         </svg>
         <div
-          className="mdc-checkbox__mixedmark"
+          class=\\"mdc-checkbox__mixedmark\\"
         />
       </div>
       <div
-        className="mdc-checkbox__ripple"
+        class=\\"mdc-checkbox__ripple\\"
       />
     </div>
     <label>
       bar
     </label>
   </div>
-</div>
+</div>"
 `;
 
 exports[`Checkbox component supports touch target 5`] = `
-<div
-  className="mdc-touch-target-wrapper baz"
+"<div
+  class=\\"mdc-touch-target-wrapper baz\\"
 >
   <div
-    className="mdc-form-field"
+    class=\\"mdc-form-field\\"
   >
     <div
-      className="mdc-checkbox mdc-checkbox--disabled mdc-checkbox--touch"
+      class=\\"mdc-checkbox mdc-checkbox--selected mdc-checkbox--touch mdc-checkbox--upgraded\\"
     >
       <input
-        className="mdc-checkbox__native-control"
-        disabled={true}
-        id="foo"
-        type="checkbox"
+        checked=\\"\\"
+        class=\\"mdc-checkbox__native-control\\"
+        id=\\"foo\\"
+        type=\\"checkbox\\"
       />
       <div
-        className="mdc-checkbox__background"
+        class=\\"mdc-checkbox__background\\"
       >
         <svg
-          className="mdc-checkbox__checkmark"
-          viewBox="0 0 24 24"
+          class=\\"mdc-checkbox__checkmark\\"
+          viewBox=\\"0 0 24 24\\"
         >
           <path
-            className="mdc-checkbox__checkmark-path"
-            d="M1.73,12.91 8.1,19.28 22.79,4.59"
-            fill="none"
+            class=\\"mdc-checkbox__checkmark-path\\"
+            d=\\"M1.73,12.91 8.1,19.28 22.79,4.59\\"
+            fill=\\"none\\"
           />
         </svg>
         <div
-          className="mdc-checkbox__mixedmark"
+          class=\\"mdc-checkbox__mixedmark\\"
         />
       </div>
       <div
-        className="mdc-checkbox__ripple"
+        class=\\"mdc-checkbox__ripple\\"
       />
     </div>
     <label
-      htmlFor="foo"
+      for=\\"foo\\"
     >
       bar
     </label>
   </div>
-</div>
+</div>"
 `;

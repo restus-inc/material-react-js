@@ -1,6 +1,6 @@
 {
   "name": "material-react-js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Meterial design components for React",
   "scripts": {
     "docs": "rimraf ./docs/api && jsdoc -R README.md -c ./jsdoc.json -r",

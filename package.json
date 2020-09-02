@@ -46,7 +46,6 @@
     "jsdoc": "^3.6.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "rimraf": "^3.0.2",
-    "tui-jsdoc-template": "^1.2.2"
+    "rimraf": "^3.0.2"
   }
 }

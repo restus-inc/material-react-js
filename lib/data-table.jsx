@@ -92,7 +92,8 @@ function Cell(props) {
 /**
  * [MDCDataTable component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-data-table#readme}
  * implemented by react component. This component can be used in combination with
- * [Pagenation]{@link module:material-react/lib/data-table-pagination}.
+ * [Pagenation]{@link module:Pagination}.
+ * @function DataTable
  * @param {Object} props
  * @param {Object[]} props.data The data source of the table body contents.
  * @param {string} [props.keyField] The property name of data source used to uniquely
@@ -138,7 +139,7 @@ function Cell(props) {
  * @param {EventHandler} [props.onSorted] Specifies event handler that is called when
  * sort icon of header cell is clicked.
  * @returns {DetailedReactHTMLElement}
- * @module material-react/lib/data-table
+ * @exports material-react-js
  */
 export default function DataTable(props) {
   const sortable = props.columns.some((column) => column.isSortable);

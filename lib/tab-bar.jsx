@@ -4,12 +4,13 @@ import { MDCTabBar } from '@material/tab-bar';
 /**
  * [MDCTabBar component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-tab-bar#readme}
  * implemented by react component.
+ * @function TabBar
  * @param {Object} props
  * @param {string} [props.className] The class name that is added to the root element.
  * @param {EventHandler} [props.onActivated] An event handler of React that is associated with
  * `button` element.
  * @returns {DetailedReactHTMLElement}
- * @module material-react/lib/tab-bar
+ * @exports material-react-js
  */
 export default function TabBar(props) {
   const rootElement = useRef();

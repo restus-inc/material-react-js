@@ -4,10 +4,11 @@ import Select from './select';
 /**
  * Pagination for [MDCDataTable component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-data-table#readme}
  * implemented by react component. This component is used as the child element of the
- * [DataTable]{@link module:material-react/lib/data-table}.
+ * [DataTable]{@link module:DataTable}.
  * This component requires [MDCSelect]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-select#readme}
  * and [MDCIconButton]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-icon-button#readme}
  * to be installed in addition to MDCDataTable.
+ * @function Pagination
  * @param {Object} props
  * @param {string} [props.className] The class name that is added to the root element.
  * @param {number[]} [props.rowsCountList] Specifies array of number that can be set to rows
@@ -33,7 +34,7 @@ import Select from './select';
  * last page icon is clicked.
  * @returns {DetailedReactHTMLElement}
  * @example
- * import { DataTable, Pagination } from 'material-react';
+ * import { DataTable, Pagination } from 'material-react-js';
  *
  * function MyTable(props) {
  *   return (
@@ -43,7 +44,7 @@ import Select from './select';
  *     </DataTable>
  *   );
  * }
- * @module material-react/lib/data-table-pagination
+ * @exports material-react-js
  */
 export default function Pagination(props) {
   const rowsCountList = (props.rowsCountList || [10, 25, 50, 100]).map((n) => n.toString());

@@ -1,5 +1,5 @@
 {
-  "name": "material-react",
+  "name": "material-react-js",
   "version": "0.0.0",
   "description": "Meterial design components for React",
   "scripts": {
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/restus-inc/material-react.git"
+    "url": "git+ssh://git@github.com/restus-inc/material-react-js.git"
   },
   "author": "Restus Inc.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/restus-inc/material-react/issues"
+    "url": "https://github.com/restus-inc/material-react-js/issues"
   },
-  "homepage": "https://github.com/restus-inc/material-react#readme",
+  "homepage": "https://github.com/restus-inc/material-react-js#readme",
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",

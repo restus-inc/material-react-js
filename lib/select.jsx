@@ -35,6 +35,7 @@ const getItemValue = (item, itemsValueAttr, index) => {
 /**
  * [MDCSelect component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-select#readme}
  * implemented by react component.
+ * @function Select
  * @param {Object} props
  * @param {Object[]|string[]} props.items The list of options.
  * @param {string} [props.itemsValueAttr] The attribute name of the options to hold a value.
@@ -54,7 +55,7 @@ const getItemValue = (item, itemsValueAttr, index) => {
  * @param {EventHandler} [props.onChange] Specifies event handler that is called when
  * a option has been selected.
  * @returns {DetailedReactHTMLElement}
- * @module material-react/lib/select
+ * @exports material-react-js
  */
 export default function Select(props) {
   const rootElement = useRef();

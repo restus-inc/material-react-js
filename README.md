@@ -1,4 +1,4 @@
-# Material React
+# material-react-js
 
 Material React is an implementation of [Material Components for the web](https://github.com/material-components/material-components-web) using React.
 

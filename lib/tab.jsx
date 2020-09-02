@@ -27,6 +27,7 @@ function IconElement(props) {
 /**
  * [MDCTab component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-tab#readme}
  * implemented by react component.
+ * @function Tab
  * @param {Object} props Attributes other than followings are passed to the `button`
  * element of React as is.
  * @param {string} props.label The text label on the tab.
@@ -40,7 +41,7 @@ function IconElement(props) {
  * adding the icon. The component renders an icon on the tab if either this attribute or
  * `props.icon` is present.
  * @returns {DetailedReactHTMLElement}
- * @module material-react/lib/tab
+ * @exports material-react-js
  */
 export default function Tab(props) {
   const rootElement = useRef();

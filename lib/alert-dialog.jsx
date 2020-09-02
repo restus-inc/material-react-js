@@ -4,6 +4,7 @@ import Dialog from './dialog';
 /**
  * An alert type [MDCDialog component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield#readme}
  * implemented by react component.
+ * @function AlertDialog
  * @param {Object} props
  * @param {string} props.content The content of the dialog.
  * @param {boolean} [isOpen] `true` if opening dialog, otherwise `false`. Default to `false`.
@@ -25,7 +26,7 @@ import Dialog from './dialog';
  * the dialog finishes its closing animation. `event.detail.action` represents the action which
  * closed the dialog.
  * @returns {DetailedReactHTMLElement}
- * @module material-react/lib/alert-dialog
+ * @exports material-react-js
  */
 export default function AlertDialog(props) {
   return (

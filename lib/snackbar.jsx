@@ -22,6 +22,7 @@ const generateRootClassName = (props) => {
 /**
  * [MDCSnackbar component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-snackbar#readme}
  * implemented by react component.
+ * @function Snackbar
  * @param {Object} props
  * @param {string} props.label The text label on the snackbar.
  * @param {boolean} [isOpen] `true` if opening snackbar, otherwise `false`. Default to `false`.
@@ -44,7 +45,7 @@ const generateRootClassName = (props) => {
  * the snackbar finishes its closing animation. `event.detail.reason` contains the reason
  * why the snackbar closed (`'dismiss'`, `'action'`, or `undefined`).
  * @returns {DetailedReactHTMLElement}
- * @module material-react/lib/snackbar
+ * @exports material-react-js
  */
 export default function Snackbar(props) {
   const rootElement = useRef();

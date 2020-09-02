@@ -85,6 +85,7 @@ function RadioWithLabel(props) {
 /**
  * [MDCRadio component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-radio#readme}
  * implemented by react component.
+ * @function Radio
  * @param {Object} props Attributes other than followings are passed to the `input`
  * element of React as is.
  * @param {string} [props.label] The label text of the radio.
@@ -97,7 +98,7 @@ function RadioWithLabel(props) {
  * @param {boolean} [props.supportsTouch] Whether to support touch in Material Design
  * specification. Material Design spec advises that touch targets should be at least 48 x 48 px.
  * @returns {DetailedReactHTMLElement}
- * @module material-react/lib/radio
+ * @exports material-react-js
  */
 export default function Radio(props) {
   if (!props.supportsTouch) {

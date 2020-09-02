@@ -97,6 +97,7 @@ function HelperText(props) {
 /**
  * [MDCTextField component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield#readme}
  * implemented by react component.
+ * @function TextField
  * @param {Object} [props] Attributes other than followings are passed to the `input`
  * or `textarea` element of React as is.
  * @param {string} [props.id] The `id` attribute of the native html input element. This
@@ -126,7 +127,7 @@ function HelperText(props) {
  * If `props.variation` is not `'textarea'` or `'filled-textarea'`, this attribute is ignored.
  * Default to `false`
  * @returns {DetailedReactHTMLElement}
- * @module material-react/lib/textfield
+ * @exports material-react-js
  */
 export default function TextField(props) {
   const rootElement = useRef();

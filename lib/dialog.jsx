@@ -11,6 +11,7 @@ const EVENTS = [
 /**
  * An confirmation type [MDCDialog component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield#readme}
  * implemented by react component.
+ * @function Dialog
  * @param {Object} props
  * @param {string} [props.title] The title of the dialog.
  * @param {boolean} [props.isOpen] `true` if opening dialog, otherwise `false`. Default to `false`.
@@ -32,10 +33,9 @@ const EVENTS = [
  * the dialog finishes its closing animation. `event.detail.action` represents the action which
  * closed the dialog.
  * @returns {DetailedReactHTMLElement}
- * @module material-react/lib/dialog
  * @example
  * import React from 'react';
- * import Dialog from 'material-react/lib/dialog';
+ * import { Dialog } from 'material-react-js';
  *
  * function MyDialog(props) {
  *   const buttons = [
@@ -73,6 +73,7 @@ const EVENTS = [
  *     </Dialog>
  *   );
  * }
+ * @exports material-react-js
  */
 export default function Dialog(props) {
   const rootElement = useRef();

@@ -40,6 +40,7 @@ function IconElement(props) {
 /**
  * [MDCButton component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-button#readme}
  * implemented by react component.
+ * @function Button
  * @param {Object} props Attributes other than followings are passed to the `button`
  * element of React as is.
  * @param {string} [props.variation] The variation of the button. Supported variations are
@@ -59,7 +60,7 @@ function IconElement(props) {
  * @param {boolean} [props.supportsTouch] Whether to support touch in Material Design
  * specification. Material Design spec advises that touch targets should be at least 48 x 48 px.
  * @returns {DetailedReactHTMLElement}
- * @module material-react/lib/button
+ * @exports material-react-js
  */
 export default function Button(props) {
   const rootElement = useRef();

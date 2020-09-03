@@ -1,3 +1,6 @@
+[![Version](https://img.shields.io/npm/v/material-react-js.svg)](https://www.npmjs.com/package/material-react-js)
+![Status](https://github.com/restus-inc/material-react-js/workflows/CI/badge.svg)
+
 # material-react-js
 
 Material React is an implementation of [Material Components for the web](https://github.com/material-components/material-components-web) using React.

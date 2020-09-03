@@ -5,7 +5,7 @@
   "scripts": {
     "docs": "rimraf ./docs/api && jsdoc -R README.md -c ./jsdoc.json -r",
     "lint": "eslint --ext .js,.jsx .",
-    "test": "jest --collectCoverage"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

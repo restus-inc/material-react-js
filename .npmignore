@@ -142,3 +142,4 @@ __tests__/
 .eslintrc.json
 jest.config.js
 jsdoc.json
+.github/

@@ -2,6 +2,11 @@
   "name": "material-react-js",
   "version": "0.1.0",
   "description": "Meterial design components for React",
+  "keywords": [
+    "material components",
+    "material design",
+    "react"
+  ],
   "scripts": {
     "docs": "rimraf ./docs/api && jsdoc -R README.md -c ./jsdoc.json -r",
     "lint": "eslint --ext .js,.jsx .",

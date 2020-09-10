@@ -10,7 +10,11 @@
   "scripts": {
     "docs": "rimraf ./docs/api && jsdoc -R README.md -c ./jsdoc.json -r",
     "lint": "eslint --ext .js,.jsx .",
-    "test": "jest"
+    "open:cover": "npm run test:cover && open-cli ./coverage/lcov-report/index.html",
+    "open:docs": "npm run docs && open-cli ./docs/api/index.html",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:cover": "npm test -- --coverage"
   },
   "repository": {
     "type": "git",
@@ -49,6 +53,7 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "jest": "^26.1.0",
     "jsdoc": "^3.6.4",
+    "open-cli": "^6.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rimraf": "^3.0.2"

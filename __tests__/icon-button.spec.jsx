@@ -21,16 +21,37 @@
  * SOFTWARE.
  */
 
-export { default as Button } from './lib/button';
-export { default as IconButton } from './lib/icon-button';
-export { default as Checkbox } from './lib/checkbox';
-export { default as Radio } from './lib/radio';
-export { default as DataTable } from './lib/data-table';
-export { default as Pagination } from './lib/data-table-pagination';
-export { default as Dialog } from './lib/dialog';
-export { default as AlertDialog } from './lib/alert-dialog';
-export { default as Select } from './lib/select';
-export { default as Snackbar } from './lib/snackbar';
-export { default as Tab } from './lib/tab';
-export { default as TabBar } from './lib/tab-bar';
-export { default as TextField } from './lib/textfield';
+/* global describe, it, expect */
+import 'regenerator-runtime/runtime';
+import React from 'react';
+import { htmlOfRendering } from './utils';
+
+import IconButton from '../lib/icon-button';
+
+describe('IconButton component', () => {
+  it('supports material icon buttons', () => {
+    expect(htmlOfRendering(
+      <IconButton className="material-icons" icon="favorite"/>,
+    )).resolves.toMatchSnapshot();
+
+    expect(htmlOfRendering(
+      <IconButton className="material-icons">favorite</IconButton>,
+    )).resolves.toMatchSnapshot();
+  });
+
+  it('supports image icon buttons', () => {
+    expect(htmlOfRendering(
+      <IconButton><img src="./img/favorite.png" alt="favorite"/></IconButton>,
+    )).resolves.toMatchSnapshot();
+  });
+
+  it('supports SVG icon buttons', () => {
+    expect(htmlOfRendering(
+      <IconButton className="foo">
+        <svg viewBox="0 0 32 32">
+          <circle cx="15" cy="15" r="15" stroke="none" fill="black"/>
+        </svg>
+      </IconButton>,
+    )).resolves.toMatchSnapshot();
+  });
+});

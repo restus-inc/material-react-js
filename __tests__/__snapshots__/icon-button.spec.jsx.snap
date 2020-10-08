@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconButton component supports SVG icon buttons 1`] = `
+"<button
+  class=\\"mdc-icon-button foo\\"
+>
+  <svg
+    viewBox=\\"0 0 32 32\\"
+  >
+    <circle
+      cx=\\"15\\"
+      cy=\\"15\\"
+      fill=\\"black\\"
+      r=\\"15\\"
+      stroke=\\"none\\"
+    />
+  </svg>
+</button>"
+`;
+
+exports[`IconButton component supports image icon buttons 1`] = `
+"<button
+  class=\\"mdc-icon-button\\"
+>
+  <img
+    alt=\\"favorite\\"
+    src=\\"./img/favorite.png\\"
+  />
+</button>"
+`;
+
+exports[`IconButton component supports material icon buttons 1`] = `
+"<button
+  class=\\"mdc-icon-button material-icons\\"
+>
+  favorite
+</button>"
+`;
+
+exports[`IconButton component supports material icon buttons 2`] = `
+"<button
+  class=\\"mdc-icon-button material-icons\\"
+>
+  favorite
+</button>"
+`;

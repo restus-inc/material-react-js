@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconToggle component supports SVG icon toggle buttons 1`] = `
+"<button
+  aria-label=\\"on\\"
+  class=\\"mdc-icon-button mdc-icon-button--on foo\\"
+  data-aria-label-off=\\"off\\"
+  data-aria-label-on=\\"on\\"
+>
+  <svg
+    class=\\"mdc-icon-button__icon bar\\"
+    viewBox=\\"0 0 24 24\\"
+  >
+    <circle
+      cx=\\"12\\"
+      cy=\\"12\\"
+      r=\\"11\\"
+      stroke-width=\\"2\\"
+    />
+  </svg>
+  <svg
+    class=\\"mdc-icon-button__icon mdc-icon-button__icon--on baz\\"
+    viewBox=\\"0 0 24 24\\"
+  >
+    <line
+      stroke-width=\\"2\\"
+      x1=\\"1\\"
+      x2=\\"23\\"
+      y1=\\"1\\"
+      y2=\\"23\\"
+    />
+  </svg>
+</button>"
+`;
+
+exports[`IconToggle component supports image icon toggle buttons 1`] = `
+"<button
+  aria-label=\\"off\\"
+  class=\\"mdc-icon-button foo\\"
+  data-aria-label-off=\\"off\\"
+  data-aria-label-on=\\"on\\"
+>
+  <img
+    alt=\\"visibility_off\\"
+    class=\\"mdc-icon-button__icon\\"
+    src=\\"./img/visibility_off.png\\"
+  />
+  <img
+    alt=\\"visibility\\"
+    class=\\"mdc-icon-button__icon mdc-icon-button__icon--on bar\\"
+    src=\\"./img/visibility.png\\"
+  />
+</button>"
+`;
+
+exports[`IconToggle component supports material icon toggle buttons 1`] = `
+"<button
+  aria-label=\\"visibility\\"
+  aria-pressed=\\"false\\"
+  class=\\"mdc-icon-button\\"
+>
+  <i
+    class=\\"mdc-icon-button__icon material-icons\\"
+  >
+    visibility_off
+  </i>
+  <i
+    class=\\"mdc-icon-button__icon mdc-icon-button__icon--on material-icons\\"
+  >
+    visibility
+  </i>
+</button>"
+`;
+
+exports[`IconToggle component supports material icon toggle buttons 2`] = `
+"<button
+  aria-label=\\"off\\"
+  class=\\"mdc-icon-button\\"
+  data-aria-label-off=\\"off\\"
+  data-aria-label-on=\\"on\\"
+>
+  <i
+    class=\\"mdc-icon-button__icon material-icons\\"
+  >
+    visibility_off
+  </i>
+  <i
+    class=\\"mdc-icon-button__icon mdc-icon-button__icon--on material-icons\\"
+  >
+    visibility
+  </i>
+</button>"
+`;
+
+exports[`IconToggle component supports material icon toggle buttons 3`] = `
+"<button
+  aria-label=\\"visibility\\"
+  aria-pressed=\\"true\\"
+  class=\\"mdc-icon-button mdc-icon-button--on foo\\"
+>
+  <i
+    class=\\"mdc-icon-button__icon material-icons\\"
+  >
+    visibility_off
+  </i>
+  <i
+    class=\\"mdc-icon-button__icon mdc-icon-button__icon--on material-icons\\"
+  >
+    visibility
+  </i>
+</button>"
+`;

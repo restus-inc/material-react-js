@@ -23,6 +23,7 @@
 
 export { default as Button } from './lib/button';
 export { default as IconButton } from './lib/icon-button';
+export { default as IconToggle } from './lib/icon-toggle';
 export { default as Checkbox } from './lib/checkbox';
 export { default as Radio } from './lib/radio';
 export { default as DataTable } from './lib/data-table';

@@ -1,0 +1,70 @@
+/**
+ * @license
+ * Copyright 2020 Restus Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+/* global describe, it, expect */
+import 'regenerator-runtime/runtime';
+import React from 'react';
+import { htmlOfRendering } from './utils';
+
+import IconToggle from '../lib/icon-toggle';
+
+describe('IconToggle component', () => {
+  it('supports material icon toggle buttons', () => {
+    expect(htmlOfRendering(
+      <IconToggle iconClassName="material-icons" onIcon="visibility" offIcon="visibility_off" label="visibility"/>,
+    )).resolves.toMatchSnapshot();
+
+    expect(htmlOfRendering(
+      <IconToggle iconClassName="material-icons" onIcon="visibility" offIcon="visibility_off" label={['off', 'on']}/>,
+    )).resolves.toMatchSnapshot();
+
+    expect(htmlOfRendering(
+      <IconToggle isOnState={true} className="foo" label="visibility">
+        <IconToggle.OffIcon className="material-icons">visibility_off</IconToggle.OffIcon>
+        <IconToggle.OnIcon className="material-icons">visibility</IconToggle.OnIcon>
+      </IconToggle>,
+    )).resolves.toMatchSnapshot();
+  });
+
+  it('supports image icon toggle buttons', () => {
+    expect(htmlOfRendering(
+      <IconToggle className="foo" label={['off', 'on']}>
+        <IconToggle.OffImage src="./img/visibility_off.png" alt="visibility_off"/>
+        <IconToggle.OnImage className="bar" src="./img/visibility.png" alt="visibility"/>
+      </IconToggle>,
+    )).resolves.toMatchSnapshot();
+  });
+
+  it('supports SVG icon toggle buttons', () => {
+    expect(htmlOfRendering(
+      <IconToggle isOnState={true} className="foo" label={['off', 'on']}>
+        <IconToggle.OffSVG className="bar" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="11" strokeWidth="2"/>
+        </IconToggle.OffSVG>
+        <IconToggle.OnSVG className="baz" viewBox="0 0 24 24">
+          <line x1="1" y1="1" x2="23" y2="23" strokeWidth="2"/>
+        </IconToggle.OnSVG>
+      </IconToggle>,
+    )).resolves.toMatchSnapshot();
+  });
+});

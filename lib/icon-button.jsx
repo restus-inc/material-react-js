@@ -45,7 +45,7 @@ const generateRootClassName = (props) => {
  * @param {string} [props.className] The class name that is added to the root element.
  * @param {string} [props.icon] The inner text of the icon element if adding the icon.
  * @param {boolean} [props.disablesMdcInstance] Specifies `true` if you do not want to
- * instantiate MDC Component. Default to `false`.
+ * instantiate MDCRipple Component. Default to `false`.
  * @returns {DetailedReactHTMLElement}
  * @example
  * import { IconButton } from 'material-react-js';

@@ -78,6 +78,13 @@ describe('DataTable component', () => {
       content: 'composer.name',
       className: 'composer-cell',
       bodyClassName: 'composer-body-cell',
+      headerAttrs: {
+        title: 'composer-column',
+      },
+      bodyAttrs: {
+        title: () => 'composer',
+        'data-name': 'composer.name',
+      },
     }, {
       key: 'detail-link',
       content: (music) => <a href={`./${music.id}`}>Show Details</a>, // eslint-disable-line react/display-name

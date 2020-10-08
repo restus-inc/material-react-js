@@ -68,6 +68,7 @@ function HeaderCell(props) {
       'aria-sort': props.sortStatus || 'none',
       'data-column-id': props.name,
     } : {}),
+    ...(props.attrs || {}),
   };
   return (
     <th {...attrs}>
@@ -98,15 +99,22 @@ const getContent = (content, rowData) => {
 };
 
 function Cell(props) {
+  const attrs = {
+    className: cellClassName(props.className, props.isNumeric),
+    ...(props.isRowHeader ? { scope: 'row' } : {}),
+    ...(props.attrs && Object.entries(props.attrs).reduce((obj, [key, value]) => (
+      Object.assign(obj, { [key]: getContent(value, props.rowData) })
+    ), {})),
+  };
   if (props.isRowHeader) {
     return (
-      <th className={cellClassName(props.className, props.isNumeric)} scope="row">
+      <th {...attrs}>
         {props.content ? getContent(props.content, props.rowData) : props.children}
       </th>
     );
   }
   return (
-    <td className={cellClassName(props.className, props.isNumeric)}>
+    <td {...attrs}>
       {props.content ? getContent(props.content, props.rowData) : props.children}
     </td>
   );
@@ -141,6 +149,13 @@ function Cell(props) {
  * of the column in the header row.
  * @param {string} [props.columns[].bodyClassName] The class name that is added to cells
  * of the column in the body rows.
+ * @param {Object} [props.columns[].headerAttrs] The attributes to add to cell elements
+ * in the header row. Specify an object that has the attribute name as the key and the attribute
+ * value (`string`) as the value.
+ * @param {Object} [props.columns[].bodyAttrs] The attributes to add to cell elements
+ * in the body rows. Specify an object that has the attribute name as the key and the attribute
+ * value (`string` or  {@link BodyRenderer}) as the value. The format of the values is the same
+ * as the `content` property.
  * @param {boolean} [props.columns[].isSortable] Specify `true` if the column is sortable,
  * otherwise `false`. Default to `false`.
  * @param {string} [props.columns[].sortStatus] Specify `'ascending'` or `'descending'`
@@ -249,6 +264,7 @@ export default function DataTable(props) {
                             isSortable={column.isSortable}
                             name={column.key}
                             sortStatus={column.sortStatus}
+                            attrs={column.headerAttrs}
                             key={column.key || j}>
                   {column.header}
                 </HeaderCell>
@@ -286,6 +302,7 @@ export default function DataTable(props) {
                       content={column.content}
                       isRowHeader={column.isRowHeader}
                       rowData={rowData}
+                      attrs={column.bodyAttrs}
                       key={column.key || j}/>
               ))}
               </tr>

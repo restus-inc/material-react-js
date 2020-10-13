@@ -78,6 +78,7 @@ export default function IconButton(props) {
       return () => {};
     }
     const mdcComponent = new MDCRipple(rootElement.current);
+    mdcComponent.unbounded = true;
     return () => {
       mdcComponent.destroy();
     };

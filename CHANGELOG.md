@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.1.1](https://github.com/restus-inc/material-react-js/compare/v1.1.1...v1.1.1) (2020-10-13)
+
+### Bug Fix
+
+* **icon-button:** Fix range of ripple ([8ac8c05](https://github.com/restus-inc/material-react-js/commit/8ac8c050b4b50de704482ac9bdc9fa13ec6af0d5))
+
 ## [1.1.0](https://github.com/restus-inc/material-react-js/compare/v1.0.0...v1.1.0) (2020-10-08)
 
 ### Features

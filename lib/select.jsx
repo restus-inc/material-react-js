@@ -164,8 +164,8 @@ export default function Select(props) {
             </>
           )}
       </div>
-      <div className="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth" role="listbox">
-        <ul className="mdc-list">
+      <div className="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
+        <ul className="mdc-list" role="listbox">
         {props.items.map((item, i) => {
           const value = getItemValue(item, props.itemsValueAttr, i);
           const selectedText = props.itemsTextAttr ? item[props.itemsTextAttr] : item.toString();

@@ -51,10 +51,10 @@ exports[`Select component allow to set objects as items 1`] = `
   </div>
   <div
     class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
-    role=\\"listbox\\"
   >
     <ul
       class=\\"mdc-list\\"
+      role=\\"listbox\\"
     >
       <li
         class=\\"mdc-list-item\\"
@@ -158,10 +158,10 @@ exports[`Select component allow to set objects as items 2`] = `
   </div>
   <div
     class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
-    role=\\"listbox\\"
   >
     <ul
       class=\\"mdc-list\\"
+      role=\\"listbox\\"
     >
       <li
         class=\\"mdc-list-item\\"
@@ -258,10 +258,10 @@ exports[`Select component supports filled select 1`] = `
   </div>
   <div
     class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
-    role=\\"listbox\\"
   >
     <ul
       class=\\"mdc-list\\"
+      role=\\"listbox\\"
     >
       <li
         class=\\"mdc-list-item\\"
@@ -363,10 +363,10 @@ exports[`Select component supports filled select 2`] = `
   </div>
   <div
     class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
-    role=\\"listbox\\"
   >
     <ul
       class=\\"mdc-list\\"
+      role=\\"listbox\\"
     >
       <li
         class=\\"mdc-list-item\\"
@@ -469,10 +469,10 @@ exports[`Select component supports filled select 3`] = `
   </div>
   <div
     class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
-    role=\\"listbox\\"
   >
     <ul
       class=\\"mdc-list\\"
+      role=\\"listbox\\"
     >
       <li
         class=\\"mdc-list-item\\"
@@ -575,10 +575,10 @@ exports[`Select component supports filled select 4`] = `
   </div>
   <div
     class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
-    role=\\"listbox\\"
   >
     <ul
       class=\\"mdc-list\\"
+      role=\\"listbox\\"
     >
       <li
         class=\\"mdc-list-item\\"
@@ -679,10 +679,10 @@ exports[`Select component supports outlined select 1`] = `
   </div>
   <div
     class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
-    role=\\"listbox\\"
   >
     <ul
       class=\\"mdc-list\\"
+      role=\\"listbox\\"
     >
       <li
         class=\\"mdc-list-item\\"
@@ -794,10 +794,10 @@ exports[`Select component supports outlined select 2`] = `
   </div>
   <div
     class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
-    role=\\"listbox\\"
   >
     <ul
       class=\\"mdc-list\\"
+      role=\\"listbox\\"
     >
       <li
         class=\\"mdc-list-item\\"
@@ -911,10 +911,10 @@ exports[`Select component supports outlined select 3`] = `
   </div>
   <div
     class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
-    role=\\"listbox\\"
   >
     <ul
       class=\\"mdc-list\\"
+      role=\\"listbox\\"
     >
       <li
         class=\\"mdc-list-item\\"

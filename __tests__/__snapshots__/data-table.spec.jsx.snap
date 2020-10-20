@@ -422,10 +422,10 @@ exports[`DataTable component supports data table with pagination 1`] = `
           </div>
           <div
             class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
-            role=\\"listbox\\"
           >
             <ul
               class=\\"mdc-list\\"
+              role=\\"listbox\\"
             >
               <li
                 aria-selected=\\"true\\"
@@ -764,10 +764,10 @@ exports[`DataTable component supports data table with pagination 2`] = `
           </div>
           <div
             class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
-            role=\\"listbox\\"
           >
             <ul
               class=\\"mdc-list\\"
+              role=\\"listbox\\"
             >
               <li
                 class=\\"mdc-list-item\\"

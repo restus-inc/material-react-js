@@ -6,7 +6,7 @@
 
 Material React is an implementation of [Material Components for the web](https://github.com/material-components/material-components-web) using React.
 
-It works in React 16.8 and above, and uses Material Components for the web 7.0.
+It works in React 17.0 and above, and uses Material Components for the web 8.0.
 
 It suports following components:
 

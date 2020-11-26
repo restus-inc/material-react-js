@@ -191,12 +191,7 @@ export default function DataTable(props) {
 
     return () => {
       if (mdcComponentRef && mdcComponentRef.current) {
-        try {
-          // Sometimes an error is thrown due to a bug in MDCTable
-          mdcComponentRef.current.destroy();
-        } catch (error) {
-          // do nothing
-        }
+        mdcComponentRef.current.destroy();
       }
     };
   }, [sortable, props.usesRowSelection, props.data]);

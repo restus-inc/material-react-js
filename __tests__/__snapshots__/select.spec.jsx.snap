@@ -320,7 +320,6 @@ exports[`Select component supports filled select 2`] = `
   <div
     aria-disabled=\\"true\\"
     aria-haspopup=\\"listbox\\"
-    aria-invalid=\\"false\\"
     aria-required=\\"true\\"
     class=\\"mdc-select__anchor\\"
     role=\\"button\\"
@@ -532,7 +531,6 @@ exports[`Select component supports filled select 4`] = `
   <div
     aria-disabled=\\"true\\"
     aria-haspopup=\\"listbox\\"
-    aria-invalid=\\"false\\"
     aria-required=\\"true\\"
     class=\\"mdc-select__anchor\\"
     role=\\"button\\"
@@ -741,7 +739,6 @@ exports[`Select component supports outlined select 2`] = `
   <div
     aria-disabled=\\"true\\"
     aria-haspopup=\\"listbox\\"
-    aria-invalid=\\"false\\"
     aria-required=\\"true\\"
     class=\\"mdc-select__anchor\\"
     role=\\"button\\"

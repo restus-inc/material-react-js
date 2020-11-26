@@ -1,6 +1,12 @@
 # Change Log
 
-## [1.1.1](https://github.com/restus-inc/material-react-js/compare/v1.1.1...v1.1.1) (2020-10-13)
+## [1.1.2](https://github.com/restus-inc/material-react-js/compare/v1.1.1...v1.1.2) (2020-11-26)
+
+### Bug Fix
+
+* **select:** Change element that has listbox role ([0277579](https://github.com/restus-inc/material-react-js/commit/0277579945d0e7e8add5b2de317b82157952ccaa))
+
+## [1.1.1](https://github.com/restus-inc/material-react-js/compare/v1.1.0...v1.1.1) (2020-10-13)
 
 ### Bug Fix
 

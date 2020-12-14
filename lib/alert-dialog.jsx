@@ -30,7 +30,7 @@ import Dialog from './dialog';
  * @function AlertDialog
  * @param {Object} props
  * @param {string} props.content The content of the dialog.
- * @param {boolean} [isOpen] `true` if opening dialog, otherwise `false`. Default to `false`.
+ * @param {boolean} [props.isOpen] `true` if opening dialog, otherwise `false`. Default to `false`.
  * @param {string} [props.className] The class name that is added to the surface element.
  * @param {Object[]} props.buttons Specifies the settings of the action buttons that
  * the dialog has.

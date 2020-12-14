@@ -131,20 +131,6 @@ export default function Select(props) {
            aria-haspopup="listbox"
            aria-required={props.required ? 'true' : null}
            aria-disabled={props.disabled ? 'true' : null}>
-        {props.variation === 'outlined' ? '' : <span className="mdc-select__ripple"></span>}
-        <span className="mdc-select__selected-text">{selectedItemText}</span>
-        <span className="mdc-select__dropdown-icon">
-          <svg className="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5">
-            <polygon className="mdc-select__dropdown-icon-inactive"
-                     stroke="none"
-                     fillRule="evenodd"
-                     points="7 10 12 15 17 10"/>
-            <polygon className="mdc-select__dropdown-icon-active"
-                     stroke="none"
-                     fillRule="evenodd"
-                     points="7 15 12 10 17 15"/>
-          </svg>
-        </span>
         {props.variation === 'outlined'
           ? (
             <span className="mdc-notched-outline">
@@ -159,16 +145,32 @@ export default function Select(props) {
           )
           : (
             <>
+              <span className="mdc-select__ripple"></span>
               {props.label && <span className="mdc-floating-label">{props.label}</span>}
-              <span className="mdc-line-ripple"></span>
             </>
           )}
+        <span className="mdc-select__selected-text-container">
+          <span className="mdc-select__selected-text">{selectedItemText}</span>
+        </span>
+        <span className="mdc-select__dropdown-icon">
+          <svg className="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5" focusable="false">
+            <polygon className="mdc-select__dropdown-icon-inactive"
+                     stroke="none"
+                     fillRule="evenodd"
+                     points="7 10 12 15 17 10"/>
+            <polygon className="mdc-select__dropdown-icon-active"
+                     stroke="none"
+                     fillRule="evenodd"
+                     points="7 15 12 10 17 15"/>
+          </svg>
+        </span>
+        {props.variation === 'outlined' ? '' : <span className="mdc-line-ripple"></span>}
       </div>
       <div className="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
         <ul className="mdc-list" role="listbox">
         {props.items.map((item, i) => {
           const value = getItemValue(item, props.itemsValueAttr, i);
-          const selectedText = props.itemsTextAttr ? item[props.itemsTextAttr] : item.toString();
+          const text = props.itemsTextAttr ? item[props.itemsTextAttr] : item.toString();
           const selected = props.value && (props.value === value);
           return (
             <li className={selected ? 'mdc-list-item mdc-list-item--selected' : 'mdc-list-item'}
@@ -177,7 +179,7 @@ export default function Select(props) {
                 aria-selected={selected ? 'true' : null}
                 key={value}>
               <span className="mdc-list-item__ripple"></span>
-              {selectedText && <span className="mdc-list-item__text">{selectedText}</span>}
+              {text && <span className="mdc-list-item__text">{text}</span>}
             </li>
           );
         })}

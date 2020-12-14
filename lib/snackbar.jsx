@@ -48,7 +48,8 @@ const generateRootClassName = (props) => {
  * @function Snackbar
  * @param {Object} props
  * @param {string} props.label The text label on the snackbar.
- * @param {boolean} [isOpen] `true` if opening snackbar, otherwise `false`. Default to `false`.
+ * @param {boolean} [props.isOpen] `true` if opening snackbar, otherwise `false`.
+ * Default to `false`.
  * @param {string} [props.className] The class name that is added to the surface element.
  * @param {string} [props.actionLabel] The label of action button on the snackbar. Does not
  * specify if action button is not placed.

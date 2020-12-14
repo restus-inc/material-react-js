@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.1.3](https://github.com/restus-inc/material-react-js/compare/v1.1.2...v1.1.3) (2020-12-14)
+
+### Document
+
+* **snackbar, simple dialog:** Fix paramter name ([9348a94](https://github.com/restus-inc/material-react-js/commit/9348a9420254076e487f9b1a31cc751e5abee9ab))
+
 ## [1.1.2](https://github.com/restus-inc/material-react-js/compare/v1.1.1...v1.1.2) (2020-11-26)
 
 ### Bug Fix

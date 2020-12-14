@@ -15,15 +15,25 @@ exports[`Select component allow to set objects as items 1`] = `
       class=\\"mdc-select__ripple\\"
     />
     <span
-      class=\\"mdc-select__selected-text\\"
+      class=\\"mdc-floating-label mdc-floating-label--float-above\\"
     >
-      two
+      foo
+    </span>
+    <span
+      class=\\"mdc-select__selected-text-container\\"
+    >
+      <span
+        class=\\"mdc-select__selected-text\\"
+      >
+        two
+      </span>
     </span>
     <span
       class=\\"mdc-select__dropdown-icon\\"
     >
       <svg
         class=\\"mdc-select__dropdown-icon-graphic\\"
+        focusable=\\"false\\"
         viewBox=\\"7 10 10 5\\"
       >
         <polygon
@@ -39,11 +49,6 @@ exports[`Select component allow to set objects as items 1`] = `
           stroke=\\"none\\"
         />
       </svg>
-    </span>
-    <span
-      class=\\"mdc-floating-label mdc-floating-label--float-above\\"
-    >
-      foo
     </span>
     <span
       class=\\"mdc-line-ripple\\"
@@ -122,15 +127,25 @@ exports[`Select component allow to set objects as items 2`] = `
       class=\\"mdc-select__ripple\\"
     />
     <span
-      class=\\"mdc-select__selected-text\\"
+      class=\\"mdc-floating-label mdc-floating-label--float-above\\"
     >
-      two
+      foo
+    </span>
+    <span
+      class=\\"mdc-select__selected-text-container\\"
+    >
+      <span
+        class=\\"mdc-select__selected-text\\"
+      >
+        two
+      </span>
     </span>
     <span
       class=\\"mdc-select__dropdown-icon\\"
     >
       <svg
         class=\\"mdc-select__dropdown-icon-graphic\\"
+        focusable=\\"false\\"
         viewBox=\\"7 10 10 5\\"
       >
         <polygon
@@ -146,11 +161,6 @@ exports[`Select component allow to set objects as items 2`] = `
           stroke=\\"none\\"
         />
       </svg>
-    </span>
-    <span
-      class=\\"mdc-floating-label mdc-floating-label--float-above\\"
-    >
-      foo
     </span>
     <span
       class=\\"mdc-line-ripple\\"
@@ -229,13 +239,18 @@ exports[`Select component supports filled select 1`] = `
       class=\\"mdc-select__ripple\\"
     />
     <span
-      class=\\"mdc-select__selected-text\\"
-    />
+      class=\\"mdc-select__selected-text-container\\"
+    >
+      <span
+        class=\\"mdc-select__selected-text\\"
+      />
+    </span>
     <span
       class=\\"mdc-select__dropdown-icon\\"
     >
       <svg
         class=\\"mdc-select__dropdown-icon-graphic\\"
+        focusable=\\"false\\"
         viewBox=\\"7 10 10 5\\"
       >
         <polygon
@@ -328,13 +343,23 @@ exports[`Select component supports filled select 2`] = `
       class=\\"mdc-select__ripple\\"
     />
     <span
-      class=\\"mdc-select__selected-text\\"
-    />
+      class=\\"mdc-floating-label mdc-floating-label--required\\"
+    >
+      foo
+    </span>
+    <span
+      class=\\"mdc-select__selected-text-container\\"
+    >
+      <span
+        class=\\"mdc-select__selected-text\\"
+      />
+    </span>
     <span
       class=\\"mdc-select__dropdown-icon\\"
     >
       <svg
         class=\\"mdc-select__dropdown-icon-graphic\\"
+        focusable=\\"false\\"
         viewBox=\\"7 10 10 5\\"
       >
         <polygon
@@ -350,11 +375,6 @@ exports[`Select component supports filled select 2`] = `
           stroke=\\"none\\"
         />
       </svg>
-    </span>
-    <span
-      class=\\"mdc-floating-label mdc-floating-label--required\\"
-    >
-      foo
     </span>
     <span
       class=\\"mdc-line-ripple\\"
@@ -432,15 +452,25 @@ exports[`Select component supports filled select 3`] = `
       class=\\"mdc-select__ripple\\"
     />
     <span
-      class=\\"mdc-select__selected-text\\"
+      class=\\"mdc-floating-label mdc-floating-label--float-above\\"
     >
-      two
+      foo
+    </span>
+    <span
+      class=\\"mdc-select__selected-text-container\\"
+    >
+      <span
+        class=\\"mdc-select__selected-text\\"
+      >
+        two
+      </span>
     </span>
     <span
       class=\\"mdc-select__dropdown-icon\\"
     >
       <svg
         class=\\"mdc-select__dropdown-icon-graphic\\"
+        focusable=\\"false\\"
         viewBox=\\"7 10 10 5\\"
       >
         <polygon
@@ -456,11 +486,6 @@ exports[`Select component supports filled select 3`] = `
           stroke=\\"none\\"
         />
       </svg>
-    </span>
-    <span
-      class=\\"mdc-floating-label mdc-floating-label--float-above\\"
-    >
-      foo
     </span>
     <span
       class=\\"mdc-line-ripple\\"
@@ -539,13 +564,23 @@ exports[`Select component supports filled select 4`] = `
       class=\\"mdc-select__ripple\\"
     />
     <span
-      class=\\"mdc-select__selected-text\\"
-    />
+      class=\\"mdc-floating-label mdc-floating-label--required\\"
+    >
+      foo
+    </span>
+    <span
+      class=\\"mdc-select__selected-text-container\\"
+    >
+      <span
+        class=\\"mdc-select__selected-text\\"
+      />
+    </span>
     <span
       class=\\"mdc-select__dropdown-icon\\"
     >
       <svg
         class=\\"mdc-select__dropdown-icon-graphic\\"
+        focusable=\\"false\\"
         viewBox=\\"7 10 10 5\\"
       >
         <polygon
@@ -561,11 +596,6 @@ exports[`Select component supports filled select 4`] = `
           stroke=\\"none\\"
         />
       </svg>
-    </span>
-    <span
-      class=\\"mdc-floating-label mdc-floating-label--required\\"
-    >
-      foo
     </span>
     <span
       class=\\"mdc-line-ripple\\"
@@ -639,15 +669,29 @@ exports[`Select component supports outlined select 1`] = `
     role=\\"button\\"
     tabindex=\\"0\\"
   >
-    
     <span
-      class=\\"mdc-select__selected-text\\"
-    />
+      class=\\"mdc-notched-outline mdc-notched-outline--no-label\\"
+    >
+      <span
+        class=\\"mdc-notched-outline__leading\\"
+      />
+      <span
+        class=\\"mdc-notched-outline__trailing\\"
+      />
+    </span>
+    <span
+      class=\\"mdc-select__selected-text-container\\"
+    >
+      <span
+        class=\\"mdc-select__selected-text\\"
+      />
+    </span>
     <span
       class=\\"mdc-select__dropdown-icon\\"
     >
       <svg
         class=\\"mdc-select__dropdown-icon-graphic\\"
+        focusable=\\"false\\"
         viewBox=\\"7 10 10 5\\"
       >
         <polygon
@@ -664,16 +708,7 @@ exports[`Select component supports outlined select 1`] = `
         />
       </svg>
     </span>
-    <span
-      class=\\"mdc-notched-outline mdc-notched-outline--no-label\\"
-    >
-      <span
-        class=\\"mdc-notched-outline__leading\\"
-      />
-      <span
-        class=\\"mdc-notched-outline__trailing\\"
-      />
-    </span>
+    
   </div>
   <div
     class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
@@ -743,31 +778,6 @@ exports[`Select component supports outlined select 2`] = `
     class=\\"mdc-select__anchor\\"
     role=\\"button\\"
   >
-    
-    <span
-      class=\\"mdc-select__selected-text\\"
-    />
-    <span
-      class=\\"mdc-select__dropdown-icon\\"
-    >
-      <svg
-        class=\\"mdc-select__dropdown-icon-graphic\\"
-        viewBox=\\"7 10 10 5\\"
-      >
-        <polygon
-          class=\\"mdc-select__dropdown-icon-inactive\\"
-          fill-rule=\\"evenodd\\"
-          points=\\"7 10 12 15 17 10\\"
-          stroke=\\"none\\"
-        />
-        <polygon
-          class=\\"mdc-select__dropdown-icon-active\\"
-          fill-rule=\\"evenodd\\"
-          points=\\"7 15 12 10 17 15\\"
-          stroke=\\"none\\"
-        />
-      </svg>
-    </span>
     <span
       class=\\"mdc-notched-outline mdc-notched-outline--upgraded\\"
     >
@@ -788,6 +798,36 @@ exports[`Select component supports outlined select 2`] = `
         class=\\"mdc-notched-outline__trailing\\"
       />
     </span>
+    <span
+      class=\\"mdc-select__selected-text-container\\"
+    >
+      <span
+        class=\\"mdc-select__selected-text\\"
+      />
+    </span>
+    <span
+      class=\\"mdc-select__dropdown-icon\\"
+    >
+      <svg
+        class=\\"mdc-select__dropdown-icon-graphic\\"
+        focusable=\\"false\\"
+        viewBox=\\"7 10 10 5\\"
+      >
+        <polygon
+          class=\\"mdc-select__dropdown-icon-inactive\\"
+          fill-rule=\\"evenodd\\"
+          points=\\"7 10 12 15 17 10\\"
+          stroke=\\"none\\"
+        />
+        <polygon
+          class=\\"mdc-select__dropdown-icon-active\\"
+          fill-rule=\\"evenodd\\"
+          points=\\"7 15 12 10 17 15\\"
+          stroke=\\"none\\"
+        />
+      </svg>
+    </span>
+    
   </div>
   <div
     class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
@@ -857,33 +897,6 @@ exports[`Select component supports outlined select 3`] = `
     role=\\"button\\"
     tabindex=\\"0\\"
   >
-    
-    <span
-      class=\\"mdc-select__selected-text\\"
-    >
-      two
-    </span>
-    <span
-      class=\\"mdc-select__dropdown-icon\\"
-    >
-      <svg
-        class=\\"mdc-select__dropdown-icon-graphic\\"
-        viewBox=\\"7 10 10 5\\"
-      >
-        <polygon
-          class=\\"mdc-select__dropdown-icon-inactive\\"
-          fill-rule=\\"evenodd\\"
-          points=\\"7 10 12 15 17 10\\"
-          stroke=\\"none\\"
-        />
-        <polygon
-          class=\\"mdc-select__dropdown-icon-active\\"
-          fill-rule=\\"evenodd\\"
-          points=\\"7 15 12 10 17 15\\"
-          stroke=\\"none\\"
-        />
-      </svg>
-    </span>
     <span
       class=\\"mdc-notched-outline mdc-notched-outline--upgraded mdc-notched-outline--notched\\"
     >
@@ -905,6 +918,38 @@ exports[`Select component supports outlined select 3`] = `
         class=\\"mdc-notched-outline__trailing\\"
       />
     </span>
+    <span
+      class=\\"mdc-select__selected-text-container\\"
+    >
+      <span
+        class=\\"mdc-select__selected-text\\"
+      >
+        two
+      </span>
+    </span>
+    <span
+      class=\\"mdc-select__dropdown-icon\\"
+    >
+      <svg
+        class=\\"mdc-select__dropdown-icon-graphic\\"
+        focusable=\\"false\\"
+        viewBox=\\"7 10 10 5\\"
+      >
+        <polygon
+          class=\\"mdc-select__dropdown-icon-inactive\\"
+          fill-rule=\\"evenodd\\"
+          points=\\"7 10 12 15 17 10\\"
+          stroke=\\"none\\"
+        />
+        <polygon
+          class=\\"mdc-select__dropdown-icon-active\\"
+          fill-rule=\\"evenodd\\"
+          points=\\"7 15 12 10 17 15\\"
+          stroke=\\"none\\"
+        />
+      </svg>
+    </span>
+    
   </div>
   <div
     class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"

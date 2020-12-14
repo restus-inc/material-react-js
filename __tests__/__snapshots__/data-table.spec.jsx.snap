@@ -382,17 +382,31 @@ exports[`DataTable component supports data table with pagination 1`] = `
             role=\\"button\\"
             tabindex=\\"0\\"
           >
-            
             <span
-              class=\\"mdc-select__selected-text\\"
+              class=\\"mdc-notched-outline mdc-notched-outline--no-label\\"
             >
-              10
+              <span
+                class=\\"mdc-notched-outline__leading\\"
+              />
+              <span
+                class=\\"mdc-notched-outline__trailing\\"
+              />
+            </span>
+            <span
+              class=\\"mdc-select__selected-text-container\\"
+            >
+              <span
+                class=\\"mdc-select__selected-text\\"
+              >
+                10
+              </span>
             </span>
             <span
               class=\\"mdc-select__dropdown-icon\\"
             >
               <svg
                 class=\\"mdc-select__dropdown-icon-graphic\\"
+                focusable=\\"false\\"
                 viewBox=\\"7 10 10 5\\"
               >
                 <polygon
@@ -409,16 +423,7 @@ exports[`DataTable component supports data table with pagination 1`] = `
                 />
               </svg>
             </span>
-            <span
-              class=\\"mdc-notched-outline mdc-notched-outline--no-label\\"
-            >
-              <span
-                class=\\"mdc-notched-outline__leading\\"
-              />
-              <span
-                class=\\"mdc-notched-outline__trailing\\"
-              />
-            </span>
+            
           </div>
           <div
             class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"
@@ -724,17 +729,31 @@ exports[`DataTable component supports data table with pagination 2`] = `
             role=\\"button\\"
             tabindex=\\"0\\"
           >
-            
             <span
-              class=\\"mdc-select__selected-text\\"
+              class=\\"mdc-notched-outline mdc-notched-outline--no-label\\"
             >
-              5
+              <span
+                class=\\"mdc-notched-outline__leading\\"
+              />
+              <span
+                class=\\"mdc-notched-outline__trailing\\"
+              />
+            </span>
+            <span
+              class=\\"mdc-select__selected-text-container\\"
+            >
+              <span
+                class=\\"mdc-select__selected-text\\"
+              >
+                5
+              </span>
             </span>
             <span
               class=\\"mdc-select__dropdown-icon\\"
             >
               <svg
                 class=\\"mdc-select__dropdown-icon-graphic\\"
+                focusable=\\"false\\"
                 viewBox=\\"7 10 10 5\\"
               >
                 <polygon
@@ -751,16 +770,7 @@ exports[`DataTable component supports data table with pagination 2`] = `
                 />
               </svg>
             </span>
-            <span
-              class=\\"mdc-notched-outline mdc-notched-outline--no-label\\"
-            >
-              <span
-                class=\\"mdc-notched-outline__leading\\"
-              />
-              <span
-                class=\\"mdc-notched-outline__trailing\\"
-              />
-            </span>
+            
           </div>
           <div
             class=\\"mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth\\"

@@ -1,5 +1,15 @@
 # Change Log
 
+## [2.0.1](https://github.com/restus-inc/material-react-js/compare/v2.0.0...v2.0.1) (2020-12-14)
+
+### Bug Fix
+
+* **select:** Fix the HTML structure of `Select` to correspond to the MDC 8.0. ([b4c86f9](https://github.com/restus-inc/material-react-js/commit/b4c86f939d3093311538b0e0cfa031613ca95fa7))
+
+### Document
+
+* **snackbar, alert dialog:** Fix paramter name ([72e9505](https://github.com/restus-inc/material-react-js/commit/72e95057be223d20c642fa1c4b0541a68f8243c7))
+
 ## [2.0.0](https://github.com/restus-inc/material-react-js/compare/v1.1.1...v2.0.0) (2020-11-26)
 
 ### Bug Fix

@@ -1,5 +1,11 @@
 # Change Log
 
+## [3.0.0](https://github.com/restus-inc/material-react-js/compare/v3.0.0...v2.0.1) (2020-12-31)
+
+### Breaking Change
+
+* Support Material Compornent for Web 9.0 ([717c2f0](https://github.com/restus-inc/material-react-js/commit/717c2f00f691561b1cdb4e8903028fee10f91f6e))
+
 ## [2.0.1](https://github.com/restus-inc/material-react-js/compare/v2.0.0...v2.0.1) (2020-12-14)
 
 ### Bug Fix

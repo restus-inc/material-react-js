@@ -1,6 +1,16 @@
 # Change Log
 
-## [3.0.0](https://github.com/restus-inc/material-react-js/compare/v3.0.0...v2.0.1) (2020-12-31)
+## [3.1.0](https://github.com/restus-inc/material-react-js/compare/v3.0.0...v3.1.0) (2021-02-07)
+
+### Bug Fix
+
+* **select:** Support when the key is not found in the items ([1f0e8aa](https://github.com/restus-inc/material-react-js/commit/1f0e8aa3b974d9f66095ac71b57c3b0721dacead))
+
+### Features
+
+* **data-table:** Add `tableClassName` and `usesStickyHeader` property ([37c7d97](https://github.com/restus-inc/material-react-js/commit/37c7d97e67f463e45c8b3e9204e5590b460c182b))
+
+## [3.0.0](https://github.com/restus-inc/material-react-js/compare/v2.0.1...v3.0.0) (2020-12-31)
 
 ### Breaking Change
 

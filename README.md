@@ -13,6 +13,7 @@ material-react-js version | React | Material Conpornent for the Web
 1.x | 16.x (16.8 or above) | 7.0
 2.x | 17.x | 8.0
 3.x | 17.x | 9.0
+4.x | 17.x | 10.0
 
 It suports following components:
 

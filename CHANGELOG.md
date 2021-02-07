@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.1.4](https://github.com/restus-inc/material-react-js/compare/v1.1.3...v1.1.4) (2021-02-07)
+
+### Bug Fix
+
+* **select:** Support when the key is not found in the items ([85e84b5](https://github.com/restus-inc/material-react-js/commit/85e84b5f3f15d6f931eb218a8a8d2dc08032b239))
+
 ## [1.1.3](https://github.com/restus-inc/material-react-js/compare/v1.1.2...v1.1.3) (2020-12-14)
 
 ### Document

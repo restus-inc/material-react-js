@@ -1567,3 +1567,177 @@ exports[`DataTable component supports standard data table 2`] = `
   </div>
 </div>"
 `;
+
+exports[`DataTable component supports standard data table 3`] = `
+"<div
+  class=\\"mdc-data-table mdc-data-table--sticky-header\\"
+>
+  <div
+    class=\\"mdc-data-table__table-container\\"
+  >
+    <table
+      class=\\"mdc-data-table__table my-table\\"
+    >
+      <thead>
+        <tr
+          class=\\"mdc-data-table__header-row\\"
+        >
+          <th
+            class=\\"mdc-data-table__header-cell mdc-data-table__header-cell--numeric id-cell\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
+          >
+            ID
+          </th>
+          <th
+            class=\\"mdc-data-table__header-cell composer-cell\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
+            title=\\"composer-column\\"
+          >
+            Composer Name
+          </th>
+          <th
+            class=\\"mdc-data-table__header-cell none\\"
+            role=\\"columnheader\\"
+            scope=\\"col\\"
+          >
+            
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class=\\"mdc-data-table__content\\"
+      >
+        <tr
+          class=\\"mdc-data-table__row\\"
+        >
+          <th
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
+          >
+            1
+          </th>
+          <td
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
+            data-name=\\"Wolfgang Amadeus Mozart\\"
+            title=\\"composer\\"
+          >
+            Wolfgang Amadeus Mozart
+          </td>
+          <td
+            class=\\"mdc-data-table__cell\\"
+          >
+            <a
+              href=\\"./1\\"
+            >
+              Show Details
+            </a>
+          </td>
+        </tr>
+        <tr
+          class=\\"mdc-data-table__row\\"
+        >
+          <th
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
+          >
+            2
+          </th>
+          <td
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
+            data-name=\\"Ludwig van Beethoven\\"
+            title=\\"composer\\"
+          >
+            Ludwig van Beethoven
+          </td>
+          <td
+            class=\\"mdc-data-table__cell\\"
+          >
+            <a
+              href=\\"./2\\"
+            >
+              Show Details
+            </a>
+          </td>
+        </tr>
+        <tr
+          class=\\"mdc-data-table__row\\"
+        >
+          <th
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
+          >
+            3
+          </th>
+          <td
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
+            data-name=\\"Antonio Vivaldi\\"
+            title=\\"composer\\"
+          >
+            Antonio Vivaldi
+          </td>
+          <td
+            class=\\"mdc-data-table__cell\\"
+          >
+            <a
+              href=\\"./3\\"
+            >
+              Show Details
+            </a>
+          </td>
+        </tr>
+        <tr
+          class=\\"mdc-data-table__row\\"
+        >
+          <th
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
+          >
+            4
+          </th>
+          <td
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
+            title=\\"composer\\"
+          />
+          <td
+            class=\\"mdc-data-table__cell\\"
+          >
+            <a
+              href=\\"./4\\"
+            >
+              Show Details
+            </a>
+          </td>
+        </tr>
+        <tr
+          class=\\"mdc-data-table__row\\"
+        >
+          <th
+            class=\\"mdc-data-table__cell mdc-data-table__cell--numeric id-cell\\"
+            scope=\\"row\\"
+          >
+            5
+          </th>
+          <td
+            class=\\"mdc-data-table__cell composer-cell composer-body-cell\\"
+            data-name=\\"George Frideric Handel\\"
+            title=\\"composer\\"
+          >
+            George Frideric Handel
+          </td>
+          <td
+            class=\\"mdc-data-table__cell\\"
+          >
+            <a
+              href=\\"./5\\"
+            >
+              Show Details
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>"
+`;

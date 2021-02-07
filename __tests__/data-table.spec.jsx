@@ -97,6 +97,10 @@ describe('DataTable component', () => {
     expect(htmlOfRendering(
       <DataTable className="my-table" data={dataSource} keyField="id" columns={columns} omitsHeaderRow={true}/>,
     )).resolves.toMatchSnapshot();
+
+    expect(htmlOfRendering(
+      <DataTable tableClassName="my-table" data={dataSource} keyField="id" columns={columns} usesStickyHeader={true} />,
+    )).resolves.toMatchSnapshot();
   });
 
   it('supports data table with row selection', () => {

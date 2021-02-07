@@ -131,6 +131,8 @@ function Cell(props) {
  * identify the data source an element. A nested property can be specified by connecting
  * then with `'.'`.
  * @param {string} [props.className] The class name that is added to the root element.
+ * @param {string} [props.tableClassName] The class name that is added to the HTML `table`
+ * element.
  * @param {boolean} [props.omitsHeaderRow] `true` if not display header row, otherwise `false`.
  * Default to `false`.
  * @param {Object[]} props.columns The setting of data table's columns.
@@ -168,6 +170,9 @@ function Cell(props) {
  * @param {RowClassName} [props.rowClassName] The function to get the class name of
  * the table row.
  * @param {string} [props.aria-label] The `aria-label` attribute added to the table tag.
+ * @param {boolean} [props.usesStickyHeader] Specify `true` if you want to make header
+ * row sticky (fixed) on vertical scroll, otherwise `false`. Default to `false`. (Note:
+ * Sticky header feature is not compatible with IE11 browsers.)
  * @param {EventHandler} [props.onRowSelectionChanged] Specifies event handler that is
  * called when row selection checkbox is clicked.
  * @param {EventHandler} [props.onSelectedAll] Specifies event handler that is called
@@ -236,10 +241,18 @@ export default function DataTable(props) {
     };
   }, [sortable, props.onSorted]);
 
+  const rootClassList = ['mdc-data-table'];
+  if (props.usesStickyHeader) {
+    rootClassList.push('mdc-data-table--sticky-header');
+  }
+  if (props.className) {
+    rootClassList.push(props.className);
+  }
+
   return (
-    <div className={props.className ? `mdc-data-table ${props.className}` : 'mdc-data-table'} ref={rootElement}>
+    <div className={rootClassList.join(' ')} ref={rootElement}>
       <div className="mdc-data-table__table-container">
-        <table className="mdc-data-table__table" aria-label={props['aria-label']}>
+        <table className={props.tableClassName ? `mdc-data-table__table ${props.tableClassName}` : 'mdc-data-table__table'} aria-label={props['aria-label']}>
         {props.omitsHeaderRow
           ? null
           : (

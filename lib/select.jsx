@@ -50,7 +50,7 @@ const generateRootClassName = (props) => {
 
 const getItemValue = (item, itemsValueAttr, index) => {
   if (itemsValueAttr) {
-    return item[itemsValueAttr];
+    return item[itemsValueAttr] || '';
   }
   return typeof item === 'object' ? index.toString() : item.toString();
 };

@@ -1,5 +1,11 @@
 # Change Log
 
+## [4.0.0](https://github.com/restus-inc/material-react-js/compare/v3.1.0...v4.0.0) (2021-02-07)
+
+### Breaking Change
+
+* Support Material Compornent for the Web 10.0 ([fca5130](https://github.com/restus-inc/material-react-js/commit/fca5130e0621335acf8f0043768e1f40b8cdb5b8))
+
 ## [3.1.0](https://github.com/restus-inc/material-react-js/compare/v3.0.0...v3.1.0) (2021-02-07)
 
 ### Bug Fix

@@ -173,6 +173,8 @@ function Cell(props) {
  * @param {boolean} [props.usesStickyHeader] Specify `true` if you want to make header
  * row sticky (fixed) on vertical scroll, otherwise `false`. Default to `false`. (Note:
  * Sticky header feature is not compatible with IE11 browsers.)
+ * @param {EventHandler} [props.onScroll] Specifies event handler that is called when
+ * table is scrolled.
  * @param {EventHandler} [props.onRowSelectionChanged] Specifies event handler that is
  * called when row selection checkbox is clicked.
  * @param {EventHandler} [props.onSelectedAll] Specifies event handler that is called
@@ -251,7 +253,7 @@ export default function DataTable(props) {
 
   return (
     <div className={rootClassList.join(' ')} ref={rootElement}>
-      <div className="mdc-data-table__table-container">
+      <div className="mdc-data-table__table-container" onScroll={props.onScroll}>
         <table className={props.tableClassName ? `mdc-data-table__table ${props.tableClassName}` : 'mdc-data-table__table'} aria-label={props['aria-label']}>
         {props.omitsHeaderRow
           ? null

@@ -335,7 +335,7 @@ describe('DataTable component', () => {
     expect(eventDetail).toMatchObject({ columnId: 'id', columnIndex: 0, sortValue: 'ascending' });
   });
 
-  it('fires onSorted evnet when a sort icon is clicked', async () => {
+  it('fires onClickFirstPageIcon, onClickPrevPageIcon, onClickNextPageIcon and onClickLastPageIcon evnet when a pagenation controll is clicked', async () => {
     const columns = [{
       key: 'id',
       header: 'ID',

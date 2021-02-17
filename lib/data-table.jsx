@@ -173,6 +173,9 @@ function Cell(props) {
  * @param {boolean} [props.usesStickyHeader] Specify `true` if you want to make header
  * row sticky (fixed) on vertical scroll, otherwise `false`. Default to `false`. (Note:
  * Sticky header feature is not compatible with IE11 browsers.)
+ * @param {React.MutableRefObject} [props.mdcDataTableRef] MutableRefObject which bind an
+ * MDCDataTable instance to. The instance is bind only if `props.usesRowSelection` is
+ * `true` or `props.columns` includes some sortable columns.
  * @param {EventHandler} [props.onScroll] Specifies event handler that is called when
  * table is scrolled.
  * @param {EventHandler} [props.onRowSelectionChanged] Specifies event handler that is
@@ -189,7 +192,7 @@ function Cell(props) {
 export default function DataTable(props) {
   const sortable = props.columns.some((column) => column.isSortable);
   const rootElement = sortable || props.usesRowSelection ? useRef() : null;
-  const mdcComponentRef = sortable || props.usesRowSelection ? useRef() : null;
+  const mdcComponentRef = props.mdcDataTableRef || (rootElement ? useRef() : null);
 
   useEffect(() => {
     if (sortable || props.usesRowSelection) {

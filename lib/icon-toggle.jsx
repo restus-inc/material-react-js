@@ -28,7 +28,7 @@ import { MDCRipple } from '@material/ripple';
 const NON_NATIVE_PROPS = [
   'className', 'iconClassName', 'onIcon', 'offIcon', 'isOnState', 'label',
   'aria-label', 'aria-pressed', 'data-aria-label-off', 'data-aria-label-on',
-  'ref', 'disablesMdcInstance',
+  'ref', 'disablesMdcInstance', 'mdcIconButtonToggleRef', 'mdcRippleRef',
 ];
 
 const generateIconClassName = (props, isOnIcon) => {
@@ -84,6 +84,10 @@ const generateRootClassName = (props) => {
  * @param {boolean} [props.disablesMdcInstance] Specifies `true` if you do not want to
  * instantiate MDCRipple Component. `MDCIconButtonToggle` is instantiated regardless
  * of the setting of this property. Default to `false`.
+ * @param {React.MutableRefObject} [props.mdcIconButtonToggleRef] MutableRefObject which
+ * bind an MDCIconButtonToggle instance to.
+ * @param {React.MutableRefObject} [props.mdcRippleRef] MutableRefObject which bind an
+ * MDCRipple instance to. The instance is not bind if `props.disablesMdcInstance` is `true`.
  * @returns {DetailedReactHTMLElement}
  * @example
  * import { IconToggle } from 'material-react-js';
@@ -128,7 +132,7 @@ const generateRootClassName = (props) => {
  */
 function IconToggle(props) {
   const rootElement = useRef();
-  const mdcComponentRef = useRef();
+  const mdcComponentRef = props.mdcIconButtonToggleRef || useRef();
 
   useEffect(() => {
     mdcComponentRef.current = new MDCIconButtonToggle(rootElement.current);
@@ -142,6 +146,9 @@ function IconToggle(props) {
       return () => {};
     }
     const mdcComponent = new MDCRipple(rootElement.current);
+    if (props.mdcRippleRef) {
+      props.mdcRippleRef.current = mdcComponent; // eslint-disable-line no-param-reassign
+    }
     return () => {
       mdcComponent.destroy();
     };

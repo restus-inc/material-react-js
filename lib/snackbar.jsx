@@ -58,6 +58,8 @@ const generateRootClassName = (props) => {
  * @param {string} [props.isLeading] Specifies `true` if the snackbar is displayed on the
  * leading egdge of the screen (the left side in LTR, or the right side in RTL). Specifying
  * `false`(default), the snackbar are centered horizontally within the viewport.
+ * @param {React.MutableRefObject} [props.mdcSnackbarRef] MutableRefObject which bind an
+ * MDCSnackbar instance to.
  * @param {EventHandler} [props.onOpening] Specifies event handler that is called when
  * the snackbar begins its opening animation.
  * @param {EventHandler} [props.onOpened] Specifies event handler that is called when
@@ -73,7 +75,7 @@ const generateRootClassName = (props) => {
  */
 export default function Snackbar(props) {
   const rootElement = useRef();
-  const mdcComponent = useRef();
+  const mdcComponent = props.mdcSnackbarRef || useRef();
 
   useEffect(() => {
     mdcComponent.current = new MDCSnackbar(rootElement.current);

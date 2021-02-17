@@ -21,14 +21,20 @@
  * SOFTWARE.
  */
 
-/* global describe, it, expect */
+/* global describe, afterEach, it, expect */
 import 'regenerator-runtime/runtime';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { MDCRipple } from '@material/ripple';
+import { render, cleanup } from '@testing-library/react';
 import { htmlOfRendering } from './utils';
 
 import Button from '../lib/button';
 
 describe('Button component', () => {
+  afterEach(async () => {
+    await cleanup();
+  });
+
   it('supports text buttons', () => {
     expect(htmlOfRendering(
       <Button label="foo"/>,
@@ -49,29 +55,42 @@ describe('Button component', () => {
 
   it('supports outlined buttons', () => {
     expect(htmlOfRendering(
-      <Button variation='outlined' label="foo"/>,
+      <Button variation="outlined" label="foo"/>,
     )).resolves.toMatchSnapshot();
 
     expect(htmlOfRendering(
-      <Button type="button" variation='outlined' label="foo" icon="favorite" supportsTouch={true}/>,
+      <Button type="button" variation="outlined" label="foo" icon="favorite" supportsTouch={true}/>,
     )).resolves.toMatchSnapshot();
 
     expect(htmlOfRendering(
-      <Button variation='outlined' label="foo" className="bar" iconClassName="fa fa-aws" disabled={true}/>,
+      <Button variation="outlined" label="foo" className="bar" iconClassName="fa fa-aws" disabled={true}/>,
     )).resolves.toMatchSnapshot();
   });
 
   it('supports contained buttons', () => {
     expect(htmlOfRendering(
-      <Button variation='contained' label="foo"/>,
+      <Button variation="contained" label="foo"/>,
     )).resolves.toMatchSnapshot();
 
     expect(htmlOfRendering(
-      <Button type="button" variation='contained' label="foo" icon="favorite" supportsTouch={true}/>,
+      <Button type="button" variation="contained" label="foo" icon="favorite" supportsTouch={true}/>,
     )).resolves.toMatchSnapshot();
 
     expect(htmlOfRendering(
-      <Button variation='contained' label="foo" className="bar" iconClassName="fa fa-aws" disabled={true}/>,
+      <Button variation="contained" label="foo" className="bar" iconClassName="fa fa-aws" disabled={true}/>,
     )).resolves.toMatchSnapshot();
+  });
+
+  it('can provide an MDCRipple instance', async () => {
+    let mdcRippleComponent;
+    function MyButton() {
+      const mdcRippleRef = useRef();
+      useEffect(() => {
+        mdcRippleComponent = mdcRippleRef.current;
+      });
+      return <Button label="foo" mdcRippleRef={mdcRippleRef}/>;
+    }
+    render(<MyButton/>);
+    expect(mdcRippleComponent).toBeInstanceOf(MDCRipple);
   });
 });

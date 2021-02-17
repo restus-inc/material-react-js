@@ -25,7 +25,7 @@ import React, { useRef, useEffect } from 'react';
 import { MDCTab } from '@material/tab';
 
 const NON_NATIVE_PROPS = [
-  'label', 'className', 'active', 'icon', 'iconClassName', 'ref',
+  'label', 'className', 'active', 'icon', 'iconClassName', 'ref', 'mdcTabRef',
 ];
 
 const generateRootClassName = (props) => {
@@ -63,6 +63,8 @@ function IconElement(props) {
  * @param {string} [props.iconClassName] The class name that is added to the icon element if
  * adding the icon. The component renders an icon on the tab if either this attribute or
  * `props.icon` is present.
+ * @param {React.MutableRefObject} [props.mdcTabRef] MutableRefObject which bind an
+ * MDCTab instance to.
  * @returns {DetailedReactHTMLElement}
  * @exports material-react-js
  */
@@ -71,6 +73,9 @@ export default function Tab(props) {
 
   useEffect(() => {
     const mdcComponent = new MDCTab(rootElement.current);
+    if (props.mdcTabRef) {
+      props.mdcTabRef.current = mdcComponent; // eslint-disable-line no-param-reassign
+    }
     return () => {
       mdcComponent.destroy();
     };

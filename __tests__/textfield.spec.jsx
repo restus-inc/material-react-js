@@ -21,14 +21,21 @@
  * SOFTWARE.
  */
 
-/* global describe, it, expect */
+/* global describe, afterEach, it, expect */
 import 'regenerator-runtime/runtime';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { MDCTextField } from '@material/textfield';
+import { render, cleanup } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { htmlOfRendering } from './utils';
 
 import TextField from '../lib/textfield';
 
 describe('TextField component', () => {
+  afterEach(async () => {
+    await cleanup();
+  });
+
   it('supports filled text fields', () => {
     expect(htmlOfRendering(
       <TextField/>,
@@ -135,5 +142,40 @@ describe('TextField component', () => {
     expect(htmlOfRendering(
       <TextField variation="filled-textarea" label="foo" id="bar" defaultValue="baz" className="qux" pattern="[a-z]*" helperText="qux" showsHelperAsValidation={true}/>,
     )).resolves.toMatchSnapshot();
+  });
+
+  it('can provide an MDCTextField instance', async () => {
+    let mdcTextFieldComponent;
+    function MyTextField() {
+      const mdcTextFieldRef = useRef();
+      useEffect(() => {
+        mdcTextFieldComponent = mdcTextFieldRef.current;
+      });
+      return <TextField label="foo" mdcTextFieldRef={mdcTextFieldRef}/>;
+    }
+    render(<MyTextField/>);
+    expect(mdcTextFieldComponent).toBeInstanceOf(MDCTextField);
+  });
+
+  it('can be manipulated via MDCTextField', async () => {
+    function TextfieldTester() {
+      const mdcTextFieldRef = useRef();
+      function changeText() {
+        mdcTextFieldRef.current.value = 'baz qux';
+      }
+      return (
+         <>
+          <TextField id="my-text-field" label="text" defaultValue="foo bar" mdcTextFieldRef={mdcTextFieldRef} data-testid="my-text-field"/>
+          <button type="button" onClick={changeText}>change</button>
+        </>
+      );
+    }
+    const { getByTestId, getByText } = render(<TextfieldTester/>);
+    const nativeInput = getByTestId('my-text-field');
+    const button = getByText('change');
+
+    expect(nativeInput.value).toBe('foo bar');
+    userEvent.click(button);
+    expect(nativeInput.value).toBe('baz qux');
   });
 });

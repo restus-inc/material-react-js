@@ -21,14 +21,21 @@
  * SOFTWARE.
  */
 
-/* global describe, it, expect */
+/* global describe, afterEach, it, expect */
 import 'regenerator-runtime/runtime';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { MDCIconButtonToggle } from '@material/icon-button';
+import { MDCRipple } from '@material/ripple';
+import { render, cleanup } from '@testing-library/react';
 import { htmlOfRendering } from './utils';
 
 import IconToggle from '../lib/icon-toggle';
 
 describe('IconToggle component', () => {
+  afterEach(async () => {
+    await cleanup();
+  });
+
   it('supports material icon toggle buttons', () => {
     expect(htmlOfRendering(
       <IconToggle iconClassName="material-icons" onIcon="visibility" offIcon="visibility_off" label="visibility"/>,
@@ -66,5 +73,25 @@ describe('IconToggle component', () => {
         </IconToggle.OnSVG>
       </IconToggle>,
     )).resolves.toMatchSnapshot();
+  });
+
+  it('can provide an MDCIconButtonToggle instance', async () => {
+    let mdcIconButtonToggleComponent;
+    let mdcRippleComponent;
+    function MyIconButtonToggle() {
+      const mdcIconButtonToggleRef = useRef();
+      const mdcRippleRef = useRef();
+      useEffect(() => {
+        mdcIconButtonToggleComponent = mdcIconButtonToggleRef.current;
+        mdcRippleComponent = mdcRippleRef.current;
+      });
+      return <IconToggle iconClassName="material-icons"
+                         onIcon="visibility" offIcon="visibility_off"
+                         mdcIconButtonToggleRef={mdcIconButtonToggleRef}
+                         mdcRippleRef={mdcRippleRef}/>;
+    }
+    render(<MyIconButtonToggle/>);
+    expect(mdcIconButtonToggleComponent).toBeInstanceOf(MDCIconButtonToggle);
+    expect(mdcRippleComponent).toBeInstanceOf(MDCRipple);
   });
 });

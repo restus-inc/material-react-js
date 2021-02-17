@@ -27,6 +27,7 @@ import { MDCFormField } from '@material/form-field';
 
 const NON_NATIVE_PROPS = [
   'label', 'className', 'indeterminate', 'supportsTouch', 'type', 'disablesMdcInstance',
+  'mdcCheckboxRef', 'mdcFormFieldRef',
 ];
 
 function NativeInput(props) {
@@ -47,6 +48,9 @@ function SimpleCheckbox(props) {
       return () => {};
     }
     const mdcComponent = new MDCCheckbox(rootElement.current);
+    if (props.mdcCheckboxRef) {
+      props.mdcCheckboxRef.current = mdcComponent; // eslint-disable-line no-param-reassign
+    }
     return () => {
       mdcComponent.destroy();
     };
@@ -87,12 +91,17 @@ function CheckboxWithLabel(props) {
   }
 
   const rootElement = useRef();
+  const mdcCheckboxRef = props.mdcCheckboxRef || (props.disablesMdcInstance ? null : useRef());
 
   useEffect(() => {
     if (props.disablesMdcInstance) {
       return () => {};
     }
     const mdcComponent = new MDCFormField(rootElement.current);
+    mdcComponent.input = mdcCheckboxRef.current;
+    if (props.mdcFormFieldRef) {
+      props.mdcFormFieldRef.current = mdcComponent; // eslint-disable-line no-param-reassign
+    }
     return () => {
       mdcComponent.destroy();
     };
@@ -109,7 +118,7 @@ function CheckboxWithLabel(props) {
 
   return (
     <div className={classNames.join(' ')} ref={rootElement}>
-      <SimpleCheckbox {...props}/>
+      <SimpleCheckbox mdcCheckboxRef={mdcCheckboxRef} {...props}/>
       <label {...labelProps}>{props.label}</label>
     </div>
   );
@@ -132,6 +141,10 @@ function CheckboxWithLabel(props) {
  * instantiate MDC Component. Default to `false`.
  * @param {boolean} [props.supportsTouch] Whether to support touch in Material Design
  * specification. Material Design spec advises that touch targets should be at least 48 x 48 px.
+ * @param {React.MutableRefObject} [props.mdcCheckboxRef] MutableRefObject which bind an
+ * MDCCheckbox instance to. The instance is not bind if `props.disablesMdcInstance` is `true`.
+ * @param {React.MutableRefObject} [props.mdcFormFieldRef] MutableRefObject which bind an
+ * MDCormField instance to. The instance is not bind if `props.disablesMdcInstance` is `true`.
  * @returns {DetailedReactHTMLElement}
  * @exports material-react-js
  */

@@ -27,6 +27,7 @@ import { MDCFormField } from '@material/form-field';
 
 const NON_NATIVE_PROPS = [
   'label', 'className', 'indeterminate', 'supportsTouch', 'type', 'disablesMdcInstance',
+  'mdcRadioRef', 'mdcFormFieldRef',
 ];
 
 function NativeInput(props) {
@@ -44,6 +45,9 @@ function SimpleRadio(props) {
       return () => {};
     }
     const mdcComponent = new MDCRadio(rootElement.current);
+    if (props.mdcRadioRef) {
+      props.mdcRadioRef.current = mdcComponent; // eslint-disable-line no-param-reassign
+    }
     return () => {
       mdcComponent.destroy();
     };
@@ -77,12 +81,17 @@ function RadioWithLabel(props) {
   }
 
   const rootElement = useRef();
+  const mdcRadioRef = props.mdcRadioRef || (props.disablesMdcInstance ? null : useRef());
 
   useEffect(() => {
     if (props.disablesMdcInstance) {
       return () => {};
     }
     const mdcComponent = new MDCFormField(rootElement.current);
+    mdcComponent.input = mdcRadioRef.current;
+    if (props.mdcFormFieldRef) {
+      props.mdcFormFieldRef.current = mdcComponent; // eslint-disable-line no-param-reassign
+    }
     return () => {
       mdcComponent.destroy();
     };
@@ -99,7 +108,7 @@ function RadioWithLabel(props) {
 
   return (
     <div className={classNames.join(' ')} ref={rootElement}>
-      <SimpleRadio {...props}/>
+      <SimpleRadio mdcRadioRef={mdcRadioRef} {...props}/>
       <label {...labelProps}>{props.label}</label>
     </div>
   );
@@ -120,6 +129,10 @@ function RadioWithLabel(props) {
  * instantiate MDC Component. Default to `false`.
  * @param {boolean} [props.supportsTouch] Whether to support touch in Material Design
  * specification. Material Design spec advises that touch targets should be at least 48 x 48 px.
+ * @param {React.MutableRefObject} [props.mdcRadioRef] MutableRefObject which bind an
+ * MDCRadio instance to. The instance is not bind if `props.disablesMdcInstance` is `true`.
+ * @param {React.MutableRefObject} [props.mdcFormFieldRef] MutableRefObject which bind an
+ * MDCormField instance to. The instance is not bind if `props.disablesMdcInstance` is `true`.
  * @returns {DetailedReactHTMLElement}
  * @exports material-react-js
  */

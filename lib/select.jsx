@@ -75,6 +75,8 @@ const getItemValue = (item, itemsValueAttr, index) => {
  * Default to `false`.
  * @param {boolean} [props.disabled] Specifies `true` if you want to disable the select.
  * Default to `false`.
+ * @param {React.MutableRefObject} [props.mdcSelectRef] MutableRefObject which bind an
+ * MDCSelect instance to.
  * @param {EventHandler} [props.onChange] Specifies event handler that is called when
  * a option has been selected.
  * @returns {DetailedReactHTMLElement}
@@ -82,7 +84,7 @@ const getItemValue = (item, itemsValueAttr, index) => {
  */
 export default function Select(props) {
   const rootElement = useRef();
-  const mdcComponentRef = useRef();
+  const mdcComponentRef = props.mdcSelectRef || useRef();
 
   useEffect(() => {
     mdcComponentRef.current = new MDCSelect(rootElement.current);

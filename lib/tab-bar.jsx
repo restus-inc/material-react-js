@@ -30,6 +30,8 @@ import { MDCTabBar } from '@material/tab-bar';
  * @function TabBar
  * @param {Object} props
  * @param {string} [props.className] The class name that is added to the root element.
+ * @param {React.MutableRefObject} [props.mdcTabBarRef] MutableRefObject which bind an
+ * MDCTabBar instance to.
  * @param {EventHandler} [props.onActivated] An event handler of React that is associated with
  * `button` element.
  * @returns {DetailedReactHTMLElement}
@@ -37,7 +39,7 @@ import { MDCTabBar } from '@material/tab-bar';
  */
 export default function TabBar(props) {
   const rootElement = useRef();
-  const mdcComponent = useRef();
+  const mdcComponent = props.mdcTabBarRef || useRef();
 
   useEffect(() => {
     mdcComponent.current = new MDCTabBar(rootElement.current);

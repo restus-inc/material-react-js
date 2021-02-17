@@ -27,6 +27,7 @@ import { MDCTextField } from '@material/textfield';
 const NON_NATIVE_PROPS = [
   'id', 'value', 'defaultValue', 'type', 'variation', 'label', 'className', 'helperText',
   'showsHelperPersistently', 'showsHelperAsValidation', 'rows', 'cols', 'resizable',
+  'mdcTextFieldRef',
 ];
 
 const generateRootClassName = (props) => {
@@ -149,12 +150,14 @@ function HelperText(props) {
  * @param {boolean} [props.resizable] Specifies `true` allowing the user to resize the textarea.
  * If `props.variation` is not `'textarea'` or `'filled-textarea'`, this attribute is ignored.
  * Default to `false`
+ * @param {React.MutableRefObject} [props.mdcTextFieldRef] MutableRefObject which bind an
+ * MDCTextField instance to.
  * @returns {DetailedReactHTMLElement}
  * @exports material-react-js
  */
 export default function TextField(props) {
   const rootElement = useRef();
-  const mdcComponentRef = useRef();
+  const mdcComponentRef = props.mdcTextFieldRef || useRef();
 
   useEffect(() => {
     const hasFocus = document.hasFocus() && document.activeElement === rootElement.current;

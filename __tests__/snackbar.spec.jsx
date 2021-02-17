@@ -23,7 +23,8 @@
 
 /* global jest, describe, afterEach, it, expect */
 import 'regenerator-runtime/runtime';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { MDCSnackbar } from '@material/snackbar';
 import { render, cleanup, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { htmlOfRendering, getByOpenedSnackbar } from './utils';
@@ -57,6 +58,19 @@ describe('Snackbar component', () => {
     expect(htmlOfRendering(
       <Snackbar label="foo" actionLabel="bar" isLeading={true} onClosed={() => {}}/>,
     )).resolves.toMatchSnapshot();
+  });
+
+  it('can provide an MDCSnackbar instance', async () => {
+    let mdcComponent;
+    function MySnackbar() {
+      const mdcSnackbarRef = useRef();
+      useEffect(() => {
+        mdcComponent = mdcSnackbarRef.current;
+      });
+      return <Snackbar message="foo" mdcSnackbarRef={mdcSnackbarRef}/>;
+    }
+    render(<MySnackbar/>);
+    expect(mdcComponent).toBeInstanceOf(MDCSnackbar);
   });
 
   it('opens when isOpen property changes to true', async () => {
@@ -121,4 +135,35 @@ describe('Snackbar component', () => {
     expect(onClosing).toHaveBeenCalledTimes(2);
     expect(() => { getByOpenedSnackbar(); }).toThrow('Unable to find an opened snackbar');
   }, 7000);
+
+  it('can be manipulated via MDCSnackbar', async () => {
+    const onOpening = jest.fn();
+    const onOpened = jest.fn();
+    function SnackbarTester() {
+      const mdcSnackbarRef = useRef();
+      function openSnackbar() {
+        mdcSnackbarRef.current.open();
+      }
+      return (
+        <div>
+          <button onClick={openSnackbar}>open</button>
+          <Snackbar message="foo" mdcSnackbarRef={mdcSnackbarRef}
+                    onOpening={onOpening}
+                    onOpened={onOpened}/>
+        </div>
+      );
+    }
+
+    const { getByText } = render(<SnackbarTester/>);
+    const openButton = getByText('open');
+
+    expect(() => { getByOpenedSnackbar(); }).toThrow('Unable to find an opened snackbar');
+    expect(onOpening).not.toHaveBeenCalled();
+
+    userEvent.click(openButton);
+    expect(onOpening).toHaveBeenCalledTimes(1);
+    expect(onOpened).not.toHaveBeenCalled();
+    await waitFor(() => expect(onOpened).toHaveBeenCalledTimes(1));
+    expect(getByOpenedSnackbar()).toBeTruthy();
+  });
 });

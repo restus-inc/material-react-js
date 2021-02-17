@@ -23,7 +23,9 @@
 
 /* global jest, describe, afterEach, it, expect */
 import 'regenerator-runtime/runtime';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { MDCTabBar } from '@material/tab-bar';
+import { MDCTab } from '@material/tab';
 import { render, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { htmlOfRendering } from './utils';
@@ -52,6 +54,35 @@ describe('Tab and TabBar component', () => {
         <Tab label="baz" className="tab" active={true}/>
       </TabBar>
     ))).resolves.toMatchSnapshot();
+  });
+
+  it('can provide an MDCTab and MDCTabBar instance', async () => {
+    let mdcTabBarComponent;
+    let mdcTabComponent1;
+    let mdcTabComponent2;
+    function MyTabs() {
+      const mdcTabBarRef = useRef();
+      const mdcTabRef1 = useRef();
+      const mdcTabRef2 = useRef();
+      useEffect(() => {
+        mdcTabBarComponent = mdcTabBarRef.current;
+        mdcTabComponent1 = mdcTabRef1.current;
+        mdcTabComponent2 = mdcTabRef2.current;
+      });
+      return (
+        <TabBar mdcTabBarRef={mdcTabBarRef}>
+          <Tab label="foo" active={true} mdcTabRef={mdcTabRef1}/>
+          <Tab label="bar" mdcTabRef={mdcTabRef2}/>
+          <Tab label="baz"/>
+        </TabBar>
+      );
+    }
+    render(<MyTabs/>);
+    expect(mdcTabBarComponent).toBeInstanceOf(MDCTabBar);
+    expect(mdcTabComponent1).toBeInstanceOf(MDCTab);
+    expect(mdcTabComponent2).toBeInstanceOf(MDCTab);
+    expect(mdcTabComponent1.active).toBe(true);
+    expect(mdcTabComponent2.active).toBe(false);
   });
 
   it('fires onActivated event when the tab is activated', () => {

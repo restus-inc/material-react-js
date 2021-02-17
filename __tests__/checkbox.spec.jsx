@@ -21,14 +21,22 @@
  * SOFTWARE.
  */
 
-/* global describe, it, expect */
+/* global describe, afterEach, it, expect */
 import 'regenerator-runtime/runtime';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { MDCCheckbox } from '@material/checkbox';
+import { MDCFormField } from '@material/form-field';
+import { render, cleanup } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { htmlOfRendering } from './utils';
 
 import Checkbox from '../lib/checkbox';
 
 describe('Checkbox component', () => {
+  afterEach(async () => {
+    await cleanup();
+  });
+
   it('supports checkbox', async () => {
     expect(htmlOfRendering(
       <Checkbox/>,
@@ -79,5 +87,47 @@ describe('Checkbox component', () => {
     expect(htmlOfRendering(
       <Checkbox id="foo" label="bar" className="baz" checked={props.checked} onChange={onChange} supportsTouch={true}/>,
     )).resolves.toMatchSnapshot();
+  });
+
+  it('can provide an MDCCheckbox instance', async () => {
+    let mdcCheckboxComponent;
+    let mdcFormFieldComponent;
+    function MyCheckbox() {
+      const mdcCheckboxRef = useRef();
+      const mdcFormFieldRef = useRef();
+      useEffect(() => {
+        mdcCheckboxComponent = mdcCheckboxRef.current;
+        mdcFormFieldComponent = mdcFormFieldRef.current;
+      });
+      return <Checkbox id="my-checkbox" label="Check" mdcCheckboxRef={mdcCheckboxRef} mdcFormFieldRef={mdcFormFieldRef}/>;
+    }
+    render(<MyCheckbox/>);
+    expect(mdcCheckboxComponent).toBeInstanceOf(MDCCheckbox);
+    expect(mdcFormFieldComponent).toBeInstanceOf(MDCFormField);
+    expect(mdcFormFieldComponent.input).toBe(mdcCheckboxComponent);
+  });
+
+  it('can be manipulated via MDCCheckbox', async () => {
+    function CheckboxTester() {
+      const mdcCheckboxRef = useRef();
+      function toggleCheckbox() {
+        mdcCheckboxRef.current.checked = !mdcCheckboxRef.current.checked;
+      }
+      return (
+         <>
+          <Checkbox id="my-checkbox" label="Check" mdcCheckboxRef={mdcCheckboxRef} data-testid="my-checkbox"/>
+          <button type="button" onClick={toggleCheckbox}>toggle</button>
+        </>
+      );
+    }
+    const { getByTestId, getByText } = render(<CheckboxTester/>);
+    const nativeCheckbox = getByTestId('my-checkbox');
+    const button = getByText('toggle');
+
+    expect(nativeCheckbox.checked).toBe(false);
+    userEvent.click(button);
+    expect(nativeCheckbox.checked).toBe(true);
+    userEvent.click(button);
+    expect(nativeCheckbox.checked).toBe(false);
   });
 });

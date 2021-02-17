@@ -24,7 +24,8 @@
 /* global jest, describe, afterEach, it, expect */
 /* eslint object-curly-newline: ["error", { "minProperties": 5 }] */
 import 'regenerator-runtime/runtime';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { MDCDialog } from '@material/dialog';
 import { render, cleanup, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { htmlOfRendering, getByOpenedDialog, getByDialogButton, getByDialogScrim } from './utils';
@@ -63,6 +64,28 @@ describe('Dialog component', () => {
     ))).resolves.toMatchSnapshot();
   });
 
+  it('can provide an MDCDialog instance', async () => {
+    let mdcComponent;
+    function MyDialog() {
+      const buttons = [{ action: 'ok', label: 'OK', isDefault: true }];
+      const mdcDialogRef = useRef();
+      useEffect(() => {
+        mdcComponent = mdcDialogRef.current;
+      });
+      return (
+        <Dialog title="foo" buttons={buttons} mdcDialogRef={mdcDialogRef}>
+          <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+          </ul>
+        </Dialog>
+      );
+    }
+    render(<MyDialog/>);
+    expect(mdcComponent).toBeInstanceOf(MDCDialog);
+  });
+
   it('opens when isOpen property changes to true', async () => {
     let actionForClosing;
     const onOpening = jest.fn();
@@ -98,7 +121,7 @@ describe('Dialog component', () => {
     const okButton = getByDialogButton(container, 'ok');
     const cancelButton = getByDialogButton(container, 'cancel');
     const scrim = getByDialogScrim(container);
-    // An error occurs if the following function is mocked.
+    // An error occurs if the following function is not mocked.
     okButton.getBoundingClientRect = jest.fn(() => ({ width: 100 }));
 
     expect(() => { getByOpenedDialog(); }).toThrow('Unable to find an opened dialog');
@@ -146,5 +169,49 @@ describe('Dialog component', () => {
     expect(onClosed).toHaveBeenCalledTimes(2);
     await waitFor(() => expect(onClosed).toHaveBeenCalledTimes(3));
     expect(actionForClosing).toBe('close');
+  });
+
+  it('can be manipulated via MDCDialog', async () => {
+    const onOpening = jest.fn();
+    const onOpened = jest.fn();
+    const buttons = [
+      { action: 'cancel', label: 'Cancel', isDefault: true },
+      { action: 'ok', label: 'OK' },
+    ];
+    function DialogTester() {
+      const mdcDialogRef = useRef();
+      function openDialog() {
+        mdcDialogRef.current.open();
+      }
+      return (
+        <>
+          <button onClick={openDialog}>open</button>
+          <Dialog title="foo" buttons={buttons} mdcDialogRef={mdcDialogRef}
+                  onOpening={onOpening}
+                  onOpened={onOpened}>
+            <ul>
+              <li>one</li>
+              <li>two</li>
+              <li>three</li>
+            </ul>
+          </Dialog>
+        </>
+      );
+    }
+
+    const { container, getByText } = render(<DialogTester/>);
+    const openButton = getByText('open');
+    const okButton = getByDialogButton(container, 'ok');
+    // An error occurs if the following function is not mocked.
+    okButton.getBoundingClientRect = jest.fn(() => ({ width: 100 }));
+
+    expect(() => { getByOpenedDialog(); }).toThrow('Unable to find an opened dialog');
+    expect(onOpening).not.toHaveBeenCalled();
+
+    userEvent.click(openButton);
+    expect(onOpening).toHaveBeenCalledTimes(1);
+    expect(onOpened).not.toHaveBeenCalled();
+    await waitFor(() => expect(onOpened).toHaveBeenCalledTimes(1));
+    expect(getByOpenedDialog()).toBeTruthy();
   });
 });

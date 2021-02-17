@@ -23,7 +23,8 @@
 
 /* global jest, beforeAll, afterEach, describe, it, expect */
 import 'regenerator-runtime/runtime';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { MDCDataTable } from '@material/data-table';
 import { render, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { htmlOfRendering } from './utils';
@@ -187,6 +188,40 @@ describe('DataTable component', () => {
     expect(htmlOfRendering(
       <DataTable data={dataSource} keyField="id" columns={columns}/>,
     )).resolves.toMatchSnapshot();
+  });
+
+  it('can provide an MDCDataTable instance', async () => {
+    let mdcComponent;
+    function MyDataTable() {
+      const columns = [{
+        key: 'id',
+        header: 'ID',
+        content: 'id',
+        isNumeric: true,
+        isRowHeader: true,
+        className: 'id-cell',
+        isSortable: true,
+        sortStatus: 'ascending',
+      }, {
+        key: 'composer-name',
+        header: 'Composer Name',
+        content: 'composer.name',
+        className: 'composer-cell',
+        bodyClassName: 'composer-body-cell',
+        isSortable: true,
+      }, {
+        key: 'detail-link',
+        content: (music) => <a href={`./${music.id}`}>Show Details</a>, // eslint-disable-line react/display-name
+        headerClassName: 'none',
+      }];
+      const mdcDataTableRef = useRef();
+      useEffect(() => {
+        mdcComponent = mdcDataTableRef.current;
+      });
+      return <DataTable data={dataSource} keyField="id" columns={columns} mdcDataTableRef={mdcDataTableRef}/>;
+    }
+    render(<MyDataTable/>);
+    expect(mdcComponent).toBeInstanceOf(MDCDataTable);
   });
 
   it('fires onRowSelectionChanged, onSelectedAll and onUnselectedAll evnet when a checkbox is clicked', async () => {

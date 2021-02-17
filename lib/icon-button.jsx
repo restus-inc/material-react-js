@@ -25,7 +25,7 @@ import React, { useEffect, useRef } from 'react';
 import { MDCRipple } from '@material/ripple';
 
 const NON_NATIVE_PROPS = [
-  'className', 'icon', 'ref', 'disablesMdcInstance',
+  'className', 'icon', 'ref', 'disablesMdcInstance', 'mdcRippleRef',
 ];
 
 const generateRootClassName = (props) => {
@@ -46,6 +46,8 @@ const generateRootClassName = (props) => {
  * @param {string} [props.icon] The inner text of the icon element if adding the icon.
  * @param {boolean} [props.disablesMdcInstance] Specifies `true` if you do not want to
  * instantiate MDCRipple Component. Default to `false`.
+ * @param {React.MutableRefObject} [props.mdcRippleRef] MutableRefObject which bind an
+ * MDCRipple instance to. The instance is not bind if `props.disablesMdcInstance` is `true`.
  * @returns {DetailedReactHTMLElement}
  * @example
  * import { IconButton } from 'material-react-js';
@@ -79,6 +81,9 @@ export default function IconButton(props) {
     }
     const mdcComponent = new MDCRipple(rootElement.current);
     mdcComponent.unbounded = true;
+    if (props.mdcRippleRef) {
+      props.mdcRippleRef.current = mdcComponent; // eslint-disable-line no-param-reassign
+    }
     return () => {
       mdcComponent.destroy();
     };

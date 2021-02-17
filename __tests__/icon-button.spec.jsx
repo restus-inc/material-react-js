@@ -21,14 +21,20 @@
  * SOFTWARE.
  */
 
-/* global describe, it, expect */
+/* global describe afterEach, it, expect, */
 import 'regenerator-runtime/runtime';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { MDCRipple } from '@material/ripple';
+import { render, cleanup } from '@testing-library/react';
 import { htmlOfRendering } from './utils';
 
 import IconButton from '../lib/icon-button';
 
 describe('IconButton component', () => {
+  afterEach(async () => {
+    await cleanup();
+  });
+
   it('supports material icon buttons', () => {
     expect(htmlOfRendering(
       <IconButton className="material-icons" icon="favorite"/>,
@@ -53,5 +59,18 @@ describe('IconButton component', () => {
         </svg>
       </IconButton>,
     )).resolves.toMatchSnapshot();
+  });
+
+  it('can provide an MDCRipple instance', async () => {
+    let mdcRippleComponent;
+    function MyIconButton() {
+      const mdcRippleRef = useRef();
+      useEffect(() => {
+        mdcRippleComponent = mdcRippleRef.current;
+      });
+      return <IconButton className="material-icons" icon="favorite" mdcRippleRef={mdcRippleRef}/>;
+    }
+    render(<MyIconButton/>);
+    expect(mdcRippleComponent).toBeInstanceOf(MDCRipple);
   });
 });

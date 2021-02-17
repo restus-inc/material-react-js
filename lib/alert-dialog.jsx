@@ -38,6 +38,8 @@ import Dialog from './dialog';
  * @param {string} props.buttons[].label The label of the action button.
  * @param {string} [props.buttons[].isDefault] Specifies `true` if the button means the
  * default action, otherwise `false`. Default to `false`.
+ * @param {React.MutableRefObject} [props.mdcDialogRef] MutableRefObject which bind an
+ * MDCDialog instance to.
  * @param {EventHandler} [props.onOpening] Specifies event handler that is called when
  * the dialog begins its opening animation.
  * @param {EventHandler} [props.onOpened] Specifies event handler that is called when

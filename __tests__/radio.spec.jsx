@@ -21,14 +21,22 @@
  * SOFTWARE.
  */
 
-/* global describe, it, expect */
+/* global describe, afterEach, it, expect */
 import 'regenerator-runtime/runtime';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { MDCRadio } from '@material/radio';
+import { MDCFormField } from '@material/form-field';
+import { render, cleanup } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { htmlOfRendering } from './utils';
 
 import Radio from '../lib/radio';
 
 describe('Radio component', () => {
+  afterEach(async () => {
+    await cleanup();
+  });
+
   it('supports radio button', () => {
     expect(htmlOfRendering(
       <Radio/>,
@@ -79,5 +87,47 @@ describe('Radio component', () => {
     expect(htmlOfRendering(
       <Radio id="foo" label="bar" className="baz" name="qux" checked={props.checked} onChange={onChange} supportsTouch={true}/>,
     )).resolves.toMatchSnapshot();
+  });
+
+  it('can provide an MDCRadio instance', async () => {
+    let mdcRadioComponent;
+    let mdcFormFieldComponent;
+    function MyRadio() {
+      const mdcRadioRef = useRef();
+      const mdcFormFieldRef = useRef();
+      useEffect(() => {
+        mdcRadioComponent = mdcRadioRef.current;
+        mdcFormFieldComponent = mdcFormFieldRef.current;
+      });
+      return <Radio id="my-radio" label="Radio" mdcRadioRef={mdcRadioRef} mdcFormFieldRef={mdcFormFieldRef}/>;
+    }
+    render(<MyRadio/>);
+    expect(mdcRadioComponent).toBeInstanceOf(MDCRadio);
+    expect(mdcFormFieldComponent).toBeInstanceOf(MDCFormField);
+    expect(mdcFormFieldComponent.input).toBe(mdcRadioComponent);
+  });
+
+  it('can be manipulated via MDCRadio', async () => {
+    function RadioTester() {
+      const mdcRadioRef = useRef();
+      function toggleRadio() {
+        mdcRadioRef.current.checked = !mdcRadioRef.current.checked;
+      }
+      return (
+         <>
+          <Radio id="my-radio" label="Radio" mdcRadioRef={mdcRadioRef} data-testid="my-radio"/>
+          <button type="button" onClick={toggleRadio}>toggle</button>
+        </>
+      );
+    }
+    const { getByTestId, getByText } = render(<RadioTester/>);
+    const nativeRadio = getByTestId('my-radio');
+    const button = getByText('toggle');
+
+    expect(nativeRadio.checked).toBe(false);
+    userEvent.click(button);
+    expect(nativeRadio.checked).toBe(true);
+    userEvent.click(button);
+    expect(nativeRadio.checked).toBe(false);
   });
 });

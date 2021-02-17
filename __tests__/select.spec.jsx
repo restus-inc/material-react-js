@@ -23,7 +23,8 @@
 
 /* global jest, describe, afterEach, it, expect */
 import 'regenerator-runtime/runtime';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { MDCSelect } from '@material/select';
 import { render, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { htmlOfRendering, findByOpenedMenu, getByMenuItem } from './utils';
@@ -83,6 +84,19 @@ describe('Select component', () => {
       // Selected value is 'two', which has index: 1.
       <Select label="foo" items={items} value="1" itemsTextAttr="value" />,
     )).resolves.toMatchSnapshot();
+  });
+
+  it('can provide an MDCSelect instance', async () => {
+    let mdcSelectComponent;
+    function MySelect() {
+      const mdcSelectRef = useRef();
+      useEffect(() => {
+        mdcSelectComponent = mdcSelectRef.current;
+      });
+      return <Select label="foo" items={['one', 'two', 'three']} mdcSelectRef={mdcSelectRef}/>;
+    }
+    render(<MySelect/>);
+    expect(mdcSelectComponent).toBeInstanceOf(MDCSelect);
   });
 
   it('fires onChange event when the value is changed', async () => {

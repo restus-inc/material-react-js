@@ -332,6 +332,11 @@ exports[`Select component supports filled select 2`] = `
 "<div
   class=\\"mdc-select mdc-select--filled mdc-select--required mdc-select--disabled\\"
 >
+  <input
+    name=\\"bar\\"
+    type=\\"hidden\\"
+    value=\\"\\"
+  />
   <div
     aria-disabled=\\"true\\"
     aria-haspopup=\\"listbox\\"
@@ -441,6 +446,11 @@ exports[`Select component supports filled select 3`] = `
 "<div
   class=\\"mdc-select mdc-select--filled qux\\"
 >
+  <input
+    name=\\"bar\\"
+    type=\\"hidden\\"
+    value=\\"two\\"
+  />
   <div
     aria-disabled=\\"false\\"
     aria-haspopup=\\"listbox\\"
@@ -890,6 +900,11 @@ exports[`Select component supports outlined select 3`] = `
 "<div
   class=\\"mdc-select mdc-select--outlined qux\\"
 >
+  <input
+    name=\\"bar\\"
+    type=\\"hidden\\"
+    value=\\"two\\"
+  />
   <div
     aria-disabled=\\"false\\"
     aria-haspopup=\\"listbox\\"

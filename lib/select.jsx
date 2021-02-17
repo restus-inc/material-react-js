@@ -75,6 +75,9 @@ const getItemValue = (item, itemsValueAttr, index) => {
  * Default to `false`.
  * @param {boolean} [props.disabled] Specifies `true` if you want to disable the select.
  * Default to `false`.
+ * @param {string} [props.name] Specifying a value for this property, the component generate
+ * an `<input type="hidden" name="{value of property}">` elelment. A value of the element
+ * is synchronized with value of Select, you can use the component as-is HTML form.
  * @param {React.MutableRefObject} [props.mdcSelectRef] MutableRefObject which bind an
  * MDCSelect instance to.
  * @param {EventHandler} [props.onChange] Specifies event handler that is called when
@@ -128,6 +131,7 @@ export default function Select(props) {
 
   return (
     <div className={generateRootClassName(props)} ref={rootElement}>
+      {props.name && <input type="hidden" name={props.name} value={selectedItemText}/>}
       <div className="mdc-select__anchor"
            role="button"
            aria-haspopup="listbox"

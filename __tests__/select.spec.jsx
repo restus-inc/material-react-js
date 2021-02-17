@@ -42,11 +42,11 @@ describe('Select component', () => {
     )).resolves.toMatchSnapshot();
 
     expect(htmlOfRendering(
-      <Select label="foo" items={['one', 'two', 'three']} required={true} disabled={true}/>,
+      <Select label="foo" items={['one', 'two', 'three']} name="bar" required={true} disabled={true}/>,
     )).resolves.toMatchSnapshot();
 
     expect(htmlOfRendering(
-      <Select label="foo" id="bar" items={['one', 'two', 'three']} value="two" className="qux"/>,
+      <Select label="foo" id="bar" items={['one', 'two', 'three']} name="bar" value="two" className="qux"/>,
     )).resolves.toMatchSnapshot();
 
     expect(htmlOfRendering(
@@ -64,7 +64,7 @@ describe('Select component', () => {
     )).resolves.toMatchSnapshot();
 
     expect(htmlOfRendering(
-      <Select variation="outlined" label="foo" id="bar" items={['one', 'two', 'three']} value="two" className="qux"/>,
+      <Select variation="outlined" label="foo" id="bar" items={['one', 'two', 'three']} name="bar" value="two" className="qux"/>,
     )).resolves.toMatchSnapshot();
   });
 
@@ -105,13 +105,16 @@ describe('Select component', () => {
       eventDetail = event.detail;
     });
 
-    const { getByRole } = render(
-      <Select items={['one', 'two', 'three']} onChange={onChange}/>,
+    const { container, getByRole } = render(
+      <Select items={['one', 'two', 'three']} name="foo" onChange={onChange}/>,
     );
+    const hiddenElement = container.querySelector('input[type=hidden][name=foo]');
+    expect(hiddenElement.value).toBe('');
     userEvent.click(getByRole('button'));
     await findByOpenedMenu(document.body);
     userEvent.click(getByMenuItem(document.body, 'two'));
     expect(onChange).toHaveBeenCalledTimes(1);
     expect(eventDetail).toEqual({ value: 'two', index: 1 });
+    expect(hiddenElement.value).toBe('two');
   });
 });

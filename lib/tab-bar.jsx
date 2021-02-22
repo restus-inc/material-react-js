@@ -21,8 +21,9 @@
  * SOFTWARE.
  */
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { MDCTabBar } from '@material/tab-bar';
+import { useMDCComponent, useMDCEvent } from './hoocks';
 
 /**
  * [MDCTabBar component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-tab-bar#readme}
@@ -38,29 +39,16 @@ import { MDCTabBar } from '@material/tab-bar';
  * @exports material-react-js
  */
 export default function TabBar(props) {
-  const rootElement = useRef();
-  const mdcComponent = props.mdcTabBarRef || useRef();
-
-  useEffect(() => {
-    mdcComponent.current = new MDCTabBar(rootElement.current);
-    return () => {
-      mdcComponent.current.destroy();
-    };
-  }, props.children.map((child) => child.type));
-
-  useEffect(() => {
-    if (props.onActivated) {
-      mdcComponent.current.listen('MDCTabBar:activated', props.onActivated);
-    }
-    return () => {
-      if (props.onActivated) {
-        mdcComponent.current.unlisten('MDCTabBar:activated', props.onActivated);
-      }
-    };
-  }, [props.onActivated]);
+  const rootElementRef = useRef();
+  const mdcTabBarRef = useMDCComponent(
+    MDCTabBar,
+    rootElementRef,
+    props.mdcTabBarRef,
+  );
+  useMDCEvent(mdcTabBarRef, 'MDCTabBar:activated', props.onActivated);
 
   return (
-    <div className={props.className ? `mdc-tab-bar ${props.className}` : 'mdc-tab-bar'} role="tablist" ref={rootElement}>
+    <div className={props.className ? `mdc-tab-bar ${props.className}` : 'mdc-tab-bar'} role="tablist" ref={rootElementRef}>
       <div className="mdc-tab-scroller">
         <div className="mdc-tab-scroller__scroll-area">
           <div className="mdc-tab-scroller__scroll-content">

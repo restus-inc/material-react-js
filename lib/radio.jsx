@@ -21,9 +21,10 @@
  * SOFTWARE.
  */
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useCallback } from 'react';
 import { MDCRadio } from '@material/radio';
 import { MDCFormField } from '@material/form-field';
+import { useMDCComponent, useMDCComponentRefProp } from './hoocks';
 
 const NON_NATIVE_PROPS = [
   'label', 'className', 'indeterminate', 'supportsTouch', 'type', 'disablesMdcInstance',
@@ -38,20 +39,13 @@ function NativeInput(props) {
 }
 
 function SimpleRadio(props) {
-  const rootElement = useRef();
-
-  useEffect(() => {
-    if (props.disablesMdcInstance) {
-      return () => {};
-    }
-    const mdcComponent = new MDCRadio(rootElement.current);
-    if (props.mdcRadioRef) {
-      props.mdcRadioRef.current = mdcComponent; // eslint-disable-line no-param-reassign
-    }
-    return () => {
-      mdcComponent.destroy();
-    };
-  }, [props.disablesMdcInstance]);
+  const rootElementRef = useRef();
+  useMDCComponent(
+    MDCRadio,
+    rootElementRef,
+    props.mdcRadioRef,
+    props.disablesMdcInstance,
+  );
 
   const classNames = ['mdc-radio'];
   if (props.disabled) {
@@ -64,7 +58,7 @@ function SimpleRadio(props) {
   }
 
   return (
-    <div className={classNames.join(' ')} ref={rootElement}>
+    <div className={classNames.join(' ')} ref={rootElementRef}>
       <NativeInput {...props}/>
       <div className="mdc-radio__background">
         <div className="mdc-radio__outer-circle"></div>
@@ -76,26 +70,22 @@ function SimpleRadio(props) {
 }
 
 function RadioWithLabel(props) {
+  const rootElementRef = useRef();
+  const mdcRadioRef = useRef();
+  useMDCComponentRefProp(mdcRadioRef, props.mdcRadioRef);
+  useMDCComponent(
+    MDCFormField,
+    rootElementRef,
+    props.mdcFormFieldRef,
+    props.disablesMdcInstance,
+    useCallback((mdcFormField) => {
+      mdcFormField.input = mdcRadioRef.current; // eslint-disable-line no-param-reassign
+    }, []),
+  );
+
   if (!props.label) {
     return <SimpleRadio {...props}/>;
   }
-
-  const rootElement = useRef();
-  const mdcRadioRef = props.mdcRadioRef || (props.disablesMdcInstance ? null : useRef());
-
-  useEffect(() => {
-    if (props.disablesMdcInstance) {
-      return () => {};
-    }
-    const mdcComponent = new MDCFormField(rootElement.current);
-    mdcComponent.input = mdcRadioRef.current;
-    if (props.mdcFormFieldRef) {
-      props.mdcFormFieldRef.current = mdcComponent; // eslint-disable-line no-param-reassign
-    }
-    return () => {
-      mdcComponent.destroy();
-    };
-  }, [props.disablesMdcInstance]);
 
   const labelProps = {};
   if (props.id) {
@@ -107,8 +97,8 @@ function RadioWithLabel(props) {
   }
 
   return (
-    <div className={classNames.join(' ')} ref={rootElement}>
-      <SimpleRadio mdcRadioRef={mdcRadioRef} {...props}/>
+    <div className={classNames.join(' ')} ref={rootElementRef}>
+      <SimpleRadio {...props} mdcRadioRef={mdcRadioRef}/>
       <label {...labelProps}>{props.label}</label>
     </div>
   );

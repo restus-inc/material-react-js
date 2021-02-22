@@ -23,6 +23,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { MDCTextField } from '@material/textfield';
+import { useMDCComponent } from './hoocks';
 
 const NON_NATIVE_PROPS = [
   'id', 'value', 'defaultValue', 'type', 'variation', 'label', 'className', 'helperText',
@@ -156,24 +157,22 @@ function HelperText(props) {
  * @exports material-react-js
  */
 export default function TextField(props) {
-  const rootElement = useRef();
-  const mdcComponentRef = props.mdcTextFieldRef || useRef();
+  const rootElementRef = useRef();
+  const mdcTextFieldRef = useMDCComponent(
+    MDCTextField,
+    rootElementRef,
+    props.mdcTextFieldRef,
+  );
 
   useEffect(() => {
-    const hasFocus = document.hasFocus() && document.activeElement === rootElement.current;
-    if (mdcComponentRef.current && !hasFocus) {
-      mdcComponentRef.current.useNativeValidation = false;
-      mdcComponentRef.current.value = props.value;
-      mdcComponentRef.current.useNativeValidation = true;
+    if (props.value == null) {
+      return;
     }
-  }, [props.value]);
-
-  useEffect(() => {
-    mdcComponentRef.current = new MDCTextField(rootElement.current);
-    return () => {
-      mdcComponentRef.current.destroy();
-    };
-  }, []);
+    const hasFocus = document.hasFocus() && document.activeElement === rootElementRef.current;
+    if (mdcTextFieldRef.current && !hasFocus) {
+      mdcTextFieldRef.current.value = props.value || '';
+    }
+  }, [mdcTextFieldRef, props.value]);
 
   const rootClassName = generateRootClassName(props);
   const labelClassName = props.defaultValue
@@ -184,7 +183,7 @@ export default function TextField(props) {
     case 'filled':
       return (
         <>
-          <label className={rootClassName} ref={rootElement}>
+          <label className={rootClassName} ref={rootElementRef}>
             <span className="mdc-text-field__ripple"></span>
             <NativeInput {...props}/>
             {!(props.label == null || props.label === '') && (
@@ -198,7 +197,7 @@ export default function TextField(props) {
     case 'outlined':
       return (
         <>
-          <label className={rootClassName} ref={rootElement}>
+          <label className={rootClassName} ref={rootElementRef}>
           <NativeInput {...props}/>
             <span className="mdc-notched-outline">
               <span className="mdc-notched-outline__leading"></span>
@@ -216,7 +215,7 @@ export default function TextField(props) {
     case 'textarea':
       return (
         <>
-          <label className={rootClassName} ref={rootElement}>
+          <label className={rootClassName} ref={rootElementRef}>
             {props.resizable ? (
               <span className="mdc-text-field__resizer">
                 <NativeInput {...props}/>
@@ -240,7 +239,7 @@ export default function TextField(props) {
     case 'filled-textarea':
       return (
         <>
-          <label className={rootClassName} ref={rootElement}>
+          <label className={rootClassName} ref={rootElementRef}>
             <span className="mdc-text-field__ripple"></span>
             {props.resizable ? (
               <span className="mdc-text-field__resizer">

@@ -21,8 +21,9 @@
  * SOFTWARE.
  */
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { MDCTab } from '@material/tab';
+import { useMDCComponent } from './hoocks';
 
 const NON_NATIVE_PROPS = [
   'label', 'className', 'active', 'icon', 'iconClassName', 'ref', 'mdcTabRef',
@@ -69,17 +70,8 @@ function IconElement(props) {
  * @exports material-react-js
  */
 export default function Tab(props) {
-  const rootElement = useRef();
-
-  useEffect(() => {
-    const mdcComponent = new MDCTab(rootElement.current);
-    if (props.mdcTabRef) {
-      props.mdcTabRef.current = mdcComponent; // eslint-disable-line no-param-reassign
-    }
-    return () => {
-      mdcComponent.destroy();
-    };
-  }, []);
+  const rootElementRef = useRef();
+  useMDCComponent(MDCTab, rootElementRef, props.mdcTabRef);
 
   const buttonProps = Object.entries(props).reduce((newProps, [key, value]) => (
     !NON_NATIVE_PROPS.includes(key) ? Object.assign(newProps, { [key]: value }) : newProps
@@ -89,7 +81,7 @@ export default function Tab(props) {
     'aria-selected': props.active,
     tabIndex: '-1',
     type: 'button',
-    ref: rootElement,
+    ref: rootElementRef,
   });
 
   return (

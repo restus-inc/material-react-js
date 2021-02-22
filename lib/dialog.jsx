@@ -23,13 +23,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { MDCDialog } from '@material/dialog';
-
-const EVENTS = [
-  { mdcEventName: 'opening', propsName: 'onOpening' },
-  { mdcEventName: 'opened', propsName: 'onOpened' },
-  { mdcEventName: 'closing', propsName: 'onClosing' },
-  { mdcEventName: 'closed', propsName: 'onClosed' },
-];
+import { useMDCEvent, useMDCComponent } from './hoocks';
 
 /**
  * An confirmation type [MDCDialog component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield#readme}
@@ -101,39 +95,24 @@ const EVENTS = [
  * @exports material-react-js
  */
 export default function Dialog(props) {
-  const rootElement = useRef();
-  const mdcComponent = props.mdcDialogRef || useRef();
+  const rootElementRef = useRef();
+  const mdcDialogRef = useMDCComponent(MDCDialog, rootElementRef, props.mdcDialogRef);
 
   useEffect(() => {
-    mdcComponent.current = new MDCDialog(rootElement.current);
-    return () => {
-      mdcComponent.current.destroy();
-    };
-  }, []);
-
-  useEffect(() => {
-    if (props.isOpen === mdcComponent.current.isOpen) {
+    if (props.isOpen === mdcDialogRef.current.isOpen) {
       return;
     }
     if (props.isOpen) {
-      mdcComponent.current.open();
+      mdcDialogRef.current.open();
     } else {
-      mdcComponent.current.close();
+      mdcDialogRef.current.close();
     }
   });
 
-  EVENTS.forEach(({ mdcEventName, propsName }) => {
-    useEffect(() => {
-      const handler = props[propsName];
-      if (!handler) {
-        return undefined;
-      }
-      mdcComponent.current.listen(`MDCDialog:${mdcEventName}`, handler);
-      return () => {
-        mdcComponent.current.unlisten(`MDCDialog:${mdcEventName}`, handler);
-      };
-    }, [props[propsName]]);
-  });
+  useMDCEvent(mdcDialogRef, 'MDCDialog:opening', props.onOpening);
+  useMDCEvent(mdcDialogRef, 'MDCDialog:opened', props.onOpened);
+  useMDCEvent(mdcDialogRef, 'MDCDialog:closing', props.onClosing);
+  useMDCEvent(mdcDialogRef, 'MDCDialog:closed', props.onClosed);
 
   const buttons = props.buttons.map((buttonProp) => (
     <button type="button"
@@ -146,7 +125,7 @@ export default function Dialog(props) {
     </button>
   ));
   return (
-    <div className="mdc-dialog" ref={rootElement}>
+    <div className="mdc-dialog" ref={rootElementRef}>
       <div className="mdc-dialog__container">
         <div className={props.className ? `mdc-dialog__surface ${props.className}` : 'mdc-dialog__surface'}
              role="alertdialog"

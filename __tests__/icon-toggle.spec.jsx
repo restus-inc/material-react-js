@@ -21,12 +21,13 @@
  * SOFTWARE.
  */
 
-/* global describe, afterEach, it, expect */
+/* global jest, describe, afterEach, it, expect */
 import 'regenerator-runtime/runtime';
 import React, { useEffect, useRef } from 'react';
 import { MDCIconButtonToggle } from '@material/icon-button';
 import { MDCRipple } from '@material/ripple';
 import { render, cleanup } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { htmlOfRendering } from './utils';
 
 import IconToggle from '../lib/icon-toggle';
@@ -93,5 +94,26 @@ describe('IconToggle component', () => {
     render(<MyIconButtonToggle/>);
     expect(mdcIconButtonToggleComponent).toBeInstanceOf(MDCIconButtonToggle);
     expect(mdcRippleComponent).toBeInstanceOf(MDCRipple);
+  });
+
+  it('fires onChange event when the icon is toggled', async () => {
+    let eventDetail = null;
+    const onChange = jest.fn((event) => {
+      eventDetail = event.detail;
+    });
+
+    const { getByTestId } = render(
+      <IconToggle iconClassName="material-icons" onIcon="visibility" offIcon="visibility_off" label="visibility" onChange={onChange} data-testid="toggle"/>,
+    );
+    const toggleButton = getByTestId('toggle');
+    expect(toggleButton.classList).not.toContain('mdc-icon-button--on');
+    userEvent.click(getByTestId('toggle'));
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(eventDetail).toEqual({ isOn: true });
+    expect(toggleButton.classList).toContain('mdc-icon-button--on');
+    userEvent.click(getByTestId('toggle'));
+    expect(onChange).toHaveBeenCalledTimes(2);
+    expect(eventDetail).toEqual({ isOn: false });
+    expect(toggleButton.classList).not.toContain('mdc-icon-button--on');
   });
 });

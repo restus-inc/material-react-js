@@ -24,7 +24,7 @@
 import React, { useRef, useCallback } from 'react';
 import { MDCIconButtonToggle } from '@material/icon-button';
 import { MDCRipple } from '@material/ripple';
-import { useMDCComponent } from './hoocks';
+import { useMDCComponent, useMDCEvent } from './hoocks';
 
 const NON_NATIVE_PROPS = [
   'className', 'iconClassName', 'onIcon', 'offIcon', 'isOnState', 'label',
@@ -89,6 +89,8 @@ const generateRootClassName = (props) => {
  * bind an MDCIconButtonToggle instance to.
  * @param {React.MutableRefObject} [props.mdcRippleRef] MutableRefObject which bind an
  * MDCRipple instance to. The instance is not bind if `props.disablesMdcInstance` is `true`.
+ * @param {EventHandler} [props.onChange] Specifies event handler that is called when
+ * the icon is toggled.
  * @returns {DetailedReactHTMLElement}
  * @example
  * import { IconToggle } from 'material-react-js';
@@ -133,7 +135,7 @@ const generateRootClassName = (props) => {
  */
 function IconToggle(props) {
   const rootElementRef = useRef();
-  useMDCComponent(
+  const mdcIconButtonToggleRef = useMDCComponent(
     MDCIconButtonToggle,
     rootElementRef,
     props.mdcIconButtonToggleRef,
@@ -147,6 +149,8 @@ function IconToggle(props) {
       mdcRipple.unbounded = true; // eslint-disable-line no-param-reassign
     }, []),
   );
+
+  useMDCEvent(mdcIconButtonToggleRef, 'MDCIconButtonToggle:change', props.onChange);
 
   const buttonProps = {
     className: generateRootClassName(props),

@@ -21,9 +21,10 @@
  * SOFTWARE.
  */
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { MDCDataTable } from '@material/data-table';
 import Checkbox from './checkbox';
+import { useMDCEvent, useMDCComponent } from './hoocks';
 
 const headerCellClassName = (props) => {
   const classList = ['mdc-data-table__header-cell'];
@@ -191,60 +192,34 @@ function Cell(props) {
  */
 export default function DataTable(props) {
   const sortable = props.columns.some((column) => column.isSortable);
-  const rootElement = sortable || props.usesRowSelection ? useRef() : null;
-  const mdcComponentRef = props.mdcDataTableRef || (rootElement ? useRef() : null);
+  const rootElementRef = useRef();
+  const mdcDataTableRef = useMDCComponent(
+    MDCDataTable,
+    rootElementRef,
+    props.mdcDataTableRef,
+    !sortable && !props.usesRowSelection,
+  );
 
-  useEffect(() => {
-    if (sortable || props.usesRowSelection) {
-      mdcComponentRef.current = new MDCDataTable(rootElement.current);
-    }
-
-    return () => {
-      if (mdcComponentRef && mdcComponentRef.current) {
-        mdcComponentRef.current.destroy();
-      }
-    };
-  }, [sortable, props.usesRowSelection, props.data]);
-
-  useEffect(() => {
-    if (!props.usesRowSelection || !props.onRowSelectionChanged) {
-      return () => {};
-    }
-    mdcComponentRef.current.listen('MDCDataTable:rowSelectionChanged', props.onRowSelectionChanged);
-    return () => {
-      mdcComponentRef.current.unlisten('MDCDataTable:rowSelectionChanged', props.onRowSelectionChanged);
-    };
-  }, [props.usesRowSelection, props.onRowSelectionChanged]);
-
-  useEffect(() => {
-    if (!props.usesRowSelection || !props.onSelectedAll) {
-      return () => {};
-    }
-    mdcComponentRef.current.listen('MDCDataTable:selectedAll', props.onSelectedAll);
-    return () => {
-      mdcComponentRef.current.unlisten('MDCDataTable:selectedAll', props.onSelectedAll);
-    };
-  }, [props.usesRowSelection, props.onSelectedAll]);
-
-  useEffect(() => {
-    if (!props.usesRowSelection || !props.onUnselectedAll) {
-      return () => {};
-    }
-    mdcComponentRef.current.listen('MDCDataTable:unselectedAll', props.onUnselectedAll);
-    return () => {
-      mdcComponentRef.current.unlisten('MDCDataTable:unselectedAll', props.onUnselectedAll);
-    };
-  }, [props.usesRowSelection, props.onUnselectedAll]);
-
-  useEffect(() => {
-    if (!sortable || !props.onSorted) {
-      return () => {};
-    }
-    mdcComponentRef.current.listen('MDCDataTable:sorted', props.onSorted);
-    return () => {
-      mdcComponentRef.current.unlisten('MDCDataTable:sorted', props.onSorted);
-    };
-  }, [sortable, props.onSorted]);
+  useMDCEvent(
+    mdcDataTableRef,
+    'MDCDataTable:rowSelectionChanged',
+    props.usesRowSelection && props.onRowSelectionChanged,
+  );
+  useMDCEvent(
+    mdcDataTableRef,
+    'MDCDataTable:selectedAll',
+    props.usesRowSelection && props.onSelectedAll,
+  );
+  useMDCEvent(
+    mdcDataTableRef,
+    'MDCDataTable:unselectedAll',
+    props.usesRowSelection && props.onUnselectedAll,
+  );
+  useMDCEvent(
+    mdcDataTableRef,
+    'MDCDataTable:sorted',
+    sortable && props.onSorted,
+  );
 
   const rootClassList = ['mdc-data-table'];
   if (props.usesStickyHeader) {
@@ -255,7 +230,7 @@ export default function DataTable(props) {
   }
 
   return (
-    <div className={rootClassList.join(' ')} ref={rootElement}>
+    <div className={rootClassList.join(' ')} ref={rootElementRef}>
       <div className="mdc-data-table__table-container" onScroll={props.onScroll}>
         <table className={props.tableClassName ? `mdc-data-table__table ${props.tableClassName}` : 'mdc-data-table__table'} aria-label={props['aria-label']}>
         {props.omitsHeaderRow

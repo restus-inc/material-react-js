@@ -21,9 +21,10 @@
  * SOFTWARE.
  */
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useCallback } from 'react';
 import { MDCIconButtonToggle } from '@material/icon-button';
 import { MDCRipple } from '@material/ripple';
+import { useMDCComponent } from './hoocks';
 
 const NON_NATIVE_PROPS = [
   'className', 'iconClassName', 'onIcon', 'offIcon', 'isOnState', 'label',
@@ -131,32 +132,25 @@ const generateRootClassName = (props) => {
  * @exports material-react-js
  */
 function IconToggle(props) {
-  const rootElement = useRef();
-  const mdcComponentRef = props.mdcIconButtonToggleRef || useRef();
-
-  useEffect(() => {
-    mdcComponentRef.current = new MDCIconButtonToggle(rootElement.current);
-    return () => {
-      mdcComponentRef.current.destroy();
-    };
-  }, []);
-
-  useEffect(() => {
-    if (props.disablesMdcInstance) {
-      return () => {};
-    }
-    const mdcComponent = new MDCRipple(rootElement.current);
-    if (props.mdcRippleRef) {
-      props.mdcRippleRef.current = mdcComponent; // eslint-disable-line no-param-reassign
-    }
-    return () => {
-      mdcComponent.destroy();
-    };
-  }, [props.disablesMdcInstance]);
+  const rootElementRef = useRef();
+  useMDCComponent(
+    MDCIconButtonToggle,
+    rootElementRef,
+    props.mdcIconButtonToggleRef,
+  );
+  useMDCComponent(
+    MDCRipple,
+    rootElementRef,
+    props.mdcRippleRef,
+    props.disablesMdcInstance,
+    useCallback((mdcRipple) => {
+      mdcRipple.unbounded = true; // eslint-disable-line no-param-reassign
+    }, []),
+  );
 
   const buttonProps = {
     className: generateRootClassName(props),
-    ref: rootElement,
+    ref: rootElementRef,
   };
   if (props.label) {
     if (Array.isArray(props.label)) {

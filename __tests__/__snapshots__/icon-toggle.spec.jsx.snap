@@ -3,7 +3,7 @@
 exports[`IconToggle component supports SVG icon toggle buttons 1`] = `
 "<button
   aria-label=\\"on\\"
-  class=\\"mdc-icon-button mdc-icon-button--on foo\\"
+  class=\\"mdc-icon-button mdc-icon-button--on foo mdc-ripple-upgraded--unbounded\\"
   data-aria-label-off=\\"off\\"
   data-aria-label-on=\\"on\\"
 >
@@ -36,7 +36,7 @@ exports[`IconToggle component supports SVG icon toggle buttons 1`] = `
 exports[`IconToggle component supports image icon toggle buttons 1`] = `
 "<button
   aria-label=\\"off\\"
-  class=\\"mdc-icon-button foo\\"
+  class=\\"mdc-icon-button foo mdc-ripple-upgraded--unbounded\\"
   data-aria-label-off=\\"off\\"
   data-aria-label-on=\\"on\\"
 >
@@ -57,7 +57,7 @@ exports[`IconToggle component supports material icon toggle buttons 1`] = `
 "<button
   aria-label=\\"visibility\\"
   aria-pressed=\\"false\\"
-  class=\\"mdc-icon-button\\"
+  class=\\"mdc-icon-button mdc-ripple-upgraded--unbounded\\"
 >
   <i
     class=\\"mdc-icon-button__icon material-icons\\"
@@ -75,7 +75,7 @@ exports[`IconToggle component supports material icon toggle buttons 1`] = `
 exports[`IconToggle component supports material icon toggle buttons 2`] = `
 "<button
   aria-label=\\"off\\"
-  class=\\"mdc-icon-button\\"
+  class=\\"mdc-icon-button mdc-ripple-upgraded--unbounded\\"
   data-aria-label-off=\\"off\\"
   data-aria-label-on=\\"on\\"
 >
@@ -96,7 +96,7 @@ exports[`IconToggle component supports material icon toggle buttons 3`] = `
 "<button
   aria-label=\\"visibility\\"
   aria-pressed=\\"true\\"
-  class=\\"mdc-icon-button mdc-icon-button--on foo\\"
+  class=\\"mdc-icon-button mdc-icon-button--on foo mdc-ripple-upgraded--unbounded\\"
 >
   <i
     class=\\"mdc-icon-button__icon material-icons\\"

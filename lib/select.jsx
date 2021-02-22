@@ -23,6 +23,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { MDCSelect } from '@material/select';
+import { useMDCComponent, useMDCEvent } from './hoocks';
 
 const generateRootClassName = (props) => {
   const rootClassNames = ['mdc-select'];
@@ -86,35 +87,19 @@ const getItemValue = (item, itemsValueAttr, index) => {
  * @exports material-react-js
  */
 export default function Select(props) {
-  const rootElement = useRef();
-  const mdcComponentRef = props.mdcSelectRef || useRef();
+  const rootElementRef = useRef();
+  const mdcSelectRef = useMDCComponent(
+    MDCSelect,
+    rootElementRef,
+    props.mdcSelectRef,
+  );
 
   useEffect(() => {
-    mdcComponentRef.current = new MDCSelect(rootElement.current);
-    return () => {
-      mdcComponentRef.current.destroy();
-    };
-  }, []);
+    mdcSelectRef.current.foundation.setValue(props.value, true);
+    mdcSelectRef.current.foundation.layout();
+  }, [mdcSelectRef, props.value]);
 
-  useEffect(() => {
-    const hasFocus = document.hasFocus() && document.activeElement === rootElement.current;
-    if (mdcComponentRef.current && !hasFocus) {
-      mdcComponentRef.current.useNativeValidation = false;
-      mdcComponentRef.current.value = props.value;
-      mdcComponentRef.current.useNativeValidation = true;
-    }
-  }, [props.value]);
-
-  useEffect(() => {
-    if (props.onChange) {
-      mdcComponentRef.current.listen('MDCSelect:change', props.onChange);
-    }
-    return () => {
-      if (props.onChange) {
-        mdcComponentRef.current.unlisten('MDCSelect:change', props.onChange);
-      }
-    };
-  }, [props.onChange]);
+  useMDCEvent(mdcSelectRef, 'MDCSelect:change', props.onChange);
 
   const selectedItemText = props.value == null
     ? ''
@@ -122,15 +107,15 @@ export default function Select(props) {
       if (text) {
         return text;
       }
-      const value = getItemValue(item, props.itemsValueAttr, i);
-      if (props.value !== value) {
+      const itemValue = getItemValue(item, props.itemsValueAttr, i);
+      if (props.value !== itemValue) {
         return text;
       }
       return props.itemsTextAttr ? item[props.itemsTextAttr] : item.toString();
     }, '');
 
   return (
-    <div className={generateRootClassName(props)} ref={rootElement}>
+    <div className={generateRootClassName(props)} ref={rootElementRef}>
       {props.name && <input type="hidden" name={props.name} value={selectedItemText}/>}
       <div className="mdc-select__anchor"
            role="button"
@@ -175,15 +160,15 @@ export default function Select(props) {
       <div className="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
         <ul className="mdc-list" role="listbox">
         {props.items.map((item, i) => {
-          const value = getItemValue(item, props.itemsValueAttr, i);
+          const itemValue = getItemValue(item, props.itemsValueAttr, i);
           const text = props.itemsTextAttr ? item[props.itemsTextAttr] : item.toString();
-          const selected = props.value && (props.value === value);
+          const selected = props.value && (props.value === itemValue);
           return (
             <li className={selected ? 'mdc-list-item mdc-list-item--selected' : 'mdc-list-item'}
-                data-value={value}
+                data-value={itemValue}
                 role="option"
                 aria-selected={selected ? 'true' : null}
-                key={value}>
+                key={itemValue}>
               <span className="mdc-list-item__ripple"></span>
               {text && <span className="mdc-list-item__text">{text}</span>}
             </li>

@@ -23,13 +23,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import { MDCSnackbar } from '@material/snackbar';
-
-const EVENTS = [
-  { mdcEventName: 'opening', propsName: 'onOpening' },
-  { mdcEventName: 'opened', propsName: 'onOpened' },
-  { mdcEventName: 'closing', propsName: 'onClosing' },
-  { mdcEventName: 'closed', propsName: 'onClosed' },
-];
+import { useMDCComponent, useMDCEvent } from './hoocks';
 
 const generateRootClassName = (props) => {
   const rootClasses = ['mdc-snackbar'];
@@ -74,42 +68,31 @@ const generateRootClassName = (props) => {
  * @exports material-react-js
  */
 export default function Snackbar(props) {
-  const rootElement = useRef();
-  const mdcComponent = props.mdcSnackbarRef || useRef();
+  const rootElementRef = useRef();
+  const mdcSnackbarRef = useMDCComponent(
+    MDCSnackbar,
+    rootElementRef,
+    props.mdcSnackbarRef,
+  );
 
   useEffect(() => {
-    mdcComponent.current = new MDCSnackbar(rootElement.current);
-    return () => {
-      mdcComponent.current.destroy();
-    };
-  }, []);
-
-  useEffect(() => {
-    if (props.isOpen === mdcComponent.current.isOpen) {
+    if (props.isOpen === mdcSnackbarRef.current.isOpen) {
       return;
     }
     if (props.isOpen) {
-      mdcComponent.current.open();
+      mdcSnackbarRef.current.open();
     } else {
-      mdcComponent.current.close();
+      mdcSnackbarRef.current.close();
     }
   });
 
-  EVENTS.forEach(({ mdcEventName, propsName }) => {
-    useEffect(() => {
-      const handler = props[propsName];
-      if (!handler) {
-        return undefined;
-      }
-      mdcComponent.current.listen(`MDCSnackbar:${mdcEventName}`, handler);
-      return () => {
-        mdcComponent.current.unlisten(`MDCSnackbar:${mdcEventName}`, handler);
-      };
-    }, [props[propsName]]);
-  });
+  useMDCEvent(mdcSnackbarRef, 'MDCSnackbar:opening', props.onOpening);
+  useMDCEvent(mdcSnackbarRef, 'MDCSnackbar:opened', props.onOpened);
+  useMDCEvent(mdcSnackbarRef, 'MDCSnackbar:closing', props.onClosing);
+  useMDCEvent(mdcSnackbarRef, 'MDCSnackbar:closed', props.onClosed);
 
   return (
-    <div className={generateRootClassName(props)} ref={rootElement}>
+    <div className={generateRootClassName(props)} ref={rootElementRef}>
       <div className={props.className ? `mdc-snackbar__surface ${props.className}` : 'mdc-snackbar__surface'}>
         <div className="mdc-snackbar__label"
              role="status"

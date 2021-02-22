@@ -21,9 +21,10 @@
  * SOFTWARE.
  */
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useCallback } from 'react';
 import { MDCCheckbox } from '@material/checkbox';
 import { MDCFormField } from '@material/form-field';
+import { useMDCComponent, useMDCComponentRefProp } from './hoocks';
 
 const NON_NATIVE_PROPS = [
   'label', 'className', 'indeterminate', 'supportsTouch', 'type', 'disablesMdcInstance',
@@ -41,20 +42,8 @@ function NativeInput(props) {
 }
 
 function SimpleCheckbox(props) {
-  const rootElement = useRef();
-
-  useEffect(() => {
-    if (props.disablesMdcInstance) {
-      return () => {};
-    }
-    const mdcComponent = new MDCCheckbox(rootElement.current);
-    if (props.mdcCheckboxRef) {
-      props.mdcCheckboxRef.current = mdcComponent; // eslint-disable-line no-param-reassign
-    }
-    return () => {
-      mdcComponent.destroy();
-    };
-  }, [props.disablesMdcInstance]);
+  const rootElementRef = useRef();
+  useMDCComponent(MDCCheckbox, rootElementRef, props.mdcCheckboxRef, props.disablesMdcInstance);
 
   const classNames = ['mdc-checkbox'];
   if (props.checked || props.defaultChecked) {
@@ -70,7 +59,7 @@ function SimpleCheckbox(props) {
   }
 
   return (
-    <div className={classNames.join(' ')} ref={rootElement}>
+    <div className={classNames.join(' ')} ref={rootElementRef}>
       <NativeInput {...props}/>
       <div className="mdc-checkbox__background">
         <svg className="mdc-checkbox__checkmark" viewBox="0 0 24 24">
@@ -86,26 +75,22 @@ function SimpleCheckbox(props) {
 }
 
 function CheckboxWithLabel(props) {
+  const rootElementRef = useRef();
+  const mdcCheckboxRef = useRef();
+  useMDCComponentRefProp(mdcCheckboxRef, props.mdcCheckboxRef);
+  useMDCComponent(
+    MDCFormField,
+    rootElementRef,
+    props.mdcFormFieldRef,
+    props.disablesMdcInstance,
+    useCallback((mdcFormField) => {
+      mdcFormField.input = mdcCheckboxRef.current; // eslint-disable-line no-param-reassign
+    }, []),
+  );
+
   if (!props.label) {
     return <SimpleCheckbox {...props}/>;
   }
-
-  const rootElement = useRef();
-  const mdcCheckboxRef = props.mdcCheckboxRef || (props.disablesMdcInstance ? null : useRef());
-
-  useEffect(() => {
-    if (props.disablesMdcInstance) {
-      return () => {};
-    }
-    const mdcComponent = new MDCFormField(rootElement.current);
-    mdcComponent.input = mdcCheckboxRef.current;
-    if (props.mdcFormFieldRef) {
-      props.mdcFormFieldRef.current = mdcComponent; // eslint-disable-line no-param-reassign
-    }
-    return () => {
-      mdcComponent.destroy();
-    };
-  }, [props.disablesMdcInstance]);
 
   const labelProps = {};
   if (props.id) {
@@ -117,8 +102,8 @@ function CheckboxWithLabel(props) {
   }
 
   return (
-    <div className={classNames.join(' ')} ref={rootElement}>
-      <SimpleCheckbox mdcCheckboxRef={mdcCheckboxRef} {...props}/>
+    <div className={classNames.join(' ')} ref={rootElementRef}>
+      <SimpleCheckbox {...props} mdcCheckboxRef={mdcCheckboxRef}/>
       <label {...labelProps}>{props.label}</label>
     </div>
   );

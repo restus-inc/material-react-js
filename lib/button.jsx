@@ -21,8 +21,9 @@
  * SOFTWARE.
  */
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { MDCRipple } from '@material/ripple';
+import { useMDCComponent } from './hoocks';
 
 const NON_NATIVE_PROPS = [
   'variation', 'label', 'className', 'icon', 'iconClassName', 'supportsTouch', 'ref',
@@ -88,24 +89,12 @@ function IconElement(props) {
  * @exports material-react-js
  */
 export default function Button(props) {
-  const rootElement = useRef();
-
-  useEffect(() => {
-    if (props.disablesMdcInstance) {
-      return () => {};
-    }
-    const mdcComponent = new MDCRipple(rootElement.current);
-    if (props.mdcRippleRef) {
-      props.mdcRippleRef.current = mdcComponent; // eslint-disable-line no-param-reassign
-    }
-    return () => {
-      mdcComponent.destroy();
-    };
-  }, [props.disablesMdcInstance]);
+  const rootElementRef = useRef();
+  useMDCComponent(MDCRipple, rootElementRef, props.mdcRippleRef, props.disablesMdcInstance);
 
   const buttonProps = Object.entries(props).reduce((newProps, [key, value]) => (
     !NON_NATIVE_PROPS.includes(key) ? Object.assign(newProps, { [key]: value }) : newProps
-  ), { className: generateRootClassName(props), ref: rootElement });
+  ), { className: generateRootClassName(props), ref: rootElementRef });
 
   const button = (
     <button {...buttonProps}>

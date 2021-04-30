@@ -84,7 +84,7 @@ export default function Snackbar(props) {
     } else {
       mdcSnackbarRef.current.close();
     }
-  });
+  }, [props.isOpen, mdcSnackbarRef]);
 
   useMDCEvent(mdcSnackbarRef, 'MDCSnackbar:opening', props.onOpening);
   useMDCEvent(mdcSnackbarRef, 'MDCSnackbar:opened', props.onOpened);

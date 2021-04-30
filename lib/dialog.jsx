@@ -37,7 +37,7 @@ import { useMDCEvent, useMDCComponent } from './hoocks';
  * the dialog has.
  * @param {string} props.buttons[].action Mandatory. The identifer of the action button.
  * @param {string} props.buttons[].label The label of the action button.
- * @param {string} [props.buttons[].isDefault] Specifies `true` if the button means the
+ * @param {boolean} [props.buttons[].isDefault] Specifies `true` if the button means the
  * default action, otherwise `false`. Default to `false`.
  * @param {React.MutableRefObject} [props.mdcDialogRef] MutableRefObject which bind an
  * MDCDialog instance to.
@@ -107,7 +107,7 @@ export default function Dialog(props) {
     } else {
       mdcDialogRef.current.close();
     }
-  });
+  }, [props.isOpen, mdcDialogRef]);
 
   useMDCEvent(mdcDialogRef, 'MDCDialog:opening', props.onOpening);
   useMDCEvent(mdcDialogRef, 'MDCDialog:opened', props.onOpened);

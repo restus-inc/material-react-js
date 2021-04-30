@@ -21,7 +21,7 @@
  * SOFTWARE.
  */
 
-import React, { useRef } from 'react';
+import React, { useRef, useCallback } from 'react';
 import { MDCDataTable } from '@material/data-table';
 import Checkbox from './checkbox';
 import { useMDCEvent, useMDCComponent } from './hoocks';
@@ -220,6 +220,13 @@ export default function DataTable(props) {
     'MDCDataTable:sorted',
     sortable && props.onSorted,
   );
+  const onRowSelectionChanged = useCallback((rowIndex, rowId, event) => {
+    if (mdcDataTableRef.current) {
+      mdcDataTableRef.current.foundation.adapter.notifyRowSelectionChanged({
+        rowIndex, rowId, selected: event.target.checked,
+      });
+    }
+  }, [mdcDataTableRef]);
 
   const rootClassList = ['mdc-data-table'];
   if (props.usesStickyHeader) {
@@ -280,8 +287,9 @@ export default function DataTable(props) {
               {props.usesRowSelection && (
                 <Cell className="mdc-data-table__cell--checkbox">
                   <Checkbox className="mdc-data-table__row-checkbox"
-                            defaultChecked={selected}
-                            disablesMdcInstance={true}/>
+                            checked={Boolean(selected)}
+                            disablesMdcInstance={true}
+                            onChange={onRowSelectionChanged.bind(null, i, key)}/>
                 </Cell>
               )}
               {props.columns.map((column, j) => (

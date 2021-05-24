@@ -224,7 +224,7 @@ describe('DataTable component', () => {
     expect(mdcComponent).toBeInstanceOf(MDCDataTable);
   });
 
-  it('fires onRowSelectionChanged, onSelectedAll and onUnselectedAll evnet when a checkbox is clicked', async () => {
+  it.skip('fires onRowSelectionChanged, onSelectedAll and onUnselectedAll evnet when a checkbox is clicked', async () => {
     const columns = [{
       key: 'id',
       header: 'ID',

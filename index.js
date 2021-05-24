@@ -35,3 +35,4 @@ export { default as Snackbar } from './lib/snackbar';
 export { default as Tab } from './lib/tab';
 export { default as TabBar } from './lib/tab-bar';
 export { default as TextField } from './lib/textfield';
+export { default as Tooltip } from './lib/tooltip';

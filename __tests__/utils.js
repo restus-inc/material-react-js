@@ -33,6 +33,13 @@ export async function htmlOfRendering(ui) {
   return html;
 }
 
+export async function htmlOfDocumentBody(ui) {
+  render(ui);
+  const html = prettyDOM(document.body, null, { highlight: false });
+  await cleanup();
+  return html;
+}
+
 export const [
   queryByOpenedMenu,
   getAllByOpenedMenu,

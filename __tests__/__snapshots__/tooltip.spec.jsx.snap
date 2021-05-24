@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip component supports plain tooltip for a single React element 1`] = `
+"<body>
+  <div>
+    <button
+      aria-describedby=\\"baz\\"
+    >
+      button
+    </button>
+  </div>
+  <div
+    aria-hidden=\\"true\\"
+    class=\\"mdc-tooltip\\"
+    id=\\"baz\\"
+    role=\\"tooltip\\"
+  >
+    <div
+      class=\\"mdc-tooltip__surface mdc-tooltip__surface-animation\\"
+    >
+      foo
+    </div>
+  </div>
+</body>"
+`;
+
+exports[`Tooltip component supports plain tooltip for a single React element 2`] = `
+"<body>
+  <div>
+    <button
+      aria-describedby=\\"mrj-0fzyuxxr\\"
+      class=\\"mdc-button\\"
+    >
+      <div
+        class=\\"mdc-button__ripple\\"
+      />
+      <span
+        class=\\"mdc-button__label\\"
+      >
+        button
+      </span>
+    </button>
+  </div>
+  <div
+    aria-hidden=\\"true\\"
+    class=\\"mdc-tooltip qux\\"
+    id=\\"mrj-0fzyuxxr\\"
+    role=\\"tooltip\\"
+  >
+    <div
+      class=\\"mdc-tooltip__surface mdc-tooltip__surface-animation\\"
+    >
+      foo
+      <br />
+      bar
+    </div>
+  </div>
+</body>"
+`;
+
+exports[`Tooltip component supports plain tooltip for a text elementa 1`] = `
+"<body>
+  <div>
+    <div
+      aria-describedby=\\"baz\\"
+    >
+      text element
+    </div>
+  </div>
+  <div
+    aria-hidden=\\"true\\"
+    class=\\"mdc-tooltip\\"
+    id=\\"baz\\"
+    role=\\"tooltip\\"
+  >
+    <div
+      class=\\"mdc-tooltip__surface mdc-tooltip__surface-animation\\"
+    >
+      foo
+    </div>
+  </div>
+</body>"
+`;
+
+exports[`Tooltip component supports plain tooltip for a text elementa 2`] = `
+"<body>
+  <div>
+    <div
+      aria-describedby=\\"mrj-0fzyuxxr\\"
+    >
+      text element
+    </div>
+  </div>
+  <div
+    aria-hidden=\\"true\\"
+    class=\\"mdc-tooltip qux\\"
+    id=\\"mrj-0fzyuxxr\\"
+    role=\\"tooltip\\"
+  >
+    <div
+      class=\\"mdc-tooltip__surface mdc-tooltip__surface-animation\\"
+    >
+      foo
+      <br />
+      bar
+    </div>
+  </div>
+</body>"
+`;
+
+exports[`Tooltip component supports plain tooltip for multiple elements 1`] = `
+"<body>
+  <div>
+    <div
+      aria-describedby=\\"baz\\"
+    >
+      <button>
+        button1
+      </button>
+      <button>
+        button2
+      </button>
+    </div>
+  </div>
+  <div
+    aria-hidden=\\"true\\"
+    class=\\"mdc-tooltip\\"
+    id=\\"baz\\"
+    role=\\"tooltip\\"
+  >
+    <div
+      class=\\"mdc-tooltip__surface mdc-tooltip__surface-animation\\"
+    >
+      foo
+    </div>
+  </div>
+</body>"
+`;
+
+exports[`Tooltip component supports plain tooltip for multiple elements 2`] = `
+"<body>
+  <div>
+    <div
+      aria-describedby=\\"mrj-0fzyuxxr\\"
+    >
+      text element
+      <button>
+        button2
+      </button>
+    </div>
+  </div>
+  <div
+    aria-hidden=\\"true\\"
+    class=\\"mdc-tooltip qux\\"
+    id=\\"mrj-0fzyuxxr\\"
+    role=\\"tooltip\\"
+  >
+    <div
+      class=\\"mdc-tooltip__surface mdc-tooltip__surface-animation\\"
+    >
+      foo
+      <br />
+      bar
+    </div>
+  </div>
+</body>"
+`;

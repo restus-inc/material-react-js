@@ -23,7 +23,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { MDCSelect } from '@material/select';
-import { useMDCComponent, useMDCEvent } from './hoocks';
+import { useMDCComponent, useMDCEvent } from './hooks';
 
 const generateRootClassName = (props) => {
   const rootClassNames = ['mdc-select'];

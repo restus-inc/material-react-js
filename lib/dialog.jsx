@@ -23,7 +23,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { MDCDialog } from '@material/dialog';
-import { useMDCEvent, useMDCComponent } from './hoocks';
+import { useMDCEvent, useMDCComponent } from './hooks';
 
 /**
  * An confirmation type [MDCDialog component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield#readme}

@@ -23,7 +23,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { MDCTextField } from '@material/textfield';
-import { useMDCComponent } from './hoocks';
+import { useMDCComponent } from './hooks';
 
 const NON_NATIVE_PROPS = [
   'id', 'value', 'defaultValue', 'type', 'variation', 'label', 'className', 'helperText',

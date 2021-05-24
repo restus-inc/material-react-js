@@ -24,7 +24,7 @@
 import React, { useRef, useCallback } from 'react';
 import { MDCIconButtonToggle } from '@material/icon-button';
 import { MDCRipple } from '@material/ripple';
-import { useMDCComponent } from './hoocks';
+import { useMDCComponent } from './hooks';
 
 const NON_NATIVE_PROPS = [
   'className', 'iconClassName', 'onIcon', 'offIcon', 'isOnState', 'label',

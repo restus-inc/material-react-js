@@ -24,7 +24,7 @@
 import React, { useRef, useCallback } from 'react';
 import { MDCDataTable } from '@material/data-table';
 import Checkbox from './checkbox';
-import { useMDCEvent, useMDCComponent } from './hoocks';
+import { useMDCEvent, useMDCComponent } from './hooks';
 
 const headerCellClassName = (props) => {
   const classList = ['mdc-data-table__header-cell'];

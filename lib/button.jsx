@@ -23,7 +23,7 @@
 
 import React, { useRef } from 'react';
 import { MDCRipple } from '@material/ripple';
-import { useMDCComponent } from './hoocks';
+import { useMDCComponent } from './hooks';
 
 const NON_NATIVE_PROPS = [
   'variation', 'label', 'className', 'icon', 'iconClassName', 'supportsTouch', 'ref',

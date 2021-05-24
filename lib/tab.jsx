@@ -23,7 +23,7 @@
 
 import React, { useRef } from 'react';
 import { MDCTab } from '@material/tab';
-import { useMDCComponent } from './hoocks';
+import { useMDCComponent } from './hooks';
 
 const NON_NATIVE_PROPS = [
   'label', 'className', 'active', 'icon', 'iconClassName', 'ref', 'mdcTabRef',

@@ -23,7 +23,7 @@
 
 import React, { useRef } from 'react';
 import { MDCTabBar } from '@material/tab-bar';
-import { useMDCComponent, useMDCEvent } from './hoocks';
+import { useMDCComponent, useMDCEvent } from './hooks';
 
 /**
  * [MDCTabBar component]{@link https://github.com/material-components/material-components-web/tree/master/packages/mdc-tab-bar#readme}

@@ -23,7 +23,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import { MDCSnackbar } from '@material/snackbar';
-import { useMDCComponent, useMDCEvent } from './hoocks';
+import { useMDCComponent, useMDCEvent } from './hooks';
 
 const generateRootClassName = (props) => {
   const rootClasses = ['mdc-snackbar'];

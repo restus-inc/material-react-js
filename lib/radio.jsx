@@ -24,7 +24,7 @@
 import React, { useRef, useCallback } from 'react';
 import { MDCRadio } from '@material/radio';
 import { MDCFormField } from '@material/form-field';
-import { useMDCComponent, useMDCComponentRefProp } from './hoocks';
+import { useMDCComponent, useMDCComponentRefProp } from './hooks';
 
 const NON_NATIVE_PROPS = [
   'label', 'className', 'indeterminate', 'supportsTouch', 'type', 'disablesMdcInstance',
